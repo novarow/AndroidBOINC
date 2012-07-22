@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/installerv2/redist/Windows/Win32
+END
+boinccas95.dll
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/installerv2/redist/Windows/Win32/boinccas95.dll
+END
+boinccas.dll
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/installerv2/redist/Windows/Win32/boinccas.dll
+END
+srcsrv.dll
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/installerv2/redist/Windows/Win32/srcsrv.dll
+END
+dbghelp95.dll
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/installerv2/redist/Windows/Win32/dbghelp95.dll
+END
+symsrv.dll
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/installerv2/redist/Windows/Win32/symsrv.dll
+END
+dbghelp.dll
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/installerv2/redist/Windows/Win32/dbghelp.dll
+END
+symsrv.yes
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/installerv2/redist/Windows/Win32/symsrv.yes
+END

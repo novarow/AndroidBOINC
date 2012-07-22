@@ -1,0 +1,233 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools
+END
+cleanlogs.sh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/cleanlogs.sh
+END
+xadd
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/xadd
+END
+grep_logs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/grep_logs
+END
+manage_privileges
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/manage_privileges
+END
+example_app_in
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/example_app_in
+END
+dir_hier_path.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/dir_hier_path.cpp
+END
+cancel_jobs.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/cancel_jobs.cpp
+END
+vote_monitor
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/vote_monitor
+END
+update_versions_v6
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/update_versions_v6
+END
+updater.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/updater.cpp
+END
+create_work.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/create_work.cpp
+END
+kill_wu.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/kill_wu.cpp
+END
+upgrade
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/upgrade
+END
+process_result_template.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/process_result_template.cpp
+END
+makelog.sh
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/makelog.sh
+END
+poll_wu.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/poll_wu.cpp
+END
+backend_lib.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/backend_lib.h
+END
+make_project
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/make_project
+END
+project.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/project.xml
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/Makefile.am
+END
+update_versions
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/update_versions
+END
+run_in_ops
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/run_in_ops
+END
+watch_tcp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/watch_tcp
+END
+boinc_submit
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/boinc_submit
+END
+process_input_template.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/process_input_template.h
+END
+create_work_example
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/create_work_example
+END
+dbcheck_files_exist
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/dbcheck_files_exist
+END
+sign_executable.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/sign_executable.cpp
+END
+example_app_out
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/example_app_out
+END
+appmgr
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/appmgr
+END
+dir_hier_move.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/dir_hier_move.cpp
+END
+backend_lib.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/backend_lib.cpp
+END
+hr_db_convert.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/hr_db_convert.cpp
+END
+parse_config
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/parse_config
+END
+demo_submit
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/demo_submit
+END
+process_input_template.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/process_input_template.cpp
+END
+demo_query
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/demo_query
+END
+db_query
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/tools/db_query
+END

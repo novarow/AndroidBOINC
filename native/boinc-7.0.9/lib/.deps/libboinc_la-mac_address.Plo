@@ -1,0 +1,254 @@
+libboinc_la-mac_address.lo: mac_address.cpp ../config.h ../version.h \
+ /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/../../../../arm-linux-androideabi/include/c++/4.4.3/cstdio \
+ /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/../../../../arm-linux-androideabi/include/c++/4.4.3/arm-linux-androideabi/bits/c++config.h \
+ /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/../../../../arm-linux-androideabi/include/c++/4.4.3/arm-linux-androideabi/bits/os_defines.h \
+ /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/../../../../arm-linux-androideabi/include/c++/4.4.3/arm-linux-androideabi/bits/cpu_defines.h \
+ /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/../../../../arm-linux-androideabi/include/c++/4.4.3/cstddef \
+ /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stddef.h \
+ /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/stdio.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/cdefs.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/cdefs_elf.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/android/api-level.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/_types.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/machine/_types.h \
+ /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stdarg.h \
+ /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/sys/types.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/stdint.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/posix_types.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/stddef.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/compiler.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/posix_types.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/types.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/types.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/machine/kernel.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/sysmacros.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/unistd.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/select.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/time.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/time.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/signal.h \
+ /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/limits.h \
+ /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/syslimits.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/limits.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/limits.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/limits.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/machine/internal_types.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/machine/limits.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/syslimits.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/string.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/malloc.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/signal.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/asm-generic/signal.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/siginfo.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/asm-generic/siginfo.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/sysconf.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/capability.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/pathconf.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/ioctl.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/ioctl.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/ioctl.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/asm-generic/ioctl.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/ioctls.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/termbits.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/ioctl_compat.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/socket.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/socket.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/socket.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/sockios.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/sockios.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/uio.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/net/if.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/if.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/hdlc/ioctl.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/netinet/in.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/endian.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/endian.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/in.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/byteorder.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/byteorder/little_endian.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/byteorder/swab.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/byteorder/generic.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/in6.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/ipv6.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/netinet/in6.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/netinet/if_ether.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/if_ether.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/if_arp.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/netdevice.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/if_packet.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/net/ethertypes.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/netinet/ether.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/net/if_ether.h \
+ unix_util.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/arpa/inet.h \
+ mac_address.h
+
+../config.h:
+
+../version.h:
+
+/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/../../../../arm-linux-androideabi/include/c++/4.4.3/cstdio:
+
+/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/../../../../arm-linux-androideabi/include/c++/4.4.3/arm-linux-androideabi/bits/c++config.h:
+
+/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/../../../../arm-linux-androideabi/include/c++/4.4.3/arm-linux-androideabi/bits/os_defines.h:
+
+/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/../../../../arm-linux-androideabi/include/c++/4.4.3/arm-linux-androideabi/bits/cpu_defines.h:
+
+/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/../../../../arm-linux-androideabi/include/c++/4.4.3/cstddef:
+
+/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stddef.h:
+
+/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/stdio.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/cdefs.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/cdefs_elf.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/android/api-level.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/_types.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/machine/_types.h:
+
+/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stdarg.h:
+
+/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/sys/types.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/stdint.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/posix_types.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/stddef.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/compiler.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/posix_types.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/types.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/types.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/machine/kernel.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/sysmacros.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/unistd.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/select.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/time.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/time.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/signal.h:
+
+/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/limits.h:
+
+/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/syslimits.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/limits.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/limits.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/limits.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/machine/internal_types.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/machine/limits.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/syslimits.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/string.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/malloc.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/signal.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/asm-generic/signal.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/siginfo.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/asm-generic/siginfo.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/sysconf.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/capability.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/pathconf.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/ioctl.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/ioctl.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/ioctl.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/asm-generic/ioctl.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/ioctls.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/termbits.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/ioctl_compat.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/socket.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/socket.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/socket.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/sockios.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/sockios.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/uio.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/net/if.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/if.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/hdlc/ioctl.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/netinet/in.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/endian.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/endian.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/in.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/byteorder.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/byteorder/little_endian.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/byteorder/swab.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/byteorder/generic.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/in6.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/ipv6.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/netinet/in6.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/netinet/if_ether.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/if_ether.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/if_arp.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/netdevice.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/if_packet.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/net/ethertypes.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/netinet/ether.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/net/if_ether.h:
+
+unix_util.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/arpa/inet.h:
+
+mac_address.h:

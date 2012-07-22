@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 79
+.deps
+Makefile
+Makefile.in
+libboinc.a
+boinccmd.unmodified
+boinc_cmd
+crypt_prog
+
+END

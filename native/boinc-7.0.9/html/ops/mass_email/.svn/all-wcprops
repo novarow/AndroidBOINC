@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/html/ops/mass_email
+END
+sample_current_subject
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/html/ops/mass_email/sample_current_subject
+END
+sample_failed_subject
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/html/ops/mass_email/sample_failed_subject
+END
+sample_current_html
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/html/ops/mass_email/sample_current_html
+END
+sample_current_text
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/html/ops/mass_email/sample_current_text
+END
+sample_lapsed_subject
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/html/ops/mass_email/sample_lapsed_subject
+END
+sample_failed_html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/html/ops/mass_email/sample_failed_html
+END
+sample_failed_text
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/html/ops/mass_email/sample_failed_text
+END
+sample_lapsed_html
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/html/ops/mass_email/sample_lapsed_html
+END
+sample_lapsed_text
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/html/ops/mass_email/sample_lapsed_text
+END

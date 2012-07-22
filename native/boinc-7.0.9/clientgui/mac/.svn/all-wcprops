@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac
+END
+SetupSecurity.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/SetupSecurity.h
+END
+MacGUI.pch
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/MacGUI.pch
+END
+MacAccessiblity.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/MacAccessiblity.cpp
+END
+browser_safari.mm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/browser_safari.mm
+END
+SetVersion.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/SetVersion.cpp
+END
+MacAccessiblity.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/MacAccessiblity.h
+END
+ProgThruProc.tiff
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/ProgThruProc.tiff
+END
+Mac_GUI.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/Mac_GUI.cpp
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/config.h
+END
+SystemMenu_Prefix.pch
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/SystemMenu_Prefix.pch
+END
+gridrepublic.tiff
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/gridrepublic.tiff
+END
+CE_ss_logo.tiff
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/CE_ss_logo.tiff
+END
+SystemMenu.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/SystemMenu.m
+END
+MacSysMenu.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/MacSysMenu.cpp
+END
+MacBitmapComboBox.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/MacBitmapComboBox.cpp
+END
+SetupSecurity.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/SetupSecurity.cpp
+END
+MacSysMenu.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/MacSysMenu.h
+END
+SecurityUtility.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/SecurityUtility.cpp
+END
+MacBitmapComboBox.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clientgui/mac/MacBitmapComboBox.h
+END

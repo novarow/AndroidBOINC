@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/vboxwrapper/deprecated/mscom
+END
+VirtualBox_i.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/vboxwrapper/deprecated/mscom/VirtualBox_i.c
+END
+VirtualBox.tlb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/vboxwrapper/deprecated/mscom/VirtualBox.tlb
+END
+VirtualBox.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/vboxwrapper/deprecated/mscom/VirtualBox.h
+END

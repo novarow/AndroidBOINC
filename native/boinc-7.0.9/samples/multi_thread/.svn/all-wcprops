@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/multi_thread
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/multi_thread/Makefile
+END
+multi_thread.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/multi_thread/multi_thread.cpp
+END

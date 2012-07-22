@@ -1,0 +1,443 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test
+END
+concat_wu
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/concat_wu
+END
+make_project_sah.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/make_project_sah.php
+END
+test.inc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test.inc
+END
+test_sticky.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_sticky.php
+END
+test_uc.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_uc.php
+END
+test_sanity.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_sanity.php
+END
+test_concat.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_concat.php
+END
+test_api.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_api.php
+END
+uc_wu_sticky
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/uc_wu_sticky
+END
+shrm
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/shrm
+END
+uc_exit_wu
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/uc_exit_wu
+END
+test_backend.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_backend.php
+END
+test_rsc.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_rsc.py
+END
+test_1sec.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_1sec.py
+END
+test_time.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_time.php
+END
+test_upload_backoff.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_upload_backoff.php
+END
+small_input
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/small_input
+END
+gen_keys.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/gen_keys.php
+END
+uc_result_sticky
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/uc_result_sticky
+END
+1sec_correct_output
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/1sec_correct_output
+END
+input
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/input
+END
+test_uc_slow.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_uc_slow.php
+END
+version.inc.in
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/version.inc.in
+END
+abort_result
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/abort_result
+END
+ucs_wu
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/ucs_wu
+END
+test_water.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_water.php
+END
+uc_multiple_uploads_result
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/uc_multiple_uploads_result
+END
+concat_correct_output
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/concat_correct_output
+END
+uc_correct_output
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/uc_correct_output
+END
+test_uc_win.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_uc_win.php
+END
+cc_config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/cc_config.xml
+END
+test_rsc.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_rsc.php
+END
+cgiserver.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/cgiserver.py
+END
+test_1sec.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_1sec.php
+END
+testproxy
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/testproxy
+END
+test_abort.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_abort.py
+END
+test_pers.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_pers.php
+END
+test_signal.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_signal.py
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/Makefile.am
+END
+test_masterurl_failure.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_masterurl_failure.php
+END
+init.inc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/init.inc
+END
+db_def_to_py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/db_def_to_py
+END
+test_suite.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_suite.php
+END
+version.py.in
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/version.py.in
+END
+test_sched_failure.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_sched_failure.php
+END
+uc_sig_wu
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/uc_sig_wu
+END
+uc_multiple_download_wu
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/uc_multiple_download_wu
+END
+test_mdownload_backoff.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_mdownload_backoff.php
+END
+1sec_result
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/1sec_result
+END
+test_upload_resume.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_upload_resume.php
+END
+make_project.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/make_project.php
+END
+ta_correct_f
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/ta_correct_f
+END
+test_abort.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_abort.php
+END
+test_uc.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_uc.py
+END
+test_sanity.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_sanity.py
+END
+test_concat.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_concat.py
+END
+test_loop.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_loop.php
+END
+test_exit.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_exit.py
+END
+uc_small_correct_output
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/uc_small_correct_output
+END
+uc_wu_nodelete
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/uc_wu_nodelete
+END
+testbase.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/testbase.py
+END
+test_limit.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_limit.php
+END
+test_prefs.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_prefs.php
+END
+fake_php.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/fake_php.py
+END
+concat_result
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/concat_result
+END
+uc_result
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/uc_result
+END
+1sec_wu
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/1sec_wu
+END
+test_sched_moved.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_sched_moved.py
+END
+test_download_backoff.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_download_backoff.php
+END
+test_masterurl_failure.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_masterurl_failure.py
+END
+ta_correct_atc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/ta_correct_atc
+END
+db_def_to_php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/db_def_to_php
+END
+test_uc.inc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/test/test_uc.inc
+END

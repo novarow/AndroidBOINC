@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/unix
+END
+Contents
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/unix/Contents
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/unix/Makefile
+END
+unxcfg.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/unix/unxcfg.h
+END
+zipgrep
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/unix/zipgrep
+END
+unix.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/unix/unix.c
+END

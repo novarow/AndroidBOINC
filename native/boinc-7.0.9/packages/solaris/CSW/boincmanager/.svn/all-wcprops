@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincmanager
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincmanager/Makefile.am
+END
+prototype.in
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincmanager/prototype.in
+END
+boincmgr.1
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincmanager/boincmgr.1
+END
+depend
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincmanager/depend
+END
+pkginfo.in
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincmanager/pkginfo.in
+END
+boinc_manager.1
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincmanager/boinc_manager.1
+END

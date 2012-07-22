@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/vm_wrapper
+END
+setupPyBOINC.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/vm_wrapper/setupPyBOINC.py
+END
+job.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/vm_wrapper/job.xml
+END
+VMwrapper.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/vm_wrapper/VMwrapper.py
+END

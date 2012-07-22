@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/worker
+END
+worker.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/worker/worker.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/worker/Makefile
+END

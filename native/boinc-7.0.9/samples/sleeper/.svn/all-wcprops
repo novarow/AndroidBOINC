@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/sleeper
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/sleeper/Makefile
+END
+sleeper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/samples/sleeper/sleeper.cpp
+END

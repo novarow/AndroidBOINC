@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clienttray
+END
+tray_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clienttray/tray_win.h
+END
+boinc_tray.rc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clienttray/boinc_tray.rc
+END
+tray_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clienttray/tray_win.cpp
+END
+boinc_tray.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/clienttray/boinc_tray.h
+END

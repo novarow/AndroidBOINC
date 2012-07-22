@@ -1,0 +1,359 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build
+END
+ce_boinctray.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/ce_boinctray.vcproj
+END
+boinc_samples.sln
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/boinc_samples.sln
+END
+ce_boincmgr.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/ce_boincmgr.vcproj
+END
+wcg.sln
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/wcg.sln
+END
+uc2_graphics.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/uc2_graphics.vcproj
+END
+libgraphics2.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/libgraphics2.vcproj
+END
+glut.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/glut.vcproj
+END
+jpeglib.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/jpeglib.vcproj
+END
+ptp_boincsvcctrl.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/ptp_boincsvcctrl.vcproj
+END
+boinccmd.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/boinccmd.vcproj
+END
+wrapper.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/wrapper.vcproj
+END
+wcg_boinc_cli.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/wcg_boinc_cli.vcproj
+END
+ptp_boinc_ss.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/ptp_boinc_ss.vcproj
+END
+CharityEngine.sln
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/CharityEngine.sln
+END
+boinc.sln
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/boinc.sln
+END
+win-config.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/win-config.h
+END
+crypt_prog.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/crypt_prog.vcproj
+END
+sim.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/sim.vcproj
+END
+libboincapi_staticcrt.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/libboincapi_staticcrt.vcproj
+END
+example_app_nvcuda.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/example_app_nvcuda.vcproj
+END
+boinclog.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/boinclog.vcproj
+END
+wcg_boinc_ss.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/wcg_boinc_ss.vcproj
+END
+boincmgr.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/boincmgr.vcproj
+END
+libboinc_staticcrt.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/libboinc_staticcrt.vcproj
+END
+ptp_boinccmd.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/ptp_boinccmd.vcproj
+END
+ce_boincsvcctrl.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/ce_boincsvcctrl.vcproj
+END
+ptp_boinc_cli.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/ptp_boinc_cli.vcproj
+END
+wrappture_example.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/wrappture_example.vcproj
+END
+ce_boinc_ss.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/ce_boinc_ss.vcproj
+END
+nvcuda.rules
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/nvcuda.rules
+END
+ptp_boinc_dll.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/ptp_boinc_dll.vcproj
+END
+buildenv.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/buildenv.cmd
+END
+worker.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/worker.vcproj
+END
+ptp_boinctray.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/ptp_boinctray.vcproj
+END
+wcg_boinccmd.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/wcg_boinccmd.vcproj
+END
+vboxwrapper.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/vboxwrapper.vcproj
+END
+boinc_cli.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/boinc_cli.vcproj
+END
+libboinc.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/libboinc.vcproj
+END
+ptp_boincmgr.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/ptp_boincmgr.vcproj
+END
+ce_boinccmd.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/ce_boinccmd.vcproj
+END
+wcg_ss_app.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/wcg_ss_app.vcproj
+END
+upper_case.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/upper_case.vcproj
+END
+ce_boinc_cli.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/ce_boinc_cli.vcproj
+END
+uc2.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/uc2.vcproj
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/config.h
+END
+example_app_atiopencl.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/example_app_atiopencl.vcproj
+END
+boinctray.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/boinctray.vcproj
+END
+image_libs.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/image_libs.vcproj
+END
+boincsvcctrl.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/boincsvcctrl.vcproj
+END
+example_app_multi_thread.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/example_app_multi_thread.vcproj
+END
+ce_boinc_dll.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/ce_boinc_dll.vcproj
+END
+ce_ss_app.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/ce_ss_app.vcproj
+END
+Progress.sln
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/Progress.sln
+END
+example_app_nvopencl.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/example_app_nvopencl.vcproj
+END
+boinc_ss.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/boinc_ss.vcproj
+END
+libboinopencl_staticcrt.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/libboinopencl_staticcrt.vcproj
+END
+sleeper.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/sleeper.vcproj
+END
+wcg_boincmgr.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/wcg_boincmgr.vcproj
+END
+boinc_os_ss.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/win_build/boinc_os_ss.vcproj
+END

@@ -1,0 +1,107 @@
+10
+
+dir
+25753
+http://boinc.berkeley.edu/svn/tags/boinc_core_release_7_0_9/samples
+http://boinc.berkeley.edu/svn
+
+
+
+2012-01-15T07:08:27.771915Z
+25068
+romw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+677681c0-c3c0-48b4-bd46-92119ef6d97a
+
+worker
+dir
+
+glut
+dir
+
+jpeglib
+dir
+
+atiopencl
+dir
+
+vboxwrapper
+dir
+
+mac_build
+dir
+
+wrapper
+dir
+
+nvcuda
+dir
+
+multi_thread
+dir
+
+vm_wrapper
+dir
+
+nvopencl
+dir
+
+wrappture
+dir
+
+image_libs
+dir
+
+example_app
+dir
+
+client_state_save.xml
+file
+
+
+
+
+2012-06-12T12:10:29.756063Z
+e06ffcfc0cfc531186f18eff701c923d
+2011-09-08T18:55:55.471486Z
+24144
+davea
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1383
+
+sleeper
+dir
+

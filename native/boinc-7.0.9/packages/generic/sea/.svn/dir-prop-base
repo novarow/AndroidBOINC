@@ -1,0 +1,9 @@
+K 10
+svn:ignore
+V 39
+BOINC
+BOINC_debug
+Makefile
+Makefile.in
+
+END

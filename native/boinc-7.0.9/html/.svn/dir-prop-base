@@ -1,0 +1,9 @@
+K 10
+svn:ignore
+V 50
+.httpd.conf
+boinc.sln
+boinc.suo
+boinc_web.phpproj
+
+END

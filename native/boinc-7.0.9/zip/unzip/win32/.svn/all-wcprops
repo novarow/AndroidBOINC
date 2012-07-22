@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32
+END
+Makefile.gcc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32/Makefile.gcc
+END
+Makefile.dj
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32/Makefile.dj
+END
+Makefile.lcc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32/Makefile.lcc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32/Makefile
+END
+w32cfg.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32/w32cfg.h
+END
+rsxntwin.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32/rsxntwin.h
+END
+win32.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32/win32.c
+END
+Contents
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32/Contents
+END
+crc_i386.asm
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32/crc_i386.asm
+END
+Makefile.bc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32/Makefile.bc
+END
+crc_i386.c
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32/crc_i386.c
+END
+nt.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32/nt.c
+END
+Makefile.emx
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32/Makefile.emx
+END
+nt.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32/nt.h
+END
+crc_lcc.asm
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32/crc_lcc.asm
+END
+Makefile.wat
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/win32/Makefile.wat
+END

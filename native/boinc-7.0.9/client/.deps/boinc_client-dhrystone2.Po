@@ -1,0 +1,28 @@
+boinc_client-dhrystone2.o: dhrystone2.cpp \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/string.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/cdefs.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/cdefs_elf.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/android/api-level.h \
+ /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stddef.h \
+ /home/novarow/tools/android-4-tc/sysroot/usr/include/malloc.h cpp.h \
+ ../config.h ../version.h dhrystone.h
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/string.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/cdefs.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/cdefs_elf.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/android/api-level.h:
+
+/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stddef.h:
+
+/home/novarow/tools/android-4-tc/sysroot/usr/include/malloc.h:
+
+cpp.h:
+
+../config.h:
+
+../version.h:
+
+dhrystone.h:

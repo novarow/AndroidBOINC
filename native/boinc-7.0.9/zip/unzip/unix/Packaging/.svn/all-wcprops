@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/unix/Packaging
+END
+pkginfo.in
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/unix/Packaging/pkginfo.in
+END
+preinstall.in
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/unix/Packaging/preinstall.in
+END
+prototype
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/unix/Packaging/prototype
+END
+postinstall
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/unix/Packaging/postinstall
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/unzip/unix/Packaging/README
+END

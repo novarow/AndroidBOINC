@@ -1,0 +1,29 @@
+K 10
+svn:ignore
+V 460
+*.user
+Build
+_boinc_dll.h
+_boinc_dll.idl
+_boinc_dll.tlb
+_boinc_dll_i.c
+_boinc_dll_p.c
+boinc.ncb
+boinc.pfx
+boinc.pvk
+boinc.spc
+boinc.suo
+boinc_2003.ncb
+boinc_2003.suo
+boinc_cli_curl.vcproj.ROMWNET.romw.user
+boinc_dll.vcproj.ROMWNET.romw.user
+boinc_ss.vcproj.ROMWNET.romw.user
+boinccmd.vcproj.ROMWNET.romw.user
+boincmgr_curl.vcproj.ROMWNET.romw.user
+dlldata.c
+libboinc.vcproj.ROMWNET.romw.user
+sim.vcproj.ROMWNET.romw.user
+updater.vcproj.ROMWNET.romw.user
+*.pdb
+
+END

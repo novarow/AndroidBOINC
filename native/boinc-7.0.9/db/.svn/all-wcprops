@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/db
+END
+boinc_db.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/db/boinc_db.h
+END
+bolt_constraints.sql
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/db/bolt_constraints.sql
+END
+bossa_schema.sql
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/db/bossa_schema.sql
+END
+constraints.sql
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/db/constraints.sql
+END
+db_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/db/db_base.h
+END
+init_db
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/db/init_db
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/db/Makefile.am
+END
+bossa_constraints.sql
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/db/bossa_constraints.sql
+END
+bolt_schema.sql
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/db/bolt_schema.sql
+END
+schema.sql
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/db/schema.sql
+END
+schema_locality.sql
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/db/schema_locality.sql
+END
+boinc_db.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/db/boinc_db.cpp
+END
+db_base.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/db/db_base.cpp
+END

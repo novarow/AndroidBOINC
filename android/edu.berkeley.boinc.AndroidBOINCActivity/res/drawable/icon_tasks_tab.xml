@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- when selected use dark icons -->
+    <item android:drawable="@drawable/chartb"
+        android:state_selected="true"></item>
+    <!-- when not selected, use white -->
+    <item android:drawable="@drawable/chartw"></item>
+</selector>

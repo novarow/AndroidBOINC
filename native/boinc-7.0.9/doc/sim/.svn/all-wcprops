@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/doc/sim
+END
+sim_web.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/doc/sim/sim_web.php
+END
+sim_util.inc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/doc/sim/sim_util.inc
+END
+sim_control.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/doc/sim/sim_control.php
+END
+sim_scenario.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/doc/sim/sim_scenario.php
+END

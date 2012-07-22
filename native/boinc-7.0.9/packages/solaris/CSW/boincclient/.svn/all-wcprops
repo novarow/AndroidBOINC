@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincclient
+END
+depend
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincclient/depend
+END
+pkginfo.in
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincclient/pkginfo.in
+END
+boinc_client.1
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincclient/boinc_client.1
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincclient/Makefile.am
+END
+boinc.1
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincclient/boinc.1
+END
+boinc-client.conf
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincclient/boinc-client.conf
+END
+prototype.in
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincclient/prototype.in
+END
+boinc_cmd.1
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincclient/boinc_cmd.1
+END
+postinstall
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincclient/postinstall
+END
+boinccmd.1
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincclient/boinccmd.1
+END
+preinstall
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/packages/solaris/CSW/boincclient/preinstall
+END

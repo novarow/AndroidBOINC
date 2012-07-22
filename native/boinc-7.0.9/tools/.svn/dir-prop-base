@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 71
+.deps
+Makefile
+Makefile.in
+dir_hier_move
+dir_hier_path
+sign_executable
+
+END

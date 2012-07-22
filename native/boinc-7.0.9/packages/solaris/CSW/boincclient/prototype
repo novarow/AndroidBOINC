@@ -1,0 +1,23 @@
+i pkginfo
+i copyright
+i depend
+i preinstall
+i postinstall
+d none /etc 0755 root bin
+d none /etc/init.d 0755 root bin
+f none /etc/init.d/cswboinc-client 0755 root bin
+d none /etc/default 0755 root bin
+f none /etc/default/boinc-client 0755 root bin
+d none /home/novarow/Documents/boincforandroid/build 0755 root bin
+d none /home/novarow/Documents/boincforandroid/build/etc 0755 root bin
+d none /home/novarow/Documents/boincforandroid/build/bin 0755 root bin
+f none /home/novarow/Documents/boincforandroid/build/bin/boinccmd 0755 root bin
+f none /home/novarow/Documents/boincforandroid/build/bin/boinc_client 0755 root bin
+l none /home/novarow/Documents/boincforandroid/build/bin/boinc=boinc_client
+f none /home/novarow/Documents/boincforandroid/build/bin/switcher 0755 root bin
+d none /home/novarow/Documents/boincforandroid/build/share 0755 root bin
+d none /home/novarow/Documents/boincforandroid/build/share/man 0755 root bin
+d none /home/novarow/Documents/boincforandroid/build/share/man/man1 0755 root bin
+f none /home/novarow/Documents/boincforandroid/build/share/man/man1/boinc.1 0755 root bin
+f none /home/novarow/Documents/boincforandroid/build/share/man/man1/boinccmd.1 0755 root bin
+f none /home/novarow/Documents/boincforandroid/build/share/man/man1/boinc_client.1 0755 root bin

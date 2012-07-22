@@ -1,0 +1,244 @@
+10
+
+dir
+25753
+http://boinc.berkeley.edu/svn/tags/boinc_core_release_7_0_9/locale
+http://boinc.berkeley.edu/svn
+
+
+
+2012-01-16T19:43:03.808407Z
+25071
+davea
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+677681c0-c3c0-48b4-bd46-92119ef6d97a
+
+it
+dir
+
+sk
+dir
+
+sl
+dir
+
+uk
+dir
+
+da
+dir
+
+pt_PT
+dir
+
+be
+dir
+
+fa
+dir
+
+bg
+dir
+
+de
+dir
+
+ja
+dir
+
+zh_TW
+dir
+
+he
+dir
+
+fi
+dir
+
+templates
+dir
+
+nb
+dir
+
+zh_CN
+dir
+
+fr
+dir
+
+hr
+dir
+
+nl
+dir
+
+Makefile.am
+file
+
+
+
+
+2012-06-12T12:09:54.817542Z
+e8e59f85c1d2b6eddb954e721882d73a
+2010-07-13T20:34:12.592392Z
+21915
+romw
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+746
+
+nn
+dir
+
+pl
+dir
+
+hu
+dir
+
+sv_SE
+dir
+
+lt
+dir
+
+ro
+dir
+
+lv
+dir
+
+copy_files.php
+file
+
+
+
+
+2012-06-12T12:09:54.817542Z
+cd4c03ebcf055bbab9668c351f9f7917
+2009-05-19T20:55:43.178167Z
+18165
+davea
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+466
+
+ca
+dir
+
+tr
+dir
+
+ru
+dir
+
+el
+dir
+
+gl
+dir
+
+ar
+dir
+
+updatetrans.sh
+file
+
+
+
+
+2012-06-12T12:09:54.817542Z
+007eef827454cc39e6afa6c0136d0403
+2011-12-16T00:55:04.699111Z
+24813
+romw
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4702
+
+cs
+dir
+
+pt_BR
+dir
+
+es
+dir
+
+ko
+dir
+
+cy
+dir
+

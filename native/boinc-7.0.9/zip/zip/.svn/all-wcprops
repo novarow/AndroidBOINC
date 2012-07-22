@@ -1,0 +1,227 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip
+END
+z_api.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/z_api.c
+END
+zip.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/zip.c
+END
+deflate.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/deflate.c
+END
+z_crc32.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/z_crc32.c
+END
+zipup.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/zipup.c
+END
+z_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/z_api.h
+END
+zip.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/zip.h
+END
+match.S
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/match.S
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/README
+END
+zipsplit.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/zipsplit.c
+END
+WHATSNEW
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/WHATSNEW
+END
+ziperr.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/ziperr.h
+END
+trees.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/trees.c
+END
+TODO
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/TODO
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/INSTALL
+END
+CHANGES
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/CHANGES
+END
+z_crctab.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/z_crctab.c
+END
+MANUAL
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/MANUAL
+END
+z_fileio.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/z_fileio.c
+END
+crc_i386.S
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/crc_i386.S
+END
+z_ttyio.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/z_ttyio.c
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/LICENSE
+END
+zipfile.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/zipfile.c
+END
+revision.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/revision.h
+END
+z_ttyio.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/z_ttyio.h
+END
+zipcloak.c
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/zipcloak.c
+END
+z_globals.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/z_globals.c
+END
+util.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/util.c
+END
+ebcdic.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/ebcdic.h
+END
+BUGS
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/BUGS
+END
+mktime.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/mktime.c
+END
+zipnote.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/zipnote.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/Makefile.am
+END
+WHERE
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/WHERE
+END
+z_crypt.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/z_crypt.c
+END
+z_crypt.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/z_crypt.h
+END
+tailor.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/zip/zip/tailor.h
+END

@@ -1,0 +1,629 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib
+END
+boinc_fcgi.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/boinc_fcgi.h
+END
+msg_log.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/msg_log.cpp
+END
+daemonmgt_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/daemonmgt_win.cpp
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/Makefile.am
+END
+base64.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/base64.h
+END
+synch.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/synch.h
+END
+win_util.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/win_util.cpp
+END
+susp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/susp.cpp
+END
+procinfo_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/procinfo_win.cpp
+END
+mfile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/mfile.cpp
+END
+idlemon.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/idlemon.h
+END
+hostinfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/hostinfo.h
+END
+gui_rpc_client_print.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/gui_rpc_client_print.cpp
+END
+proc_control.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/proc_control.cpp
+END
+x_util.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/x_util.cpp
+END
+mac_address.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/mac_address.cpp
+END
+crypt.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/crypt.h
+END
+thread.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/thread.cpp
+END
+mem_usage.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/mem_usage.h
+END
+str_replace.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/str_replace.h
+END
+util.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/util.h
+END
+run_app_windows.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/run_app_windows.h
+END
+md5.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/md5.c
+END
+gui_rpc_client.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/gui_rpc_client.cpp
+END
+stackwalker_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/stackwalker_win.cpp
+END
+diagnostics_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/diagnostics_win.h
+END
+md5_file.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/md5_file.h
+END
+hostinfo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/hostinfo.cpp
+END
+md5.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/md5.h
+END
+coproc.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/coproc.h
+END
+proxy_info.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/proxy_info.cpp
+END
+stackwalker_imports.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/stackwalker_imports.h
+END
+network.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/network.h
+END
+win_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/win_util.h
+END
+crypt.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/crypt.cpp
+END
+mfile.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/mfile.h
+END
+gui_rpc_client_ops.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/gui_rpc_client_ops.cpp
+END
+cc_config.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/cc_config.cpp
+END
+str_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/str_util.h
+END
+average.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/average.cpp
+END
+boinc_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/boinc_win.h
+END
+diagnostics.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/diagnostics.h
+END
+util.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/util.cpp
+END
+daemonmgt.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/daemonmgt.h
+END
+synch_test.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/synch_test.cpp
+END
+procinfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/procinfo.h
+END
+miofile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/miofile.cpp
+END
+prefs.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/prefs.h
+END
+md5_test.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/md5_test.cpp
+END
+coproc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/coproc.cpp
+END
+notice.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/notice.h
+END
+network.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/network.cpp
+END
+error_numbers.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/error_numbers.h
+END
+msg_queue.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/msg_queue.cpp
+END
+gui_rpc_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/gui_rpc_client.h
+END
+std_fixes.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/std_fixes.h
+END
+stackwalker_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/stackwalker_win.h
+END
+proxy_info.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/proxy_info.h
+END
+url.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/url.cpp
+END
+cert_sig.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/cert_sig.h
+END
+idlemon_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/idlemon_win.cpp
+END
+str_util.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/str_util.cpp
+END
+diagnostics.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/diagnostics.cpp
+END
+boinc_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/boinc_win.cpp
+END
+parse.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/parse.cpp
+END
+cal_boinc.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/cal_boinc.h
+END
+filesys.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/filesys.cpp
+END
+shmem.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/shmem.h
+END
+cc_config.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/cc_config.h
+END
+procinfo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/procinfo.cpp
+END
+average.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/average.h
+END
+prefs.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/prefs.cpp
+END
+app_ipc.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/app_ipc.h
+END
+unix_util.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/unix_util.cpp
+END
+notice.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/notice.cpp
+END
+boinc_fcgi.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/boinc_fcgi.cpp
+END
+base64.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/base64.cpp
+END
+synch.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/synch.cpp
+END
+crypt_prog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/crypt_prog.cpp
+END
+miofile.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/miofile.h
+END
+msg_log.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/msg_log.h
+END
+common_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/common_defs.h
+END
+msg_queue.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/msg_queue.h
+END
+cert_sig.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/cert_sig.cpp
+END
+procinfo_mac.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/procinfo_mac.cpp
+END
+mem_usage.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/mem_usage.cpp
+END
+url.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/url.h
+END
+proc_control.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/proc_control.h
+END
+shmem_test.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/shmem_test.cpp
+END
+shmem.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/shmem.cpp
+END
+parse_test.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/parse_test.cpp
+END
+mac_address.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/mac_address.h
+END
+app_ipc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/app_ipc.cpp
+END
+thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/thread.h
+END
+Makefile.mingw
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/Makefile.mingw
+END
+cl_boinc.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/cl_boinc.h
+END
+run_app_windows.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/run_app_windows.cpp
+END
+parse.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/parse.h
+END
+procinfo_unix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/procinfo_unix.cpp
+END
+filesys.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/filesys.h
+END
+md5_file.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/md5_file.cpp
+END
+diagnostics_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/diagnostics_win.cpp
+END
+msg_test.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/msg_test.cpp
+END
+unix_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/lib/unix_util.h
+END

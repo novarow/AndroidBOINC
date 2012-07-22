@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build
+END
+HowToBuildBOINC_XCode.rtf
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/HowToBuildBOINC_XCode.rtf
+END
+buildWxMac.sh
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/buildWxMac.sh
+END
+buildjpeg.sh
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/buildjpeg.sh
+END
+Make_BOINC_Service.sh
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/Make_BOINC_Service.sh
+END
+Installer-Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/Installer-Info.plist
+END
+WaitPermissions-Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/WaitPermissions-Info.plist
+END
+Uninstaller-Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/Uninstaller-Info.plist
+END
+Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/Info.plist
+END
+Mac_SA_Insecure.sh
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/Mac_SA_Insecure.sh
+END
+setupForBOINC.sh
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/setupForBOINC.sh
+END
+SystemMenu-Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/SystemMenu-Info.plist
+END
+buildcurl.sh
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/buildcurl.sh
+END
+PostInstall-Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/PostInstall-Info.plist
+END
+Mac_SA_Secure.sh
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/Mac_SA_Secure.sh
+END
+ScreenSaver-Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/ScreenSaver-Info.plist
+END
+buildc-ares.sh
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/buildc-ares.sh
+END
+BuildMacBOINC.sh
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/25080/tags/boinc_core_release_7_0_9/mac_build/BuildMacBOINC.sh
+END

@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 80
+cgiserver.pyc
+run-*
+testbase.pyc
+testproxy.log
+version.inc
+Makefile
+Makefile.in
+
+END

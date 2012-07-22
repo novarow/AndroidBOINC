@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndroidBOINC</string>
+    <string name="project_name">BOINC Test Project</string>
+    
+    
+    
+    <string name="debug_refresh">Refresh</string>
+    <string name="debug_clear">Clear Log</string>
+    <string name="status_running">Running&#8230;</string>
+    <string name="status_running_long">Thank you for participating in\nBOINC Test Project!</string>
+    <string name="status_paused">Paused</string>
+    <string name="status_paused_long">Computation suspended.</string>
+    <string name="status_error">Whooops</string>
+    <string name="status_error_long">&#8230;this should not happen!\nClick on the icon to try again.</string>
+    <string name="status_computing_disabled">Paused.</string>
+    <string name="status_computing_disabled_long">Tap to continue!</string>
+    <string name="disable_computation">Tap to pause!</string>
+    
+    <!-- suspend reasons -->
+    <string name="suspend_header">Paused.</string>
+    <string name="suspend_batteries">You are running on batteries!</string>
+    <string name="suspend_batteries_solution">Connect to charger or change preferences.</string>
+    <string name="suspend_useractive">Paused.</string>
+    <string name="suspend_useractive_solution">Tap to continue!</string>
+    <string name="suspend_userreq">Paused.</string>
+    <string name="suspend_userreq_solution">Tap to continue!</string>
+    <string name="suspend_tod">Paused.</string>
+    <string name="suspend_tod_solution">Tap to continue!</string>
+    <string name="suspend_bm">Paused.</string>
+    <string name="suspend_bm_solution">Tap to continue!</string>
+    <string name="suspend_disksize">Paused.</string>
+    <string name="suspend_disksize_solution">Tap to continue!</string>
+    <string name="suspend_cputhrottle">Paused.</string>
+    <string name="suspend_cputhrottle_solution">Tap to continue!</string>
+    <string name="suspend_noinput">Paused.</string>
+    <string name="suspend_noinput_solution">Tap to continue!</string>
+    <string name="suspend_delay">Paused.</string>
+    <string name="suspend_delay_solution">Tap to continue!</string>
+    <string name="suspend_exclusiveapp">Paused.</string>
+    <string name="suspend_exclusiveapp_solution">Tap to continue!</string>
+    <string name="suspend_cpu">Paused.</string>
+    <string name="suspend_cpu_solution">Tap to continue!</string>
+    <string name="suspend_network">Paused.</string>
+    <string name="suspend_network_solution">Tap to continue!</string>
+    <string name="suspend_os">Paused.</string>
+    <string name="suspend_os_solution">Tap to continue!</string>
+    
+    
+    <string name="project_url">http://isaac.ssl.berkeley.edu/test/</string>
+    <string name="project_auth_token">dfdf2520a9999a3f86874c5894d2cb7d</string>
+    
+
+</resources>
