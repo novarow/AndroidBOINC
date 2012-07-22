@@ -1,0 +1,11 @@
+prefix=/home/novarow/tools/android-4-tc/arm-linux-androideabi
+exec_prefix=${prefix}
+libdir=${exec_prefix}//home/novarow/tools/android-4-tc/arm-linux-androideabi/lib
+includedir=${prefix}/include
+
+Name: OpenSSL-libcrypto
+Description: OpenSSL cryptography library
+Version: 1.0.0d
+Requires: 
+Libs: -L${libdir} -lcrypto -ldl
+Cflags: -I${includedir} 
