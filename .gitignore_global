@@ -1,0 +1,6 @@
+*.so
+*.o
+*.lo
+*.la
+*.class
+*.apk

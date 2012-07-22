@@ -1,0 +1,22 @@
+TODOs
+
+BOINC client:
+- add logic to check whether device is connected to charger. (suspend reason)
+- figure out whether it is possible to check connection status of wifi in native code. If so, add to client state. (suspend reason). Clearify whether this needs adaption of preferences or implement "hard-coded"
+- figure out how to get md5 verification hash for project attachment (rpc call?)
+
+
+BOINC Android manager:
+- Optimize client setup routine (try reconnect in onCreate, if not, start new client)
+- Implement task overview
+- Preferences: add preferences to the GUI and set up RPC to read/write them (also include auth pwd for project in settings)
+- Include "Manager messages"
+
+Science apps:
+- Get people to build and test real-life apps for Android client
+
+General:
+- howto compile apps
+- howto "brand" manager
+- howto compile client
+- documenation of architecure
