@@ -10,24 +10,18 @@ The intention of this project is to port the exisiting BOINC client to ARM based
 This repository contains all code to build the fully-fledged BOINC client for Android:
 
 android/:
-	edu.berkeley.boinc.AndroidBOINCActivity:
-	The Android application (BOINC manager for Android)
+edu.berkeley.boinc.AndroidBOINCActivity: The Android application (BOINC manager for Android)
 
 native/:
-	android-4-tc
-	standalone toolchain for cross compilation of native source code for Android ARM (v5 ABI) devices. It contains cross compilation tool binaries as well as the SYSROOT for Android devices with NDK level 4 (Android 1.6)
+android-4-tc: standalone toolchain for cross compilation of native source code for Android ARM (v5 ABI) devices. It contains cross compilation tool binaries as well as the SYSROOT for Android devices with NDK level 4 (Android 1.6)
 
-	boinc-7.0.9
-	The adapted version of the BOINC client, forked from BOINC repo tag 7.0.9. See /samples/example_app for Android specific "upper case" example application.
+boinc-7.0.9: Adapted version of the BOINC client, forked from BOINC repo tag 7.0.9. See /samples/example_app for Android specific "upper case" example application.
 
-	curl-x.x.x
-	curl library source, used by the client
+curl-x.x.x: curl library source, used by the client
 
-	openssl-x
-	openSSL library source, used by the client
+openssl-x: openSSL library source, used by the client
 
-	build.sh
-	build script to build the required libraries, the BOINC client and BOINC applications for Android devices, using the cross compiler binaries offered by the Android NDK and the corresponding SYSROOT.
+build.sh: build script to build the required libraries, the BOINC client and BOINC applications for Android devices, using the cross compiler binaries offered by the Android NDK and the corresponding SYSROOT.
 
 
 	 
