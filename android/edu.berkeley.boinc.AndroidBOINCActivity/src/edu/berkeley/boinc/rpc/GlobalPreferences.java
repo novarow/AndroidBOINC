@@ -19,10 +19,6 @@
 
 package edu.berkeley.boinc.rpc;
 
-/**
- * @author mat
- *
- */
 public class GlobalPreferences {
 	public boolean run_on_batteries;
     // poorly named; what it really means is:
@@ -53,8 +49,8 @@ public class GlobalPreferences {
 	public double cpu_usage_limit;
 	public double daily_xfer_limit_mb;
 	public int daily_xfer_period_days;
-	public double run_if_battery_nl_than;
-	public double run_if_temp_lt_than;
+	public boolean override_file_present;
+	public boolean network_wifi_only;
 	
 	public TimePreferences cpu_times = new TimePreferences();
 	public TimePreferences net_times = new TimePreferences();

@@ -1,7 +1,7 @@
 package edu.berkeley.boinc.definitions;
 
 /*
- * This tries to hold the same values as defined in lib/common_defs.h
+ * This tries to be the same as lib/common_defs.h
  */
 
 public class CommonDefs {
@@ -85,6 +85,7 @@ public class CommonDefs {
 	public static final Integer SUSPEND_REASON_CPU_USAGE = 1024;
 	public static final Integer SUSPEND_REASON_NETWORK_QUOTA_EXCEEDED = 2048;
 	public static final Integer SUSPEND_REASON_OS = 4096;
+	public static final Integer SUSPEND_REASON_WIFI_STATE = 8192;
 
 	// Values of RESULT::state
 	// THESE MUST BE IN NUMERICAL ORDER

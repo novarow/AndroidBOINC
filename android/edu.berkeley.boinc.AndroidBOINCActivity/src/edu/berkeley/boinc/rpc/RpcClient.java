@@ -1033,11 +1033,9 @@ public class RpcClient {
 			mRequest.append(globalPrefs.daily_xfer_limit_mb);
 			mRequest.append("</daily_xfer_limit_mb>\n  <daily_xfer_period_days>");
 			mRequest.append(globalPrefs.daily_xfer_period_days);
-			mRequest.append("</daily_xfer_period_days>\n  <run_if_battery_nl_than>");
-			mRequest.append(globalPrefs.run_if_battery_nl_than);
-			mRequest.append("</run_if_battery_nl_than>\n  <run_if_temp_lt_than>");
-			mRequest.append(globalPrefs.run_if_temp_lt_than);
-			mRequest.append("</run_if_temp_lt_than>\n");
+			mRequest.append("</daily_xfer_period_days>\n  <network_wifi_only>");
+			mRequest.append(globalPrefs.network_wifi_only);
+			mRequest.append("</network_wifi_only>\n");
 			
 			// write days prefs
 			TimePreferences.TimeSpan[] weekPrefs = globalPrefs.cpu_times.week_prefs;

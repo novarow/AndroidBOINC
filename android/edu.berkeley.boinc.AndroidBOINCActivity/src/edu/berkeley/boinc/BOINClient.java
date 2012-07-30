@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import edu.berkeley.boinc.definitions.CommonDefs;
 import edu.berkeley.boinc.rpc.CcStatus;
+import edu.berkeley.boinc.rpc.GlobalPreferences;
 import edu.berkeley.boinc.rpc.ProjectAttachReply;
 import edu.berkeley.boinc.rpc.RpcClient;
 
@@ -116,6 +117,11 @@ public class BOINClient {
 				ArrayList<edu.berkeley.boinc.rpc.Result> tasks = rpc.getResults();
 				Log.d(TAG, "getCcStatus");
 				edu.berkeley.boinc.rpc.CcStatus status = rpc.getCcStatus();
+				
+				//prefs test
+				GlobalPreferences prefs = rpc.getGlobalPrefsWorkingStruct();
+				Log.d(TAG, "Java class holds network_wifi_only value: " + prefs.network_wifi_only); 
+				
 				if((tasks==null)||(status==null)) { //connection problem
 					return false;
 				} else {
@@ -268,6 +274,9 @@ public class BOINClient {
 	        	publishProgress("project attachment failed!");
 	        	return success;
 	        }
+	        
+	        //test settings
+	        //rpc.setGlobalPrefsOverride("<network_wifi_only>0</network_wifi_only>");
 	        
 	        //finished - return value goes to onPostExecute
 			return success;
@@ -467,8 +476,6 @@ public class BOINClient {
 	    }
 		
 	}
-
-    
     
     public void shutdown(View view) {
     	Log.d(TAG, "shutdown");

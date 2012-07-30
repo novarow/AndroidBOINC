@@ -69,16 +69,16 @@ public class AndroidBOINCActivity extends TabActivity {
     public static void logMessage(Context ctx, String tag, String message) {
         Intent testLog = new Intent();
         testLog.setAction("edu.berkeley.boinc.log");
-        testLog.putExtra("message", message);
+        testLog.putExtra("message", message);   
         testLog.putExtra("tag", tag);
         ctx.sendBroadcast(testLog);
     }
     
     //temporary! until re-connect is implemented
-    public void onPause(){
+    /*public void onPause(){
     	Log.d(TAG, "onPause");
     	client.shutdown();
     	Log.d(TAG, "client shut down");
     	super.onPause();
-    }
+    }*/
 }

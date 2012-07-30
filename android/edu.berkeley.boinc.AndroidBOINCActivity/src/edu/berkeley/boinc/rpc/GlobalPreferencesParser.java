@@ -26,10 +26,6 @@ import edu.berkeley.boinc.debug.Logging;
 import android.util.Log;
 import android.util.Xml;
 
-/**
- * @author mat
- *
- */
 public class GlobalPreferencesParser extends BaseParser {
 	private static final String TAG = "GlobalPreferencesParser";
 	
@@ -171,10 +167,6 @@ public class GlobalPreferencesParser extends BaseParser {
 						mPreferences.daily_xfer_limit_mb = Double.parseDouble(mCurrentElement.toString());
 					} else if (localName.equalsIgnoreCase("daily_xfer_period_days")) {
 						mPreferences.daily_xfer_period_days = Integer.parseInt(mCurrentElement.toString());
-					} else if (localName.equalsIgnoreCase("run_if_battery_nl_than")) {
-						mPreferences.run_if_battery_nl_than = Double.parseDouble(mCurrentElement.toString());
-					} else if (localName.equalsIgnoreCase("run_if_temp_lt_than")) {
-						mPreferences.run_if_temp_lt_than = Double.parseDouble(mCurrentElement.toString());
 					} else if (localName.equalsIgnoreCase("start_hour")) {
 						mPreferences.cpu_times.start_hour = Double.parseDouble(mCurrentElement.toString());
 					} else if (localName.equalsIgnoreCase("end_hour")) {
@@ -183,6 +175,10 @@ public class GlobalPreferencesParser extends BaseParser {
 						mPreferences.net_times.start_hour = Double.parseDouble(mCurrentElement.toString());
 					} else if (localName.equalsIgnoreCase("net_end_hour")) {
 						mPreferences.net_times.end_hour = Double.parseDouble(mCurrentElement.toString());
+					} else if (localName.equalsIgnoreCase("override_file_present")) {
+						mPreferences.override_file_present = Integer.parseInt(mCurrentElement.toString()) != 0;
+					} else if (localName.equalsIgnoreCase("network_wifi_only")) {
+						mPreferences.network_wifi_only = Integer.parseInt(mCurrentElement.toString()) != 0;
 					}
 				}
 			}
