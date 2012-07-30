@@ -123,6 +123,10 @@ extern "C" {
 mach_port_t gEventHandle = NULL;
 #endif  // __APPLE__
 
+#ifdef ANDROID
+#include "android_log.h"
+#endif
+
 #ifdef _HPUX_SOURCE
 #include <sys/pstat.h>
 #endif
@@ -181,6 +185,7 @@ int get_timezone() {
     return 0;
 }
 
+
 // Returns true if the host is currently running off battery power
 // If you can't figure out, return false
 //
@@ -206,6 +211,48 @@ bool HOST_INFO::host_is_running_on_batteries() {
     CFRelease(list);
     return retval;
 
+#elif ANDROID
+
+LOGD("checking battery status");
+
+	// using /sys/class/power_supply/*/online
+	// power supplies are both ac and usb!
+	char acpath[1024];
+	snprintf(acpath,sizeof(acpath),"/sys/class/power_supply/ac/online");
+	char usbpath[1024];
+	snprintf(usbpath,sizeof(usbpath),"/sys/class/power_supply/usb/online");
+
+	FILE *fsysac = fopen(acpath, "r");
+	FILE *fsysusb = fopen(usbpath, "r");
+	int aconline = 0;
+	int usbonline = 0;
+	bool power_supply_online = false;
+
+	if(fsysac) {
+LOGD("ac file available");
+		(void) fscanf(fsysac, "%d", &aconline);
+		fclose(fsysac);
+	}
+
+	if(fsysusb) {
+LOGD("usb file available");
+		(void) fscanf(fsysusb, "%d", &usbonline);
+		fclose(fsysusb);
+	}
+
+	if((aconline == 1) || (usbonline == 1)){
+		power_supply_online = true;
+		char msg[1024];
+		snprintf(msg,sizeof(msg),"power supply online! status for usb: %d and ac: %d",usbonline,aconline);
+		LOGD(msg);
+	} else {
+		LOGD("running on batteries");
+	}
+
+	return !power_supply_online;
+
+
+//Android is LINUX_LIKE_SYSTEM, but since ANDROID checked first, this part is not executed on Android devices
 #elif LINUX_LIKE_SYSTEM
     static enum {
       Detect,
@@ -342,6 +389,7 @@ bool HOST_INFO::host_is_running_on_batteries() {
             // online is 1 if on AC power, 0 if on battery
             return (0 == online);
         }
+	
     case NoBattery:
     default:
          // we have no way to determine if we're on batteries,
@@ -1400,7 +1448,11 @@ int HOST_INFO::get_host_info() {
 #if HAVE_SYS_UTSNAME_H
     struct utsname u;
     uname(&u);
+#ifdef ANDROID
+    safe_strcpy(os_name, "Android");
+#else
     safe_strcpy(os_name, u.sysname);
+#endif //ANDROID
 #if defined(__EMX__) // OS2: version is in u.version
     safe_strcpy(os_version, u.version);
 #elif defined(__HAIKU__)

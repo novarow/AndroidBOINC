@@ -8,5 +8,5 @@
 
 import sys, os
 
-TOP_BUILD_DIR = "/home/novarow/Documents/boincforandroid/boinc-7.0.9j"
+TOP_BUILD_DIR = "/home/novarow/Documents/AndroidBOINC/native/boinc-7.0.9"
 sys.path.insert(0, os.path.join(TOP_BUILD_DIR, 'py'))

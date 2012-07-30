@@ -47,8 +47,8 @@
 #  /etc/boinc-client.conf, or the same files under ${sysconfdir}
 
 ## These 4 installation dirs set by autoconf. ##########################
-prefix=`dirname /home/novarow/Documents/boincforandroid/build/.`
-exec_prefix=`dirname /home/novarow/Documents/boincforandroid/build/.`
+prefix=`dirname /home/novarow/Documents/AndroidBOINC/native/nativebuild/.`
+exec_prefix=`dirname /home/novarow/Documents/AndroidBOINC/native/nativebuild/.`
 bindir=`dirname ${exec_prefix}/bin/.`
 sysconfdir=`dirname ${prefix}/etc/.`
 ########################################################################

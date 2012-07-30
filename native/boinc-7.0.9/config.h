@@ -12,13 +12,13 @@
 
 
 /* Directory where BOINC executables will be installed */
-#define BOINC_EXECPREFIX "/home/novarow/Documents/boincforandroid/build/bin"
+#define BOINC_EXECPREFIX "/home/novarow/Documents/AndroidBOINC/native/nativebuild/bin"
 
 /* Directory where BOINC libraries will be installed */
-#define BOINC_LIBDIR "/home/novarow/Documents/boincforandroid/build/lib"
+#define BOINC_LIBDIR "/home/novarow/Documents/AndroidBOINC/native/nativebuild/lib"
 
 /* Directory tree where BOINC will be installed */
-#define BOINC_PREFIX "/home/novarow/Documents/boincforandroid/build"
+#define BOINC_PREFIX "/home/novarow/Documents/AndroidBOINC/native/nativebuild"
 
 /* Define to the type pointed to by the 5th parameter of getsockopt */
 #define BOINC_SOCKLEN_T socklen_t

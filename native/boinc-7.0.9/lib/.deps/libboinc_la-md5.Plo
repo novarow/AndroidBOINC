@@ -1,21 +1,21 @@
 libboinc_la-md5.lo: md5.c md5.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/string.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/cdefs.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/cdefs_elf.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/android/api-level.h \
- /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stddef.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/malloc.h
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/string.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/cdefs.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/cdefs_elf.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/android/api-level.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stddef.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/malloc.h
 
 md5.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/string.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/string.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/cdefs.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/cdefs.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/cdefs_elf.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/cdefs_elf.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/android/api-level.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/android/api-level.h:
 
-/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stddef.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stddef.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/malloc.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/malloc.h:

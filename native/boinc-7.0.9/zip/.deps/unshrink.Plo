@@ -1,203 +1,203 @@
 unshrink.lo: unzip/unshrink.c unzip/unzip.h unzip/unzpriv.h \
- /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stddef.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/stdlib.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/cdefs.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/cdefs_elf.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/android/api-level.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/string.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/malloc.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/alloca.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/strings.h \
- /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/sys/types.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/stdint.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/_types.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/machine/_types.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/posix_types.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/stddef.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/compiler.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/posix_types.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/types.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/types.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/machine/kernel.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/sysmacros.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/memory.h \
- /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/stdio.h \
- /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stdarg.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/ctype.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/errno.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/errno.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/errno.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/asm-generic/errno.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/asm-generic/errno-base.h \
- /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/limits.h \
- /home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/syslimits.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/limits.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/limits.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/limits.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/machine/internal_types.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/machine/limits.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/syslimits.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/signal.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/signal.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/asm-generic/signal.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/siginfo.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/asm-generic/siginfo.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stddef.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/stdlib.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/cdefs.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/cdefs_elf.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/android/api-level.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/string.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/malloc.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/alloca.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/strings.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/sys/types.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/stdint.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/_types.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/machine/_types.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/posix_types.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/stddef.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/compiler.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm/posix_types.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm/types.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/types.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/machine/kernel.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/sysmacros.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/memory.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/stdio.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stdarg.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/ctype.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/errno.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/errno.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm/errno.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm-generic/errno.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm-generic/errno-base.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/limits.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/syslimits.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/limits.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/limits.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/limits.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/machine/internal_types.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/machine/limits.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/syslimits.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/signal.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm/signal.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm-generic/signal.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm/siginfo.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm-generic/siginfo.h \
  unzip/unix/unxcfg.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/stat.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/time.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/time.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/stat.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/endian.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/endian.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/fcntl.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/fcntl.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/fcntl.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/asm-generic/fcntl.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/unistd.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/select.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/sysconf.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/capability.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/pathconf.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/sys/param.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/param.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/asm/param.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/time.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/utime.h \
- /home/novarow/tools/android-4-tc/sysroot/usr/include/linux/utime.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/stat.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/time.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/time.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/stat.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/endian.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/endian.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/fcntl.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/fcntl.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm/fcntl.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm-generic/fcntl.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/unistd.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/select.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/sysconf.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/capability.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/pathconf.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/param.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/param.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm/param.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/time.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/utime.h \
+ /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/utime.h \
  unzip/globals.h
 
 unzip/unzip.h:
 
 unzip/unzpriv.h:
 
-/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stddef.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stddef.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/stdlib.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/stdlib.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/cdefs.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/cdefs.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/cdefs_elf.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/cdefs_elf.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/android/api-level.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/android/api-level.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/string.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/string.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/malloc.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/malloc.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/alloca.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/alloca.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/strings.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/strings.h:
 
-/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/sys/types.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/sys/types.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/stdint.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/stdint.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/_types.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/_types.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/machine/_types.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/machine/_types.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/posix_types.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/posix_types.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/stddef.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/stddef.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/compiler.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/compiler.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/posix_types.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm/posix_types.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/types.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm/types.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/types.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/types.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/machine/kernel.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/machine/kernel.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/sysmacros.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/sysmacros.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/memory.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/memory.h:
 
-/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/stdio.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/stdio.h:
 
-/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stdarg.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include/stdarg.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/ctype.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/ctype.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/errno.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/errno.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/errno.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/errno.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/errno.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm/errno.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/asm-generic/errno.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm-generic/errno.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/asm-generic/errno-base.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm-generic/errno-base.h:
 
-/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/limits.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/limits.h:
 
-/home/novarow/tools/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/syslimits.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/bin/../lib/gcc/arm-linux-androideabi/4.4.3/include-fixed/syslimits.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/limits.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/limits.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/limits.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/limits.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/limits.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/limits.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/machine/internal_types.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/machine/internal_types.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/machine/limits.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/machine/limits.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/syslimits.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/syslimits.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/signal.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/signal.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/signal.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm/signal.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/asm-generic/signal.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm-generic/signal.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/siginfo.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm/siginfo.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/asm-generic/siginfo.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm-generic/siginfo.h:
 
 unzip/unix/unxcfg.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/stat.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/stat.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/time.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/time.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/time.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/time.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/stat.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/stat.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/endian.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/endian.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/endian.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/endian.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/fcntl.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/fcntl.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/fcntl.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/fcntl.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/fcntl.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm/fcntl.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/asm-generic/fcntl.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm-generic/fcntl.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/unistd.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/unistd.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/select.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/select.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/sysconf.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/sysconf.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/capability.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/capability.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/pathconf.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/pathconf.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/sys/param.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/sys/param.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/param.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/param.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/asm/param.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/asm/param.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/time.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/time.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/utime.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/utime.h:
 
-/home/novarow/tools/android-4-tc/sysroot/usr/include/linux/utime.h:
+/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/include/linux/utime.h:
 
 unzip/globals.h:

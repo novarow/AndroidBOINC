@@ -79,6 +79,7 @@ void GLOBAL_PREFS_MASK::set_all() {
     cpu_usage_limit = true;
     daily_xfer_limit_mb = true;
     daily_xfer_period_days = true;
+    network_wifi_only = true;
 }
 
 bool GLOBAL_PREFS_MASK::are_prefs_set() {
@@ -114,6 +115,7 @@ bool GLOBAL_PREFS_MASK::are_prefs_set() {
     if (cpu_usage_limit) return true;
     if (daily_xfer_limit_mb) return true;
     if (daily_xfer_period_days) return true;
+    if (network_wifi_only) return true;
     return false;
 }
 
@@ -236,6 +238,7 @@ LOGD("GLOBAL_PREFS::defaults");
     cpu_usage_limit = 100;
     daily_xfer_limit_mb = 0;
     daily_xfer_period_days = 0;
+    network_wifi_only = false;
 
     // don't initialize source_project, source_scheduler,
     // mod_time, host_specific here
@@ -252,6 +255,7 @@ void GLOBAL_PREFS::clear_bools() {
     confirm_before_connecting = false;
     hangup_if_dialed = false;
     dont_verify_images = false;
+    network_wifi_only = true;
 }
 
 void GLOBAL_PREFS::init() {
@@ -272,6 +276,9 @@ GLOBAL_PREFS::GLOBAL_PREFS() {
 int GLOBAL_PREFS::parse(
     XML_PARSER& xp, const char* host_venue, bool& found_venue, GLOBAL_PREFS_MASK& mask
 ) {
+char msg[1024];
+snprintf(msg,sizeof(msg),"GLOBAL_PREFS::parse with host_venue %s",host_venue);
+LOGD(msg);
     init();
     clear_bools();
     return parse_override(xp, host_venue, found_venue, mask);
@@ -335,6 +342,8 @@ int GLOBAL_PREFS::parse_day(XML_PARSER& xp) {
 int GLOBAL_PREFS::parse_override(
     XML_PARSER& xp, const char* host_venue, bool& found_venue, GLOBAL_PREFS_MASK& mask
 ) {
+
+LOGD("GLOBAL_PREFS::parse_override");
     char buf2[256], attrs[256];
     bool in_venue = false, in_correct_venue=false;
     double dtemp;
@@ -538,6 +547,12 @@ int GLOBAL_PREFS::parse_override(
             }
             continue;
         }
+LOGD("before new tag");
+	if (xp.parse_bool("network_wifi_only", network_wifi_only)) {
+LOGD("new tag");
+            mask.network_wifi_only = true;
+            continue;
+        }
         if (xp.parse_bool("host_specific", host_specific)) {
             continue;
         }
@@ -614,7 +629,8 @@ int GLOBAL_PREFS::write(MIOFILE& f) {
         "   <cpu_usage_limit>%f</cpu_usage_limit>\n"
         "   <daily_xfer_limit_mb>%f</daily_xfer_limit_mb>\n"
         "   <daily_xfer_period_days>%d</daily_xfer_period_days>\n"
-        "   <override_file_present>%d</override_file_present>\n",
+        "   <override_file_present>%d</override_file_present>\n"
+	"   <network_wifi_only>%d</network_wifi_only>\n",
         source_project,
         mod_time,
         run_on_batteries?1:0,
@@ -647,7 +663,8 @@ int GLOBAL_PREFS::write(MIOFILE& f) {
         cpu_usage_limit,
         daily_xfer_limit_mb,
         daily_xfer_period_days,
-        override_file_present?1:0
+        override_file_present?1:0,
+	network_wifi_only?1:0
     );
     if (max_ncpus) {
         f.printf("   <max_cpus>%d</max_cpus>\n", max_ncpus);
@@ -694,6 +711,7 @@ void GLOBAL_PREFS::write_day_prefs(MIOFILE& f) {
 // as selected by the mask of bools
 //
 int GLOBAL_PREFS::write_subset(MIOFILE& f, GLOBAL_PREFS_MASK& mask) {
+LOGD("GLOBAL_PREFS::write_subset");
     if (!mask.are_prefs_set()) return 0;
     
     f.printf("<global_preferences>\n");
@@ -810,6 +828,13 @@ int GLOBAL_PREFS::write_subset(MIOFILE& f, GLOBAL_PREFS_MASK& mask) {
     if (mask.daily_xfer_period_days) {
         f.printf("   <daily_xfer_period_days>%d</daily_xfer_period_days>\n", daily_xfer_period_days);
     }
+    if (mask.network_wifi_only) {
+LOGD("writing subset includes wifi");
+        f.printf("   <network_wifi_only>%d</network_wifi_only>\n",
+            network_wifi_only?1:0
+        );
+    }
+
 
     write_day_prefs(f);
     f.printf("</global_preferences>\n");

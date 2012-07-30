@@ -32,6 +32,9 @@
 #include <sys/types.h>
 #endif
 #endif
+#ifdef ANDROID
+#include "android_log.h"
+#endif
 
 #include "str_util.h"
 #include "str_replace.h"
@@ -325,6 +328,16 @@ void CLIENT_STATE::check_suspend_network() {
         if (!recent_rpc) network_suspended = true;
         network_suspend_reason = SUSPEND_REASON_USER_REQ;
     }
+
+#ifdef ANDROID
+//verify that device is on wifi before making project transfers.
+    if(global_prefs.network_wifi_only && !host_info.host_wifi_online()) {
+	file_xfers_suspended = true;
+	if (!recent_rpc) network_suspended = true;
+	network_suspend_reason = SUSPEND_REASON_WIFI_STATE;
+	LOGD("supended due to wifi state");
+    }
+#endif
 
     if (global_prefs.daily_xfer_limit_mb && global_prefs.daily_xfer_period_days) {
         double up, down;

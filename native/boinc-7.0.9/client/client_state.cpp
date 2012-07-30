@@ -344,17 +344,11 @@ LOGD("CLIENT_STATE::init()");
     GetUserName(pbuf, &buf_size);
     msg_printf(NULL, MSG_INFO, "Running under account %s", pbuf);
 #endif
-LOGD("1");
-LOGD("10");
     parse_account_files();
-LOGD("11");
     parse_statistics_files();
-LOGD("12");
     host_info.get_host_info();
-LOGD("13");
     set_ncpus();
     show_host_info();
-LOGD("14");
     // check for GPUs.
     //
     for (int j=1; j<coprocs.n_rsc; j++) {
@@ -438,7 +432,6 @@ LOGD("2");
     // for projects with no account file
     //
     parse_state_file();
-LOGD("3");
     // this needs to go after parse_state_file because
     // GPU exclusions refer to projects
     //
@@ -495,7 +488,6 @@ LOGD("3");
         );
         cant_write_state_file = true;
     }
-LOGD("4");
     // scan user prefs; create file records
     //
     parse_preferences_for_user_files();
@@ -534,7 +526,6 @@ LOGD("4");
     // - run CPU benchmarks
     // - contact reference site (or some project) to trigger firewall alert
     //
-LOGD("5");
     if (new_client) {
         run_cpu_benchmarks = true;
         if (config.dont_contact_ref_site) {
@@ -556,7 +547,6 @@ LOGD("5");
     request_work_fetch("Startup");
     work_fetch.init();
     debt_interval_start = now;
-LOGD("after work fetch");
     // set up the project and slot directories
     //
     delete_old_slot_dirs();
@@ -578,7 +568,6 @@ LOGD("after work fetch");
     project_init.init();
 
     if (!no_gui_rpc) {
-LOGD("setting up socket and rpc");
         // When we're running at boot time,
         // it may be a few seconds before we can socket/bind/listen.
         // So retry a few times.

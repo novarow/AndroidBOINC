@@ -1,33 +1,35 @@
 #!/bin/sh
 #script to compile BOINC for Android
 
-#===please adapt the following paths============================
+#===adapt the following paths============================
 #Android toolchain
-ANDROIDTC="/home/novarow/Documents/AndroidBOINC/android-4-tc"
+ANDROIDTC="/home/novarow/Documents/AndroidBOINC/native/android-4-tc"
 
 #sources
 #OpenSSL
-OPENSSL="/home/novarow/Documents/AndroidBOINC/openssl-1.0.0d"
+OPENSSL="/home/novarow/Documents/AndroidBOINC/native/openssl-1.0.0d"
 #Curl
-CURL="/home/novarow/Documents/AndroidBOINC/curl-7.21.4"
+CURL="/home/novarow/Documents/AndroidBOINC/native/curl-7.21.4"
 #BOINC
-BOINC="/home/novarow/Documents/AndroidBOINC/boinc-7.0.9j"
+BOINC="/home/novarow/Documents/AndroidBOINC/native/boinc-7.0.9"
 #BOINC Application
 BAPP="$BOINC/samples/example_app"
 
 #destination
 #build output
-BOINCINSTALL="/home/novarow/Documents/AndroidBOINC/nativebuild"
+BOINCINSTALL="/home/novarow/Documents/AndroidBOINC/native/nativebuild"
 #APK assets
 TARGETAPK="/home/novarow/VBshare/ews/edu.berkeley.boinc.AndroidBOINCActivity/assets"
 #=============================================================
 
-#===and mark with 'yes' what to compile=======================
-CONFIGURE="yes"
+#===...and configure the script=======================
+#CONFIGURE="yes"
+#MAKECLEAN="yes"
+
 #COMPILEOPENSSL="yes" #compiling required libraries. ONLY NECESSARY if libssl.a and libcurl.a DO NOT EXIST in $TCINCLUDES
 #COMPILECURL="yes"
-#COMPILEBOINC="yes"
-COMPILEAPP="yes"
+COMPILEBOINC="yes"
+#COMPILEAPP="yes"
 #=============================================================
 
 
@@ -81,7 +83,9 @@ fi
 if [ -n "$COMPILEBOINC" ]; then
 echo "==================building BOINC from $BOINC=========================="
 cd $BOINC
+if [ -n "$MAKECLEAN" ]; then
 make clean
+fi
 if [ -n "$CONFIGURE" ]; then
 ./_autosetup
 ./configure --host=arm-linux --prefix=$BOINCINSTALL --with-boinc-platform=arm-android-linux-gnu --with-boinc-alt-platform=arm-android --disable-server --disable-manager --disable-shared --enable-static
