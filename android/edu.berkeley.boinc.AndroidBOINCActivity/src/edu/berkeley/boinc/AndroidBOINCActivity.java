@@ -34,6 +34,9 @@ public class AndroidBOINCActivity extends TabActivity {
 	        // service that we know is running in our own process, we can
 	        // cast its IBinder to a concrete class and directly access it.
 	        monitor = ((Monitor.LocalBinder)service).getService();
+	        
+	        //set application context to service singleton
+	        Monitor.getClientStatus().setCtx(getApplicationContext());
 
 	        // Tell the user about this for our demo.
 	        Toast.makeText(getApplicationContext(), "service connected", Toast.LENGTH_SHORT).show();
@@ -51,12 +54,15 @@ public class AndroidBOINCActivity extends TabActivity {
 	};
 
 	void doBindService() {
+		// Start service, if we use this method first, the service will not terminate until "stopService" is called. Even if there are no more bound Activityies.
+		startService(new Intent(this,Monitor.class));
+		
 	    // Establish a connection with the service.  We use an explicit
 	    // class name because we want a specific service implementation that
 	    // we know will be running in our own process (and thus won't be
 	    // supporting component replacement by other applications).
 		Log.d(TAG,"doBindService()");
-		bindService(new Intent(this, Monitor.class), mConnection, Context.BIND_AUTO_CREATE);
+		bindService(new Intent(this, Monitor.class), mConnection, 0);
 	    mIsBound = true;
 	}
 
@@ -81,9 +87,6 @@ public class AndroidBOINCActivity extends TabActivity {
         setContentView(R.layout.main);  
          
         Log.d(TAG, "onCreate"); 
-        
-        //set application context to service singleton
-        Monitor.getClientStatus().setCtx(this);
         
         //temporary - disable strict mode
         //StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();

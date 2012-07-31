@@ -44,6 +44,7 @@ public class Monitor extends Service{
 	
 	private NotificationManager mNM;
 	
+	public static Boolean monitorActive = false;
 	private Process clientProcess;
 	
 	private RpcClient rpc = new RpcClient();
@@ -58,7 +59,7 @@ public class Monitor extends Service{
     }
 	
 	/*
-	 * gets called once, when the first binding occurs
+	 * gets called once, when startService is called from within an Activity
 	 */
 	@Override
     public void onCreate() {
@@ -72,8 +73,13 @@ public class Monitor extends Service{
         (new ClientMonitorAsync()).execute(new Integer[0]);
     }
 	
+	/*
+	 * gets called once, when startService is called from within an Activity
+	 */
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+    	//this gets called after startService(intent)
+    	Log.d(TAG, "onStartCommand");
         // returning START_STICKY causes service to run until it is explecitly closed
         return START_STICKY;
     }
@@ -97,11 +103,11 @@ public class Monitor extends Service{
     }
 
     /*
-     * gets called every-time an activity binds to this service
+     * gets called every-time an activity binds to this service, but not the initial start (onCreate and onStartCommand are called there)
      */
     @Override
     public IBinder onBind(Intent intent) {
-    	Log.d(TAG,"onBind");
+    	//Log.d(TAG,"onBind");
         return mBinder;
     }
     private final IBinder mBinder = new LocalBinder();
@@ -122,6 +128,16 @@ public class Monitor extends Service{
         mNM.notify(1234, notification);
     }
 	
+    public void restartMonitor() {
+    	if(Monitor.monitorActive) { //monitor is already active, launch cancelled
+    		AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "monitor active - restart cancelled");
+    	}
+    	else {
+        	Log.d(TAG,"restart monitor");
+        	(new ClientMonitorAsync()).execute(new Integer[0]);
+    	}
+    }
+    
 	public void setRunMode(Integer mode) {
 		Boolean success = rpc.setRunMode(mode,0);
 		Log.d(TAG,"run mode set to " + mode + " returned " + success);
@@ -141,7 +157,6 @@ public class Monitor extends Service{
 		
 		@Override
 		protected void onPreExecute() {
-			Log.d(TAG,"preExecute");
 		}
 		
 		@Override
@@ -219,6 +234,7 @@ public class Monitor extends Service{
 		protected void onPostExecute(Boolean success) {
 			AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "client connection broken! (permanent)");
 			Log.d(TAG+" - onPostExecute","client connection broken! (permanent)"); 
+			Monitor.monitorActive = false;
 		}
 		
 
