@@ -18,7 +18,8 @@ import android.widget.Toast;
 
 public class AndroidBOINCActivity extends TabActivity {
 	
-	private static final String TAG = "AndroidBOINCActivity"; 
+	private final String TAG = "AndroidBOINCActivity"; 
+	private final Boolean debugTab = true;
 	
 	private Monitor monitor;
 	public static ClientStatus client;
@@ -98,31 +99,49 @@ public class AndroidBOINCActivity extends TabActivity {
         doBindService();
         
         TabHost tabHost = getTabHost();
-        TabSpec statusSpec = tabHost.newTabSpec("Status");
-        statusSpec.setIndicator("Status", getResources().getDrawable(R.drawable.icon_status_tab));
+        
+        TabSpec statusSpec = tabHost.newTabSpec(getResources().getString(R.string.tab_status));
+        statusSpec.setIndicator(getResources().getString(R.string.tab_status), getResources().getDrawable(R.drawable.icon_status_tab));
         Intent statusIntent = new Intent(this,StatusActivity.class);
         statusSpec.setContent(statusIntent);
-        TabSpec tasksSpec = tabHost.newTabSpec("Tasks");
-        tasksSpec.setIndicator("Tasks", getResources().getDrawable(R.drawable.icon_tasks_tab));
+        tabHost.addTab(statusSpec);
+        
+        TabSpec tasksSpec = tabHost.newTabSpec(getResources().getString(R.string.tab_tasks));
+        tasksSpec.setIndicator(getResources().getString(R.string.tab_tasks), getResources().getDrawable(R.drawable.icon_tasks_tab));
         Intent tasksIntent = new Intent(this,TasksActivity.class);
         tasksSpec.setContent(tasksIntent);
-        TabSpec prefsSpec = tabHost.newTabSpec("Preferences");
-        prefsSpec.setIndicator("Preferences", getResources().getDrawable(R.drawable.icon_prefs_tab));
+        tabHost.addTab(tasksSpec);
+        
+        TabSpec transSpec = tabHost.newTabSpec(getResources().getString(R.string.tab_transfers));
+        transSpec.setIndicator(getResources().getString(R.string.tab_transfers), getResources().getDrawable(R.drawable.icon_trans_tab));
+        Intent transIntent = new Intent(this,TransActivity.class);
+        transSpec.setContent(transIntent);
+        tabHost.addTab(transSpec);
+        
+        TabSpec prefsSpec = tabHost.newTabSpec(getResources().getString(R.string.tab_preferences));
+        prefsSpec.setIndicator(getResources().getString(R.string.tab_preferences), getResources().getDrawable(R.drawable.icon_prefs_tab));
         Intent prefsIntent = new Intent(this,PrefsActivity.class);
         prefsSpec.setContent(prefsIntent);
-        TabSpec msgsSpec = tabHost.newTabSpec("Messages");
-        msgsSpec.setIndicator("Messages", getResources().getDrawable(R.drawable.icon_msgs_tab));
+        tabHost.addTab(prefsSpec);
+        
+        TabSpec msgsSpec = tabHost.newTabSpec(getResources().getString(R.string.tab_messages));
+        msgsSpec.setIndicator(getResources().getString(R.string.tab_messages), getResources().getDrawable(R.drawable.icon_msgs_tab));
         Intent msgsIntent = new Intent(this,MsgsActivity.class);
         msgsSpec.setContent(msgsIntent);
-        TabSpec debugSpec = tabHost.newTabSpec("Debug");
-        debugSpec.setIndicator("Debug", getResources().getDrawable(R.drawable.icon_debug_tab));
-        Intent debugIntent = new Intent(this,DebugActivity.class);
-        debugSpec.setContent(debugIntent);
-        tabHost.addTab(statusSpec);
-        tabHost.addTab(tasksSpec);
         tabHost.addTab(msgsSpec);
-        tabHost.addTab(prefsSpec);
-        tabHost.addTab(debugSpec);
+        
+        if(debugTab) {
+	        TabSpec debugSpec = tabHost.newTabSpec(getResources().getString(R.string.tab_debug));
+	        debugSpec.setIndicator(getResources().getString(R.string.tab_debug), getResources().getDrawable(R.drawable.icon_debug_tab));
+	        Intent debugIntent = new Intent(this,DebugActivity.class);
+	        debugSpec.setContent(debugIntent);
+	        tabHost.addTab(debugSpec);
+        }
+        
+        
+        
+        
+        
         
         Log.d(TAG,"tab layout setup done");
 

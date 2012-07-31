@@ -59,12 +59,6 @@ public class StatusActivity extends Activity {
 	        mIsBound = false;
 	    }
 	}
-
-	@Override
-	protected void onDestroy() {
-	    super.onDestroy();
-	    doUnbindService();
-	}
 	
 	public void onCreate(Bundle savedInstanceState) {
 		//bind to monitor in order to call its functions and access ClientStatus singleton
@@ -85,6 +79,12 @@ public class StatusActivity extends Activity {
 		Log.d(TAG+"-onPause","remove noisy receiver");
 		unregisterReceiver(mClientStatusChangeRec);
 		super.onStop();
+	}
+
+	@Override
+	protected void onDestroy() {
+	    super.onDestroy();
+	    doUnbindService();
 	}
 	
 	private void loadLayout() {

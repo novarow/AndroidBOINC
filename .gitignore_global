@@ -8,3 +8,4 @@
 *.lai
 *.class
 *.apk
+.DS_Store
