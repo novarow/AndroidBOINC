@@ -30,6 +30,7 @@
                 <action android:name="edu.berkeley.boinc.log" />
             </intent-filter>
         </activity>
+        <service android:enabled="true" android:name=".client.Monitor"></service>
         <receiver android:name=".receiver.LogReceiver">
             <intent-filter android:priority="999">
                 <action android:name="edu.berkeley.boinc.log" />

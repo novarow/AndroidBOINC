@@ -16,8 +16,8 @@ public class ClientComputingReceiver extends BroadcastReceiver {
 		//TODO
 		
 		//set status of client
-		AndroidBOINCActivity.client.computing = false; //client is computing BOINC task
-		AndroidBOINCActivity.client.suspendReason = 0; //reason why computing got suspended
+		//AndroidBOINCActivity.monitor.computing = false; //client is computing BOINC task
+		//AndroidBOINCActivity.monitor.suspendReason = 0; //reason why computing got suspended
 	}
 
 }

@@ -14,21 +14,21 @@ public class ClientLaunchReceiver extends BroadcastReceiver {
 		//gets triggered when launch starts and finishes
 		
 		if(intent.getBooleanExtra("finished", false)) { // client launch finished
-			AndroidBOINCActivity.client.settingUp = false;
-			AndroidBOINCActivity.client.launched = true;
+			//AndroidBOINCActivity.monitor.settingUp = false;
+			//AndroidBOINCActivity.monitor.launched = true;
 			Log.d("ClientLaunchReceiver", "client setup finished");
 
 			//start monitor
-			AndroidBOINCActivity.client.startMonitor();
+			//AndroidBOINCActivity.monitor.startMonitor();
 		}
 		else { //client launch started
 			
 			//get the client flags straight...
-			AndroidBOINCActivity.client.broken=false;
-			AndroidBOINCActivity.client.computing=false;
-			AndroidBOINCActivity.client.launched=false;
-			AndroidBOINCActivity.client.executing=false;
-			AndroidBOINCActivity.client.settingUp=true;
+			//AndroidBOINCActivity.monitor.broken=false;
+			//AndroidBOINCActivity.monitor.computing=false;
+			//AndroidBOINCActivity.monitor.launched=false;
+			//AndroidBOINCActivity.monitor.executing=false;
+			//AndroidBOINCActivity.monitor.settingUp=true;
 			Log.d("ClientLaunchReceiver", "client setup started");
 		}
 	}

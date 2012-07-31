@@ -13,10 +13,10 @@ public class ClientErrorReceiver extends BroadcastReceiver {
 		Log.d("ClientErrorReceiver", "onReceive");
 		
 		//set corresponding status flags of static client
-		AndroidBOINCActivity.client.broken = true; 
+		//AndroidBOINCActivity.monitor.broken = true; 
 		
 		//shutdown client (flags for launched and executing are set there)
-		AndroidBOINCActivity.client.shutdown();
+		//AndroidBOINCActivity.monitor.shutdown();
 
 	}
 

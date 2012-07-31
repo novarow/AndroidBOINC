@@ -1,4 +1,4 @@
-package edu.berkeley.boinc;
+package edu.berkeley.boinc.client;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,22 +10,36 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
+import edu.berkeley.boinc.AndroidBOINCActivity;
+import edu.berkeley.boinc.R;
 import edu.berkeley.boinc.definitions.CommonDefs;
 import edu.berkeley.boinc.rpc.CcStatus;
 import edu.berkeley.boinc.rpc.GlobalPreferences;
 import edu.berkeley.boinc.rpc.ProjectAttachReply;
 import edu.berkeley.boinc.rpc.RpcClient;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Binder;
+import android.os.IBinder;
 import android.util.Log;
-import android.view.View;
+import android.widget.Toast;
 
-public class BOINClient {
+public class Monitor extends Service{
 	
-	private final String TAG = "BOINClient";
-	private Context ctx;
+	private final String TAG = "BOINC Client Monitor Service";
+	private ClientStatus client;
+	
+	private NotificationManager mNM;
+	
+	private Process clientProcess;
+	
+	private RpcClient rpc = new RpcClient();
 	
 	//---------------------client status
 	//Client status flags
@@ -43,25 +57,79 @@ public class BOINClient {
 	//---------------------end client status
 	
 
-	private Process client;
+	/*
+	 * returns this class, allows clients to access this service's functions and attributes.
+	 */
+	public class LocalBinder extends Binder {
+        public Monitor getService() {
+            return Monitor.this;
+        }
+    }
 	
-	private RpcClient rpc = new RpcClient();
+	/*
+	 * gets called once, when the first binding occurs
+	 */
+	@Override
+    public void onCreate() {
+		Log.d(TAG,"onCreate()");
+        
+        // test notification
+		mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        showNotification();
+        
+        
+        (new ClientMonitorAsync()).execute(new Integer[0]);
+    }
 	
-	public BOINClient(Context ctx) {
-		this.ctx = ctx;
-	}
-	
-	public void setup(){
-		(new ClientLaunchAsync(ctx)).execute(new Integer[0]);
-	}
-	
-	public void shutdown(){
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        // returning START_STICKY causes service to run until it is explecitly closed
+        return START_STICKY;
+    }
+
+    /*
+     * this should not be reached
+     */
+    @Override
+    public void onDestroy() {
+        // Cancel the persistent notification.
+        mNM.cancel(1234);
+        
 		Boolean success = rpc.quit();
 		Log.d(TAG,"graceful client shutdown returned " + success);
 		if(!success) {
-			client.destroy();
+			clientProcess.destroy();
 		}
-	}
+
+        // Tell the user we stopped.
+        Toast.makeText(this, "service stopped", Toast.LENGTH_SHORT).show();
+    }
+
+    /*
+     * gets called every-time an activity binds to this service
+     */
+    @Override
+    public IBinder onBind(Intent intent) {
+    	Log.d(TAG,"onBind");
+        return mBinder;
+    }
+    private final IBinder mBinder = new LocalBinder();
+    
+    /*
+     * Show a notification while this service is running.
+     */
+    private void showNotification() {
+        Notification notification = new Notification(R.drawable.playw48, "service started", System.currentTimeMillis());
+
+        // The PendingIntent to launch our activity if the user selects this notification
+        PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(), 0, new Intent(getApplicationContext(), AndroidBOINCActivity.class), 0);
+
+        // Set the info for the views that show in the notification panel.
+        notification.setLatestEventInfo(getApplicationContext(), "blub", "service started", contentIntent);
+
+        // Send the notification.
+        mNM.notify(1234, notification);
+    }
 	
 	public void setRunMode(Integer mode) {
 		Boolean success = rpc.setRunMode(mode,0);
@@ -79,18 +147,21 @@ public class BOINClient {
 		return this.status;
 	}
 	
-	public void startMonitor() {
-		Log.d(TAG,"startMonitor");
-		(new ClientMonitorAsync(ctx)).execute(new Integer[0]);
-	}
-	
 	private final class ClientMonitorAsync extends AsyncTask<Integer,String,Boolean> {
 
-		private final String TAG = "BOINClient monitor";
-		private Context ctx;
-
-		public ClientMonitorAsync(Context ctx) {
-			this.ctx = ctx;
+		private final String TAG = "ClientMonitorAsync";
+		
+		private Boolean clientStarted = false;
+		
+		private final String clientName = "boinc_client"; 
+		private final String authFileName = "gui_rpc_auth.cfg";
+		private String clientPath = "/data/data/edu.berkeley.boinc/client/";
+		
+		private final Integer maxDuration = 30; //maximum polling duration
+		
+		@Override
+		protected void onPreExecute() {
+			Log.d(TAG,"preExecute");
 		}
 		
 		@Override
@@ -100,12 +171,13 @@ public class BOINClient {
 			while(true) {
 				Log.d(TAG+"-doInBackground","monitor loop...");
 				
-				/*
+				
 				if(!rpc.connectionAlive()) { //check whether connection is still alive
-					//runs cc_status on RPC?
-					return false;
+					//if connection is not working, either client has not been set up yet, or client crashed.
+					//in both cases start client again
+					setupClient(); //executed in same thread -> blocks monitor execution
 				}
-				*/
+				
 				//Log.d(TAG, "getHostInfo");
 				//rpc.getHostInfo();
 				//Log.d(TAG, "getProjectStatus");
@@ -148,7 +220,7 @@ public class BOINClient {
 					setClientStatus(tasks,status);
 			        Intent clientStatus = new Intent();
 			        clientStatus.setAction("edu.berkeley.boinc.clientstatus");
-					ctx.sendBroadcast(clientStatus);
+			        getApplicationContext().sendBroadcast(clientStatus);
 				}
 	    		try {
 	    			Thread.sleep(10000); //sleep
@@ -159,59 +231,117 @@ public class BOINClient {
 		@Override
 		protected void onProgressUpdate(String... arg0) {
 			Log.d(TAG+"-onProgressUpdate",arg0[0]);
-			AndroidBOINCActivity.logMessage(ctx, TAG, arg0[0]);
+			AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, arg0[0]);
 		}
 		
 		@Override
 		protected void onPostExecute(Boolean success) {
-			AndroidBOINCActivity.logMessage(ctx, TAG, "client connection broken!");
-			Log.d(TAG+" - onPostExecute","client connection broken!");
+			AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "client connection broken!");
+			Log.d(TAG+" - onPostExecute","client connection broken!"); 
 			
 			//kill client process
 			try {
-				shutdown();
+				//shutdown();
 			}catch(Exception e) {}
 			
 	        Intent clientError = new Intent();
 	        clientError.setAction("edu.berkeley.boinc.clienterror");
-			ctx.sendOrderedBroadcast(clientError,null);
+	        getApplicationContext().sendOrderedBroadcast(clientError,null);
 		}
-	}
-	
-	private final class ClientLaunchAsync extends AsyncTask<Integer,String,Boolean> {
+		
 
-		private final String TAG = "BOINClient setup";
 		
-		private final String clientName = "boinc_client"; 
-		private final String authFileName = "gui_rpc_auth.cfg";
-		private String clientPath = "/data/data/edu.berkeley.boinc/client/";
-		private Context ctx;
-		
-		private final Integer maxDuration = 30; //maximum polling duration
-		
-		public ClientLaunchAsync(Context ctx) {
-			this.ctx = ctx;
-		}
-		
-		@Override
-		protected void onPreExecute() {
+		private void setupClient() {
 			
-			//publish event, that client is launching
+			//publish event, that client is about to launch
 	        Intent clientLaunch = new Intent();
 	        clientLaunch.setAction("edu.berkeley.boinc.clientlaunch");
 	        clientLaunch.putExtra("finished", false);
-			ctx.sendOrderedBroadcast(clientLaunch,null);
+			getApplicationContext().sendOrderedBroadcast(clientLaunch,null);
+			
+			//try to reconnect, if client of another Manager lifecycle exists.
+			Boolean success =  reconnectClient();
+			
+			if(!success) { //if reconnect did not work out, loop through setup routine until successful or timeout
+				success = false;
+				Integer counter = 0;
+				Integer max = 5; //max number of setup attempts
+				while(!(success=setupClientRoutine()) && (counter<max)) { //re-trys setting up the client several times, before giving up.
+					AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "--- restart setup ---");
+					counter++;
+				}
+			}
+	        
+			//publish results
+			AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "finished " + success);
+			if(success) { //if setup successful, publish with clientlaunch event
+		        Intent clientReady = new Intent();
+		        clientReady.setAction("edu.berkeley.boinc.clientlaunch");
+		        clientReady.putExtra("finished", true);
+		        getApplicationContext().sendOrderedBroadcast(clientReady,null);
+			}
+			else { //setup failed several times, publish error
+		        Intent clientError = new Intent();
+		        clientError.setAction("edu.berkeley.boinc.clienterror");
+		        getApplicationContext().sendOrderedBroadcast(clientError,null);
+			}
 		}
 		
-		@Override
-		protected Boolean doInBackground(Integer...arg0) {
-			
-			Boolean manualAppSetup = false; //debug!
-			
+		/*
+		 * called by setupClient()
+		 * tries to reconnect to running BOINC client.
+		 * This is needed, if previous execution of this Manager app terminated and BOINC client is still running on the device.
+		 */
+		private Boolean reconnectClient() {
 			Boolean success = false;
 			
-	        //setup client
-	        success = setupClient(true);
+			publishProgress("trying to re-connect client.");
+			
+	        success = connect();
+	        if(success) {
+	        	publishProgress("re-connected. (1/3)");
+	        }
+	        else {
+	        	publishProgress("re-connection failed!");
+	        	return success;
+	        }
+	        
+	        //authorize
+	        success = authorize();
+	        if(success) {
+	        	publishProgress("authorized. (2/3)");
+	        }
+	        else {
+	        	publishProgress("authorization failed!");
+	        	return success;
+	        }
+	        
+	        //attach project
+	        attachProject();
+	        success = attachProjectPoll();
+	        if(success) {
+	        	publishProgress("project attached. (3/3)");
+	        }
+	        else {
+	        	publishProgress("project attachment failed!");
+	        	return success;
+	        }
+	        
+	        publishProgress("client re-connected");
+	        return success;
+		}
+		
+		/*
+		 * called by setupClient()
+		 * walks through the steps necessary to get a working and interacting BOINC client.
+		 */
+		private Boolean setupClientRoutine() {
+			//setup client
+			Boolean success = false;
+			
+			shutdownExisitingClient();
+	
+	        success = installClient(true);
 	        if(success) {
 	        	publishProgress("installed. (1/5)");
 	        }
@@ -219,24 +349,12 @@ public class BOINClient {
 	        	publishProgress("installation failed!");
 	        	return success;
 	        }
-			
-	        //setup app
-	        if(manualAppSetup){
-		        success = setupApp();
-		        if(success) {
-		        	publishProgress("app installed. (1.5/5)");
-		        }
-		        else {
-		        	publishProgress("app installation failed!");
-		        	return success;
-		        }
-	        }
 	        
 	        //run client
 	        success = runClient();
 	        if(success) {
 	        	publishProgress("started. (2/5)");
-	        	executing = true;
+	        	clientStarted = true; //mark that client process is running.
 	        }
 	        else {
 	        	publishProgress("start of client failed!");
@@ -244,7 +362,18 @@ public class BOINClient {
 	        }
 	        
 	        //connect in loop
-	        success = connect();
+    		try {
+    			Thread.sleep(5000); //sleep for five seconds before connecting to BOINC client
+    		}catch(Exception e){}
+	    	success = false;
+	    	Integer loop = 0;
+	    	while(!success && (6 > loop)) {
+	    		success = connect();
+	    		loop++;
+	    		try {
+	    			Thread.sleep(5000); //sleep for five seconds
+	    		}catch(Exception e){}
+	    	}
 	        if(success) {
 	        	publishProgress("connected. (3/5)");
 	        }
@@ -275,44 +404,35 @@ public class BOINClient {
 	        	return success;
 	        }
 	        
-	        //test settings
-	        //rpc.setGlobalPrefsOverride("<network_wifi_only>0</network_wifi_only>");
-	        
-	        //finished - return value goes to onPostExecute
-			return success;
+	        return success;
 		}
 		
-		@Override
-		protected void onProgressUpdate(String... arg0) {
-			Log.d(TAG+"-onProgressUpdate",arg0[0]);
-			AndroidBOINCActivity.logMessage(ctx, TAG, arg0[0]);
-		}
-		
-		@Override
-		protected void onPostExecute(Boolean success) {
-			AndroidBOINCActivity.logMessage(ctx, TAG, "finished " + success);
-			Log.d(TAG+" - onPostExecute","success: " + success);
-			
-			if(success) { //if setup successful, publish with clientlaunch event
-		        Intent clientReady = new Intent();
-		        clientReady.setAction("edu.berkeley.boinc.clientlaunch");
-		        clientReady.putExtra("finished", true);
-				ctx.sendOrderedBroadcast(clientReady,null);
+		/*
+		 * called by setupClientRoutine()
+		 * checks whether client process exists (previous launch attempts) and kills it
+		 */
+		private void shutdownExisitingClient() {
+			if(clientStarted){ //client has been started before, connection is broken
+				publishProgress("shutdown of existing client");
+				Boolean success = rpc.quit();
+				Log.d(TAG+"-setupClient","graceful client shutdown returned " + success);
+				if(!success) {
+					clientProcess.destroy();
+				}
+				else{
+		    		try {
+		    			Thread.sleep(10000); //give client time for graceful shutdown
+		    		}catch(Exception e){}
+				}
 			}
-			else { //setup failed, publish error
-		        Intent clientError = new Intent();
-		        clientError.setAction("edu.berkeley.boinc.clienterror");
-				ctx.sendOrderedBroadcast(clientError,null);
-			}
-			
-			//mark end of set up process
-			settingUp = false;
-			
 		}
-		
-	    private Boolean setupClient(Boolean overwrite){
+
+		/*
+		 * called by setupClientRoutine()
+		 * copies the binaries of BOINC client from assets directory into storage space of this application
+		 */
+	    private Boolean installClient(Boolean overwrite){
 	    	Boolean success = false;
-	    	publishProgress("starting...");
 	    	try {
 	    		
 	    		//end execution if no overwrite
@@ -336,7 +456,7 @@ public class BOINClient {
 	    		}
 	    		
 	    		//copy client from assets to clientPath
-	    		InputStream assets = ctx.getAssets().open(clientName); 
+	    		InputStream assets = getApplicationContext().getAssets().open(clientName); 
 	    		OutputStream data = new FileOutputStream(boincClient); 
 	    		byte[] b = new byte [1024];
 	    		int read; 
@@ -359,6 +479,7 @@ public class BOINClient {
 	    	return success;
 	    }
 	    
+	    /*
 	    public Boolean setupApp(){
 	    	Boolean success = false;
 	    	Log.d(TAG, "setupApp");
@@ -389,13 +510,17 @@ public class BOINClient {
 	    		Log.e(TAG, "IOException", ioe);
 	    	}
 	    	return success;
-	    }
+	    }*/
 	    
+	    /*
+	     * called by setupClientRoutine()
+	     * executes the BOINC client using the Java Runtime exec method.
+	     */
 	    private Boolean runClient() {
 	    	Boolean success = false;
 	    	try { 
 	        	//starts a new process which executes the BOINC client 
-	        	client = Runtime.getRuntime().exec(clientPath + clientName);
+	        	clientProcess = Runtime.getRuntime().exec(clientPath + clientName);
 	        	success = true;
 	    	}
 	    	catch (IOException ioe) {
@@ -405,24 +530,19 @@ public class BOINClient {
 	    	return success;
 	    }
 	    
+	    /*
+	     * called by setupClientRoutine() and reconnectClient()
+	     * connects to running BOINC client.
+	     */
 	    private Boolean connect() {
-    		try {
-    			Thread.sleep(5000); //sleep for five seconds
-    		}catch(Exception e){}
-	    	Boolean success = false;
-	    	Integer loop = 0;
-	    	while(!success && (6 > loop)) {
-	    		success = rpc.open("127.0.0.1", 31416);
-	    		loop++;
-	    		try {
-	    			Thread.sleep(5000); //sleep for five seconds
-	    		}catch(Exception e){}
-	    	}
-	    	return success;
+	    	return rpc.open("127.0.0.1", 31416);
 	    }
 	    
+	    /*
+	     * called by setupClientRoutine() and reconnectClient()
+	     * authorizes this application as valid RPC Manager by reading auth token from file and making RPC call.
+	     */
 	    private Boolean authorize() {
-	    	//read authentication key from file
 	    	File authFile = new File(clientPath+authFileName);
 	    	StringBuffer fileData = new StringBuffer(100);
 	    	char[] buf = new char[1024];
@@ -450,12 +570,20 @@ public class BOINClient {
 			return rpc.authorize(authKey); 
 	    }
 	    
+	    /*
+	     * called by setupClientRoutine() and reconnectClient()
+	     * attaches the hard coded BOINC project to this client. RPC call does nothing, if client already attached to project.
+	     */
 	    private Boolean attachProject() {
 	    	Log.d(TAG, "attachProject");
 	    	//rpc.projectAttach("http://setiathome.berkeley.edu/", "cdd28f1747e714dc61cf731cb47f4205", "SETI@home");
-	    	return rpc.projectAttach(ctx.getString(R.string.project_url), ctx.getString(R.string.project_auth_token), ctx.getString(R.string.project_name));
+	    	return rpc.projectAttach(getApplicationContext().getString(R.string.project_url), getApplicationContext().getString(R.string.project_auth_token), getApplicationContext().getString(R.string.project_name));
 	    }
 	    
+	    /*
+	     * called by setupClientRoutine() and reconnectClient()
+	     * retrieves "attachProject" result in a polling loop
+	     */
 	    private Boolean attachProjectPoll() {
 	    	Log.d(TAG, "attachProjectPoll");
 	    	Boolean success = false;
@@ -474,15 +602,5 @@ public class BOINClient {
 	    	}
 	    	return success;
 	    }
-		
 	}
-    
-    public void shutdown(View view) {
-    	Log.d(TAG, "shutdown");
-    	executing = false;
-    	launched = false;
-    	computing = false;
-    	client.destroy();
-    }
-
 }
