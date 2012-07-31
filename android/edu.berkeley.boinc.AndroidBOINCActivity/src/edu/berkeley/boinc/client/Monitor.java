@@ -33,29 +33,20 @@ import android.widget.Toast;
 public class Monitor extends Service{
 	
 	private final String TAG = "BOINC Client Monitor Service";
-	private ClientStatus client;
+	
+	private static ClientStatus clientStatus; //holds the status of the client as determined by the Monitor
+	public static ClientStatus getClientStatus() { //singleton pattern
+		if (clientStatus == null) {
+			clientStatus = new ClientStatus();
+		}
+		return clientStatus;
+	}
 	
 	private NotificationManager mNM;
 	
 	private Process clientProcess;
 	
 	private RpcClient rpc = new RpcClient();
-	
-	//---------------------client status
-	//Client status flags
-	public Boolean settingUp = false; //client is in set up routine
-	public Boolean executing = false; //client process is executing (could still be initializing)
-	public Boolean launched = false; //client completed setup and is now available for RPCs
-	public Boolean broken = false; //communication to client is broken
-	public Boolean computing = false; //client is computing BOINC task
-	public Integer suspendReason = 0; //reason why computing got suspended
-	public Boolean computingEnabled = false; //run mode of client (2 auto = true, 3 never = false)
-	//client status RPC
-	private CcStatus status;
-	//tasks status
-	private ArrayList<edu.berkeley.boinc.rpc.Result> tasks; //holds information to task in client
-	//---------------------end client status
-	
 
 	/*
 	 * returns this class, allows clients to access this service's functions and attributes.
@@ -136,17 +127,6 @@ public class Monitor extends Service{
 		Log.d(TAG,"run mode set to " + mode + " returned " + success);
 	}
 	
-	public synchronized void setClientStatus(ArrayList<edu.berkeley.boinc.rpc.Result> newTasks, edu.berkeley.boinc.rpc.CcStatus newStatus) { //synchronized wrapper for client status complex vars
-		this.tasks = newTasks;
-		this.status = newStatus;
-	}
-	public synchronized ArrayList<edu.berkeley.boinc.rpc.Result> getTasks() {
-		return this.tasks;
-	}
-	public synchronized edu.berkeley.boinc.rpc.CcStatus getStatus() {
-		return this.status;
-	}
-	
 	private final class ClientMonitorAsync extends AsyncTask<Integer,String,Boolean> {
 
 		private final String TAG = "ClientMonitorAsync";
@@ -198,6 +178,7 @@ public class Monitor extends Service{
 					return false;
 				} else {
 					Log.d(TAG,"task_mode: " + status.task_mode + " task_suspend_reason: " + status.task_suspend_reason);
+					/*
 					if(status.task_mode==CommonDefs.RUN_MODE_NEVER) { // run mode set to "never"
 						Log.d(TAG,"disabled by user");
 						computing = false;
@@ -216,8 +197,8 @@ public class Monitor extends Service{
 							Log.d(TAG,"suspended");
 							computing = false;
 						}
-					}
-					setClientStatus(tasks,status);
+					}*/
+					//setClientStatus(tasks,status);
 			        Intent clientStatus = new Intent();
 			        clientStatus.setAction("edu.berkeley.boinc.clientstatus");
 			        getApplicationContext().sendBroadcast(clientStatus);
@@ -236,28 +217,17 @@ public class Monitor extends Service{
 		
 		@Override
 		protected void onPostExecute(Boolean success) {
-			AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "client connection broken!");
-			Log.d(TAG+" - onPostExecute","client connection broken!"); 
-			
-			//kill client process
-			try {
-				//shutdown();
-			}catch(Exception e) {}
-			
-	        Intent clientError = new Intent();
-	        clientError.setAction("edu.berkeley.boinc.clienterror");
-	        getApplicationContext().sendOrderedBroadcast(clientError,null);
+			AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "client connection broken! (permanent)");
+			Log.d(TAG+" - onPostExecute","client connection broken! (permanent)"); 
 		}
 		
 
 		
 		private void setupClient() {
 			
-			//publish event, that client is about to launch
-	        Intent clientLaunch = new Intent();
-	        clientLaunch.setAction("edu.berkeley.boinc.clientlaunch");
-	        clientLaunch.putExtra("finished", false);
-			getApplicationContext().sendOrderedBroadcast(clientLaunch,null);
+			//adapt client status and broadcast event
+			getClientStatus().setupStatus = 0;
+			getClientStatus().fire();
 			
 			//try to reconnect, if client of another Manager lifecycle exists.
 			Boolean success =  reconnectClient();
@@ -274,16 +244,14 @@ public class Monitor extends Service{
 	        
 			//publish results
 			AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "finished " + success);
-			if(success) { //if setup successful, publish with clientlaunch event
-		        Intent clientReady = new Intent();
-		        clientReady.setAction("edu.berkeley.boinc.clientlaunch");
-		        clientReady.putExtra("finished", true);
-		        getApplicationContext().sendOrderedBroadcast(clientReady,null);
+			if(success) { //if setup successful, publish...
+				getClientStatus().setupStatus = 1;
+				getClientStatus().fire();
 			}
-			else { //setup failed several times, publish error
-		        Intent clientError = new Intent();
-		        clientError.setAction("edu.berkeley.boinc.clienterror");
-		        getApplicationContext().sendOrderedBroadcast(clientError,null);
+			else { //setup failed several times, publish...
+				getClientStatus().setupStatus = 2;
+				getClientStatus().fire();
+				
 			}
 		}
 		

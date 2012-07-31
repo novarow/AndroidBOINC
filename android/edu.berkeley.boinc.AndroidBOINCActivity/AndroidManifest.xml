@@ -36,21 +36,6 @@
                 <action android:name="edu.berkeley.boinc.log" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".receiver.ClientLaunchReceiver">
-            <intent-filter android:priority="999">
-                <action android:name="edu.berkeley.boinc.clientlaunch" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name=".receiver.ClientComputingReceiver">
-            <intent-filter android:priority="999">
-                <action android:name="edu.berkeley.boinc.clientcomputing" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name=".receiver.ClientErrorReceiver">
-            <intent-filter android:priority="999">
-                <action android:name="edu.berkeley.boinc.clienterror" />
-            </intent-filter>
-        </receiver>
         
     </application>
 

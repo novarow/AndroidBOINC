@@ -1,5 +1,7 @@
 package edu.berkeley.boinc;
 
+import edu.berkeley.boinc.client.ClientStatus;
+import edu.berkeley.boinc.client.Monitor;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -13,48 +15,27 @@ public class StatusActivity extends Activity {
 	
 	private final String TAG = "StatusActivity";
 	
-	private BroadcastReceiver localClientStatusRecQuiet = new BroadcastReceiver() {
+	private BroadcastReceiver mClientStatusChangeRec = new BroadcastReceiver() {
 		@Override
 		public void onReceive(Context context,Intent intent) {
-			//gets triggered every time the client setup status changes (clientlaunch, clientrunning, clienterror)
-			String action = intent.getAction();
-			Log.d(TAG+"-localClientStatusRecQuiet","received action " + action);
-			//loadLayout();
-		}
-	};
-	private BroadcastReceiver localClientStatusRecNoisy = new BroadcastReceiver() {
-		@Override
-		public void onReceive(Context context,Intent intent) {
-			//gets triggered every time the client status changes (clientstatus)
 			String action = intent.getAction();
 			Log.d(TAG+"-localClientStatusRecNoisy","received action " + action);
-			//loadLayout();
+			loadLayout();
 		}
 	};
-	private IntentFilter ifcl = new IntentFilter("edu.berkeley.boinc.clientlaunch");
-	private IntentFilter ifcr = new IntentFilter("edu.berkeley.boinc.clientcomputing");
-	private IntentFilter ifce = new IntentFilter("edu.berkeley.boinc.clienterror");
-	private IntentFilter ifcs = new IntentFilter("edu.berkeley.boinc.clientstatus");
+	private IntentFilter ifcsc = new IntentFilter("edu.berkeley.boinc.clientstatuschange");
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-        
-		//loadLayout();
-		
-        //register less noisy status receiver permanently for this activity
-		//this receiver has lower priority than BroadcastReceivers in edu.berkeley.boinc.reiceiver
-        registerReceiver(localClientStatusRecQuiet,ifcl);
-        registerReceiver(localClientStatusRecQuiet,ifcr);
-        registerReceiver(localClientStatusRecQuiet,ifce);
 	}
 	
 	public void onResume() {
-		//register noisy client status receiver here, so only active when Activity is being visible
+		//register noisy clientStatusChangeReceiver here, so only active when Activity is visible
 		Log.d(TAG+"-onResume","register noisy receiver");
-		registerReceiver(localClientStatusRecNoisy,ifcs);
+		registerReceiver(mClientStatusChangeRec,ifcsc);
 		
 		//refresh layout
-		//loadLayout();
+		loadLayout();
 		
 		super.onResume();
 	}
@@ -62,35 +43,26 @@ public class StatusActivity extends Activity {
 	public void onPause() {
 		//unregister receiver, so there are not multiple intents flying in
 		Log.d(TAG+"-onPause","remove noisy receiver");
-		unregisterReceiver(localClientStatusRecNoisy);
+		unregisterReceiver(mClientStatusChangeRec);
 		super.onStop();
 	}
-	/*
+	
 	private void loadLayout() {
 		Log.d(TAG,"loadLayout()");
-		if(AndroidBOINCActivity.monitor.broken) { //client connection is broken
+		ClientStatus status = Monitor.getClientStatus();
+		switch(status.setupStatus){
+		case 0:
+			Log.d(TAG,"layout: status_layout_launching");
+			setContentView(R.layout.status_layout_launching);
+			break;
+		case 1:
+			Log.d(TAG,"client's setup status: ready! determine run status...");
+			setContentView(R.layout.status_layout_suspended); //TEMPORARY
+			break;
+		case 2:
 			setContentView(R.layout.status_layout_error);
 			Log.d(TAG,"layout: status_layout_error");
-		} else { // client connection is not broken
-			if(AndroidBOINCActivity.monitor.launched) { // client finished launching
-				if(AndroidBOINCActivity.monitor.computingEnabled) { //client is in run mode "auto", so not paused by user
-					if(AndroidBOINCActivity.monitor.computing) {
-						Log.d(TAG,"layout: status_layout_computing");
-						setContentView(R.layout.status_layout_computing);
-					}else {
-						Log.d(TAG,"layout: status_layout_suspended");
-						setContentView(R.layout.status_layout_suspended);
-					}
-				}
-				else { //client is in run mode "never", force paused by user
-					Log.d(TAG,"layout: status_layout_computing_disabled");
-					setContentView(R.layout.status_layout_computing_disabled);
-				}
-			}
-			else { //client is launching
-				Log.d(TAG,"layout: status_layout_launching");
-				setContentView(R.layout.status_layout_launching);
-			}
+			break;
 		}
 	}
 	
@@ -98,20 +70,20 @@ public class StatusActivity extends Activity {
 	//has to be public in order to get triggered by layout component
 	public void reinitClient(View view) {
 		Log.d(TAG,"reinitClient");
-		AndroidBOINCActivity.monitor.setup(); //start over with setup of client
+		//AndroidBOINCActivity.monitor.setup(); //start over with setup of client
 		loadLayout(); //load new layout
 	}
 	
 	public void disableComputation(View view) {
 		Log.d(TAG,"disableComputation");
-		AndroidBOINCActivity.monitor.setRunMode(3); //run mode 3 = never
+		//AndroidBOINCActivity.monitor.setRunMode(3); //run mode 3 = never
 		loadLayout(); //load new layout
 	}
 	
 	public void enableComputation(View view) {
 		Log.d(TAG,"enableComputation");
-		AndroidBOINCActivity.monitor.setRunMode(2); //run mode 2 = auto
+		//AndroidBOINCActivity.monitor.setRunMode(2); //run mode 2 = auto
 		loadLayout(); //load new layout
-	}*/
+	}
 
 }

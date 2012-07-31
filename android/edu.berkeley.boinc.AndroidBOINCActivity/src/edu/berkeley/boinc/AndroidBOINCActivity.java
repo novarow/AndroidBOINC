@@ -80,7 +80,10 @@ public class AndroidBOINCActivity extends TabActivity {
         super.onCreate(savedInstanceState);  
         setContentView(R.layout.main);  
          
-        Log.d(TAG, "onCreate");  
+        Log.d(TAG, "onCreate"); 
+        
+        //set application context to service singleton
+        Monitor.getClientStatus().setCtx(this);
         
         //temporary - disable strict mode
         //StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
