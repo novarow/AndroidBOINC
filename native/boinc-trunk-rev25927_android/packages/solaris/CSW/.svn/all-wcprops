@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/17392/trunk/boinc/packages/solaris/CSW
+END
+build_packages.sh
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/17388/trunk/boinc/packages/solaris/CSW/build_packages.sh
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/17388/trunk/boinc/packages/solaris/CSW/Makefile.am
+END

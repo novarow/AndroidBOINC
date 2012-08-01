@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 109
+Makefile
+Makefile.in
+libboinc_graphics_impl.a
+libboinc_graphics_api.a
+libboinc_graphics_lib.a
+libboinc_api.a
+
+END

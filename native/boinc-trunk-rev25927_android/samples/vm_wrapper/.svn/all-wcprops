@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/18904/trunk/boinc/samples/vm_wrapper
+END
+job.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/18904/trunk/boinc/samples/vm_wrapper/job.xml
+END
+VMwrapper.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/18904/trunk/boinc/samples/vm_wrapper/VMwrapper.py
+END
+setupPyBOINC.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/18904/trunk/boinc/samples/vm_wrapper/setupPyBOINC.py
+END

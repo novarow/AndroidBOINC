@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/24735/trunk/boinc/clientgui/skins/Default
+END
+skin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/24735/trunk/boinc/clientgui/skins/Default/skin.xml
+END
+background_image.png
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/24697/trunk/boinc/clientgui/skins/Default/background_image.png
+END
+workunit_running_image.png
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/24697/trunk/boinc/clientgui/skins/Default/workunit_running_image.png
+END
+workunit_waiting_image.png
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/24697/trunk/boinc/clientgui/skins/Default/workunit_waiting_image.png
+END
+workunit_suspended_image.png
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/24697/trunk/boinc/clientgui/skins/Default/workunit_suspended_image.png
+END

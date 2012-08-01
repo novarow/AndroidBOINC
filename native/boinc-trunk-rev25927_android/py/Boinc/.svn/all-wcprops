@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/25322/trunk/boinc/py/Boinc
+END
+add_util.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/12027/trunk/boinc/py/Boinc/add_util.py
+END
+setup_project.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/25322/trunk/boinc/py/Boinc/setup_project.py
+END
+configxml.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2867/trunk/boinc/py/Boinc/configxml.py
+END
+projectxml.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/15679/trunk/boinc/py/Boinc/projectxml.py
+END
+version.py.in
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/3856/trunk/boinc/py/Boinc/version.py.in
+END
+boinc_project_path.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/18424/trunk/boinc/py/Boinc/boinc_project_path.py
+END
+boinc_db.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/4504/trunk/boinc/py/Boinc/boinc_db.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2246/trunk/boinc/py/Boinc/__init__.py
+END
+tools.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/23525/trunk/boinc/py/Boinc/tools.py
+END
+database.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/22667/trunk/boinc/py/Boinc/database.py
+END
+boincxml.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/18840/trunk/boinc/py/Boinc/boincxml.py
+END
+util.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2245/trunk/boinc/py/Boinc/util.py
+END
+sched_messages.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2841/trunk/boinc/py/Boinc/sched_messages.py
+END
+db_mid.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/12027/trunk/boinc/py/Boinc/db_mid.py
+END
+db_base.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/22616/trunk/boinc/py/Boinc/db_base.py
+END

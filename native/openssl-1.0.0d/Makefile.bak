@@ -26,7 +26,7 @@ HERE=.
 # for, say, /usr/ and yet have everything installed to /tmp/somedir/usr/.
 # Normally it is left empty.
 INSTALL_PREFIX=
-INSTALLTOP=/home/novarow/tools/android-4-tc/arm-linux-androideabi/ssl
+INSTALLTOP=/home/novarow/tools/android-4-tc/arm-linux-androideabi
 
 # Do not edit this manually. Use Configure --openssldir=DIR do change this!
 OPENSSLDIR=/home/novarow/tools/android-4-tc/arm-linux-androideabi/ssl
@@ -60,7 +60,7 @@ OPENSSLDIR=/home/novarow/tools/android-4-tc/arm-linux-androideabi/ssl
 # PKCS1_CHECK - pkcs1 tests.
 
 CC= arm-linux-androideabi-gcc
-CFLAG= -DOPENSSL_THREADS -D_REENTRANT -DL_ENDIAN -DTERMIO -O3 -fomit-frame-pointer -Wall
+CFLAG= -DOPENSSL_THREADS -D_REENTRANT -DL_ENDIAN -DTERMIO -O3 -fomit-frame-pointer -Wall $(CFLAGS)
 DEPFLAG= -DOPENSSL_NO_GMP -DOPENSSL_NO_JPAKE -DOPENSSL_NO_MD2 -DOPENSSL_NO_RC5 -DOPENSSL_NO_RFC3779 -DOPENSSL_NO_STORE
 PEX_LIBS= 
 EX_LIBS= -ldl

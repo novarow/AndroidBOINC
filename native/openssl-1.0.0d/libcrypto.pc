@@ -1,4 +1,4 @@
-prefix=/home/novarow/tools/android-4-tc/arm-linux-androideabi
+prefix=/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

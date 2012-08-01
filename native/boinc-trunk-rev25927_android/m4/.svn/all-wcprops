@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/25804/trunk/boinc/m4
+END
+boinc_set_compile_flags.m4
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/21812/trunk/boinc/m4/boinc_set_compile_flags.m4
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/15375/trunk/boinc/m4/Makefile.am
+END
+libcurl.m4
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/25804/trunk/boinc/m4/libcurl.m4
+END
+boinc_platform.m4
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/17388/trunk/boinc/m4/boinc_platform.m4
+END
+sah_largefile_breaks_cxx.m4
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/5375/trunk/boinc/m4/sah_largefile_breaks_cxx.m4
+END
+boinc_wxwidgets.m4
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/20502/trunk/boinc/m4/boinc_wxwidgets.m4
+END
+ax_check_glut.m4
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/16989/trunk/boinc/m4/ax_check_glut.m4
+END
+ax_lang_compiler_ms.m4
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/4665/trunk/boinc/m4/ax_lang_compiler_ms.m4
+END
+ax_winsock.m4
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/9072/trunk/boinc/m4/ax_winsock.m4
+END
+boinc_check_cygwin.m4
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/9072/trunk/boinc/m4/boinc_check_cygwin.m4
+END
+boinc_check_fcgi.m4
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/25804/trunk/boinc/m4/boinc_check_fcgi.m4
+END
+sah_header_stdcxx.m4
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/13804/trunk/boinc/m4/sah_header_stdcxx.m4
+END
+sah_libext.m4
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/6970/trunk/boinc/m4/sah_libext.m4
+END
+sah_staticize_ldflags.m4
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/6592/trunk/boinc/m4/sah_staticize_ldflags.m4
+END
+ax_check_gl.m4
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/16989/trunk/boinc/m4/ax_check_gl.m4
+END
+sah_namespace.m4
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/13804/trunk/boinc/m4/sah_namespace.m4
+END
+sah_grx.m4
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/5957/trunk/boinc/m4/sah_grx.m4
+END
+boinc_getsockopt.m4
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/18428/trunk/boinc/m4/boinc_getsockopt.m4
+END
+sah_check_lib.m4
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/17414/trunk/boinc/m4/sah_check_lib.m4
+END
+check_ssl.m4
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/16904/trunk/boinc/m4/check_ssl.m4
+END
+boinc_gtk.m4
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/16904/trunk/boinc/m4/boinc_gtk.m4
+END
+sah_select_bitness.m4
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/5957/trunk/boinc/m4/sah_select_bitness.m4
+END
+boinc_check_flags.m4
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/16991/trunk/boinc/m4/boinc_check_flags.m4
+END
+boinc_msg_debug.m4
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/8896/trunk/boinc/m4/boinc_msg_debug.m4
+END
+boinc_check_lib_with.m4
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/16904/trunk/boinc/m4/boinc_check_lib_with.m4
+END
+sah_links.m4
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/6976/trunk/boinc/m4/sah_links.m4
+END
+ax_check_glu.m4
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/16989/trunk/boinc/m4/ax_check_glu.m4
+END
+kc_mysql.m4
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/14996/trunk/boinc/m4/kc_mysql.m4
+END
+acx_pthread.m4
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/14996/trunk/boinc/m4/acx_pthread.m4
+END
+gtk-2.0.m4
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/20458/trunk/boinc/m4/gtk-2.0.m4
+END
+sqlite3.m4
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/18147/trunk/boinc/m4/sqlite3.m4
+END
+wxWidgets.m4
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/14996/trunk/boinc/m4/wxWidgets.m4
+END

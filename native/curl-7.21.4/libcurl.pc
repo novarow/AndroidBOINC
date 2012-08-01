@@ -23,9 +23,9 @@
 # This should most probably benefit from getting a "Requires:" field added
 # dynamically by configure.
 #
-prefix=/home/novarow/tools/android-4-tc/arm-linux-androideabi
+prefix=/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi
 exec_prefix=${prefix}
-libdir=/home/novarow/tools/android-4-tc/arm-linux-androideabi/lib
+libdir=/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi/lib
 includedir=${prefix}/include
 supported_protocols="DICT FILE FTP FTPS GOPHER HTTP HTTPS IMAP IMAPS POP3 POP3S RTSP SMTP SMTPS TELNET TFTP"
 supported_features="SSL libz NTLM"

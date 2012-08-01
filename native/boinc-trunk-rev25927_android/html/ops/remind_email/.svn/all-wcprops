@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/10820/trunk/boinc/html/ops/remind_email
+END
+sample_failed_subject
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/10820/trunk/boinc/html/ops/remind_email/sample_failed_subject
+END
+sample_lapsed_subject
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/10820/trunk/boinc/html/ops/remind_email/sample_lapsed_subject
+END
+sample_failed_html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/10820/trunk/boinc/html/ops/remind_email/sample_failed_html
+END
+sample_failed_text
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/10820/trunk/boinc/html/ops/remind_email/sample_failed_text
+END
+sample_lapsed_html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/10820/trunk/boinc/html/ops/remind_email/sample_lapsed_html
+END
+sample_lapsed_text
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/10820/trunk/boinc/html/ops/remind_email/sample_lapsed_text
+END

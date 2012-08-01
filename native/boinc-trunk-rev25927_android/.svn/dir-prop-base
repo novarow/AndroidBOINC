@@ -1,0 +1,30 @@
+K 10
+svn:ignore
+V 238
+Makefile
+Makefile.in
+aclocal.m4
+autom4te.cache
+boinc-*.tar.gz
+boinc-*.tar.bz2
+boinc-*.zip
+compile
+config.h
+config.h.in
+config.guess
+config.log
+config.status
+config.sub
+configure
+configure.lineno
+depcomp
+libtool
+ltmain.sh
+missing
+stamp-h*
+
+K 13
+svn:mergeinfo
+V 38
+/branches/boinc_core_release_6_8:23955
+END

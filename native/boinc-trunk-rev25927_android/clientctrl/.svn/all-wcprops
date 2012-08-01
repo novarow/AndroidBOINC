@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/25583/trunk/boinc/clientctrl
+END
+boincsvcctrl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/23977/trunk/boinc/clientctrl/boincsvcctrl.xml
+END
+boincsvcctrl.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/19576/trunk/boinc/clientctrl/boincsvcctrl.cpp
+END
+boincsvcctrl.rc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25583/trunk/boinc/clientctrl/boincsvcctrl.rc
+END
+boincsvcctrl.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/16488/trunk/boinc/clientctrl/boincsvcctrl.h
+END

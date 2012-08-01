@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 82
+Debug
+Debug95
+Release
+Release95
+boinccas.aps
+boinccas.ncb
+boinccas.suo
+x64
+*.user
+
+END

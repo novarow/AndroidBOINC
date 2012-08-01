@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/25903/trunk/boinc/mac_build
+END
+Mac_SA_Insecure.sh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/22947/trunk/boinc/mac_build/Mac_SA_Insecure.sh
+END
+setupForBOINC.sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25903/trunk/boinc/mac_build/setupForBOINC.sh
+END
+SystemMenu-Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/12957/trunk/boinc/mac_build/SystemMenu-Info.plist
+END
+buildcurl.sh
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/25856/trunk/boinc/mac_build/buildcurl.sh
+END
+PostInstall-Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/12957/trunk/boinc/mac_build/PostInstall-Info.plist
+END
+Mac_SA_Secure.sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25373/trunk/boinc/mac_build/Mac_SA_Secure.sh
+END
+ScreenSaver-Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/12957/trunk/boinc/mac_build/ScreenSaver-Info.plist
+END
+buildc-ares.sh
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/25856/trunk/boinc/mac_build/buildc-ares.sh
+END
+BuildMacBOINC.sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25855/trunk/boinc/mac_build/BuildMacBOINC.sh
+END
+HowToBuildBOINC_XCode.rtf
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25876/trunk/boinc/mac_build/HowToBuildBOINC_XCode.rtf
+END
+buildWxMac.sh
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/25900/trunk/boinc/mac_build/buildWxMac.sh
+END
+buildfreetype.sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25903/trunk/boinc/mac_build/buildfreetype.sh
+END
+buildopenssl.sh
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/25856/trunk/boinc/mac_build/buildopenssl.sh
+END
+buildjpeg.sh
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/22489/trunk/boinc/mac_build/buildjpeg.sh
+END
+Make_BOINC_Service.sh
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/17330/trunk/boinc/mac_build/Make_BOINC_Service.sh
+END
+Installer-Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/12957/trunk/boinc/mac_build/Installer-Info.plist
+END
+WaitPermissions-Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/19592/trunk/boinc/mac_build/WaitPermissions-Info.plist
+END
+Uninstaller-Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/12957/trunk/boinc/mac_build/Uninstaller-Info.plist
+END
+buildFTGL.sh
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/25903/trunk/boinc/mac_build/buildFTGL.sh
+END
+Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25277/trunk/boinc/mac_build/Info.plist
+END

@@ -1,0 +1,107 @@
+10
+
+dir
+25927
+http://boinc.berkeley.edu/svn/trunk/boinc/samples
+http://boinc.berkeley.edu/svn
+
+
+
+2012-07-17T11:22:05.961628Z
+25876
+charlief
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+677681c0-c3c0-48b4-bd46-92119ef6d97a
+
+sleeper
+dir
+
+worker
+dir
+
+glut
+dir
+
+jpeglib
+dir
+
+atiopencl
+dir
+
+vboxwrapper
+dir
+
+mac_build
+dir
+
+wrapper
+dir
+
+nvcuda
+dir
+
+multi_thread
+dir
+
+vm_wrapper
+dir
+
+nvopencl
+dir
+
+wrappture
+dir
+
+image_libs
+dir
+
+example_app
+dir
+
+client_state_save.xml
+file
+
+
+
+
+2012-08-01T12:58:27.459074Z
+e06ffcfc0cfc531186f18eff701c923d
+2011-09-08T18:55:55.471486Z
+24144
+davea
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1383
+

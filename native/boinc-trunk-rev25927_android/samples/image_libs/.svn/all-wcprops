@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/15730/trunk/boinc/samples/image_libs
+END
+bmplib.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/15730/trunk/boinc/samples/image_libs/bmplib.cpp
+END
+tgalib.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/15730/trunk/boinc/samples/image_libs/tgalib.h
+END
+bmplib.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/15730/trunk/boinc/samples/image_libs/bmplib.h
+END
+tgalib.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/15730/trunk/boinc/samples/image_libs/tgalib.cpp
+END

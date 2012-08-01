@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/17388/trunk/boinc/client/scripts
+END
+boinc.bash
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/15233/trunk/boinc/client/scripts/boinc.bash
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/15375/trunk/boinc/client/scripts/Makefile.am
+END
+boinc-client.conf
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/15173/trunk/boinc/client/scripts/boinc-client.conf
+END
+boinc-client.in
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/17388/trunk/boinc/client/scripts/boinc-client.in
+END

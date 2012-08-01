@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25866/trunk/boinc/samples/vboxwrapper
+END
+BuildMacVboxWrapper.sh
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25866/trunk/boinc/samples/vboxwrapper/BuildMacVboxWrapper.sh
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/24872/trunk/boinc/samples/vboxwrapper/Makefile
+END
+Makefile_mac
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25862/trunk/boinc/samples/vboxwrapper/Makefile_mac
+END
+vbox.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/25691/trunk/boinc/samples/vboxwrapper/vbox.cpp
+END
+vboxwrapper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25698/trunk/boinc/samples/vboxwrapper/vboxwrapper.cpp
+END
+floppyio.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25030/trunk/boinc/samples/vboxwrapper/floppyio.cpp
+END
+vbox.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25691/trunk/boinc/samples/vboxwrapper/vbox.h
+END
+vboxwrapper.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25308/trunk/boinc/samples/vboxwrapper/vboxwrapper.h
+END
+floppyio.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25030/trunk/boinc/samples/vboxwrapper/floppyio.h
+END

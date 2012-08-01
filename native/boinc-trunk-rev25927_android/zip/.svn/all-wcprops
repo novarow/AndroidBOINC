@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/25056/trunk/boinc/zip
+END
+ziptest.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/25056/trunk/boinc/zip/ziptest.dsp
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/25056/trunk/boinc/zip/Makefile.am
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/25056/trunk/boinc/zip/README.txt
+END
+aclocal.m4
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/25056/trunk/boinc/zip/aclocal.m4
+END
+boinc_zip.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25056/trunk/boinc/zip/boinc_zip.cpp
+END
+boinc_zip.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25056/trunk/boinc/zip/boinc_zip.vcproj
+END
+test.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/25056/trunk/boinc/zip/test.c
+END
+boinc_zip.dsp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25056/trunk/boinc/zip/boinc_zip.dsp
+END
+configure
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/25056/trunk/boinc/zip/configure
+END
+boinc_zip.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/25056/trunk/boinc/zip/boinc_zip.h
+END
+ziptest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/25056/trunk/boinc/zip/ziptest.cpp
+END
+ziptest.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25056/trunk/boinc/zip/ziptest.vcproj
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/25380/trunk/boinc/locale/templates
+END
+BOINC-Manager.pot
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25380/trunk/boinc/locale/templates/BOINC-Manager.pot
+END
+BOINC-Web.pot
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/23327/trunk/boinc/locale/templates/BOINC-Web.pot
+END
+BOINC-Client.pot
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25229/trunk/boinc/locale/templates/BOINC-Client.pot
+END
+BOINC-Project-Generic.pot
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/25071/trunk/boinc/locale/templates/BOINC-Project-Generic.pot
+END

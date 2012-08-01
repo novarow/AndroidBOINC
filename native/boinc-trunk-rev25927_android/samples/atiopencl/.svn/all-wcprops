@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/24388/trunk/boinc/samples/atiopencl
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/22006/trunk/boinc/samples/atiopencl/Makefile
+END
+Makefile_mac
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/24388/trunk/boinc/samples/atiopencl/Makefile_mac
+END
+atiopencl_kernels.cl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/22001/trunk/boinc/samples/atiopencl/atiopencl_kernels.cl
+END
+atiopencl.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/24387/trunk/boinc/samples/atiopencl/atiopencl.cpp
+END
+atiopencl.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/22073/trunk/boinc/samples/atiopencl/atiopencl.hpp
+END

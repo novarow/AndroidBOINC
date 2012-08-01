@@ -1,0 +1,311 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/INSTALL
+END
+match.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/match.c
+END
+crc_i386.S
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/crc_i386.S
+END
+unshrink.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unshrink.c
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/LICENSE
+END
+unzip.txt
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unzip.txt
+END
+unzip.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unzip.c
+END
+funzip.txt
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/funzip.txt
+END
+ttyio.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/ttyio.c
+END
+extract.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/extract.c
+END
+unzip.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unzip.h
+END
+funzip.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/funzip.c
+END
+Contents
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/Contents
+END
+ttyio.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/ttyio.h
+END
+zipgrep.txt
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/zipgrep.txt
+END
+consts.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/consts.h
+END
+ebcdic.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/ebcdic.h
+END
+BUGS
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/BUGS
+END
+unzvers.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unzvers.h
+END
+inflate.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/inflate.c
+END
+apihelp.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/apihelp.c
+END
+globals.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/globals.c
+END
+inflate.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/inflate.h
+END
+globals.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/globals.h
+END
+History.550
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/History.550
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/Makefile.am
+END
+WHERE
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/WHERE
+END
+timezone.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/timezone.c
+END
+crctab.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/crctab.c
+END
+file_id.diz
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/file_id.diz
+END
+timezone.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/timezone.h
+END
+explode.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/explode.c
+END
+crypt.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/crypt.c
+END
+envargs.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/envargs.c
+END
+crypt.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/crypt.h
+END
+zip.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/zip.h
+END
+fileio.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/fileio.c
+END
+api.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/api.c
+END
+unreduce.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unreduce.c
+END
+list.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/list.c
+END
+zipinfo.txt
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/zipinfo.txt
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/README
+END
+crc32.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/crc32.c
+END
+unzipstb.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unzipstb.c
+END
+process.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/process.c
+END
+zipinfo.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/zipinfo.c
+END
+tables.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/tables.h
+END
+gbloffs.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/gbloffs.c
+END
+unzpriv.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unzpriv.h
+END
+unzipsfx.txt
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unzipsfx.txt
+END
+ToDo
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/ToDo
+END

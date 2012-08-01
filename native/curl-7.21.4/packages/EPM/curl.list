@@ -1,11 +1,11 @@
 # Directories...
-$prefix=/home/novarow/tools/android-4-tc/arm-linux-androideabi
+$prefix=/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi
 $exec_prefix=${prefix}
 $bindir=${exec_prefix}/bin
 $confdir=${prefix}/etc
-$docdir=/home/novarow/tools/android-4-tc/arm-linux-androideabi/doc
+$docdir=/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi/doc
 $mandir=${datarootdir}/man
-$libdir=/home/novarow/tools/android-4-tc/arm-linux-androideabi/lib
+$libdir=/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi/lib
 $srcdir=../..
 $includedir=${prefix}/include
 $datarootdir=${prefix}/share

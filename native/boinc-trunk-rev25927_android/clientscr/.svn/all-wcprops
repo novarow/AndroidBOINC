@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/25856/trunk/boinc/clientscr
+END
+gfx_switcher.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25262/trunk/boinc/clientscr/gfx_switcher.cpp
+END
+screensaver_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/25672/trunk/boinc/clientscr/screensaver_win.cpp
+END
+screensaver_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/25607/trunk/boinc/clientscr/screensaver_win.h
+END
+boinc_ss.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/19923/trunk/boinc/clientscr/boinc_ss.h
+END
+mac_saver_module.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/23964/trunk/boinc/clientscr/mac_saver_module.cpp
+END
+Mac_Saver_ModuleView.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/23884/trunk/boinc/clientscr/Mac_Saver_ModuleView.h
+END
+boinc_ss_opengl.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/19923/trunk/boinc/clientscr/boinc_ss_opengl.h
+END
+screensaver_x11.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/24055/trunk/boinc/clientscr/screensaver_x11.cpp
+END
+Mac_Saver_ModuleView.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/25856/trunk/boinc/clientscr/Mac_Saver_ModuleView.m
+END
+Mac_Saver_Module.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/23884/trunk/boinc/clientscr/Mac_Saver_Module.h
+END
+screensaver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/25198/trunk/boinc/clientscr/screensaver.cpp
+END
+boinc_ss.rc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/25583/trunk/boinc/clientscr/boinc_ss.rc
+END
+screensaver.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/19923/trunk/boinc/clientscr/screensaver.h
+END
+boinc_ss_opengl.rc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/25583/trunk/boinc/clientscr/boinc_ss_opengl.rc
+END
+ss_app.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/24656/trunk/boinc/clientscr/ss_app.cpp
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/22004/trunk/boinc/clientscr/Makefile.am
+END
+ss_config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/17168/trunk/boinc/clientscr/ss_config.xml
+END

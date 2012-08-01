@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unix
+END
+Contents
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unix/Contents
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unix/Makefile
+END
+unxcfg.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unix/unxcfg.h
+END
+zipgrep
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unix/zipgrep
+END
+unix.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unix/unix.c
+END

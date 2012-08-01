@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/25806/trunk/boinc/locale
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/21915/trunk/boinc/locale/Makefile.am
+END
+copy_files.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/18165/trunk/boinc/locale/copy_files.php
+END
+updatetrans.sh
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/24813/trunk/boinc/locale/updatetrans.sh
+END

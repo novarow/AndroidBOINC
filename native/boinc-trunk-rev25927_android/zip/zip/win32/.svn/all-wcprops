@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32
+END
+makefile.gcc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/makefile.gcc
+END
+makefile.dj
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/makefile.dj
+END
+win32zip.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/win32zip.h
+END
+z_win32.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/z_win32.c
+END
+makefile.lcc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/makefile.lcc
+END
+lm32_lcc.asm
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/lm32_lcc.asm
+END
+README.NT
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/README.NT
+END
+match32.asm
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/match32.asm
+END
+rsxntwin.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/rsxntwin.h
+END
+makefile.w10
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/makefile.w10
+END
+makefile.ibm
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/makefile.ibm
+END
+makefile.w32
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/makefile.w32
+END
+README.TZ
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/README.TZ
+END
+zipup.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/zipup.h
+END
+makefile.bor
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/makefile.bor
+END
+zip.def
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/zip.def
+END
+crc_i386.asm
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/crc_i386.asm
+END
+osdep.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/osdep.h
+END
+crc_i386.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/crc_i386.c
+END
+nt.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/nt.c
+END
+makefile.emx
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/makefile.emx
+END
+win32zip.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/win32zip.c
+END
+nt.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/nt.h
+END
+crc_lcc.asm
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/crc_lcc.asm
+END
+makefile.wat
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/win32/makefile.wat
+END

@@ -6,7 +6,7 @@ BOINC client:
 
 BOINC Android manager:
 - MD5 verification hash for project attachment (rpc call??)
-- Status: add network status and redesign layout
+- Status: add network status, redesign layout, add aquired project credit
 - Tasks: implement
 - Transfers: implement
 - Preferences: implement (include project settings like url, pwd)

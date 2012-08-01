@@ -1,0 +1,1097 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/25872/trunk/boinc/html/user
+END
+lammps.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25746/trunk/boinc/html/user/lammps.php
+END
+forum_subscribe.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/24048/trunk/boinc/html/user/forum_subscribe.php
+END
+prefs_remove.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/23030/trunk/boinc/html/user/prefs_remove.php
+END
+head.png
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2794/trunk/boinc/html/user/head.png
+END
+team_join_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/23010/trunk/boinc/html/user/team_join_action.php
+END
+sample_motd.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/19949/trunk/boinc/html/user/sample_motd.php
+END
+team_quit_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/23010/trunk/boinc/html/user/team_quit_form.php
+END
+black.css
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/17823/trunk/boinc/html/user/black.css
+END
+donated.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/24048/trunk/boinc/html/user/donated.php
+END
+cert1.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25673/trunk/boinc/html/user/cert1.php
+END
+result.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/23010/trunk/boinc/html/user/result.php
+END
+show_user.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/25608/trunk/boinc/html/user/show_user.php
+END
+team_remove_inactive_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/23010/trunk/boinc/html/user/team_remove_inactive_action.php
+END
+top_hosts.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/23228/trunk/boinc/html/user/top_hosts.php
+END
+profile_alpha.html
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1802/trunk/boinc/html/user/profile_alpha.html
+END
+lookup_account.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/15758/trunk/boinc/html/user/lookup_account.php
+END
+gpu_list.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/24614/trunk/boinc/html/user/gpu_list.php
+END
+forum_moderate_thread_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/24048/trunk/boinc/html/user/forum_moderate_thread_action.php
+END
+team_create_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/23010/trunk/boinc/html/user/team_create_form.php
+END
+account_finish.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/24048/trunk/boinc/html/user/account_finish.php
+END
+translate.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/23010/trunk/boinc/html/user/translate.php
+END
+forum_forum.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/25865/trunk/boinc/html/user/forum_forum.php
+END
+user_search.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/25267/trunk/boinc/html/user/user_search.php
+END
+html.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/24048/trunk/boinc/html/user/html.php
+END
+host_edit_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/24048/trunk/boinc/html/user/host_edit_form.php
+END
+am_get_info.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/23008/trunk/boinc/html/user/am_get_info.php
+END
+weak_auth.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/25581/trunk/boinc/html/user/weak_auth.php
+END
+create_team.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/22315/trunk/boinc/html/user/create_team.php
+END
+bossa_job_finished.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/16556/trunk/boinc/html/user/bossa_job_finished.php
+END
+forum_moderate_post_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/24048/trunk/boinc/html/user/forum_moderate_post_action.php
+END
+uotd.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25673/trunk/boinc/html/user/uotd.php
+END
+openid.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/23326/trunk/boinc/html/user/openid.php
+END
+prefs.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/23010/trunk/boinc/html/user/prefs.php
+END
+forum_index.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/24048/trunk/boinc/html/user/forum_index.php
+END
+team_lookup.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/24048/trunk/boinc/html/user/team_lookup.php
+END
+profile_search_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/24048/trunk/boinc/html/user/profile_search_action.php
+END
+style2.css
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/23018/trunk/boinc/html/user/style2.css
+END
+prefs_edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/24109/trunk/boinc/html/user/prefs_edit.php
+END
+bbcode_toolbar.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/18500/trunk/boinc/html/user/bbcode_toolbar.js
+END
+manage.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/24250/trunk/boinc/html/user/manage.php
+END
+manage_app.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/24250/trunk/boinc/html/user/manage_app.php
+END
+edit_email_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/24048/trunk/boinc/html/user/edit_email_action.php
+END
+merge_by_name.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/24885/trunk/boinc/html/user/merge_by_name.php
+END
+forum_banishment_vote_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/24048/trunk/boinc/html/user/forum_banishment_vote_action.php
+END
+edit_user_info_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25485/trunk/boinc/html/user/edit_user_info_action.php
+END
+team_forum.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/25717/trunk/boinc/html/user/team_forum.php
+END
+boinc_logo_trans.gif
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3514/trunk/boinc/html/user/boinc_logo_trans.gif
+END
+team_founder_transfer_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23010/trunk/boinc/html/user/team_founder_transfer_form.php
+END
+team_delta.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/23010/trunk/boinc/html/user/team_delta.php
+END
+get_output.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/25745/trunk/boinc/html/user/get_output.php
+END
+mail_passwd.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/23010/trunk/boinc/html/user/mail_passwd.php
+END
+forum_reply.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/25872/trunk/boinc/html/user/forum_reply.php
+END
+bossa_example4.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/22315/trunk/boinc/html/user/bossa_example4.php
+END
+bolt_sched.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/22315/trunk/boinc/html/user/bolt_sched.php
+END
+donate.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/15758/trunk/boinc/html/user/donate.php
+END
+rss_main.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/24377/trunk/boinc/html/user/rss_main.php
+END
+edit_forum_preferences_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/25859/trunk/boinc/html/user/edit_forum_preferences_action.php
+END
+forum_user_posts.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25871/trunk/boinc/html/user/forum_user_posts.php
+END
+currency.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/12754/trunk/boinc/html/user/currency.js
+END
+white.css
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/23354/trunk/boinc/html/user/white.css
+END
+pending.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/24885/trunk/boinc/html/user/pending.php
+END
+team_quit_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/23023/trunk/boinc/html/user/team_quit_action.php
+END
+team.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/23872/trunk/boinc/html/user/team.php
+END
+validate_email_addr.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/23932/trunk/boinc/html/user/validate_email_addr.php
+END
+add_venue.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/24124/trunk/boinc/html/user/add_venue.php
+END
+login_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/24056/trunk/boinc/html/user/login_form.php
+END
+top_teams.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/23228/trunk/boinc/html/user/top_teams.php
+END
+forum_edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/24048/trunk/boinc/html/user/forum_edit.php
+END
+hosts_user.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/24048/trunk/boinc/html/user/hosts_user.php
+END
+notify_rss.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/20145/trunk/boinc/html/user/notify_rss.php
+END
+team_members.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/23230/trunk/boinc/html/user/team_members.php
+END
+bossa_get_job.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/15758/trunk/boinc/html/user/bossa_get_job.php
+END
+team_change_founder_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23010/trunk/boinc/html/user/team_change_founder_form.php
+END
+sample_robots.txt
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5480/trunk/boinc/html/user/sample_robots.txt
+END
+sample_moderation.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/23010/trunk/boinc/html/user/sample_moderation.php
+END
+submit.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25822/trunk/boinc/html/user/submit.php
+END
+apps.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25171/trunk/boinc/html/user/apps.php
+END
+all_news.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/23010/trunk/boinc/html/user/all_news.php
+END
+notices.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/23119/trunk/boinc/html/user/notices.php
+END
+team_join.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/23010/trunk/boinc/html/user/team_join.php
+END
+server_status.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/25786/trunk/boinc/html/user/server_status.php
+END
+forum_search_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/24129/trunk/boinc/html/user/forum_search_action.php
+END
+forum_thread_vote.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/23010/trunk/boinc/html/user/forum_thread_vote.php
+END
+create_account.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/25488/trunk/boinc/html/user/create_account.php
+END
+download_network.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/23230/trunk/boinc/html/user/download_network.php
+END
+edit_user_info_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/23010/trunk/boinc/html/user/edit_user_info_form.php
+END
+forum_thread_status.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/24048/trunk/boinc/html/user/forum_thread_status.php
+END
+create_profile.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/24065/trunk/boinc/html/user/create_profile.php
+END
+team_join_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/23010/trunk/boinc/html/user/team_join_form.php
+END
+sandbox.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/25743/trunk/boinc/html/user/sandbox.php
+END
+team_manage.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/23023/trunk/boinc/html/user/team_manage.php
+END
+bolt.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/15921/trunk/boinc/html/user/bolt.php
+END
+edit_forum_preferences_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/25859/trunk/boinc/html/user/edit_forum_preferences_form.php
+END
+submit_status.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/23773/trunk/boinc/html/user/submit_status.php
+END
+team_remove_inactive_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23010/trunk/boinc/html/user/team_remove_inactive_form.php
+END
+team_founder_transfer_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23941/trunk/boinc/html/user/team_founder_transfer_action.php
+END
+bolt_admin.css
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/16314/trunk/boinc/html/user/bolt_admin.css
+END
+team_display.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/23228/trunk/boinc/html/user/team_display.php
+END
+forum_moderate_post.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/24048/trunk/boinc/html/user/forum_moderate_post.php
+END
+tree_threader.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/25557/trunk/boinc/html/user/tree_threader.php
+END
+team_edit_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/23010/trunk/boinc/html/user/team_edit_form.php
+END
+xml.gif
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/9190/trunk/boinc/html/user/xml.gif
+END
+forum_get_data.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/22623/trunk/boinc/html/user/forum_get_data.php
+END
+team_admins.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/23010/trunk/boinc/html/user/team_admins.php
+END
+profile_menu.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/24324/trunk/boinc/html/user/profile_menu.php
+END
+cert_all.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/25673/trunk/boinc/html/user/cert_all.php
+END
+team_email_list.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/23010/trunk/boinc/html/user/team_email_list.php
+END
+team_edit_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/24048/trunk/boinc/html/user/team_edit_action.php
+END
+opt_out.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/23010/trunk/boinc/html/user/opt_out.php
+END
+get_project_config.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/24300/trunk/boinc/html/user/get_project_config.php
+END
+bossa_apps.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/15758/trunk/boinc/html/user/bossa_apps.php
+END
+info.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/23010/trunk/boinc/html/user/info.php
+END
+forum_banishment_vote.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/24048/trunk/boinc/html/user/forum_banishment_vote.php
+END
+forum_post.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/25717/trunk/boinc/html/user/forum_post.php
+END
+languages.txt
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/1672/trunk/boinc/html/user/languages.txt
+END
+show_host_detail.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/23872/trunk/boinc/html/user/show_host_detail.php
+END
+bolt.css
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/22650/trunk/boinc/html/user/bolt.css
+END
+edit_passwd_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/24048/trunk/boinc/html/user/edit_passwd_action.php
+END
+login_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/24048/trunk/boinc/html/user/login_action.php
+END
+userw.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25101/trunk/boinc/html/user/userw.php
+END
+team_create_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/23010/trunk/boinc/html/user/team_create_action.php
+END
+old_news.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/23010/trunk/boinc/html/user/old_news.php
+END
+team_search.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/23507/trunk/boinc/html/user/team_search.php
+END
+profile_rate.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/23010/trunk/boinc/html/user/profile_rate.php
+END
+pm.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/24886/trunk/boinc/html/user/pm.php
+END
+delete_account.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/24048/trunk/boinc/html/user/delete_account.php
+END
+bolt_course.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/15921/trunk/boinc/html/user/bolt_course.php
+END
+am_set_host_info.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/23010/trunk/boinc/html/user/am_set_host_info.php
+END
+delete_profile.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/24067/trunk/boinc/html/user/delete_profile.php
+END
+language_select.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/23010/trunk/boinc/html/user/language_select.php
+END
+am_set_info.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/25721/trunk/boinc/html/user/am_set_info.php
+END
+head.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2794/trunk/boinc/html/user/head.jpg
+END
+ffmail_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/24048/trunk/boinc/html/user/ffmail_action.php
+END
+stats.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/24072/trunk/boinc/html/user/stats.php
+END
+donations.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/24048/trunk/boinc/html/user/donations.php
+END
+host_delete.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/24048/trunk/boinc/html/user/host_delete.php
+END
+forum_moderate_thread.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/24048/trunk/boinc/html/user/forum_moderate_thread.php
+END
+explain_state.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/24048/trunk/boinc/html/user/explain_state.php
+END
+moderation.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/24886/trunk/boinc/html/user/moderation.php
+END
+create_account_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/25335/trunk/boinc/html/user/create_account_form.php
+END
+cert_team.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/25673/trunk/boinc/html/user/cert_team.php
+END
+submit_rpc_handler.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/24959/trunk/boinc/html/user/submit_rpc_handler.php
+END
+openid_login.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25485/trunk/boinc/html/user/openid_login.php
+END
+sample_index.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/24174/trunk/boinc/html/user/sample_index.php
+END
+project_specific_prefs.inc.sample
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/11356/trunk/boinc/html/user/project_specific_prefs.inc.sample
+END
+create_account_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25485/trunk/boinc/html/user/create_account_action.php
+END
+forum_search.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/24129/trunk/boinc/html/user/forum_search.php
+END
+manage_project.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/25724/trunk/boinc/html/user/manage_project.php
+END
+bbcode.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/24622/trunk/boinc/html/user/bbcode.php
+END
+forum_thread.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25872/trunk/boinc/html/user/forum_thread.php
+END
+moderator_instructions.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23010/trunk/boinc/html/user/moderator_instructions.php
+END
+donation_ipn.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/15758/trunk/boinc/html/user/donation_ipn.php
+END
+top_users.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/23228/trunk/boinc/html/user/top_users.php
+END
+show_coproc.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/23872/trunk/boinc/html/user/show_coproc.php
+END
+main.css
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/23034/trunk/boinc/html/user/main.css
+END
+home.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/24048/trunk/boinc/html/user/home.php
+END
+forum_report_post.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25165/trunk/boinc/html/user/forum_report_post.php
+END
+account_finish_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/24048/trunk/boinc/html/user/account_finish_action.php
+END
+edit_passwd_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/23010/trunk/boinc/html/user/edit_passwd_form.php
+END
+view_profile.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25654/trunk/boinc/html/user/view_profile.php
+END
+get_passwd.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/24096/trunk/boinc/html/user/get_passwd.php
+END
+results.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/23625/trunk/boinc/html/user/results.php
+END
+forum_rate.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/24048/trunk/boinc/html/user/forum_rate.php
+END
+submit_app.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/24137/trunk/boinc/html/user/submit_app.php
+END
+host_app_versions.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25825/trunk/boinc/html/user/host_app_versions.php
+END
+forum_help_desk.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/24048/trunk/boinc/html/user/forum_help_desk.php
+END
+friend.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/24048/trunk/boinc/html/user/friend.php
+END
+app_versions.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/21105/trunk/boinc/html/user/app_versions.php
+END
+logout.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/23387/trunk/boinc/html/user/logout.php
+END
+host_update_credit.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/24048/trunk/boinc/html/user/host_update_credit.php
+END
+team_change_founder_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23010/trunk/boinc/html/user/team_change_founder_action.php
+END
+gpu_ratios.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/24616/trunk/boinc/html/user/gpu_ratios.php
+END
+host_venue_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/24048/trunk/boinc/html/user/host_venue_action.php
+END
+submit_example.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/24959/trunk/boinc/html/user/submit_example.php
+END
+host_edit_action.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/24048/trunk/boinc/html/user/host_edit_action.php
+END
+edit_email_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/23010/trunk/boinc/html/user/edit_email_form.php
+END
+forum_rss.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/24048/trunk/boinc/html/user/forum_rss.php
+END
+ffmail_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/24048/trunk/boinc/html/user/ffmail_form.php
+END
+sample_moderator_instructions.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23010/trunk/boinc/html/user/sample_moderator_instructions.php
+END
+bolt_course_sample.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/15758/trunk/boinc/html/user/bolt_course_sample.php
+END
+workunit.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/23116/trunk/boinc/html/user/workunit.php
+END
+uotd_gadget.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/23010/trunk/boinc/html/user/uotd_gadget.php
+END

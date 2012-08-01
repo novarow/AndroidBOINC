@@ -1,0 +1,659 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/25594/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas
+END
+CALaunchBOINCManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/24833/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CALaunchBOINCManager.cpp
+END
+aclmgmt.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/24954/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/aclmgmt.cpp
+END
+CAGrantBOINCProjectsRights.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/16674/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGrantBOINCProjectsRights.cpp
+END
+CASaveExecutionState.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/15439/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CASaveExecutionState.cpp
+END
+CASetPermissionBOINC.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/15010/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CASetPermissionBOINC.h
+END
+CACreateClientAuthFile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/18669/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CACreateClientAuthFile.cpp
+END
+terminate.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/terminate.cpp
+END
+main.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/main.h
+END
+CAValidateInstall.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/15425/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAValidateInstall.h
+END
+CAShutdownBOINCManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAShutdownBOINCManager.h
+END
+CAGrantBOINCAdminsVirtualBoxRights.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/24951/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGrantBOINCAdminsVirtualBoxRights.h
+END
+CASetPermissionBOINCDataProjects.h
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/14989/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CASetPermissionBOINCDataProjects.h
+END
+CAGrantBOINCUsersRights.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/19361/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGrantBOINCUsersRights.cpp
+END
+CAShutdownBOINC.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAShutdownBOINC.h
+END
+CAHideBOINCProjectProfile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/14964/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAHideBOINCProjectProfile.cpp
+END
+dirops.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/14989/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/dirops.cpp
+END
+lsaprivs.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/24954/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/lsaprivs.cpp
+END
+CARestoreSetupState.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/18466/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CARestoreSetupState.cpp
+END
+dcomperm.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/24954/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/dcomperm.h
+END
+CAMigrateBOINCDataVersion.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/15466/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAMigrateBOINCDataVersion.h
+END
+CACCConfigMd5sum.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/16169/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CACCConfigMd5sum.h
+END
+boinccas95.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/19548/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/boinccas95.vcproj
+END
+CACreateBOINCAccounts.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/16631/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CACreateBOINCAccounts.cpp
+END
+CASetPermissionBOINC.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/17772/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CASetPermissionBOINC.cpp
+END
+CAShutdownBOINCManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/18514/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAShutdownBOINCManager.cpp
+END
+CACreateProjectInitFile.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/19548/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CACreateProjectInitFile.h
+END
+CACreateBOINCGroups.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/14313/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CACreateBOINCGroups.h
+END
+CASetPermissionBOINCDataProjects.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/17772/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CASetPermissionBOINCDataProjects.cpp
+END
+CAGrantBOINCAdminsVirtualBoxRights.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/24951/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGrantBOINCAdminsVirtualBoxRights.cpp
+END
+CALaunchBOINCManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/24777/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CALaunchBOINCManager.h
+END
+sdmgmt.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/24954/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/sdmgmt.cpp
+END
+CAVerifyInstallDirectories.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/18396/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAVerifyInstallDirectories.cpp
+END
+CAGrantBOINCMasterRights.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/14313/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGrantBOINCMasterRights.h
+END
+CACreateClientAuthFile.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/14657/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CACreateClientAuthFile.h
+END
+boinccas.def
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/24951/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/boinccas.def
+END
+terminate.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/14598/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/terminate.h
+END
+CAShutdownBOINCScreensaver.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAShutdownBOINCScreensaver.h
+END
+utils.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/24954/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/utils.cpp
+END
+password.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/14331/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/password.cpp
+END
+CASetPermissionBOINCDataSlots.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/17772/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CASetPermissionBOINCDataSlots.cpp
+END
+wrappers.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/24951/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/wrappers.cpp
+END
+boinccas.rc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/25594/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/boinccas.rc
+END
+dirops.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/14989/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/dirops.h
+END
+CAHideBOINCProjectProfile.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/14964/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAHideBOINCProjectProfile.h
+END
+CAMigrateBOINCDataVersion.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/15466/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAMigrateBOINCDataVersion.cpp
+END
+lkuprid.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/24954/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/lkuprid.cpp
+END
+CAGrantBOINCProjectsVirtualBoxRights.h
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/24951/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGrantBOINCProjectsVirtualBoxRights.h
+END
+boinccas95.def
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/19633/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/boinccas95.def
+END
+CACleanupOldBinaries.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CACleanupOldBinaries.h
+END
+CAGrantBOINCAdminsRights.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/14964/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGrantBOINCAdminsRights.h
+END
+CAValidateSetupType.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/17778/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAValidateSetupType.cpp
+END
+CASetPermissionBOINCData.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/14989/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CASetPermissionBOINCData.h
+END
+CASaveSetupState.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/16631/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CASaveSetupState.cpp
+END
+boinccas.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/18396/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/boinccas.h
+END
+CAGrantBOINCMasterRights.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/16674/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGrantBOINCMasterRights.cpp
+END
+CACreateBOINCAccounts.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CACreateBOINCAccounts.h
+END
+CAGetUsersGroupName.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGetUsersGroupName.h
+END
+CAHideBOINCMasterProfile.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/14964/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAHideBOINCMasterProfile.h
+END
+CAGetAdministratorsGroupName.h
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGetAdministratorsGroupName.h
+END
+CAShutdownBOINCScreensaver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAShutdownBOINCScreensaver.cpp
+END
+CALaunchBOINCTray.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/24951/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CALaunchBOINCTray.h
+END
+stdafx.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/24788/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/stdafx.h
+END
+CAVerifyInstallDirectories.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/15425/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAVerifyInstallDirectories.h
+END
+boinccas.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/24954/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/boinccas.vcproj
+END
+CAGrantBOINCProjectRights.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/16674/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGrantBOINCProjectRights.cpp
+END
+CAMigratex86x64.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAMigratex86x64.cpp
+END
+CAGrantBOINCProjectsVirtualBoxRights.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/24951/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGrantBOINCProjectsVirtualBoxRights.cpp
+END
+launcher.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/24826/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/launcher.h
+END
+CAMigrateBOINCData.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/15175/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAMigrateBOINCData.h
+END
+CASetPermissionBOINCDataSlots.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/14989/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CASetPermissionBOINCDataSlots.h
+END
+password.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/14331/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/password.h
+END
+CACleanupOldBinaries.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CACleanupOldBinaries.cpp
+END
+CAGrantBOINCAdminsRights.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/19361/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGrantBOINCAdminsRights.cpp
+END
+CAShutdownUD.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAShutdownUD.cpp
+END
+CARestoreExecutionState.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/15439/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CARestoreExecutionState.cpp
+END
+CASetPermissionBOINCData.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/17772/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CASetPermissionBOINCData.cpp
+END
+CAMigrateBOINCDataCleanup.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/15466/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAMigrateBOINCDataCleanup.h
+END
+lkuprid.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/5553/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/lkuprid.h
+END
+boinccas.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/18396/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/boinccas.cpp
+END
+CAGetUsersGroupName.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGetUsersGroupName.cpp
+END
+CAValidateInstall.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/22021/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAValidateInstall.cpp
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/main.cpp
+END
+CAValidateSetupType.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAValidateSetupType.h
+END
+CAHideBOINCMasterProfile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/14964/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAHideBOINCMasterProfile.cpp
+END
+CAGetAdministratorsGroupName.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGetAdministratorsGroupName.cpp
+END
+CAValidateRebootRequest.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/15606/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAValidateRebootRequest.h
+END
+CASaveSetupState.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CASaveSetupState.h
+END
+CALaunchBOINCTray.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/24951/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CALaunchBOINCTray.cpp
+END
+stdafx.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/7985/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/stdafx.cpp
+END
+CAShutdownBOINC.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/14659/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAShutdownBOINC.cpp
+END
+CAGrantBOINCProjectsRights.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/14964/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGrantBOINCProjectsRights.h
+END
+listacl.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/24951/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/listacl.cpp
+END
+boinccas.sln
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/12764/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/boinccas.sln
+END
+CASaveExecutionState.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/15435/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CASaveExecutionState.h
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/5553/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/resource.h
+END
+CAMigrateBOINCData.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/17737/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAMigrateBOINCData.cpp
+END
+launcher.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/24951/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/launcher.cpp
+END
+CAGrantBOINCUsersRights.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/14964/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGrantBOINCUsersRights.h
+END
+CAGrantBOINCProjectRights.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/14313/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAGrantBOINCProjectRights.h
+END
+lsaprivs.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/14964/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/lsaprivs.h
+END
+CAMigratex86x64.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAMigratex86x64.h
+END
+CAMigrateBOINCDataCleanup.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/15466/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAMigrateBOINCDataCleanup.cpp
+END
+CACCConfigMd5sum.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/21175/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CACCConfigMd5sum.cpp
+END
+CAShutdownUD.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAShutdownUD.h
+END
+CARestoreSetupState.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/13804/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CARestoreSetupState.h
+END
+CARestoreExecutionState.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/15435/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CARestoreExecutionState.h
+END
+CAValidateRebootRequest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/15945/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CAValidateRebootRequest.cpp
+END
+CACreateProjectInitFile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/21147/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CACreateProjectInitFile.cpp
+END
+CACreateBOINCGroups.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/25594/trunk/boinc/win_build/installerv2/redist/Windows/src/boinccas/CACreateBOINCGroups.cpp
+END

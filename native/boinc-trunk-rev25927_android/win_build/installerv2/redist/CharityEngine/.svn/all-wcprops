@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23977/trunk/boinc/win_build/installerv2/redist/CharityEngine
+END
+CE_IsDialogBanner.bmp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/23977/trunk/boinc/win_build/installerv2/redist/CharityEngine/CE_IsDialogBanner.bmp
+END
+CE_IsDialogBitmap.bmp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/23977/trunk/boinc/win_build/installerv2/redist/CharityEngine/CE_IsDialogBitmap.bmp
+END
+CE_Splash.bmp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/23977/trunk/boinc/win_build/installerv2/redist/CharityEngine/CE_Splash.bmp
+END
+acct_mgr_url.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/23977/trunk/boinc/win_build/installerv2/redist/CharityEngine/acct_mgr_url.xml
+END
+ce.ico
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/23977/trunk/boinc/win_build/installerv2/redist/CharityEngine/ce.ico
+END

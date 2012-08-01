@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/24642/trunk/boinc/clientgui/res/skins/default/graphic
+END
+background_image.xpm
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/24412/trunk/boinc/clientgui/res/skins/default/graphic/background_image.xpm
+END
+workunit_animation_image.xpm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/22898/trunk/boinc/clientgui/res/skins/default/graphic/workunit_animation_image.xpm
+END
+workunit_running_image.xpm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/24441/trunk/boinc/clientgui/res/skins/default/graphic/workunit_running_image.xpm
+END
+workunit_waiting_image.xpm
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/24441/trunk/boinc/clientgui/res/skins/default/graphic/workunit_waiting_image.xpm
+END
+project_image.xpm
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/24642/trunk/boinc/clientgui/res/skins/default/graphic/project_image.xpm
+END
+workunit_suspended_image.xpm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/24441/trunk/boinc/clientgui/res/skins/default/graphic/workunit_suspended_image.xpm
+END
+dialog_background_image.xpm
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/24412/trunk/boinc/clientgui/res/skins/default/graphic/dialog_background_image.xpm
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/13818/trunk/boinc/html/bt/database
+END
+bittorrent_files.sql
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/13297/trunk/boinc/html/bt/database/bittorrent_files.sql
+END
+bittorrent_ipbans.sql
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/13818/trunk/boinc/html/bt/database/bittorrent_ipbans.sql
+END
+bittorrent_peers.sql
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/13793/trunk/boinc/html/bt/database/bittorrent_peers.sql
+END

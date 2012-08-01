@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/23453/trunk/boinc/samples/vboxwrapper/deprecated
+END
+vbox.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23449/trunk/boinc/samples/vboxwrapper/deprecated/vbox.h
+END
+vm.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/23453/trunk/boinc/samples/vboxwrapper/deprecated/vm.h
+END
+vbox_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/23450/trunk/boinc/samples/vboxwrapper/deprecated/vbox_win.cpp
+END
+vbox.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23448/trunk/boinc/samples/vboxwrapper/deprecated/vbox.cpp
+END
+vboxwrapper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/23451/trunk/boinc/samples/vboxwrapper/deprecated/vboxwrapper.cpp
+END
+vm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/23452/trunk/boinc/samples/vboxwrapper/deprecated/vm.cpp
+END

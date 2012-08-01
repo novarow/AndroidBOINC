@@ -21,7 +21,7 @@
 #
 ###########################################################################
 
-prefix=/home/novarow/tools/android-4-tc/arm-linux-androideabi
+prefix=/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi
 exec_prefix=${prefix}
 includedir=${prefix}/include
 
@@ -136,24 +136,24 @@ while test $# -gt 0; do
        	;;
 
     --libs)
-	if test "X/home/novarow/tools/android-4-tc/arm-linux-androideabi/lib" != "X/usr/lib" -a "X/home/novarow/tools/android-4-tc/arm-linux-androideabi/lib" != "X/usr/lib64"; then
-	   CURLLIBDIR="-L/home/novarow/tools/android-4-tc/arm-linux-androideabi/lib "
+	if test "X/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi/lib" != "X/usr/lib" -a "X/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi/lib" != "X/usr/lib64"; then
+	   CURLLIBDIR="-L/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi/lib "
 	else
 	   CURLLIBDIR=""
 	fi
 	if test "Xyes" = "Xyes"; then
-	  echo ${CURLLIBDIR}-lcurl -L/home/novarow/tools/android-4-tc/sysroot/usr/lib -L/home/novarow/tools/android-4-tc/arm-linux-androideabi/lib -llog -lssl -lcrypto -lz 
+	  echo ${CURLLIBDIR}-lcurl -L/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/lib -L/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi/lib -llog -lssl -lcrypto -lz 
 	else
-	  echo ${CURLLIBDIR}-lcurl -L/home/novarow/tools/android-4-tc/sysroot/usr/lib -L/home/novarow/tools/android-4-tc/arm-linux-androideabi/lib -llog 
+	  echo ${CURLLIBDIR}-lcurl -L/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/lib -L/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi/lib -llog 
 	fi
 	;;
 
     --static-libs)
-	echo /home/novarow/tools/android-4-tc/arm-linux-androideabi/lib/libcurl.a -L/home/novarow/tools/android-4-tc/sysroot/usr/lib -L/home/novarow/tools/android-4-tc/arm-linux-androideabi/lib -llog -lssl -lcrypto -lz 
+	echo /home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi/lib/libcurl.a -L/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/lib -L/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi/lib -llog -lssl -lcrypto -lz 
 	;;
 
     --configure)
-      echo " '--host=arm-linux' '--prefix=/home/novarow/tools/android-4-tc/arm-linux-androideabi' '--libdir=/home/novarow/tools/android-4-tc/arm-linux-androideabi/lib' '--disable-shared' '--enable-static' '--with-random=/dev/urandom' 'host_alias=arm-linux' 'CC=arm-linux-androideabi-gcc' 'CFLAGS=--sysroot=/home/novarow/tools/android-4-tc/sysroot -DANDROID -DDECLARE_TIMEZONE -Wall -I/home/novarow/tools/android-4-tc/arm-linux-androideabi/include -O3 -fomit-frame-pointer' 'LDFLAGS=-L/home/novarow/tools/android-4-tc/sysroot/usr/lib -L/home/novarow/tools/android-4-tc/arm-linux-androideabi/lib -llog'"
+      echo " '--host=arm-linux' '--prefix=/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi' '--libdir=/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi/lib' '--disable-shared' '--enable-static' '--with-random=/dev/urandom' 'host_alias=arm-linux' 'CC=arm-linux-androideabi-gcc' 'CFLAGS=--sysroot=/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot -DANDROID -DDECLARE_TIMEZONE -Wall -I/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi/include -O3 -fomit-frame-pointer' 'LDFLAGS=-L/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/lib -L/home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi/lib -llog'"
     ;;
 
     *)

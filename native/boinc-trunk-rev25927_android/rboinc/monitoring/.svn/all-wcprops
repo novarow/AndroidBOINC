@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/24510/trunk/boinc/rboinc/monitoring
+END
+monitoring_errors.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/24510/trunk/boinc/rboinc/monitoring/monitoring_errors.pl
+END
+monitoring_functions.sql
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/23083/trunk/boinc/rboinc/monitoring/monitoring_functions.sql
+END
+monitoring_compute.sql
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/23083/trunk/boinc/rboinc/monitoring/monitoring_compute.sql
+END
+monitoring_cron.sh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/24510/trunk/boinc/rboinc/monitoring/monitoring_cron.sh
+END
+generate_error_table.sh
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/24510/trunk/boinc/rboinc/monitoring/generate_error_table.sh
+END
+monitoring_errors_table.pm
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/23083/trunk/boinc/rboinc/monitoring/monitoring_errors_table.pm
+END
+monitoring_schema.sql
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23083/trunk/boinc/rboinc/monitoring/monitoring_schema.sql
+END
+monitoring_status.sql
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23083/trunk/boinc/rboinc/monitoring/monitoring_status.sql
+END
+duplicate_late.sh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/24510/trunk/boinc/rboinc/monitoring/duplicate_late.sh
+END

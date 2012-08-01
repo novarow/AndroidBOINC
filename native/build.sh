@@ -1,4 +1,4 @@
-#!/bin/sh
+#/bin/sh
 #script to compile BOINC for Android
 
 #===adapt the following paths============================
@@ -9,9 +9,10 @@ ANDROIDTC="/home/novarow/Documents/AndroidBOINC/native/android-4-tc"
 #OpenSSL
 OPENSSL="/home/novarow/Documents/AndroidBOINC/native/openssl-1.0.0d"
 #Curl
-CURL="/home/novarow/Documents/AndroidBOINC/native/curl-7.21.4"
+CURL="/home/novarow/Documents/AndroidBOINC/native/curl-7.27.0"
 #BOINC
-BOINC="/home/novarow/Documents/AndroidBOINC/native/boinc-7.0.9"
+#BOINC="/home/novarow/Documents/AndroidBOINC/native/boinc-7.0.9"
+BOINC="/home/novarow/Documents/AndroidBOINC/native/boinc-trunk-rev25927_android"
 #BOINC Application
 BAPP="$BOINC/samples/example_app"
 
@@ -25,11 +26,13 @@ TARGETAPK="/home/novarow/VBshare/ews/edu.berkeley.boinc.AndroidBOINCActivity/ass
 #===...and configure the script=======================
 #CONFIGURE="yes"
 #MAKECLEAN="yes"
+#CONFIGUREBOINC="yes"
+#MAKECLEANBOINC="yes"
 
 #COMPILEOPENSSL="yes" #compiling required libraries. ONLY NECESSARY if libssl.a and libcurl.a DO NOT EXIST in $TCINCLUDES
 #COMPILECURL="yes"
-COMPILEBOINC="yes"
-#COMPILEAPP="yes"
+#COMPILEBOINC="yes"
+COMPILEAPP="yes"
 #=============================================================
 
 
@@ -41,7 +44,7 @@ TCSYSROOT="$ANDROIDTC/sysroot" #SYSROOT of Android device
 STDCPPTC="$TCINCLUDES/lib/libstdc++.a" #stdc++ library
 
 #compiler setup
-export PATH="$PATH:$TCBINARIES" #add location of compiler binaries to PATH
+export PATH="$PATH:$TCBINARIES:$TCINCLUDES/bin" #add location of compiler binaries to PATH
 export CC=arm-linux-androideabi-gcc #C compiler
 export CXX=arm-linux-androideabi-g++ #C++ compiler
 export LD=arm-linux-androideabi-ld #LD tool
@@ -61,12 +64,16 @@ echo "==========================================================================
 if [ -n "$COMPILEOPENSSL" ]; then
 echo "================building openssl from $OPENSSL============================="
 cd $OPENSSL
+if [ -n "$MAKECLEAN" ]; then
 make clean
+fi
+if [ -n "$CONFIGURE" ]; then
 ./Configure linux-generic32 no-shared no-dso -DL_ENDIAN --openssldir="$TCINCLUDES/ssl"
 #override flags in Makefile
 sed -e "s/^CFLAG=.*$/`grep -e \^CFLAG= Makefile` \$(CFLAGS)/g
 s%^INSTALLTOP=.*%INSTALLTOP=$TCINCLUDES%g" Makefile > Makefile.out
 mv Makefile.out Makefile
+fi
 make
 make install_sw
 echo "====================building openssl done=================================="
@@ -74,8 +81,12 @@ fi
 if [ -n "$COMPILECURL" ]; then
 echo "==================building curl from $CURL================================="
 cd $CURL
+if [ -n "$MAKECLEAN" ]; then
 make clean
+fi
+if [ -n "$CONFIGURE" ]; then
 ./configure --host=arm-linux --prefix=$TCINCLUDES --libdir="$TCINCLUDES/lib" --disable-shared --enable-static --with-random=/dev/urandom
+fi
 make
 make install
 echo "===================building curl done============================="
@@ -83,10 +94,10 @@ fi
 if [ -n "$COMPILEBOINC" ]; then
 echo "==================building BOINC from $BOINC=========================="
 cd $BOINC
-if [ -n "$MAKECLEAN" ]; then
+if [ -n "$MAKECLEANBOINC" ]; then
 make clean
 fi
-if [ -n "$CONFIGURE" ]; then
+if [ -n "$CONFIGUREBOINC" ]; then
 ./_autosetup
 ./configure --host=arm-linux --prefix=$BOINCINSTALL --with-boinc-platform=arm-android-linux-gnu --with-boinc-alt-platform=arm-android --disable-server --disable-manager --disable-shared --enable-static
 sed -e "s%^CLIENTLIBS *= *.*$%CLIENTLIBS = -lm $STDCPPTC%g" client/Makefile > client/Makefile.out #override libstdc++ in Makefile

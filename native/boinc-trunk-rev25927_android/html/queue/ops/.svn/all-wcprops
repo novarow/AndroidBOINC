@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/14554/trunk/boinc/html/queue/ops
+END
+ops_queue_show_queue.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/14229/trunk/boinc/html/queue/ops/ops_queue_show_queue.php
+END
+ops_queue_remove_job.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/14554/trunk/boinc/html/queue/ops/ops_queue_remove_job.php
+END
+ops_queue_show_job.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/14229/trunk/boinc/html/queue/ops/ops_queue_show_job.php
+END

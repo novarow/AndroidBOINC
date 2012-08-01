@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/23083/trunk/boinc/rboinc/server/etc
+END
+rboinc_httpd_conf
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/23083/trunk/boinc/rboinc/server/etc/rboinc_httpd_conf
+END
+default_LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/23083/trunk/boinc/rboinc/server/etc/default_LICENSE
+END
+default_idx_file
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/23083/trunk/boinc/rboinc/server/etc/default_idx_file
+END
+default_COPYRIGHT
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/23083/trunk/boinc/rboinc/server/etc/default_COPYRIGHT
+END
+default_hills_file
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/23083/trunk/boinc/rboinc/server/etc/default_hills_file
+END
+user.passwd
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/23083/trunk/boinc/rboinc/server/etc/user.passwd
+END
+default_metainp_file
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/23083/trunk/boinc/rboinc/server/etc/default_metainp_file
+END
+default_metadata_file
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23083/trunk/boinc/rboinc/server/etc/default_metadata_file
+END

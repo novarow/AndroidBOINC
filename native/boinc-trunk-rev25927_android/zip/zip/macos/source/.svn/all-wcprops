@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source
+END
+pathname.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/pathname.c
+END
+VolWarn.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/VolWarn.h
+END
+unixlike.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/unixlike.h
+END
+pathname.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/pathname.h
+END
+macos.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/macos.c
+END
+helpers.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/helpers.c
+END
+zip_rc.hqx
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/zip_rc.hqx
+END
+helpers.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/helpers.h
+END
+macstuff.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/macstuff.c
+END
+recurse.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/recurse.c
+END
+macglob.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/macglob.h
+END
+extrafld.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/extrafld.c
+END
+recurse.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/recurse.h
+END
+macstuff.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/macstuff.h
+END
+mactime.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/mactime.c
+END
+charmap.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/charmap.h
+END
+macopen.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/macopen.c
+END
+mactime.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/mactime.h
+END
+macopen.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/macopen.h
+END
+getenv.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/getenv.c
+END
+unixlike.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25056/trunk/boinc/zip/zip/macos/source/unixlike.c
+END

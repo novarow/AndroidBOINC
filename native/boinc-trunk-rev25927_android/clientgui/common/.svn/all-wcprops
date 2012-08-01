@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/23657/trunk/boinc/clientgui/common
+END
+wxFlatNotebookImages.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/23657/trunk/boinc/clientgui/common/wxFlatNotebookImages.h
+END
+wxPieCtrl.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/19961/trunk/boinc/clientgui/common/wxPieCtrl.cpp
+END
+wxFNBDropTarget.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/17861/trunk/boinc/clientgui/common/wxFNBDropTarget.h
+END
+wxFlatNotebook.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/19971/trunk/boinc/clientgui/common/wxFlatNotebook.cpp
+END
+wxPieCtrl.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/19961/trunk/boinc/clientgui/common/wxPieCtrl.h
+END
+wxFlatNotebook.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/11338/trunk/boinc/clientgui/common/wxFlatNotebook.h
+END

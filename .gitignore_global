@@ -1,9 +1,7 @@
-*.so
 *.o
 *.lo
 *.Po
 *.Plo
-*.a
 *.la
 *.lai
 *.class

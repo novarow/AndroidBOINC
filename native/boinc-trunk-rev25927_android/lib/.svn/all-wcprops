@@ -1,0 +1,623 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/25884/trunk/boinc/lib
+END
+stackwalker_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/12364/trunk/boinc/lib/stackwalker_win.h
+END
+win_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/24474/trunk/boinc/lib/win_util.h
+END
+cert_sig.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/23984/trunk/boinc/lib/cert_sig.cpp
+END
+procinfo_mac.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25880/trunk/boinc/lib/procinfo_mac.cpp
+END
+mac_address.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25837/trunk/boinc/lib/mac_address.cpp
+END
+crypt.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/25838/trunk/boinc/lib/crypt.h
+END
+mem_usage.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/15762/trunk/boinc/lib/mem_usage.h
+END
+boinc_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/15929/trunk/boinc/lib/boinc_win.cpp
+END
+gui_rpc_client_ops.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/25837/trunk/boinc/lib/gui_rpc_client_ops.cpp
+END
+str_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/25837/trunk/boinc/lib/str_util.h
+END
+parse.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/25499/trunk/boinc/lib/parse.cpp
+END
+thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/24235/trunk/boinc/lib/thread.h
+END
+prefs.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/25465/trunk/boinc/lib/prefs.cpp
+END
+average.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/25838/trunk/boinc/lib/average.h
+END
+unix_util.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25837/trunk/boinc/lib/unix_util.cpp
+END
+app_ipc.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/25753/trunk/boinc/lib/app_ipc.h
+END
+synch_test.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/16069/trunk/boinc/lib/synch_test.cpp
+END
+md5_file.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/21457/trunk/boinc/lib/md5_file.cpp
+END
+procinfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/24664/trunk/boinc/lib/procinfo.h
+END
+synch.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/22739/trunk/boinc/lib/synch.cpp
+END
+msg_test.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/16069/trunk/boinc/lib/msg_test.cpp
+END
+coproc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/25884/trunk/boinc/lib/coproc.cpp
+END
+boinc_fcgi.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/17388/trunk/boinc/lib/boinc_fcgi.h
+END
+stackwalker_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/23842/trunk/boinc/lib/stackwalker_win.cpp
+END
+base64.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/15762/trunk/boinc/lib/base64.h
+END
+miofile.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/23978/trunk/boinc/lib/miofile.h
+END
+win_util.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/24121/trunk/boinc/lib/win_util.cpp
+END
+procinfo_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25599/trunk/boinc/lib/procinfo_win.cpp
+END
+msg_log.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/16904/trunk/boinc/lib/msg_log.h
+END
+common_defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25821/trunk/boinc/lib/common_defs.h
+END
+mfile.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/15762/trunk/boinc/lib/mfile.h
+END
+gui_rpc_client_print.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/25297/trunk/boinc/lib/gui_rpc_client_print.cpp
+END
+mem_usage.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/24303/trunk/boinc/lib/mem_usage.cpp
+END
+proc_control.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/24431/trunk/boinc/lib/proc_control.cpp
+END
+cert_sig.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/23984/trunk/boinc/lib/cert_sig.h
+END
+url.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/25838/trunk/boinc/lib/url.h
+END
+shmem.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/25427/trunk/boinc/lib/shmem.cpp
+END
+average.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/21021/trunk/boinc/lib/average.cpp
+END
+mac_address.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/16432/trunk/boinc/lib/mac_address.h
+END
+boinc_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/25665/trunk/boinc/lib/boinc_win.h
+END
+daemonmgt.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/19866/trunk/boinc/lib/daemonmgt.h
+END
+notice.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/23978/trunk/boinc/lib/notice.cpp
+END
+boinc_fcgi.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/17388/trunk/boinc/lib/boinc_fcgi.cpp
+END
+procinfo_unix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/25659/trunk/boinc/lib/procinfo_unix.cpp
+END
+filesys.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/25480/trunk/boinc/lib/filesys.h
+END
+base64.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/21457/trunk/boinc/lib/base64.cpp
+END
+miofile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/21457/trunk/boinc/lib/miofile.cpp
+END
+prefs.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/25838/trunk/boinc/lib/prefs.h
+END
+crypt_prog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25244/trunk/boinc/lib/crypt_prog.cpp
+END
+daemonmgt_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/21457/trunk/boinc/lib/daemonmgt_win.cpp
+END
+hostinfo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/25674/trunk/boinc/lib/hostinfo.cpp
+END
+network.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/25838/trunk/boinc/lib/network.cpp
+END
+error_numbers.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25601/trunk/boinc/lib/error_numbers.h
+END
+coproc.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/25849/trunk/boinc/lib/coproc.h
+END
+idlemon.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/19726/trunk/boinc/lib/idlemon.h
+END
+mfile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/24233/trunk/boinc/lib/mfile.cpp
+END
+std_fixes.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/15762/trunk/boinc/lib/std_fixes.h
+END
+url.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/25837/trunk/boinc/lib/url.cpp
+END
+idlemon_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/21457/trunk/boinc/lib/idlemon_win.cpp
+END
+diagnostics.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25676/trunk/boinc/lib/diagnostics.cpp
+END
+str_replace.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25631/trunk/boinc/lib/str_replace.h
+END
+proc_control.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/24474/trunk/boinc/lib/proc_control.h
+END
+shmem_test.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/16069/trunk/boinc/lib/shmem_test.cpp
+END
+parse_test.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25260/trunk/boinc/lib/parse_test.cpp
+END
+Makefile.mingw
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25881/trunk/boinc/lib/Makefile.mingw
+END
+cl_boinc.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/24618/trunk/boinc/lib/cl_boinc.h
+END
+util.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/25837/trunk/boinc/lib/util.cpp
+END
+shmem.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/25838/trunk/boinc/lib/shmem.h
+END
+filesys.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/25874/trunk/boinc/lib/filesys.cpp
+END
+cal_boinc.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/22039/trunk/boinc/lib/cal_boinc.h
+END
+cc_config.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/25691/trunk/boinc/lib/cc_config.h
+END
+run_app_windows.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/24120/trunk/boinc/lib/run_app_windows.h
+END
+md5_test.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/16069/trunk/boinc/lib/md5_test.cpp
+END
+md5.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/20873/trunk/boinc/lib/md5.c
+END
+notice.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/22543/trunk/boinc/lib/notice.h
+END
+diagnostics_win.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/15762/trunk/boinc/lib/diagnostics_win.h
+END
+md5.h
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/10/trunk/boinc/lib/md5.h
+END
+gui_rpc_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25659/trunk/boinc/lib/gui_rpc_client.h
+END
+stackwalker_imports.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/23282/trunk/boinc/lib/stackwalker_imports.h
+END
+network.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/25710/trunk/boinc/lib/network.h
+END
+hostinfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/25259/trunk/boinc/lib/hostinfo.h
+END
+msg_queue.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/25838/trunk/boinc/lib/msg_queue.h
+END
+crypt.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/25659/trunk/boinc/lib/crypt.cpp
+END
+proxy_info.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/23975/trunk/boinc/lib/proxy_info.h
+END
+x_util.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/19291/trunk/boinc/lib/x_util.cpp
+END
+str_util.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/25821/trunk/boinc/lib/str_util.cpp
+END
+thread.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/24235/trunk/boinc/lib/thread.cpp
+END
+cc_config.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25691/trunk/boinc/lib/cc_config.cpp
+END
+app_ipc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/25691/trunk/boinc/lib/app_ipc.cpp
+END
+diagnostics.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/20198/trunk/boinc/lib/diagnostics.h
+END
+run_app_windows.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/24119/trunk/boinc/lib/run_app_windows.cpp
+END
+parse.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/24617/trunk/boinc/lib/parse.h
+END
+procinfo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/25457/trunk/boinc/lib/procinfo.cpp
+END
+util.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/25837/trunk/boinc/lib/util.h
+END
+diagnostics_win.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/25599/trunk/boinc/lib/diagnostics_win.cpp
+END
+unix_util.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/24303/trunk/boinc/lib/unix_util.h
+END
+gui_rpc_client.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/24648/trunk/boinc/lib/gui_rpc_client.cpp
+END
+msg_log.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/25587/trunk/boinc/lib/msg_log.cpp
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/25269/trunk/boinc/lib/Makefile.am
+END
+synch.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/15762/trunk/boinc/lib/synch.h
+END
+md5_file.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/17966/trunk/boinc/lib/md5_file.h
+END
+msg_queue.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/24303/trunk/boinc/lib/msg_queue.cpp
+END
+proxy_info.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25105/trunk/boinc/lib/proxy_info.cpp
+END

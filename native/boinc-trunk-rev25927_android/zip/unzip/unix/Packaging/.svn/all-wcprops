@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unix/Packaging
+END
+postinstall
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unix/Packaging/postinstall
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unix/Packaging/README
+END
+pkginfo.in
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unix/Packaging/pkginfo.in
+END
+preinstall.in
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unix/Packaging/preinstall.in
+END
+prototype
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/25056/trunk/boinc/zip/unzip/unix/Packaging/prototype
+END

@@ -1,0 +1,425 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/25875/trunk/boinc/html/inc
+END
+email.inc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/24510/trunk/boinc/html/inc/email.inc
+END
+forum_banishment_vote.inc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/15758/trunk/boinc/html/inc/forum_banishment_vote.inc
+END
+akismet.inc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/16175/trunk/boinc/html/inc/akismet.inc
+END
+translation.inc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/25673/trunk/boinc/html/inc/translation.inc
+END
+bbcode_html.inc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/24886/trunk/boinc/html/inc/bbcode_html.inc
+END
+bolt_xset.inc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/22623/trunk/boinc/html/inc/bolt_xset.inc
+END
+geoip.inc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/14951/trunk/boinc/html/inc/geoip.inc
+END
+stats_sites.inc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/25780/trunk/boinc/html/inc/stats_sites.inc
+END
+bossa.inc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/15758/trunk/boinc/html/inc/bossa.inc
+END
+team_types.inc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/15758/trunk/boinc/html/inc/team_types.inc
+END
+result.inc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25873/trunk/boinc/html/inc/result.inc
+END
+user.inc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25581/trunk/boinc/html/inc/user.inc
+END
+util_basic.inc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/22959/trunk/boinc/html/inc/util_basic.inc
+END
+prefs.inc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25351/trunk/boinc/html/inc/prefs.inc
+END
+bossa_example.inc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/17847/trunk/boinc/html/inc/bossa_example.inc
+END
+db.inc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/24050/trunk/boinc/html/inc/db.inc
+END
+team.inc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/24050/trunk/boinc/html/inc/team.inc
+END
+wap.inc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/25101/trunk/boinc/html/inc/wap.inc
+END
+forum.inc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/25875/trunk/boinc/html/inc/forum.inc
+END
+bolt_ex.inc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/16363/trunk/boinc/html/inc/bolt_ex.inc
+END
+bolt_util.inc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/16384/trunk/boinc/html/inc/bolt_util.inc
+END
+time.inc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/22623/trunk/boinc/html/inc/time.inc
+END
+sandbox.inc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25740/trunk/boinc/html/inc/sandbox.inc
+END
+forum_email.inc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/23941/trunk/boinc/html/inc/forum_email.inc
+END
+bolt_select.inc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/22623/trunk/boinc/html/inc/bolt_select.inc
+END
+submit_util.inc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/25745/trunk/boinc/html/inc/submit_util.inc
+END
+profile.inc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/24050/trunk/boinc/html/inc/profile.inc
+END
+db_conn.inc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/25711/trunk/boinc/html/inc/db_conn.inc
+END
+db_ops.inc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/25260/trunk/boinc/html/inc/db_ops.inc
+END
+submit_db.inc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/25724/trunk/boinc/html/inc/submit_db.inc
+END
+notify.inc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/22045/trunk/boinc/html/inc/notify.inc
+END
+credit.inc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/15758/trunk/boinc/html/inc/credit.inc
+END
+pm.inc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/24886/trunk/boinc/html/inc/pm.inc
+END
+news.inc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/23119/trunk/boinc/html/inc/news.inc
+END
+bolt_util_ops.inc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/16384/trunk/boinc/html/inc/bolt_util_ops.inc
+END
+bbcode_convert.inc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/19949/trunk/boinc/html/inc/bbcode_convert.inc
+END
+text_transform.inc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/24622/trunk/boinc/html/inc/text_transform.inc
+END
+image.inc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/15758/trunk/boinc/html/inc/image.inc
+END
+dir_hier.inc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/15758/trunk/boinc/html/inc/dir_hier.inc
+END
+forum_db.inc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/22748/trunk/boinc/html/inc/forum_db.inc
+END
+recaptchalib.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/13961/trunk/boinc/html/inc/recaptchalib.php
+END
+boinc_db.inc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/25719/trunk/boinc/html/inc/boinc_db.inc
+END
+bolt.inc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/22623/trunk/boinc/html/inc/bolt.inc
+END
+GeoIP.dat
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/14951/trunk/boinc/html/inc/GeoIP.dat
+END
+cache.inc
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/24152/trunk/boinc/html/inc/cache.inc
+END
+bolt_rnd.inc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/22623/trunk/boinc/html/inc/bolt_rnd.inc
+END
+bossa_example2.inc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/17840/trunk/boinc/html/inc/bossa_example2.inc
+END
+bossa_example3.inc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/15758/trunk/boinc/html/inc/bossa_example3.inc
+END
+bolt_sched.inc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/16305/trunk/boinc/html/inc/bolt_sched.inc
+END
+bossa_example4.inc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/17789/trunk/boinc/html/inc/bossa_example4.inc
+END
+sanitize_html.inc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/15758/trunk/boinc/html/inc/sanitize_html.inc
+END
+countries.inc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/18397/trunk/boinc/html/inc/countries.inc
+END
+bossa_db.inc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/22748/trunk/boinc/html/inc/bossa_db.inc
+END
+prefs_util.inc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/23355/trunk/boinc/html/inc/prefs_util.inc
+END
+util.inc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25743/trunk/boinc/html/inc/util.inc
+END
+forum_rss.inc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/24483/trunk/boinc/html/inc/forum_rss.inc
+END
+bolt_snap.inc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/16370/trunk/boinc/html/inc/bolt_snap.inc
+END
+kses.php
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/13804/trunk/boinc/html/inc/kses.php
+END
+bolt_cat.inc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/16390/trunk/boinc/html/inc/bolt_cat.inc
+END
+bossa_impl.inc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/23617/trunk/boinc/html/inc/bossa_impl.inc
+END
+page_translate.inc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/15758/trunk/boinc/html/inc/page_translate.inc
+END
+cert.inc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/15758/trunk/boinc/html/inc/cert.inc
+END
+util_ops.inc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/25731/trunk/boinc/html/inc/util_ops.inc
+END
+xml.inc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/25608/trunk/boinc/html/inc/xml.inc
+END
+submit.inc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/24959/trunk/boinc/html/inc/submit.inc
+END
+bolt_db.inc
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/22623/trunk/boinc/html/inc/bolt_db.inc
+END
+friend.inc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/23498/trunk/boinc/html/inc/friend.inc
+END
+bolt_seq.inc
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/22623/trunk/boinc/html/inc/bolt_seq.inc
+END
+uotd.inc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/25673/trunk/boinc/html/inc/uotd.inc
+END
+host.inc
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/24882/trunk/boinc/html/inc/host.inc
+END

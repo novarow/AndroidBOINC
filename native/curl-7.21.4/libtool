@@ -138,7 +138,7 @@ old_postuninstall_cmds=""
 LTCC="arm-linux-androideabi-gcc"
 
 # LTCC compiler flags.
-LTCFLAGS="--sysroot=/home/novarow/tools/android-4-tc/sysroot -DANDROID -DDECLARE_TIMEZONE -Wall -isystem /home/novarow/tools/android-4-tc/arm-linux-androideabi/include -O3 -fomit-frame-pointer -g0 -Wno-system-headers"
+LTCFLAGS="--sysroot=/home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot -DANDROID -DDECLARE_TIMEZONE -Wall -isystem /home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi/include -O3 -fomit-frame-pointer -g0 -Wno-system-headers"
 
 # Take the output of nm and produce a listing of raw symbols and C names.
 global_symbol_pipe=""
@@ -240,7 +240,7 @@ finish_eval=""
 hardcode_into_libs=yes
 
 # Compile-time system search path for libraries.
-sys_lib_search_path_spec="/home/novarow/tools/android-4-tc/lib/gcc/arm-linux-androideabi/4.4.3 /home/novarow/tools/android-4-tc/lib/gcc /home/novarow/tools/android-4-tc/arm-linux-androideabi/lib /home/novarow/tools/android-4-tc/sysroot/usr/lib"
+sys_lib_search_path_spec="/home/novarow/Documents/AndroidBOINC/native/android-4-tc/lib/gcc/arm-linux-androideabi/4.4.3 /home/novarow/Documents/AndroidBOINC/native/android-4-tc/lib/gcc /home/novarow/Documents/AndroidBOINC/native/android-4-tc/arm-linux-androideabi/lib /home/novarow/Documents/AndroidBOINC/native/android-4-tc/sysroot/usr/lib"
 
 # Run-time system search path for libraries.
 sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/lib/i386-linux-gnu/mesa /lib/i386-linux-gnu /usr/lib/i386-linux-gnu /lib/i686-linux-gnu /usr/lib/i686-linux-gnu /usr/local/lib "
