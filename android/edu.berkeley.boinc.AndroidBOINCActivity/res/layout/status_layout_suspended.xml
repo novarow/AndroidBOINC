@@ -16,19 +16,37 @@
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dip"
-        android:layout_marginTop="30dip"
+        android:layout_marginBottom="20dip"
         android:contentDescription="@string/status_running"
         android:src="@drawable/pausew48" />
 
     <TextView
-        android:id="@+id/paused_long"
+        android:id="@+id/suspend_reason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:text="@string/suspend_unknown"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    
+    <ImageView
+        android:id="@+id/disableImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dip"
+        android:contentDescription="@string/status_running"
+        android:longClickable="false"
+        android:src="@drawable/stopw24" />
+
+    <TextView
+        android:id="@+id/disableText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dip"
         android:layout_marginRight="20dip"
-        android:gravity="center_horizontal"
-        android:text="@string/status_paused_long"
+        android:gravity="center"
+        android:longClickable="false"
+        android:text="@string/disable_computation"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </LinearLayout>

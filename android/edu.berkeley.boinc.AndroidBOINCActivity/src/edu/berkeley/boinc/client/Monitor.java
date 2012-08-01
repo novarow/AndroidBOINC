@@ -170,7 +170,7 @@ public class Monitor extends Service{
 				if(!rpc.connectionAlive()) { //check whether connection is still alive
 					//if connection is not working, either client has not been set up yet, or client crashed.
 					//in both cases start client again
-					setupClient(); //executed in same thread -> blocks monitor execution
+					setupClient(); //synchronous execution in same thread -> blocks monitor until finished
 				}
 				
 				//Log.d(TAG, "getHostInfo");
@@ -180,19 +180,28 @@ public class Monitor extends Service{
 				//Log.d(TAG, "getActiveResults");
 				//rpc.getActiveResults();  
 				
-				Log.d(TAG, "getResults");
-				ArrayList<edu.berkeley.boinc.rpc.Result> tasks = rpc.getResults();
-				Log.d(TAG, "getCcStatus");
-				edu.berkeley.boinc.rpc.CcStatus status = rpc.getCcStatus();
+				//Log.d(TAG, "getResults");
+				//ArrayList<edu.berkeley.boinc.rpc.Result> tasks = rpc.getResults();
+				
 				
 				//prefs test
-				GlobalPreferences prefs = rpc.getGlobalPrefsWorkingStruct();
-				Log.d(TAG, "Java class holds network_wifi_only value: " + prefs.network_wifi_only); 
+				//GlobalPreferences prefs = rpc.getGlobalPrefsWorkingStruct();
+				//Log.d(TAG, "Java class holds network_wifi_only value: " + prefs.network_wifi_only); 
 				
-				if((tasks==null)||(status==null)) { //connection problem
-					return false;
+				Log.d(TAG, "getCcStatus");
+				edu.berkeley.boinc.rpc.CcStatus status = rpc.getCcStatus();
+				Log.d(TAG, "getState");
+				edu.berkeley.boinc.rpc.CcState state = rpc.getState();
+				
+				if((state!=null)&&(status!=null)) {
+					Monitor.clientStatus.setClientStatus(status,state);
 				} else {
-					Log.d(TAG,"task_mode: " + status.task_mode + " task_suspend_reason: " + status.task_suspend_reason);
+					AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "client status connection problem");
+				}
+					//connection problem! do nothing, loop will continue, "connectionAlive" fail, and the setup routine start.
+					
+					
+					//Log.d(TAG,"task_mode: " + status.task_mode + " task_suspend_reason: " + status.task_suspend_reason);
 					/*
 					if(status.task_mode==CommonDefs.RUN_MODE_NEVER) { // run mode set to "never"
 						Log.d(TAG,"disabled by user");
@@ -214,12 +223,12 @@ public class Monitor extends Service{
 						}
 					}*/
 					//setClientStatus(tasks,status);
-			        Intent clientStatus = new Intent();
-			        clientStatus.setAction("edu.berkeley.boinc.clientstatus");
-			        getApplicationContext().sendBroadcast(clientStatus);
-				}
+				
+		        Intent clientStatus = new Intent();
+		        clientStatus.setAction("edu.berkeley.boinc.clientstatus");
+		        getApplicationContext().sendBroadcast(clientStatus);
 	    		try {
-	    			Thread.sleep(10000); //sleep
+	    			Thread.sleep(3000); //sleep
 	    		}catch(Exception e){}
 			}
 		}

@@ -6,18 +6,18 @@ BOINC client:
 
 BOINC Android manager:
 - MD5 verification hash for project attachment (rpc call??)
-- Status: distinct different supsend reasons and give advice
+- Status: add network status and redesign layout
 - Tasks: implement
 - Transfers: implement
 - Preferences: implement (include project settings like url, pwd)
 - Messages: implement
-- Debug: improve layout and data structure
+- Debug: improve layout and data structure, add "shutdown client"
 -> find RPC calls and parse all above needed information accordingly
 
 Science apps:
 - Get people to build and test real-life apps for Android client
 
-General:
+Documentation:
 - howto compile apps
 - howto "brand" manager
 - howto compile client
