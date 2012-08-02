@@ -1,0 +1,546 @@
+Binary files boinc-trunk-rev25927/api/libboinc_api.a and boinc-trunk-rev25927_android/api/libboinc_api.a differ
+Binary files boinc-trunk-rev25927/api/libboinc_opencl.a and boinc-trunk-rev25927_android/api/libboinc_opencl.a differ
+diff -crBN boinc-trunk-rev25927/client/client_msgs.cpp boinc-trunk-rev25927_android/client/client_msgs.cpp
+*** boinc-trunk-rev25927/client/client_msgs.cpp	2012-08-01 14:58:40.944159368 +0200
+--- boinc-trunk-rev25927_android/client/client_msgs.cpp	2012-08-01 16:26:58.729092058 +0200
+***************
+*** 39,44 ****
+--- 39,46 ----
+  
+  #include "client_msgs.h"
+  
++ #include "android_log.h"
++ 
+  MESSAGE_DESCS message_descs;
+  
+  #ifdef SIM
+***************
+*** 117,122 ****
+--- 119,129 ----
+      } else {
+          x = "---";
+      }
++ #ifdef ANDROID // print message to Logcat
++     char amessage[2048];
++     snprintf(amessage,sizeof(amessage),"client_msgs: %s",message);
++     LOGD(amessage);
++ #endif //ANDROID
+      printf("%s [%s] %s\n", time_string, x, message);
+  #ifdef _WIN32
+      if (gstate.executing_as_daemon) {
+diff -crBN boinc-trunk-rev25927/client/cs_prefs.cpp boinc-trunk-rev25927_android/client/cs_prefs.cpp
+*** boinc-trunk-rev25927/client/cs_prefs.cpp	2012-08-01 14:58:40.872196272 +0200
+--- boinc-trunk-rev25927_android/client/cs_prefs.cpp	2012-08-01 16:29:49.780426726 +0200
+***************
+*** 45,50 ****
+--- 45,52 ----
+  #include "file_names.h"
+  #include "project.h"
+  
++ #include "android_log.h"
++ 
+  using std::min;
+  using std::string;
+  
+***************
+*** 332,337 ****
+--- 334,349 ----
+          goto done;
+      }
+  
++ #ifdef ANDROID
++ //verify that device is on wifi before making project transfers.
++     if(global_prefs.network_wifi_only && !host_info.host_wifi_online()) {
++ 	file_xfers_suspended = true;
++ 	if (!recent_rpc) network_suspended = true;
++ 	network_suspend_reason = SUSPEND_REASON_WIFI_STATE;
++ 	LOGD("supended due to wifi state");
++     }
++ #endif
++ 
+      if (global_prefs.daily_xfer_limit_mb && global_prefs.daily_xfer_period_days) {
+          double up, down;
+          daily_xfer_history.totals(
+diff -crBN boinc-trunk-rev25927/client/hostinfo_network.cpp boinc-trunk-rev25927_android/client/hostinfo_network.cpp
+*** boinc-trunk-rev25927/client/hostinfo_network.cpp	2012-08-01 14:58:40.932165518 +0200
+--- boinc-trunk-rev25927_android/client/hostinfo_network.cpp	2012-08-01 16:34:46.080781587 +0200
+***************
+*** 55,60 ****
+--- 55,89 ----
+  
+  #include "hostinfo.h"
+  
++ #include "android_log.h"
++ 
++ #if defined ANDROID
++ // Returns TRUE if host is currently using a wifi connection
++ // used on Android devices to prevent usage of data plans.
++ // if value cant be read, default return false
++ bool HOST_INFO::host_wifi_online() {
++         char wifipath[1024];
++         snprintf(wifipath,sizeof(wifipath),"/sys/class/net/eth0/operstate");
++ 
++         FILE *fsyswifi = fopen(wifipath, "r");
++         char wifi_state[64];
++ 
++         bool wifi_online = false;
++ 
++         if(fsyswifi) {
++                 (void) fscanf(fsyswifi, "%s", &wifi_state);
++                 fclose(fsyswifi);
++         }
++ 
++         if((strcmp(wifi_state,"up")) == 0) { //operstate = up
++ 	LOGD("wifi is online");
++                 wifi_online = true;
++         }
++ 
++         return wifi_online;
++ }
++ #endif //ANDROID
++ 
+  // get domain name and IP address of this host
+  //
+  int HOST_INFO::get_local_network_info() {
+***************
+*** 93,100 ****
+  void HOST_INFO::make_random_string(const char* salt, char* out) {
+      char buf[1024];
+  
+!     sprintf(buf, "%d%.15e%s%s%f%s",
+!         getpid(), dtime(), domain_name, ip_addr, d_free, salt
+      );
+      md5_block((const unsigned char*) buf, (int)strlen(buf), out);
+  }
+--- 122,129 ----
+  void HOST_INFO::make_random_string(const char* salt, char* out) {
+      char buf[1024];
+  
+!     sprintf(buf, "%f%s%s%f%s",
+!         dtime(), domain_name, ip_addr, d_free, salt
+      );
+      md5_block((const unsigned char*) buf, (int)strlen(buf), out);
+  }
+diff -crBN boinc-trunk-rev25927/client/hostinfo_unix.cpp boinc-trunk-rev25927_android/client/hostinfo_unix.cpp
+*** boinc-trunk-rev25927/client/hostinfo_unix.cpp	2012-08-01 14:58:40.856204472 +0200
+--- boinc-trunk-rev25927_android/client/hostinfo_unix.cpp	2012-08-01 16:40:53.771917396 +0200
+***************
+*** 154,159 ****
+--- 154,161 ----
+  #include <X11/extensions/scrnsaver.h>
+  #endif
+  
++ #include "android_log.h"
++ 
+  // The following is intended to be true both on Linux
+  // and Debian GNU/kFreeBSD (see trac #521)
+  //
+***************
+*** 212,217 ****
+--- 214,254 ----
+      CFRelease(list);
+      return retval;
+  
++ #elif ANDROID
++ 	// using /sys/class/power_supply/*/online
++ 	// power supplies are both ac and usb!
++ 	char acpath[1024];
++ 	snprintf(acpath,sizeof(acpath),"/sys/class/power_supply/ac/online");
++ 	char usbpath[1024];
++ 	snprintf(usbpath,sizeof(usbpath),"/sys/class/power_supply/usb/online");
++ 
++ 	FILE *fsysac = fopen(acpath, "r");
++ 	FILE *fsysusb = fopen(usbpath, "r");
++ 	int aconline = 0;
++ 	int usbonline = 0;
++ 	bool power_supply_online = false;
++ 
++ 	if(fsysac) {
++ 		(void) fscanf(fsysac, "%d", &aconline);
++ 		fclose(fsysac);
++ 	}
++ 
++ 	if(fsysusb) {
++ 		(void) fscanf(fsysusb, "%d", &usbonline);
++ 		fclose(fsysusb);
++ 	}
++ 
++ 	if((aconline == 1) || (usbonline == 1)){
++ 		power_supply_online = true;
++ 		char msg[1024];
++ 		snprintf(msg,sizeof(msg),"power supply online! status for usb: %d and ac: %d",usbonline,aconline);
++ 		LOGD(msg);
++ 	} else {
++ 		LOGD("running on batteries");
++ 	}
++ 
++ 	return !power_supply_online;
++ 
+  #elif LINUX_LIKE_SYSTEM
+      static enum {
+        Detect,
+***************
+*** 1409,1415 ****
+--- 1446,1456 ----
+  #if HAVE_SYS_UTSNAME_H
+      struct utsname u;
+      uname(&u);
++ #ifdef ANDROID
++     safe_strcpy(os_name, "Android");
++ #else
+      safe_strcpy(os_name, u.sysname);
++ #endif //ANDROID
+  #if defined(__EMX__) // OS2: version is in u.version
+      safe_strcpy(os_version, u.version);
+  #elif defined(__HAIKU__)
+diff -crBN boinc-trunk-rev25927/client/main.cpp boinc-trunk-rev25927_android/client/main.cpp
+*** boinc-trunk-rev25927/client/main.cpp	2012-08-01 14:58:40.908177818 +0200
+--- boinc-trunk-rev25927_android/client/main.cpp	2012-08-01 16:46:58.845778088 +0200
+***************
+*** 66,71 ****
+--- 66,73 ----
+  
+  #include "main.h"
+  
++ #include "android_log.h"
++ 
+  // Log informational messages to system specific places
+  //
+  void log_message_startup(const char* msg) {
+***************
+*** 81,86 ****
+--- 83,90 ----
+          LogEventInfoMessage(evt_msg);
+  #elif defined(__EMX__)
+  #elif defined (__APPLE__)
++ #elif defined (ANDROID)
++ 	LOGD(evt_msg);
+  #else
+          syslog(LOG_DAEMON|LOG_INFO, evt_msg);
+  #endif
+***************
+*** 110,115 ****
+--- 114,121 ----
+          LogEventErrorMessage(evt_msg);
+  #elif defined(__EMX__)
+  #elif defined (__APPLE__)
++ #elif defined (ANDROID)
++ 	LOGD(evt_msg);
+  #else
+          syslog(LOG_DAEMON|LOG_ERR, evt_msg);
+  #endif
+***************
+*** 130,135 ****
+--- 136,143 ----
+          LogEventErrorMessage(evt_msg);
+  #elif defined(__EMX__)
+  #elif defined (__APPLE__)
++ #elif defined (ANDROID)
++         LOGD(evt_msg);
+  #else
+          syslog(LOG_DAEMON|LOG_ERR, evt_msg);
+  #endif
+***************
+*** 369,374 ****
+--- 377,391 ----
+  int main(int argc, char** argv) {
+      int retval = 0;
+  
++ #ifdef ANDROID
++     chdir(CWD); //CWD defined at lib/android_log.h
++     char ccwd[1024];
++     getcwd(ccwd,sizeof(ccwd));
++     char msg[1024];
++     snprintf(msg,sizeof(msg),"Hello Logcat! cwd at: %s", ccwd);
++     LOGD(msg);
++ #endif
++ 
+      for (int index = 1; index < argc; index++) {
+          if (strcmp(argv[index], "-daemon") == 0 || strcmp(argv[index], "--daemon") == 0) {
+              gstate.executing_as_daemon = true;
+diff -crBN boinc-trunk-rev25927/lib/android_log.h boinc-trunk-rev25927_android/lib/android_log.h
+*** boinc-trunk-rev25927/lib/android_log.h	1970-01-01 01:00:00.000000000 +0100
+--- boinc-trunk-rev25927_android/lib/android_log.h	2012-08-01 16:47:45.612562444 +0200
+***************
+*** 0 ****
+--- 1,10 ----
++ #ifdef ANDROID
++ //setup logcat for debugging android application via DDMS
++ #include "android/log.h"
++ #define LOG_TAG "BOINC"
++ #define LOGI(...) __android_log_print(ANDROID_LOG_INFO,LOG_TAG, __VA_ARGS__)
++ #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
++ //setup cwd
++ #define CWD "/data/data/edu.berkeley.boinc/client"
++ #endif
++ 
+diff -crBN boinc-trunk-rev25927/lib/common_defs.h boinc-trunk-rev25927_android/lib/common_defs.h
+*** boinc-trunk-rev25927/lib/common_defs.h	2012-08-01 15:02:00.086032562 +0200
+--- boinc-trunk-rev25927_android/lib/common_defs.h	2012-08-01 16:49:19.886491853 +0200
+***************
+*** 103,109 ****
+      SUSPEND_REASON_EXCLUSIVE_APP_RUNNING = 512,
+      SUSPEND_REASON_CPU_USAGE = 1024,
+      SUSPEND_REASON_NETWORK_QUOTA_EXCEEDED = 2048,
+!     SUSPEND_REASON_OS = 4096
+  };
+  
+  // Values of RESULT::state in client.
+--- 103,110 ----
+      SUSPEND_REASON_EXCLUSIVE_APP_RUNNING = 512,
+      SUSPEND_REASON_CPU_USAGE = 1024,
+      SUSPEND_REASON_NETWORK_QUOTA_EXCEEDED = 2048,
+!     SUSPEND_REASON_OS = 4096,
+!     SUSPEND_REASON_WIFI_STATE = 8192
+  };
+  
+  // Values of RESULT::state in client.
+diff -crBN boinc-trunk-rev25927/lib/hostinfo.h boinc-trunk-rev25927_android/lib/hostinfo.h
+*** boinc-trunk-rev25927/lib/hostinfo.h	2012-08-01 15:02:00.086032562 +0200
+--- boinc-trunk-rev25927_android/lib/hostinfo.h	2012-08-01 16:50:59.679109918 +0200
+***************
+*** 80,85 ****
+--- 80,88 ----
+  #else
+      bool users_idle(bool check_all_logins, double idle_time_to_run);
+  #endif
++ #ifdef ANDROID
++     bool host_wifi_online();
++ #endif
+      int get_host_info();
+      int get_local_network_info();
+      int get_virtualbox_version();
+Binary files boinc-trunk-rev25927/lib/libboinc.a and boinc-trunk-rev25927_android/lib/libboinc.a differ
+diff -crBN boinc-trunk-rev25927/lib/network.cpp boinc-trunk-rev25927_android/lib/network.cpp
+*** boinc-trunk-rev25927/lib/network.cpp	2012-08-01 15:01:59.926114573 +0200
+--- boinc-trunk-rev25927_android/lib/network.cpp	2012-08-01 16:53:00.533989324 +0200
+***************
+*** 287,293 ****
+  #endif
+  
+  void reset_dns() {
+! #if !defined(_WIN32) && !defined(__APPLE__)
+      // Windows doesn't have this, and it crashes Macs
+      res_init();
+  #endif
+--- 287,293 ----
+  #endif
+  
+  void reset_dns() {
+! #if !defined(ANDROID) && !defined(_WIN32) && !defined(__APPLE__)
+      // Windows doesn't have this, and it crashes Macs
+      res_init();
+  #endif
+diff -crBN boinc-trunk-rev25927/lib/prefs.cpp boinc-trunk-rev25927_android/lib/prefs.cpp
+*** boinc-trunk-rev25927/lib/prefs.cpp	2012-08-01 15:02:00.054048964 +0200
+--- boinc-trunk-rev25927_android/lib/prefs.cpp	2012-08-01 16:59:11.698817483 +0200
+***************
+*** 79,84 ****
+--- 79,85 ----
+      cpu_usage_limit = true;
+      daily_xfer_limit_mb = true;
+      daily_xfer_period_days = true;
++     network_wifi_only = true;
+  }
+  
+  bool GLOBAL_PREFS_MASK::are_prefs_set() {
+***************
+*** 114,119 ****
+--- 115,121 ----
+      if (cpu_usage_limit) return true;
+      if (daily_xfer_limit_mb) return true;
+      if (daily_xfer_period_days) return true;
++     if (network_wifi_only) return true;
+      return false;
+  }
+  
+***************
+*** 235,240 ****
+--- 237,243 ----
+      cpu_usage_limit = 100;
+      daily_xfer_limit_mb = 0;
+      daily_xfer_period_days = 0;
++     network_wifi_only = false;
+  
+      // don't initialize source_project, source_scheduler,
+      // mod_time, host_specific here
+***************
+*** 251,256 ****
+--- 254,260 ----
+      confirm_before_connecting = false;
+      hangup_if_dialed = false;
+      dont_verify_images = false;
++     network_wifi_only = true;
+  }
+  
+  void GLOBAL_PREFS::init() {
+***************
+*** 610,616 ****
+          "   <cpu_usage_limit>%f</cpu_usage_limit>\n"
+          "   <daily_xfer_limit_mb>%f</daily_xfer_limit_mb>\n"
+          "   <daily_xfer_period_days>%d</daily_xfer_period_days>\n"
+!         "   <override_file_present>%d</override_file_present>\n",
+          source_project,
+          mod_time,
+          run_on_batteries?1:0,
+--- 614,621 ----
+          "   <cpu_usage_limit>%f</cpu_usage_limit>\n"
+          "   <daily_xfer_limit_mb>%f</daily_xfer_limit_mb>\n"
+          "   <daily_xfer_period_days>%d</daily_xfer_period_days>\n"
+!         "   <override_file_present>%d</override_file_present>\n"
+! 	"   <network_wifi_only>%d</network_wifi_only>\n",
+          source_project,
+          mod_time,
+          run_on_batteries?1:0,
+***************
+*** 643,649 ****
+          cpu_usage_limit,
+          daily_xfer_limit_mb,
+          daily_xfer_period_days,
+!         override_file_present?1:0
+      );
+      if (max_ncpus) {
+          f.printf("   <max_cpus>%d</max_cpus>\n", max_ncpus);
+--- 648,655 ----
+          cpu_usage_limit,
+          daily_xfer_limit_mb,
+          daily_xfer_period_days,
+!         override_file_present?1:0,
+! 	network_wifi_only?1:0
+      );
+      if (max_ncpus) {
+          f.printf("   <max_cpus>%d</max_cpus>\n", max_ncpus);
+***************
+*** 806,811 ****
+--- 812,820 ----
+      if (mask.daily_xfer_period_days) {
+          f.printf("   <daily_xfer_period_days>%d</daily_xfer_period_days>\n", daily_xfer_period_days);
+      }
++     if (mask.network_wifi_only) {
++         f.printf("   <network_wifi_only>%d</network_wifi_only>\n", network_wifi_only?1:0 );
++     }
+  
+      write_day_prefs(f);
+      f.printf("</global_preferences>\n");
+diff -crBN boinc-trunk-rev25927/lib/prefs.h boinc-trunk-rev25927_android/lib/prefs.h
+*** boinc-trunk-rev25927/lib/prefs.h	2012-08-01 15:02:00.110020260 +0200
+--- boinc-trunk-rev25927_android/lib/prefs.h	2012-08-01 17:01:23.499029355 +0200
+***************
+*** 67,72 ****
+--- 67,73 ----
+      bool cpu_usage_limit;
+      bool daily_xfer_limit_mb;
+      bool daily_xfer_period_days;
++     bool network_wifi_only;
+  
+      GLOBAL_PREFS_MASK();
+      void clear();
+***************
+*** 172,177 ****
+--- 173,182 ----
+      bool host_specific;
+          // an account manager can set this; if set, don't propagate
+      bool override_file_present;
++     bool network_wifi_only;
++ 	 // introduced with Android. Do network communication only when on Wifi, not on public cell networks.
++ 	 // CAUTION: this only applies to the transfer of work units! initial project attachments transfers are made regardless of this preference
++ 
+  
+      GLOBAL_PREFS();
+      void defaults();
+diff -crBN boinc-trunk-rev25927/lib/shmem.h boinc-trunk-rev25927_android/lib/shmem.h
+*** boinc-trunk-rev25927/lib/shmem.h	2012-08-01 15:01:59.954100221 +0200
+--- boinc-trunk-rev25927_android/lib/shmem.h	2012-08-01 19:36:07.332934445 +0200
+***************
+*** 22,29 ****
+--- 22,31 ----
+  
+  #ifndef _WIN32
+  #include <sys/types.h>
++ #ifndef ANDROID
+  #include <sys/shm.h>
+  #endif
++ #endif
+  
+  // create_shmem(): create a shared-memory segment of the given size.
+  // attach_shmem(): attach to a shared-memory segment
+diff -crBN boinc-trunk-rev25927/lib/str_util.cpp boinc-trunk-rev25927_android/lib/str_util.cpp
+*** boinc-trunk-rev25927/lib/str_util.cpp	2012-08-01 15:02:00.094028462 +0200
+--- boinc-trunk-rev25927_android/lib/str_util.cpp	2012-08-01 17:03:20.303935655 +0200
+***************
+*** 608,613 ****
+--- 608,614 ----
+      case SUSPEND_REASON_CPU_USAGE: return "CPU is busy";
+      case SUSPEND_REASON_NETWORK_QUOTA_EXCEEDED: return "network bandwidth limit exceeded";
+      case SUSPEND_REASON_OS: return "requested by operating system";
++     case SUSPEND_REASON_WIFI_STATE: return "device is not on wifi";
+      }
+      return "unknown reason";
+  }
+diff -crBN boinc-trunk-rev25927/lib/synch.cpp boinc-trunk-rev25927_android/lib/synch.cpp
+*** boinc-trunk-rev25927/lib/synch.cpp	2012-08-01 15:02:00.062044862 +0200
+--- boinc-trunk-rev25927_android/lib/synch.cpp	2012-08-01 17:05:16.224411063 +0200
+***************
+*** 18,23 ****
+--- 18,25 ----
+  
+  // interfaces for accessing sempahores
+  
++ #ifndef ANDROID //disabled on Android
++ 
+  #include "config.h"
+  #include <cstdio>
+  #include <cstdlib>
+***************
+*** 111,113 ****
+--- 113,116 ----
+      return 0;
+  }
+  
++ #endif //ANDROID
+diff -crBN boinc-trunk-rev25927/samples/example_app/Makefile boinc-trunk-rev25927_android/samples/example_app/Makefile
+*** boinc-trunk-rev25927/samples/example_app/Makefile	2012-08-01 14:58:23.101309793 +0200
+--- boinc-trunk-rev25927_android/samples/example_app/Makefile	2012-08-01 20:32:48.946304746 +0200
+***************
+*** 4,11 ****
+  BOINC_API_DIR = $(BOINC_DIR)/api
+  BOINC_LIB_DIR = $(BOINC_DIR)/lib
+  
+! CXXFLAGS = -g \
+! 	-Wall -W -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -fno-common \
+      -DAPP_GRAPHICS \
+      -I$(BOINC_DIR) \
+      -I$(BOINC_LIB_DIR) \
+--- 4,11 ----
+  BOINC_API_DIR = $(BOINC_DIR)/api
+  BOINC_LIB_DIR = $(BOINC_DIR)/lib
+  
+! CXXFLAGS = --sysroot=/home/novarow/tools/android-4-tc/sysroot \
+!     -DANDROID \
+      -DAPP_GRAPHICS \
+      -I$(BOINC_DIR) \
+      -I$(BOINC_LIB_DIR) \
+***************
+*** 47,55 ****
+  # because otherwise you might get a version in /usr/lib etc.
+  
+  uc2: uc2.o libstdc++.a $(BOINC_API_DIR)/libboinc_api.a $(BOINC_LIB_DIR)/libboinc.a
+! 	$(CXX) $(CXXFLAGS) -o uc2 uc2.o libstdc++.a -pthread \
+  	$(BOINC_API_DIR)/libboinc_api.a \
+! 	$(BOINC_LIB_DIR)/libboinc.a
+  
+  uc2_graphics: uc2_graphics.o libstdc++.a $(BOINC_LIB_DIR)/libboinc.a $(BOINC_API_DIR)/libboinc_graphics2.a
+  	$(CXX) $(CXXFLAGS) -o uc2_graphics uc2_graphics.o libstdc++.a -pthread \
+--- 47,56 ----
+  # because otherwise you might get a version in /usr/lib etc.
+  
+  uc2: uc2.o libstdc++.a $(BOINC_API_DIR)/libboinc_api.a $(BOINC_LIB_DIR)/libboinc.a
+! 	$(CXX) $(CXXFLAGS) -o uc2 uc2.o libstdc++.a  \
+  	$(BOINC_API_DIR)/libboinc_api.a \
+! 	$(BOINC_LIB_DIR)/libboinc.a \
+! 	-llog
+  
+  uc2_graphics: uc2_graphics.o libstdc++.a $(BOINC_LIB_DIR)/libboinc.a $(BOINC_API_DIR)/libboinc_graphics2.a
+  	$(CXX) $(CXXFLAGS) -o uc2_graphics uc2_graphics.o libstdc++.a -pthread \
+Binary files boinc-trunk-rev25927/samples/example_app/uc2.o and boinc-trunk-rev25927_android/samples/example_app/uc2.o differ
+Binary files boinc-trunk-rev25927/zip/libboinc_zip.a and boinc-trunk-rev25927_android/zip/libboinc_zip.a differ
