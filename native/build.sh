@@ -1,49 +1,40 @@
 #/bin/sh
 #script to compile BOINC for Android
 
-#===adapt the following paths============================
+#++++++++++++++++++++++++CONFIGURATION++++++++++++++++++++++++++++
+#===BOINC platform name
+BPNAME="arm-android-4"
+
+#===locations
 #Android toolchain
-ANDROIDTC="/home/novarow/Documents/AndroidBOINC/native/android-4-tc"
+ANDROIDTC=""
 
 #sources
-#OpenSSL
-OPENSSL="/home/novarow/Documents/AndroidBOINC/native/openssl-1.0.0d"
-#Curl
-CURL="/home/novarow/Documents/AndroidBOINC/native/curl-7.27.0"
-#BOINC
-#BOINC="/home/novarow/Documents/AndroidBOINC/native/boinc-7.0.9"
-BOINC="/home/novarow/Documents/AndroidBOINC/native/boinc-trunk-rev25927_android"
-#BOINC Application
-BAPP="$BOINC/samples/example_app"
+OPENSSL="" #openSSL sources, requiered by BOINC
+CURL="" #CURL sources, required by BOINC
+BOINC="" #BOINC source code
+BAPP="" #BOINC application ("scientific app") source
 
 #destination
-#build output
-BOINCINSTALL="/home/novarow/Documents/AndroidBOINC/native/nativebuild"
-#APK assets
-TARGETAPK="/home/novarow/VBshare/ews/edu.berkeley.boinc.AndroidBOINCActivity/assets"
-#=============================================================
+BOINCINSTALL="" #destination directory of boinc binaries
+TARGETAPK="" #location of Android Manager App, which will use this BOINC build
 
-#===...and configure the script=======================
-#CONFIGURE="yes"
-#MAKECLEAN="yes"
-#CONFIGUREBOINC="yes"
-#MAKECLEANBOINC="yes"
+#===script behavior
+CONFIGURE="yes"
+MAKECLEAN="yes"
 
-#COMPILEOPENSSL="yes" #compiling required libraries. ONLY NECESSARY if libssl.a and libcurl.a DO NOT EXIST in $TCINCLUDES
-#COMPILECURL="yes"
-#COMPILEBOINC="yes"
+COMPILEOPENSSL="yes" #compiling required libraries. ONLY NECESSARY if libssl.a and libcurl.a DO NOT EXIST in $TCINCLUDES
+COMPILECURL="yes"
+COMPILEBOINC="yes"
 COMPILEAPP="yes"
-#=============================================================
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-
-#convenience vars
 TCBINARIES="$ANDROIDTC/bin" #cross compiler location
 TCINCLUDES="$ANDROIDTC/arm-linux-androideabi" #libraries to include in build
 TCSYSROOT="$ANDROIDTC/sysroot" #SYSROOT of Android device
 STDCPPTC="$TCINCLUDES/lib/libstdc++.a" #stdc++ library
 
-#compiler setup
 export PATH="$PATH:$TCBINARIES:$TCINCLUDES/bin" #add location of compiler binaries to PATH
 export CC=arm-linux-androideabi-gcc #C compiler
 export CXX=arm-linux-androideabi-g++ #C++ compiler
@@ -54,12 +45,10 @@ export LDFLAGS="-L$TCSYSROOT/usr/lib -L$TCINCLUDES/lib -llog" #log is Logcat
 export GDB_CFLAGS="--sysroot=$TCSYSROOT -Wall -g -I$TCINCLUDES/include"
 
 
-
-#cleaning target directory
-echo "===================removing files from $BOINCINSTALL==========================="
+echo "===================cleanup of $BOINCINSTALL==========================="
 cd $BOINCINSTALL
 rm -r *
-echo "==========================================================================="
+echo "======================================================================"
 
 if [ -n "$COMPILEOPENSSL" ]; then
 echo "================building openssl from $OPENSSL============================="
@@ -76,7 +65,7 @@ mv Makefile.out Makefile
 fi
 make
 make install_sw
-echo "====================building openssl done=================================="
+echo "========================openssl DONE=================================="
 fi
 if [ -n "$COMPILECURL" ]; then
 echo "==================building curl from $CURL================================="
@@ -89,7 +78,7 @@ if [ -n "$CONFIGURE" ]; then
 fi
 make
 make install
-echo "===================building curl done============================="
+echo "========================curl done================================="
 fi
 if [ -n "$COMPILEBOINC" ]; then
 echo "==================building BOINC from $BOINC=========================="
@@ -99,7 +88,7 @@ make clean
 fi
 if [ -n "$CONFIGUREBOINC" ]; then
 ./_autosetup
-./configure --host=arm-linux --prefix=$BOINCINSTALL --with-boinc-platform=arm-android-linux-gnu --with-boinc-alt-platform=arm-android --disable-server --disable-manager --disable-shared --enable-static
+./configure --host=arm-linux --prefix=$BOINCINSTALL --with-boinc-platform="$BPNAME" --disable-server --disable-manager --disable-shared --enable-static
 sed -e "s%^CLIENTLIBS *= *.*$%CLIENTLIBS = -lm $STDCPPTC%g" client/Makefile > client/Makefile.out #override libstdc++ in Makefile
 mv client/Makefile.out client/Makefile
 fi
@@ -111,9 +100,9 @@ cd ../client
 make install
 cd ../lib
 make install
-echo "===================building BOINC done============================="
-echo "===================copy binary to Android assets direcotry at $TARGETAPK========================="
-sudo cp "$BOINCINSTALL/bin/boinc_client" "$TARGETAPK/boinc_client"
+echo "=============================BOINC done============================="
+echo "===================copy binary to assets direcotry of APK at $TARGETAPK========================="
+sudo cp "$BOINCINSTALL/bin/boinc_client" "$TARGETAPK/assets/boinc_client"
 fi
 if [ -n "$COMPILEAPP" ]; then
 echo "=================building application from $BAPP=============="
@@ -121,8 +110,5 @@ cd "$BAPP"
 make clean
 ln -s "$STDCPPTC" #create symbolic link to stdc++ library
 make #Makefile got manually modified
-echo "===================building example app done============================="
-echo "===================copy binary to Android assets direcotry at $TARGETAPK========================="
-sudo cp "$BOINC/samples/example_app/uc2" "$TARGETAPK/uc2"
-fi
-echo "===================script done==================="
+echo "============================app done============================="
+echo "============================script done=========================="

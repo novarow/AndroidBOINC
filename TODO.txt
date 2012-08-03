@@ -2,9 +2,11 @@ TODOs
 
 BOINC client:
 - merge changes to trunk
-
+- submit build script to BOINC repo. (caution: confustion with peter haneppe's script)
 
 BOINC Android manager:
+- add compatibility check for ARCH and ABI.
+- auto start service. add auto start to preferences.
 - MD5 verification hash for project attachment (rpc call??)
 - Status: add network status, redesign layout, add aquired project credit
 - Tasks: implement
@@ -14,11 +16,10 @@ BOINC Android manager:
 - Debug: improve layout and data structure, add "shutdown client"
 -> find RPC calls and parse all above needed information accordingly
 
-Science apps:
+BOINC apps:
 - Get people to build and test real-life apps for Android client
 
 Documentation:
-- howto compile apps
-- howto "brand" manager
-- howto compile client
-- documenation of architecure
+- HowTo build AndroidBOINC
+- HowTo build BOINC apps for AndroidBOINC
+- describe this project's approach and architecture in BOINC wiki
