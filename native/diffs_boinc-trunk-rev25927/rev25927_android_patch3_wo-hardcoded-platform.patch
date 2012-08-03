@@ -1,0 +1,13 @@
+*** boinc-trunk-rev25927/client/cs_platforms.cpp	2012-08-01 14:58:40.852206522 +0200
+--- boinc-trunk-rev25927_android/client/cs_platforms.cpp	2012-08-03 17:38:10.581716398 +0200
+***************
+*** 96,103 ****
+      }
+      add_platform("windows_intelx86");
+  #endif
+- #elif defined(ANDROID)
+-     add_platform("arm-android");
+  
+  #elif defined(__APPLE__)
+  
+--- 96,101 ----

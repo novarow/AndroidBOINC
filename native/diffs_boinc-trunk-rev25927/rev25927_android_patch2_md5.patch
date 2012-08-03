@@ -1,0 +1,28 @@
+*** boinc-trunk-rev25927/lib/md5_file.cpp	2012-08-01 15:01:59.962096121 +0200
+--- boinc-trunk-rev25927_android/lib/md5_file.cpp	2012-08-03 16:56:02.177502745 +0200
+***************
+*** 32,37 ****
+--- 32,41 ----
+  #include <wincrypt.h>
+  #endif
+  
++ #ifdef ANDROID
++ #include "stdlib.h"
++ #endif
++ 
+  #include "md5.h"
+  #include "md5_file.h"
+  #include "error_numbers.h"
+***************
+*** 111,116 ****
+--- 115,124 ----
+      }
+          
+      CryptReleaseContext(hCryptProv, 0);
++ #elif defined ANDROID
++ // /dev/random not available on Android, using stdlib function instead
++     int i = rand();
++     snprintf(buf,sizeof(buf),"%d",i);
+  #else
+  #ifndef _USING_FCGI_
+      FILE* f = fopen("/dev/random", "r");
