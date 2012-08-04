@@ -2,9 +2,10 @@ TODOs
 
 BOINC client:
 - merge changes to trunk
-- submit build script to BOINC repo. (caution: confustion with peter haneppe's script)
+- submit build script to BOINC repo. (caution: confustion with Android build script currently present)
 
 BOINC Android manager:
+- add login in preferences, and prompt upon first start up
 - add compatibility check for ARCH and ABI.
 - auto start service. add auto start to preferences.
 - MD5 verification hash for project attachment (rpc call??)

@@ -1,0 +1,128 @@
+HowTo Build AndroidBOINC
+
+This document describes, how to build the BOINC Client/Manager AndroidBOINC for Android-powered devices.
+
+To learn more about this project and it's architecture, see *link*
+
+
+0. Introduction
+
+0.0 Naming convention
+
+AndroidBOINC - Android application that bundles a cross compiled BOINC Client together with a Android-specific BOINC Manager (GUI).
+BOINC apps - scientific applications to be dsitributed and calculated on participating devices.
+
+
+0.1 Requirements
+- recommended IDE for Android development is Eclipse with ADT plugin
+- Android SDK
+http://developer.android.com/sdk/
+- Android NKD
+http://developer.android.com/tools/sdk/ndk/index.html
+- BOINC Client source code
+http://boinc.berkeley.edu/trac/wiki/SourceCode
+- AndroidBOINC source code
+http://boinc.berkeley.edu/trac/wiki/SourceCode
+- AndroidBOINC build script
+*link*
+
+
+0.2 Used versions
+
+Development target:
+- ARM architecture featuring ABI v5
+- NDK-level 4 (Android 1.6)
+
+Tested with:
+- ARM ABI v7 device (Samsung Galaxy SII)
+- Android platform 2.3.4
+
+
+1. Building BOINC Client
+
+1.1 Setup NDK toolchain
+
+In order to run the BOINC Client on Android-powered devices, it is necessary to compile it with the according cross compilation toolchain. This toolchain differs depending on the targeted Android platform version and CPU architecture.
+
+The Android NDK offers a script to build a standalone redistributable toolchain, including the binaries of the cross compilation tools and the sysroot (headers and libraries which are present on the targeted Android device, for more information see "Android NDK stable APIs"). To do so, run the following command from the Android NDK root direcotry:
+"build/tools/make-standalone-toolchain.sh --platform=android-4 --install-dir=/tmp/tc"
+This will install a toolchain for ARM devices (default, use e.g. "--arch=x86" to change) with minimum Android version 1.6 in the given installation directory.
+
+A map of NDK Android platform version (e.g. android-4) to common Android versions (e.g. Android 1.6) can be found in under "Stable APIs" of the Android NDK documentation.
+
+
+1.2 Build Client using script
+
+With the compilation toolchain ready, proceed with actually building the BOINC Client. The BONIC repository provides a build script, which sets up the paths and invokes the building tools.
+
+Before first execution, configure the build script with the following information:
+- BPNAME: name of the BOINC platform. This can be use to distinct different Android architecutres or platform versions by your project's scheduler. (use e.g. "android-arm-4")
+- ANDROIDTC: location of the standalone toolchain, set up in 1.1
+- OPENSSL: location of openSSL sources, openSSL is required by BOINC Client. (Tested with version 1.0.0d)
+- CURL: location of CURL sources, Curl is required by BOINC Client. (Tested with 7.27.0)
+- BOINC: location of BOINC sources, no adaptions for Android necessary, use source code from BOINC repository
+- BAPP: location of BOINC app, optional. Not required to build the Client.
+- BOINCINSTALL: destination directory for BOINC binaries.
+- TARGETAPK: location of AndroidBOINC sources. Script copies the BOINC Client binary to the Android project's "assets" directory.
+
+Run script and verify that "boinc_client" executable got created. Note that it will not run on your development machine, if you target the ARM architecture.
+
+
+2. Building AndroidBOINC
+
+AndroidBOINC consists of an Android-specific BOINC Manager (GUI, written in Java using the Android Application Framework API) bundled with cross compiled BOINC Client binaries (see section 1). This section describes, how to build the Android application.
+
+
+2.1 Setup Android SDK
+
+Step-by-step instructions on how to set up the Android development environment, including Android SDK, development tools, Android platforms, Eclipse and ADT plugin can be found here:
+http://developer.android.com/sdk/installing/index.html
+
+
+2.2 Customize AndroidBOINC
+
+AndroidBOINC is able to attach to a single project only. This is a limitation of the Android Manager, rather then the BOINC Client. In order to provide AndroidBOINC for your project, the very basic modifications to the Android app are:
+- adapt the default project URL & name (located at *android.package.name*/res/values/strings.xml)
+
+Of course you are free to adapt the Manager to suit the needs of your project, e.g.:
+- rename application
+- adapt graphical identitiy
+- translate to other language
+
+If you make major improvements to AndroidBOINC, please consider sharing them with the community!
+
+
+2.3 Remarks on changing package name
+
+If you want to change the Android application's package name, be advised that you also have to adapt the working directory in the sources of the BOINC Client. The working directory is defined in *boinc-client-sources*/lib/android_log.h.
+
+The working directory is defined with the pattern:
+"/data/data/*android.package.name*/client"
+
+Re-compile BOINC Client for changes to take effect.
+
+
+2.4 Building Android BOINC Manager
+
+Make sure, that the cross compiled BOINC Client resides in your Android project's "assets" directory. Building the Android project in Eclipse will bundle the Client's binaries into the Android application's APK file.
+
+
+3. Debugging
+
+Both components of AndroidBOINC, the BOINC Client and the BOINC Manager, use Logcat to write debugging messages.
+
+If you are using an Android emulator (AVD) to debug your project, note the following:
+
+- AVD is by default ARM ABI v5.
+- AVD does not support wifi, the data connetion is tunneld to the cellular data connection of the emulator. Be adviced, that AndroidBOINC's default configuration allows project work unit transfers only when wifi is connected! To change this behavior, go to application's "settings" tab.
+- Internal memory and RAM are very little on an AVD. Note that most common Android smartphones have higher capabilities.
+
+To adapt an AVD instance, in terms of available RAM, internal memory, Android platform version or ARM ABI version, see:
+http://developer.android.com/tools/devices/index.html
+
+
+4. Next steps
+
+- build your scientific BOINC apps for Android (see *link*). Keep in mind, that the Android platform and architecture settings have to be the same for both, the AndroidBOINC and the BOINC apps. The compatibilty of the device gets only checked, when AndroidBOINC is installed on a device, unsupported scientific apps will not be detected and are likely to crash on some devices. Use "BOINC platform" configuration of the build script, to distinct versions with project scheduler.
+- configure project scheduler to distribute BOINC apps for AndroidBOINC.
+- submit AndroidBOINC to an app store or distribute APK independently.
