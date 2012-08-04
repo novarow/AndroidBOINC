@@ -8,7 +8,7 @@ This document describes, how to build BOINC scientific apps for to be executed b
 0.0 Naming convention
 
 AndroidBOINC - Android application that bundles a cross compiled BOINC Client together with a Android-specific BOINC Manager (GUI).
-BOINC apps - scientific applications to be dsitributed and calculated on participating devices.
+BOINC apps - scientific applications to be distributed and calculated on participating devices.
 
 
 0.1 Requirements
@@ -30,7 +30,7 @@ Tested with:
 - Android platform 2.3.4
 
 
-0.3 Compatibilty with AndroidBOINC
+0.3 Compatibility with AndroidBOINC
 
 Caution: Verification whether volunteering Android devices meets the requirements is only done upon AndroidBOINC app installation. It is the project's responsibility to ensure, that distributed BOINC apps meet the requirements. If a higher minimum platform version is used for BOINC apps than for AndroidBOINC, they are likely to crash on some devices.
 
@@ -45,7 +45,7 @@ There are two approaches to this:
 
 Note: 0.3 Compatibility with AndroidBOINC
 
-To set up a custome cross compilation toolchain, see section 1.1 of "HowTo Build AndroidBOINC" at:
+To set up a custom cross compilation toolchain, see section 1.1 of "HowTo Build AndroidBOINC" at:
 *link*
 
 

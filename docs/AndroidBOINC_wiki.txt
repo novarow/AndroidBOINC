@@ -9,11 +9,11 @@ Architecture:
 
 AndroidBOINC combines the two independent BOINC components of Client and Manager.
 
-The BOINC Client got adapted to accomodate the needs of mobile devices and can be cross compiled to run on ARM-Android-based devices. To allow volunteers to control the Client, AndroidBOINC's second component is a BOINC Manager, developed for Android using the common design patterns. AndroidBOINC bundles those two components together, to be distributed in a single APK.
+The BOINC Client got adapted to accommodate the needs of mobile devices and can be cross compiled to run on ARM-Android-based devices. To allow volunteers to control the Client, AndroidBOINC's second component is a BOINC Manager, developed for Android using the common design patterns. AndroidBOINC bundles those two components together, to be distributed in a single APK.
 
 Client and Manager communicate via RPCs, similar to versions on Windows or Linux.
 
-On startup the Android application executes the BOINC Client, which does not have Android-specific methods implemented and consists soley out of native source code. The Client and Manager run as two seperate processes.
+On startup the Android application executes the BOINC Client, which does not have Android-specific methods implemented and consists solely out of native source code. The Client and Manager run as two separate processes.
 
 
 Aspects of Android platform:
@@ -22,18 +22,18 @@ Aspects of Android platform:
 Applications are only allowed to write into two areas of a device's storage space. One is the app's directory, located at /data/data/*package.name*/, files in this directory can be set executable and run using the Java's Runtime.exec command. This space is "private", so only accessible by the application it belongs to. The second storage location is the device SD card (if present), this is generally accessible by all applications, but mounted non-executable.
 
 - Permissions:
-Android restricts access to certain feautres with its permission system. Required permissions have to be declaered in the AndroidManifest.xml file by the developer, the user then gets promted to grant access upon installation. AndroidBOINC requires the "Network" permission, for transmitting workunits and also for the RPC communication in-between Manager and Client. This permission is granted to the App-specific Linux User ID, and therefore also applies to its child-processes.
+Android restricts access to certain features with its permission system. Required permissions have to be declared in the AndroidManifest.xml file by the developer, the user then gets prompted to grant access upon installation. AndroidBOINC requires the "Network" permission, for transmitting workunits and also for the RPC communication in-between Manager and Client. This permission is granted to the App-specific Linux User ID, and therefore also applies to its child-processes.
 
 - Lifecycle:
-Applications which are not visible at the moment can get killed by the system. If the user navigates back to a destroyed application, it gets reactivated. In most cases according lifecycle-methods are called, however those are not relyable. This behavior only applies to applications which are executed in Android's Dalvik virtual machine and not to native child-processes like the BOINC Client. As a consequence, the Manager tries to connect to a possibly existing BOINC Client. Only if this attempt fails, a new instance of the BOINC client is executed.
+Applications which are not visible at the moment can get killed by the system. If the user navigates back to a destroyed application, it gets reactivated. In most cases according lifecycle-methods are called, however those are not reliable. This behavior only applies to applications which are executed in Android's Dalvik virtual machine and not to native child-processes like the BOINC Client. As a consequence, the Manager tries to connect to a possibly existing BOINC Client. Only if this attempt fails, a new instance of the BOINC client is executed.
 
 - Distribution:
-Like every other application, AndroidBOINC comes in an APK package. The BOINC Client gets distributed as part of the Android app and resides in its "assets" direcory. When executed, the Client gets copied to the local storage space and executed from there.
+Like every other application, AndroidBOINC comes in an APK package. The BOINC Client gets distributed as part of the Android app and resides in its "assets" directory. When executed, the Client gets copied to the local storage space and executed from there.
 
 
 Considerations for mobile devices:
 
-In order to accomodate the limitations of mobile devices, two features got introduced to the BOINC Client:
+In order to accommodate the limitations of mobile devices, two features got introduced to the BOINC Client:
 
 - Wifi detection: AndroidBOINC, by default, does communication with its project scheduler only when logged into a Wifi. This helps volunteers keeping control of limitations on a data plan.
 
