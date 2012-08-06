@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dip"
+    android:orientation="vertical">
+    <EditText
+         android:id="@+id/Input"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content" >
+         <requestFocus />
+     </EditText>
+     
+    <Button
+        android:id="@+id/buttonPrefSubmit"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dip"
+        android:text="@string/prefs_submit_button" />
+</LinearLayout>
