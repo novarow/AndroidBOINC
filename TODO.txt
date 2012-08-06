@@ -5,14 +5,12 @@ BOINC client:
 - submit build script to BOINC repo. (caution: confustion with Android build script currently present)
 
 BOINC Android manager:
-- add login in preferences, and prompt upon first start up
+- add login logic
 - add compatibility check for ARCH and ABI.
-- auto start service. add auto start to preferences.
-- MD5 verification hash for project attachment (rpc call??)
+- auto start service. (depending on pref)
 - Status: add network status, redesign layout, add aquired project credit
 - Tasks: implement
 - Transfers: implement
-- Preferences: implement (include project settings like url, pwd)
 - Messages: implement
 - Debug: improve layout and data structure, add "shutdown client"
 -> find RPC calls and parse all above needed information accordingly
@@ -21,6 +19,3 @@ BOINC apps:
 - Get people to build and test real-life apps for Android client
 
 Documentation:
-- HowTo build AndroidBOINC
-- HowTo build BOINC apps for AndroidBOINC
-- describe this project's approach and architecture in BOINC wiki

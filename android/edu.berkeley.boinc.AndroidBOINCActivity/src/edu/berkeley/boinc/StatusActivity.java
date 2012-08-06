@@ -21,6 +21,7 @@ import android.widget.TextView;
 public class StatusActivity extends Activity {
 	
 	private final String TAG = "StatusActivity";
+	private final String PREFS = "BOINC";
 	
 	private Monitor monitor;
 	
@@ -47,6 +48,7 @@ public class StatusActivity extends Activity {
 
 	    public void onServiceDisconnected(ComponentName className) {
 	        monitor = null;
+	        mIsBound = false;
 	    }
 	};
 
@@ -174,6 +176,10 @@ public class StatusActivity extends Activity {
 			case 2:
 				setContentView(R.layout.status_layout_error);
 				Log.d(TAG,"layout: status_layout_error");
+				break;
+			case 3:
+				setContentView(R.layout.status_layout_noproject);
+				Log.d(TAG,"layout: status_layout_noproject");
 				break;
 			}
 		}

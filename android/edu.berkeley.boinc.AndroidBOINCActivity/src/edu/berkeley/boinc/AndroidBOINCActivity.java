@@ -37,9 +37,6 @@ public class AndroidBOINCActivity extends TabActivity {
 	        // service that we know is running in our own process, we can
 	        // cast its IBinder to a concrete class and directly access it.
 	        monitor = ((Monitor.LocalBinder)service).getService();
-	        
-	        //set application context to service singleton
-	        Monitor.getClientStatus().setCtx(getApplicationContext());
 
 	        // Tell the user about this for our demo.
 	        Toast.makeText(getApplicationContext(), "service connected", Toast.LENGTH_SHORT).show();

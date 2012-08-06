@@ -3,9 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    <TextView android:text="preferences"
-        android:padding="15dip"
-        android:textSize="18dip"
+
+    <ListView
+        android:id="@+id/listview"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="fill_parent" >
+    </ListView>
+
 </LinearLayout>

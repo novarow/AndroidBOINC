@@ -27,6 +27,7 @@ public class ClientStatus {
 	// 0 = client is in setup routine (default)
 	// 1 = client is launched and available for RPC (connected and authorized)
 	// 2 = client is in a permanent error state, there are not attempts to fix it (otherwise 0)
+	// 3 = client is launched but not attached to the project (login)
 	public Integer setupStatus = 0;
 	
 	//computing status
@@ -60,7 +61,7 @@ public class ClientStatus {
 	}
 	
 	/*
-	 * Application context is required by the broadcast mechanism, reference is copied by AndroidBOINCActivity on start up.
+	 * Application context is required by the broadcast mechanism, reference is copied by Monitor service on start up.
 	 */
 	public synchronized void setCtx(Context tctx) {
 		this.ctx = tctx;

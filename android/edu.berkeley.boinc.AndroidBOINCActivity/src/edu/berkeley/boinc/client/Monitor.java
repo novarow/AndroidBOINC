@@ -11,6 +11,7 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 
 import edu.berkeley.boinc.AndroidBOINCActivity;
+import edu.berkeley.boinc.AppPreferences;
 import edu.berkeley.boinc.R;
 import edu.berkeley.boinc.definitions.CommonDefs;
 import edu.berkeley.boinc.rpc.CcStatus;
@@ -35,11 +36,20 @@ public class Monitor extends Service{
 	private final String TAG = "BOINC Client Monitor Service";
 	
 	private static ClientStatus clientStatus; //holds the status of the client as determined by the Monitor
+	private static AppPreferences prefs; //hold the status of the app, controlled by AppPreferences
+	
 	public static ClientStatus getClientStatus() { //singleton pattern
 		if (clientStatus == null) {
 			clientStatus = new ClientStatus();
 		}
 		return clientStatus;
+	}
+	
+	public static AppPreferences getAppPrefs() { //singleton pattern
+		if (prefs == null) {
+			prefs = new AppPreferences();
+		}
+		return prefs;
 	}
 	
 	private NotificationManager mNM;
@@ -64,6 +74,10 @@ public class Monitor extends Service{
 	@Override
     public void onCreate() {
 		Log.d(TAG,"onCreate()");
+		
+		getAppPrefs().readPrefs(this);
+		
+		getClientStatus().setCtx(this);
         
         // test notification
 		mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
@@ -138,9 +152,23 @@ public class Monitor extends Service{
     	}
     }
     
-	public void setRunMode(Integer mode) {
+	public synchronized void setRunMode(Integer mode) {
 		Boolean success = rpc.setRunMode(mode,0);
 		Log.d(TAG,"run mode set to " + mode + " returned " + success);
+	}
+	
+	public synchronized GlobalPreferences getPrefs() {
+		Log.d(TAG,"getPrefs");
+		return rpc.getGlobalPrefsWorkingStruct();
+	}
+	
+	public synchronized void setPrefs(GlobalPreferences globalPrefs) {
+		rpc.setGlobalPrefsOverrideStruct(globalPrefs); //set new override settings
+		rpc.readGlobalPrefsOverride(); //trigger reload of override settings
+	}
+	
+	public synchronized String getMd5(String email, String pwd) {
+		return rpc.getPasswdHash(pwd, email);
 	}
 	
 	private final class ClientMonitorAsync extends AsyncTask<Integer,String,Boolean> {
@@ -228,7 +256,7 @@ public class Monitor extends Service{
 		        clientStatus.setAction("edu.berkeley.boinc.clientstatus");
 		        getApplicationContext().sendBroadcast(clientStatus);
 	    		try {
-	    			Thread.sleep(3000); //sleep
+	    			Thread.sleep(10000); //sleep
 	    		}catch(Exception e){}
 			}
 		}

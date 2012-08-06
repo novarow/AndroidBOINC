@@ -1,0 +1,15 @@
+*** boinc-trunk-rev25985/lib/prefs.cpp	2012-08-05 10:13:58.082035988 +0200
+--- boinc-trunk-rev25985_android/lib/prefs.cpp	2012-08-06 13:18:21.677322654 +0200
+***************
+*** 539,544 ****
+--- 539,548 ----
+              }
+              continue;
+          }
++         if (xp.parse_bool("network_wifi_only", network_wifi_only)) {
++             mask.network_wifi_only = true;
++             continue;
++         }
+          if (xp.parse_bool("host_specific", host_specific)) {
+              continue;
+          }
