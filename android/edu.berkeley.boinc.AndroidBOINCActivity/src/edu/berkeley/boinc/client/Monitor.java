@@ -13,10 +13,8 @@ import java.util.ArrayList;
 import edu.berkeley.boinc.AndroidBOINCActivity;
 import edu.berkeley.boinc.AppPreferences;
 import edu.berkeley.boinc.R;
-import edu.berkeley.boinc.definitions.CommonDefs;
 import edu.berkeley.boinc.rpc.AccountIn;
 import edu.berkeley.boinc.rpc.AccountOut;
-import edu.berkeley.boinc.rpc.CcStatus;
 import edu.berkeley.boinc.rpc.GlobalPreferences;
 import edu.berkeley.boinc.rpc.Project;
 import edu.berkeley.boinc.rpc.ProjectAttachReply;
@@ -26,7 +24,6 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Binder;
@@ -155,78 +152,14 @@ public class Monitor extends Service{
     	}
     }
     
-    public synchronized Integer lookupCredentials(String email, String pwd, Integer maxDuration) {
-    	Integer retval = -1;
-    	AccountIn credentials = new AccountIn();
-    	credentials.email_addr = email;
-    	credentials.passwd = pwd;
-    	credentials.url = getString(R.string.project_url);
-    	Boolean success = rpc.lookupAccount(credentials); //asynch
-    	if(success) { //only continue if lookupAccount command did not fail
-    		//get authentication token from lookupAccountPoll
-    		Integer counter = 0;
-    		Integer sleepDuration = 500; //in mili seconds
-    		Integer maxLoops = maxDuration / sleepDuration;
-    		Boolean loop = true;
-    		while(loop && (counter < maxLoops)) {
-    			loop = false;
-    			try {
-    				Thread.sleep(sleepDuration);
-    			} catch (Exception e) {}
-    			counter ++;
-    			AccountOut auth = rpc.lookupAccountPoll();
-    			if (auth.error_num == -204) {
-    				loop = true; //no result yet, keep looping
-    			}
-    			else {
-    				//final result ready
-    				if(auth.error_num == 0) { //write usable results to AppPreferences
-        				AppPreferences appPrefs = Monitor.getAppPrefs(); //get singleton appPrefs to save authToken
-        				appPrefs.setEmail(email);
-        				appPrefs.setPwd(pwd);
-        				appPrefs.setMd5(auth.authenticator);
-        				Log.d(TAG, "credentials verified");
-    				}
-    				retval = auth.error_num;
-    			}
-    		}
-    	}
-    	Log.d(TAG, "lookupCredentials returns " + retval);
-    	return retval;
+    public synchronized void attachProject(String email, String pwd) {
+		Log.d(TAG,"attachProject");
+		String[] param = new String[2];
+		param[0] = email;
+		param[1] = pwd;
+		(new ProjectAttachAsync()).execute(param);
     }
     
-    public synchronized Boolean attachProject(Integer maxDuration) {
-    	Boolean success = false;
-
-    	//get singleton appPrefs to read authToken
-		AppPreferences appPrefs = Monitor.getAppPrefs(); 
-		
-		//make asynchronous call to attach project
-    	success = rpc.projectAttach(getString(R.string.project_url), appPrefs.getMd5(), getString(R.string.project_name));
-    	if(success) { //only continue if attach command did not fail
-    		// verify success of projectAttach with poll function
-    		success = false;
-    		Integer counter = 0;
-    		Integer sleepDuration = 500; //in mili seconds
-    		Integer maxLoops = maxDuration / sleepDuration;
-    		while(!success && (counter < maxLoops)) {
-    			try {
-    				Thread.sleep(sleepDuration);
-    			} catch (Exception e) {}
-    			counter ++;
-    			ProjectAttachReply reply = rpc.projectAttachPoll();
-    			Integer result = reply.error_num;
-    			if(result == 0) {
-    				success = true;
-    	    		AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "project attached!");
-    				// Client is attached to project, publish setupStatus 1 -> setup complete!
-    				getClientStatus().setupStatus = 1;
-    				getClientStatus().fire();
-    			}
-    		}
-    	}
-    	return success;
-    }
     
 	public synchronized void setRunMode(Integer mode) {
 		Boolean success = rpc.setRunMode(mode,0);
@@ -252,8 +185,6 @@ public class Monitor extends Service{
 		private final String clientName = getString(R.string.client_name); 
 		private final String authFileName = getString(R.string.auth_file_name); 
 		private String clientPath = getString(R.string.client_path); 
-		
-		private final Integer maxDuration = 30; //maximum polling duration
 		
 		@Override
 		protected Boolean doInBackground(Integer... params) {
@@ -636,6 +567,156 @@ public class Monitor extends Service{
 	    		success = true;
 	    	}
 	    	Log.d(TAG,"verifyProjectAttach about to return with " + success);
+	    	return success;
+	    }
+	}
+	
+	private final class ProjectAttachAsync extends AsyncTask<String,String,Boolean> {
+
+		private final String TAG = "ProjectAttachAsync";
+		
+		private final Integer maxDuration = 3000; //maximum polling duration
+		
+		private String email;
+		private String pwd;
+		
+		@Override
+		protected void onPreExecute() {
+			Log.d(TAG+"-onPreExecute","publish setupStatus 0"); //client is in setup routine... again.
+			getClientStatus().setupStatus = 0;
+			getClientStatus().fire();
+		}
+		
+		@Override
+		protected Boolean doInBackground(String... params) {
+			this.email = params[0];
+			this.pwd = params[1];
+			Log.d(TAG+"-doInBackground","login started with: " + email + "-" + pwd);
+			
+			Integer retval = lookupCredentials();
+			Boolean success = false;
+			switch (retval) {
+			case 0:
+				Log.d(TAG, "verified successful");
+				success = true;
+				break;
+			case -206:
+				Log.d(TAG, "password incorrect!");
+				publishProgress("Password Incorrect!");
+				break;
+			case -136:
+				Log.d(TAG, "eMail incorrect!");
+				publishProgress("eMail Incorrect!");
+				break;
+			default:
+				Log.d(TAG, "unkown error occured!");
+				publishProgress("Unknown Error!");
+				break;
+			}
+			
+			if(!success) {
+				Log.d(TAG, "verification failed - exit");
+				return false;
+			}
+			
+			Boolean attach = attachProject(); //tries credentials stored in AppPreferences singleton, terminates after 3000 ms in order to prevent "ANR application not responding" dialog
+			if(attach) {
+				publishProgress("Successful.");
+			}
+			return attach;
+		}
+
+		@Override
+		protected void onProgressUpdate(String... arg0) {
+			Log.d(TAG+"-onProgressUpdate",arg0[0]);
+			AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, arg0[0]);
+			Toast toast = Toast.makeText(getApplicationContext(), arg0[0], Toast.LENGTH_SHORT);
+			toast.show();
+		}
+		
+		@Override
+		protected void onPostExecute(Boolean success) {
+			if(success) { //login successful
+				Log.d(TAG,"login successful, restart monitor");
+				restartMonitor();
+			} else { //login failed
+				Log.d(TAG,"login failed, publish");
+				getClientStatus().setupStatus = 3;
+				getClientStatus().fire();
+			}
+			
+		}
+		
+		private Integer lookupCredentials() {
+	    	Integer retval = -1;
+	    	AccountIn credentials = new AccountIn();
+	    	credentials.email_addr = email;
+	    	credentials.passwd = pwd;
+	    	credentials.url = getString(R.string.project_url);
+	    	Boolean success = rpc.lookupAccount(credentials); //asynch
+	    	if(success) { //only continue if lookupAccount command did not fail
+	    		//get authentication token from lookupAccountPoll
+	    		Integer counter = 0;
+	    		Integer sleepDuration = 500; //in mili seconds
+	    		Integer maxLoops = maxDuration / sleepDuration;
+	    		Boolean loop = true;
+	    		while(loop && (counter < maxLoops)) {
+	    			loop = false;
+	    			try {
+	    				Thread.sleep(sleepDuration);
+	    			} catch (Exception e) {}
+	    			counter ++;
+	    			AccountOut auth = rpc.lookupAccountPoll();
+	    			if (auth.error_num == -204) {
+	    				loop = true; //no result yet, keep looping
+	    			}
+	    			else {
+	    				//final result ready
+	    				if(auth.error_num == 0) { //write usable results to AppPreferences
+	        				AppPreferences appPrefs = Monitor.getAppPrefs(); //get singleton appPrefs to save authToken
+	        				appPrefs.setEmail(email);
+	        				appPrefs.setPwd(pwd);
+	        				appPrefs.setMd5(auth.authenticator);
+	        				Log.d(TAG, "credentials verified");
+	    				}
+	    				retval = auth.error_num;
+	    			}
+	    		}
+	    	}
+	    	Log.d(TAG, "lookupCredentials returns " + retval);
+	    	return retval;
+	    }
+	    
+	    private Boolean attachProject() {
+	    	Boolean success = false;
+
+	    	//get singleton appPrefs to read authToken
+			AppPreferences appPrefs = Monitor.getAppPrefs(); 
+			
+			//make asynchronous call to attach project
+	    	success = rpc.projectAttach(getString(R.string.project_url), appPrefs.getMd5(), getString(R.string.project_name));
+	    	if(success) { //only continue if attach command did not fail
+	    		// verify success of projectAttach with poll function
+	    		success = false;
+	    		Integer counter = 0;
+	    		Integer sleepDuration = 500; //in mili seconds
+	    		Integer maxLoops = maxDuration / sleepDuration;
+	    		while(!success && (counter < maxLoops)) {
+	    			try {
+	    				Thread.sleep(sleepDuration);
+	    			} catch (Exception e) {}
+	    			counter ++;
+	    			ProjectAttachReply reply = rpc.projectAttachPoll();
+	    			Integer result = reply.error_num;
+	    			if(result == 0) {
+	    				success = true;
+	    	    		AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "project attached!");
+	    				// Client is attached to project, publish setupStatus 1 -> setup complete!
+	    				getClientStatus().setupStatus = 1;
+	    				getClientStatus().fire();
+	    			}
+	    		}
+	    	}
 	    	return success;
 	    }
 	}

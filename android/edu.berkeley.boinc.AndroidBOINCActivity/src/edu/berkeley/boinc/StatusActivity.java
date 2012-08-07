@@ -15,16 +15,13 @@ import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class StatusActivity extends Activity {
 	
 	private final String TAG = "StatusActivity";
-	private final String PREFS = "BOINC";
 	
 	private Monitor monitor;
 	
@@ -199,12 +196,6 @@ public class StatusActivity extends Activity {
 	public void loginButtonClicked (View view) {
 		Log.d(TAG,"loginButtonClicked");
 		
-		//TODO give user better feedback!
-		//change button behavior
-		//Button button = (Button) findViewById(R.id.loginConfirmButton);
-		//button.setText(getString(R.string.status_noproject_button));
-		//button.setClickable(false);
-		
 		//read input data
 		EditText emailET = (EditText) findViewById(R.id.emailIn);
 		EditText pwdET = (EditText) findViewById(R.id.pwdIn);
@@ -224,46 +215,8 @@ public class StatusActivity extends Activity {
 			return;
 		}
 		
-		//trigger rpc to lookup account
-		Integer retval = monitor.lookupCredentials(email, pwd, 3000);
-		Toast toast;
-		Boolean success = false;
-		switch (retval) {
-		case 0:
-			Log.d(TAG, "verified successful");
-			success = true;
-			break;
-		case -206:
-			Log.d(TAG, "password incorrect!");
-			toast = Toast.makeText(this, "Password Incorrect!", Toast.LENGTH_SHORT);
-			toast.show();
-			break;
-		case -136:
-			Log.d(TAG, "eMail incorrect!");
-			toast = Toast.makeText(this, "eMail Incorrect!", Toast.LENGTH_SHORT);
-			toast.show();
-			break;
-		default:
-			Log.d(TAG, "unkown error occured!");
-			toast = Toast.makeText(this, "sorry, unknown error occured!", Toast.LENGTH_SHORT);
-			toast.show();
-			break;
-		}
-		
-		Boolean attach = false;
-		if(success) {
-			//trigger rpc to login
-			attach = monitor.attachProject(3000); //tries credentials stored in AppPreferences singleton, terminates after 3000 ms in order to prevent "ANR application not responding" dialog
-		}
-
-		//set button back
-		//button.setText(getString(R.string.status_noproject_button_wait));
-		//button.setClickable(true);
-		
-		if(attach) { // start monitor again, if attach successful
-			monitor.restartMonitor();
-		}
-		
+		//trigger async attach
+		monitor.attachProject(email, pwd);
 	}
 	
 	private OnClickListener mEnableClickListener = new OnClickListener() {
