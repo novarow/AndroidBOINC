@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:onClick="onItemClick" >
+    <TextView android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/taskName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    </TextView>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:id="@+id/taskProgress"
+        	android:layout_marginLeft="10dip"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content">
+	    </TextView>
+	    
+        <ProgressBar
+        	android:id="@+id/progressBar"
+        	style="?android:attr/progressBarStyleHorizontal"
+        	android:layout_marginLeft="10dip"
+        	android:layout_marginRight="10dip"
+        	android:layout_width="match_parent"
+        	android:layout_height="20dip"
+        	android:progressDrawable="@drawable/progressbar_stopped" />
+        
+    </LinearLayout>
+    <TextView android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/taskStatus"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    
+
+</LinearLayout>

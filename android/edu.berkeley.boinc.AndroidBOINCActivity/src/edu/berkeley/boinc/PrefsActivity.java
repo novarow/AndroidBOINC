@@ -37,8 +37,8 @@ public class PrefsActivity extends Activity implements OnClickListener {
 	private PrefsListAdapter listAdapter;
 	
 	private ArrayList<PrefsListItemWrapper> data = new ArrayList<PrefsListItemWrapper>(); //Adapter for list data
-	private GlobalPreferences clientPrefs = null; //preferences of the client
-	private AppPreferences appPrefs = null; //Android specific preferences
+	private GlobalPreferences clientPrefs = null; //preferences of the client, read on every onResume via RPC
+	private AppPreferences appPrefs = null; //Android specific preferences, singleton of monitor
 	
 	private Dialog dialog; //Dialog for input on non-Bool preferences
 	
@@ -64,10 +64,8 @@ public class PrefsActivity extends Activity implements OnClickListener {
 	        monitor = ((Monitor.LocalBinder)service).getService();
 		    mIsBound = true;
 			appPrefs = Monitor.getAppPrefs();
-			clientPrefs = monitor.getPrefs();
 		    Log.d(TAG, "prefs available");
 		    initPrefsLayout();
-		    loadSettings();
 		    
 	    }
 
@@ -90,7 +88,14 @@ public class PrefsActivity extends Activity implements OnClickListener {
 	    }
 	}
 	
+	private void readPrefs() {
+		clientPrefs = monitor.getPrefs(); //read prefs from client via rpc
+	}
+	
 	private void initPrefsLayout() {
+
+		readPrefs(); //update preferences
+		
 		setContentView(R.layout.prefs_layout);
 		lv = (ListView) findViewById(R.id.listview);
         listAdapter = new PrefsListAdapter(PrefsActivity.this,R.id.listview,data);
@@ -109,6 +114,8 @@ public class PrefsActivity extends Activity implements OnClickListener {
 	}
 	
 	private void loadSettings() {
+		readPrefs(); //update preferences
+		
 		((PrefsListItemWrapperText)data.get(0)).status = appPrefs.getEmail();
 		((PrefsListItemWrapperText)data.get(1)).status = appPrefs.getPwd();
 		((PrefsListItemWrapperBool)data.get(2)).setStatus(appPrefs.getAutostart());
@@ -216,12 +223,14 @@ public class PrefsActivity extends Activity implements OnClickListener {
 		Log.d(TAG,"onClick with input " + tmp);
 		switch (id) {
 		case R.string.prefs_project_email_header:
+			//TODO cant be reached, clickable turned of in PrefsListAdapter
 			appPrefs.setEmail(tmp);
 			break;
 		case R.string.prefs_project_pwd_header:
 			appPrefs.setPwd(tmp);
 			//TODO logout (detach)
 			//TODO login (attach)
+			//TODO cant be reached, clickable turned of in PrefsListAdapter
 			break;
 		case R.string.prefs_disk_max_pct_header:
 			clientPrefs.disk_max_used_pct = Double.parseDouble(tmp);

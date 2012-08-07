@@ -186,6 +186,8 @@ public class Monitor extends Service{
 		private final String authFileName = getString(R.string.auth_file_name); 
 		private String clientPath = getString(R.string.client_path); 
 		
+		private Integer refreshFrequency = 3000; //frequency of which the monitor updates client status via RPC, to often can cause reduced performance!
+		
 		@Override
 		protected Boolean doInBackground(Integer... params) {
 			Log.d(TAG+"-doInBackground","monitor started.");
@@ -219,7 +221,7 @@ public class Monitor extends Service{
 		        clientStatus.setAction("edu.berkeley.boinc.clientstatus");
 		        getApplicationContext().sendBroadcast(clientStatus);
 	    		try {
-	    			Thread.sleep(10000); //sleep
+	    			Thread.sleep(refreshFrequency); //sleep
 	    		}catch(Exception e){}
 			}
 		}

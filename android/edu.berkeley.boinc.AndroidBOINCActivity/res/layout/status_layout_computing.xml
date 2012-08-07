@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:text="@string/status_running"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#228B22" />
+        android:textColor="@color/active" />
 
     <ImageView
         android:id="@+id/imageView2"

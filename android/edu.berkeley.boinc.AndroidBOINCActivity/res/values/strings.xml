@@ -74,7 +74,23 @@
 	<string name="prefs_autostart_false">Start BOINC manually</string>
 	<string name="prefs_project_email_header">Login: eMail</string>
 	<string name="prefs_project_pwd_header">Login: password</string>
-	    
+	
+	
+	<!-- tasks tab strings -->
+	<string name="tasks_result_new">New</string>
+	<string name="tasks_result_files_downloading">Files downloading</string>
+	<string name="tasks_result_files_downloaded">Files downloaded</string>
+	<string name="tasks_result_compute_error">Compute error</string>
+	<string name="tasks_result_files_uploading">Files uploading</string>
+	<string name="tasks_result_files_uploaded">Files uploaded</string>
+	<string name="tasks_result_aborted">Aborted</string>
+	<string name="tasks_result_upload_failed">Upload failed</string>
+	
+	<string name="tasks_active_uninitialized">Starting</string>
+	<string name="tasks_active_executing">Running</string>
+	<string name="tasks_active_suspended">Paused</string>
+	<string name="tasks_active_abort_pending">Stopping</string>
+	<string name="tasks_active_quit_pending">Stopping</string>
 	    
     <!-- debug tab strings -->
     <string name="debug_refresh">Refresh</string>

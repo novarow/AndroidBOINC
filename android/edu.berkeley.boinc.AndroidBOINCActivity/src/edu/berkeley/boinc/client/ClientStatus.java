@@ -1,5 +1,7 @@
 package edu.berkeley.boinc.client;
 
+import java.util.ArrayList;
+
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -80,6 +82,13 @@ public class ClientStatus {
 		} else {
 			AndroidBOINCActivity.logMessage(ctx, TAG, "discard status change due to parse error" + computingParseError + computingStatus + computingSuspendReason + "-" + networkParseError + networkStatus + networkSuspendReason);
 		}
+	}
+	
+	public synchronized ArrayList<Result> getTasks() {
+		if(state == null) { //request comes in before first monitor cycle. (e.g. when not logged in)
+			return null;
+		}
+		return state.results;
 	}
 	
 	/*
