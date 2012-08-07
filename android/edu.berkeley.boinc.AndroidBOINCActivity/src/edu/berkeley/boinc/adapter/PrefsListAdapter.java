@@ -6,7 +6,6 @@ import edu.berkeley.boinc.R;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,7 +56,11 @@ public class PrefsListAdapter extends ArrayAdapter<PrefsListItemWrapper>{
     		header.setText(((PrefsListItemWrapperText) listItem).header);
     		TextView status = (TextView) v.findViewById(R.id.status);
     		status.setText(((PrefsListItemWrapperText) listItem).display);
-    		
+    	}
+    	
+    	if((listItem.ID == R.string.prefs_project_email_header) || (listItem.ID == R.string.prefs_project_pwd_header)) {
+    		//if item is project credentials, make non-clickable, since it can not be changed, once logged in.
+    		v.setClickable(false);
     	}
     	
         return v;

@@ -13,7 +13,7 @@ public class AppPreferences {
 	
 	private String email;
 	private String pwd;
-	private String md5;
+	private String md5; // holds projects authentication token, as looked up during login
 	private Boolean autostart;
 	
 	public void readPrefs (Context ctx) {
@@ -28,10 +28,6 @@ public class AppPreferences {
 		Log.d(TAG, "read successful.");
 	}
 	
-	private String getPasswdHash(String passwd, String email_addr) {
-		return Md5.hash(passwd+email_addr);
-	}
-	
 	public void setEmail(String email) {
 		SharedPreferences.Editor editor = prefs.edit();
 		editor.putString("email", email);
@@ -40,13 +36,10 @@ public class AppPreferences {
 	}
 	
 	public void setPwd(String pwd) {
-		String md5 = getPasswdHash(pwd, email);
 		SharedPreferences.Editor editor = prefs.edit();
 		editor.putString("pwd", pwd);
-		editor.putString("md5", md5);
 		editor.commit();
 		this.pwd = pwd;
-		this.md5 = md5;
 	}
 	
 	public void setMd5(String md5) {

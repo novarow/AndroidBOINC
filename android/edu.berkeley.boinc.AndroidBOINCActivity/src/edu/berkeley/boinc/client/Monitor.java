@@ -14,8 +14,11 @@ import edu.berkeley.boinc.AndroidBOINCActivity;
 import edu.berkeley.boinc.AppPreferences;
 import edu.berkeley.boinc.R;
 import edu.berkeley.boinc.definitions.CommonDefs;
+import edu.berkeley.boinc.rpc.AccountIn;
+import edu.berkeley.boinc.rpc.AccountOut;
 import edu.berkeley.boinc.rpc.CcStatus;
 import edu.berkeley.boinc.rpc.GlobalPreferences;
+import edu.berkeley.boinc.rpc.Project;
 import edu.berkeley.boinc.rpc.ProjectAttachReply;
 import edu.berkeley.boinc.rpc.RpcClient;
 
@@ -152,6 +155,79 @@ public class Monitor extends Service{
     	}
     }
     
+    public synchronized Integer lookupCredentials(String email, String pwd, Integer maxDuration) {
+    	Integer retval = -1;
+    	AccountIn credentials = new AccountIn();
+    	credentials.email_addr = email;
+    	credentials.passwd = pwd;
+    	credentials.url = getString(R.string.project_url);
+    	Boolean success = rpc.lookupAccount(credentials); //asynch
+    	if(success) { //only continue if lookupAccount command did not fail
+    		//get authentication token from lookupAccountPoll
+    		Integer counter = 0;
+    		Integer sleepDuration = 500; //in mili seconds
+    		Integer maxLoops = maxDuration / sleepDuration;
+    		Boolean loop = true;
+    		while(loop && (counter < maxLoops)) {
+    			loop = false;
+    			try {
+    				Thread.sleep(sleepDuration);
+    			} catch (Exception e) {}
+    			counter ++;
+    			AccountOut auth = rpc.lookupAccountPoll();
+    			if (auth.error_num == -204) {
+    				loop = true; //no result yet, keep looping
+    			}
+    			else {
+    				//final result ready
+    				if(auth.error_num == 0) { //write usable results to AppPreferences
+        				AppPreferences appPrefs = Monitor.getAppPrefs(); //get singleton appPrefs to save authToken
+        				appPrefs.setEmail(email);
+        				appPrefs.setPwd(pwd);
+        				appPrefs.setMd5(auth.authenticator);
+        				Log.d(TAG, "credentials verified");
+    				}
+    				retval = auth.error_num;
+    			}
+    		}
+    	}
+    	Log.d(TAG, "lookupCredentials returns " + retval);
+    	return retval;
+    }
+    
+    public synchronized Boolean attachProject(Integer maxDuration) {
+    	Boolean success = false;
+
+    	//get singleton appPrefs to read authToken
+		AppPreferences appPrefs = Monitor.getAppPrefs(); 
+		
+		//make asynchronous call to attach project
+    	success = rpc.projectAttach(getString(R.string.project_url), appPrefs.getMd5(), getString(R.string.project_name));
+    	if(success) { //only continue if attach command did not fail
+    		// verify success of projectAttach with poll function
+    		success = false;
+    		Integer counter = 0;
+    		Integer sleepDuration = 500; //in mili seconds
+    		Integer maxLoops = maxDuration / sleepDuration;
+    		while(!success && (counter < maxLoops)) {
+    			try {
+    				Thread.sleep(sleepDuration);
+    			} catch (Exception e) {}
+    			counter ++;
+    			ProjectAttachReply reply = rpc.projectAttachPoll();
+    			Integer result = reply.error_num;
+    			if(result == 0) {
+    				success = true;
+    	    		AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "project attached!");
+    				// Client is attached to project, publish setupStatus 1 -> setup complete!
+    				getClientStatus().setupStatus = 1;
+    				getClientStatus().fire();
+    			}
+    		}
+    	}
+    	return success;
+    }
+    
 	public synchronized void setRunMode(Integer mode) {
 		Boolean success = rpc.setRunMode(mode,0);
 		Log.d(TAG,"run mode set to " + mode + " returned " + success);
@@ -167,25 +243,17 @@ public class Monitor extends Service{
 		rpc.readGlobalPrefsOverride(); //trigger reload of override settings
 	}
 	
-	public synchronized String getMd5(String email, String pwd) {
-		return rpc.getPasswdHash(pwd, email);
-	}
-	
 	private final class ClientMonitorAsync extends AsyncTask<Integer,String,Boolean> {
 
 		private final String TAG = "ClientMonitorAsync";
 		
 		private Boolean clientStarted = false;
 		
-		private final String clientName = "boinc_client"; 
-		private final String authFileName = "gui_rpc_auth.cfg";
-		private String clientPath = "/data/data/edu.berkeley.boinc/client/";
+		private final String clientName = getString(R.string.client_name); 
+		private final String authFileName = getString(R.string.auth_file_name); 
+		private String clientPath = getString(R.string.client_path); 
 		
 		private final Integer maxDuration = 30; //maximum polling duration
-		
-		@Override
-		protected void onPreExecute() {
-		}
 		
 		@Override
 		protected Boolean doInBackground(Integer... params) {
@@ -196,25 +264,14 @@ public class Monitor extends Service{
 				
 				
 				if(!rpc.connectionAlive()) { //check whether connection is still alive
-					//if connection is not working, either client has not been set up yet, or client crashed.
-					//in both cases start client again
-					setupClient(); //synchronous execution in same thread -> blocks monitor until finished
+					//if connection is not working, either client has not been set up yet, user not attached to project, or client crashed.
+					//in all cases trigger startUp again.
+					if(!startUp()) { //synchronous execution in same thread -> blocks monitor until finished
+						publishProgress("starting BOINC Client failed. Stop Monitor.");
+						//cancel(true); 
+						return false; //if startUp fails, stop monitor execution. restart has to be triggered by user.
+					}
 				}
-				
-				//Log.d(TAG, "getHostInfo");
-				//rpc.getHostInfo();
-				//Log.d(TAG, "getProjectStatus");
-				//rpc.getProjectStatus();
-				//Log.d(TAG, "getActiveResults");
-				//rpc.getActiveResults();  
-				
-				//Log.d(TAG, "getResults");
-				//ArrayList<edu.berkeley.boinc.rpc.Result> tasks = rpc.getResults();
-				
-				
-				//prefs test
-				//GlobalPreferences prefs = rpc.getGlobalPrefsWorkingStruct();
-				//Log.d(TAG, "Java class holds network_wifi_only value: " + prefs.network_wifi_only); 
 				
 				Log.d(TAG, "getCcStatus");
 				edu.berkeley.boinc.rpc.CcStatus status = rpc.getCcStatus();
@@ -226,31 +283,6 @@ public class Monitor extends Service{
 				} else {
 					AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "client status connection problem");
 				}
-					//connection problem! do nothing, loop will continue, "connectionAlive" fail, and the setup routine start.
-					
-					
-					//Log.d(TAG,"task_mode: " + status.task_mode + " task_suspend_reason: " + status.task_suspend_reason);
-					/*
-					if(status.task_mode==CommonDefs.RUN_MODE_NEVER) { // run mode set to "never"
-						Log.d(TAG,"disabled by user");
-						computing = false;
-						suspendReason = status.task_suspend_reason; //doesnt matter too much, because layout doesnt show
-						computingEnabled = false;
-					}
-					else if (status.task_mode==CommonDefs.RUN_MODE_AUTO){ //client is in run mode "auto"
-						suspendReason = status.task_suspend_reason;
-						computingEnabled = true;
-						if(suspendReason==CommonDefs.SUSPEND_NOT_SUSPENDED) { //not suspended, so computing
-							Log.d(TAG,"computing");
-							//TODO check whether there are active tasks?
-							computing = true;
-						}
-						else { //suspended
-							Log.d(TAG,"suspended");
-							computing = false;
-						}
-					}*/
-					//setClientStatus(tasks,status);
 				
 		        Intent clientStatus = new Intent();
 		        clientStatus.setAction("edu.berkeley.boinc.clientstatus");
@@ -269,50 +301,128 @@ public class Monitor extends Service{
 		
 		@Override
 		protected void onPostExecute(Boolean success) {
-			AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "client connection broken! (permanent)");
-			Log.d(TAG+" - onPostExecute","client connection broken! (permanent)"); 
+			Log.d(TAG+" - onPostExecute","monitor exit"); 
 			Monitor.monitorActive = false;
 		}
 		
 
 		
-		private void setupClient() {
+		private Boolean startUp() {
 			
 			//adapt client status and broadcast event
 			getClientStatus().setupStatus = 0;
 			getClientStatus().fire();
 			
-			//try to reconnect, if client of another Manager lifecycle exists.
-			Boolean success =  reconnectClient();
+			//status control
+			Boolean success = false;
 			
-			if(!success) { //if reconnect did not work out, loop through setup routine until successful or timeout
-				success = false;
+			//try to connect, if client of another Manager lifecycle exists.
+			Boolean connect =  connectClient();
+			
+			if(!connect) { //if connect did not work out, start new client instance and run connect attempts in loop
 				Integer counter = 0;
 				Integer max = 5; //max number of setup attempts
-				while(!(success=setupClientRoutine()) && (counter<max)) { //re-trys setting up the client several times, before giving up.
+				Boolean setup = setupClient();
+				if(!setup) {
+					//setup failed, publish setupStatus 2 -> permanent error!
+					getClientStatus().setupStatus = 2;
+					getClientStatus().fire();
+				}
+				//try to connect to executed Client in loop
+				while(!(connect=connectClient()) && (counter<max)) { //re-trys setting up the client several times, before giving up.
 					AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "--- restart setup ---");
 					counter++;
+					try {
+						Thread.sleep(5000);
+					}catch (Exception e) {}
 				}
-			}
-	        
-			//publish results
-			AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "finished " + success);
-			if(success) { //if setup successful, publish...
-				getClientStatus().setupStatus = 1;
-				getClientStatus().fire();
-			}
-			else { //setup failed several times, publish...
-				getClientStatus().setupStatus = 2;
-				getClientStatus().fire();
+				
+				//connect still not succeeded. publish setupStatus 2 -> permanent error!
+				if(!connect) {
+					getClientStatus().setupStatus = 2;
+					getClientStatus().fire();
+				}
 				
 			}
+
+			//client is connected.
+			
+			Boolean login = false;
+			login = checkLogin();
+			if(login) { // Client is attached to project, publish setupStatus 1 -> setup complete!
+				getClientStatus().setupStatus = 1;
+				getClientStatus().fire();
+				//return true in order to start monitor
+				success = true;
+			} else { //client is not attached to project, publish setupStatus 3 -> wait for user input
+				getClientStatus().setupStatus = 3;
+				getClientStatus().fire();
+			}
+			
+			//return success status, start monitor only if true.
+			return success;
+		}
+		
+		private Boolean connectClient() {
+			Boolean success = false;
+			
+			publishProgress("connect client.");
+			
+	        success = connect();
+	        if(success) {
+	        	publishProgress("socket connection established (1/2)");
+	        }
+	        else {
+	        	publishProgress("socket connection failed!");
+	        	return success;
+	        }
+	        
+	        //authorize
+	        success = authorize();
+	        if(success) {
+	        	publishProgress("socket authorized. (2/2)");
+	        }
+	        else {
+	        	publishProgress("socket authorization failed!");
+	        	return success;
+	        }
+	        return success;
 		}
 		
 		/*
-		 * called by setupClient()
-		 * tries to reconnect to running BOINC client.
-		 * This is needed, if previous execution of this Manager app terminated and BOINC client is still running on the device.
+		 * checks whether client is attached to project
 		 */
+		private Boolean checkLogin() {
+			publishProgress("verify project login:");
+			Boolean success = false;
+			success = verifyProjectAttach();
+	        if(success) {
+	        	publishProgress("credentials verified. logged in!");
+	        }
+	        else {
+	        	publishProgress("not logged in!");
+	        	return success;
+	        }
+			return success;
+		}
+		
+		/*
+		private Boolean projectLogin() {
+			publishProgress("project login...");
+			Boolean success = false;
+
+	        if(success) {
+	        	publishProgress("credentials verified. logged in!");
+	        }
+	        else {
+	        	publishProgress("not logged in!");
+	        	return success;
+	        }
+			return success;
+		}
+		
+		
+
 		private Boolean reconnectClient() {
 			Boolean success = false;
 			
@@ -350,21 +460,23 @@ public class Monitor extends Service{
 	        
 	        publishProgress("client re-connected");
 	        return success;
-		}
+		} */
 		
 		/*
-		 * called by setupClient()
-		 * walks through the steps necessary to get a working and interacting BOINC client.
+		 * called by startUp()
+		 * copies and executes the Client
 		 */
-		private Boolean setupClientRoutine() {
+		private Boolean setupClient() {
 			//setup client
 			Boolean success = false;
 			
 			shutdownExisitingClient();
 	
+			publishProgress("Client setup.");
+			
 	        success = installClient(true);
 	        if(success) {
-	        	publishProgress("installed. (1/5)");
+	        	publishProgress("installed. (1/2)");
 	        }
 	        else {
 	        	publishProgress("installation failed!");
@@ -374,57 +486,13 @@ public class Monitor extends Service{
 	        //run client
 	        success = runClient();
 	        if(success) {
-	        	publishProgress("started. (2/5)");
+	        	publishProgress("started. (2/2)");
 	        	clientStarted = true; //mark that client process is running.
 	        }
 	        else {
-	        	publishProgress("start of client failed!");
+	        	publishProgress("start failed!");
 	        	return success;
 	        }
-	        
-	        //connect in loop
-    		try {
-    			Thread.sleep(5000); //sleep for five seconds before connecting to BOINC client
-    		}catch(Exception e){}
-	    	success = false;
-	    	Integer loop = 0;
-	    	while(!success && (6 > loop)) {
-	    		success = connect();
-	    		loop++;
-	    		try {
-	    			Thread.sleep(5000); //sleep for five seconds
-	    		}catch(Exception e){}
-	    	}
-	        if(success) {
-	        	publishProgress("connected. (3/5)");
-	        }
-	        else {
-	        	publishProgress("connection failed!");
-	        	return success;
-	        }
-	        
-	        //authorize
-	        success = authorize();
-	        if(success) {
-	        	publishProgress("authorized. (4/5)");
-	        }
-	        else {
-	        	publishProgress("authorization failed!");
-	        	return success;
-	        }
-	        
-	        //attach project
-	        Boolean tmp = attachProject();
-	        Log.d(TAG,"attach project returned: " + tmp);
-	        success = attachProjectPoll();
-	        if(success) {
-	        	publishProgress("project attached. (5/5)");
-	        }
-	        else {
-	        	publishProgress("project attachment failed!");
-	        	return success;
-	        }
-	        
 	        return success;
 		}
 		
@@ -501,39 +569,6 @@ public class Monitor extends Service{
 	    }
 	    
 	    /*
-	    public Boolean setupApp(){
-	    	Boolean success = false;
-	    	Log.d(TAG, "setupApp");
-	    	try {
-	    		File app = new File(clientPath+"projects/isaac.ssl.berkeley.edu_test/uppercase_6.27_arm-android-linux-gnu");
-	    		if(app.exists()) {
-	    			app.delete();
-	    			Log.d(TAG, "deleted");  
-	    		}
-	    		
-	    		InputStream assets = ctx.getAssets().open("uc2"); 
-	    		OutputStream data = new FileOutputStream(app); 
-	    		byte[] b = new byte [1024];
-	    		int read; 
-	    		while((read = assets.read(b)) != -1){ 
-	    			data.write(b,0,read);
-	    		}
-	    		assets.close(); 
-	    		data.flush(); 
-	    		data.close();
-	    		Log.d(TAG, "copy successful"); 
-	    		app.setExecutable(true);
-	    		success = app.canExecute();
-	    		Log.d(TAG, "native client file in app space is executable: " + success);  
-	    	}
-	    	catch (IOException ioe) {  
-	    		Log.d(TAG, "Exception: " + ioe.getMessage());
-	    		Log.e(TAG, "IOException", ioe);
-	    	}
-	    	return success;
-	    }*/
-	    
-	    /*
 	     * called by setupClientRoutine()
 	     * executes the BOINC client using the Java Runtime exec method.
 	     */
@@ -591,36 +626,16 @@ public class Monitor extends Service{
 			return rpc.authorize(authKey); 
 	    }
 	    
-	    /*
-	     * called by setupClientRoutine() and reconnectClient()
-	     * attaches the hard coded BOINC project to this client. RPC call does nothing, if client already attached to project.
-	     */
-	    private Boolean attachProject() {
-	    	Log.d(TAG, "attachProject");
-	    	//rpc.projectAttach("http://setiathome.berkeley.edu/", "cdd28f1747e714dc61cf731cb47f4205", "SETI@home");
-	    	return rpc.projectAttach(getApplicationContext().getString(R.string.project_url), getApplicationContext().getString(R.string.project_auth_token), getApplicationContext().getString(R.string.project_name));
-	    }
-	    
-	    /*
-	     * called by setupClientRoutine() and reconnectClient()
-	     * retrieves "attachProject" result in a polling loop
-	     */
-	    private Boolean attachProjectPoll() {
-	    	Log.d(TAG, "attachProjectPoll");
+	    private Boolean verifyProjectAttach() {
+	    	Log.d(TAG, "verifyProjectAttach");
 	    	Boolean success = false;
-	    	Integer loop = 0;
-	    	while(!success && (maxDuration > loop)) {
-		    	ProjectAttachReply reply = rpc.projectAttachPoll();
-		    	Log.d(TAG,"ProjectAttachReply: " + reply.error_num);
-		    	if(reply.error_num==0){
-		    		Log.d(TAG, "Returned 0, project attached.");
-		    		success = true;
-		    	}
-	    		loop++;
-	    		try {
-	    			Thread.sleep(1000); //sleep for one second
-	    		}catch(Exception e){}
+	    	ArrayList<Project> projects = rpc.getProjectStatus();
+	    	Integer attachedProjectsAmount = projects.size();
+	    	Log.d(TAG,"projects amount " + projects.size()); 
+	    	if(attachedProjectsAmount > 0) { // there are attached projects
+	    		success = true;
 	    	}
+	    	Log.d(TAG,"verifyProjectAttach about to return with " + success);
 	    	return success;
 	    }
 	}

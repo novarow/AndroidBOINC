@@ -79,11 +79,12 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/loginConfirmButton"
         android:layout_width="150dip"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dip"
+        android:onClick="loginButtonClicked"
         android:text="@string/status_noproject_button" />
 
 </LinearLayout>

@@ -6,7 +6,9 @@ BOINC client:
 
 BOINC Android manager:
 - add login logic
+- add logout logic (re-login with different credentials) (project attach)
 - add compatibility check for ARCH and ABI.
+- replace hardwired data directory (client path) in case someone wants to change package name.
 - auto start service. (depending on pref)
 - Status: add network status, redesign layout, add aquired project credit
 - Tasks: implement
