@@ -1,0 +1,24 @@
+diff -crB 25993/client/main.cpp android/client/main.cpp
+*** 25993/client/main.cpp	2012-08-08 09:42:06.389978005 +0200
+--- android/client/main.cpp	2012-08-08 09:41:34.478379188 +0200
+***************
+*** 380,386 ****
+      int retval = 0;
+  
+  #ifdef ANDROID
+-     chdir(CWD); //CWD defined at lib/android_log.h
+      char ccwd[1024];
+      getcwd(ccwd, sizeof(ccwd));
+      char msg[1024];
+--- 380,385 ----
+diff -crB 25993/lib/android_log.h android/lib/android_log.h
+*** 25993/lib/android_log.h	2012-08-08 09:42:18.405826944 +0200
+--- android/lib/android_log.h	2012-08-08 09:41:13.694640476 +0200
+***************
+*** 20,24 ****
+  #define LOG_TAG "BOINC"
+  #define LOGI(...) __android_log_print(ANDROID_LOG_INFO,LOG_TAG, __VA_ARGS__)
+  #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
+- //setup cwd
+- #define CWD "/data/data/edu.berkeley.boinc/client"
+--- 20,22 ----

@@ -8,8 +8,9 @@ BOINC Android manager:
 - add logout logic (re-login with different credentials) (project attach)
 - add compatibility check for ARCH and ABI.
 - replace hardwired data directory (client path) in case someone wants to change package name.
+- determine whether chmod is really necassary. (-> Runtime.exec(?) )
 - auto start service. (depending on pref)
-- Status: add network status, redesign layout, add aquired project credit
+- Status: add network status, redesign layout, add aquired project credit, save state when logging in.
 - Transfers: implement
 - Messages: implement
 - Debug: improve layout and data structure, add "shutdown client"
