@@ -33,8 +33,8 @@
             <corners
                 android:radius="5dip" />
             <gradient
-                android:startColor="@color/stopped"
-                android:endColor="@color/stopped" />
+                android:startColor="@color/error"
+                android:endColor="@color/error" />
         </shape>
     </clip>
 </item>

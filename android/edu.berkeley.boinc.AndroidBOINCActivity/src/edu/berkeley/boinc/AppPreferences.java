@@ -1,6 +1,5 @@
 package edu.berkeley.boinc;
 
-import edu.berkeley.boinc.rpc.Md5;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -21,11 +20,11 @@ public class AppPreferences {
 			prefs = ctx.getSharedPreferences(PREFS, 0);
 		}
 		autostart = prefs.getBoolean("autostart", false);
-		email = prefs.getString(email, "test@test.asdf");
-		pwd = prefs.getString(pwd, "lol");
-		md5 = prefs.getString(md5, "");
+		email = prefs.getString("email", "");
+		pwd = prefs.getString("pwd", "");
+		md5 = prefs.getString("md5", "");
 		
-		Log.d(TAG, "read successful.");
+		Log.d(TAG, "appPrefs read successful." + autostart + email + pwd + md5);
 	}
 	
 	public void setEmail(String email) {

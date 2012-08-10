@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class PrefsActivity extends Activity implements OnClickListener {
 	
@@ -58,6 +59,12 @@ public class PrefsActivity extends Activity implements OnClickListener {
 		super.onResume();
 	}
 	
+	/*
+	 * Service binding part
+	 * only necessary, when function on monitor instance has to be called
+	 * currently in Prefs- and DebugActivity
+	 * 
+	 */
 	private ServiceConnection mConnection = new ServiceConnection() {
 	    public void onServiceConnected(ComponentName className, IBinder service) {
 	    	Log.d(TAG,"onServiceConnected");
@@ -221,36 +228,45 @@ public class PrefsActivity extends Activity implements OnClickListener {
 		EditText input = (EditText) dialog.findViewById(R.id.Input);
 		String tmp = input.getText().toString();
 		Log.d(TAG,"onClick with input " + tmp);
-		switch (id) {
-		case R.string.prefs_project_email_header:
-			//TODO cant be reached, clickable turned of in PrefsListAdapter
-			appPrefs.setEmail(tmp);
-			break;
-		case R.string.prefs_project_pwd_header:
-			appPrefs.setPwd(tmp);
-			//TODO logout (detach)
-			//TODO login (attach)
-			//TODO cant be reached, clickable turned of in PrefsListAdapter
-			break;
-		case R.string.prefs_disk_max_pct_header:
-			clientPrefs.disk_max_used_pct = Double.parseDouble(tmp);
-			monitor.setPrefs(clientPrefs);
-			break;
-		case R.string.prefs_disk_min_free_gb_header:
-			clientPrefs.disk_max_used_gb = Double.parseDouble(tmp);
-			monitor.setPrefs(clientPrefs);
-			break;
-		case R.string.prefs_daily_xfer_limit_mb_header:
-			clientPrefs.daily_xfer_limit_mb = Double.parseDouble(tmp);
-			monitor.setPrefs(clientPrefs);
-			break;
-		default:
-			Log.d(TAG,"onClick (dialog submit button), couldnt match ID");
-			break;
-		
+		try {
+			switch (id) {
+			case R.string.prefs_project_email_header:
+				//TODO cant be reached, clickable turned of in PrefsListAdapter
+				appPrefs.setEmail(tmp);
+				break;
+			case R.string.prefs_project_pwd_header:
+				appPrefs.setPwd(tmp);
+				//TODO logout (detach)
+				//TODO login (attach)
+				//TODO cant be reached, clickable turned of in PrefsListAdapter
+				break;
+			case R.string.prefs_disk_max_pct_header:
+				tmp=tmp.replaceAll(",","."); //replace e.g. European decimal seperator "," by "."
+				clientPrefs.disk_max_used_pct = Double.parseDouble(tmp);
+				monitor.setPrefs(clientPrefs);
+				break;
+			case R.string.prefs_disk_min_free_gb_header:
+				tmp=tmp.replaceAll(",","."); //replace e.g. European decimal seperator "," by "."
+				clientPrefs.disk_max_used_gb = Double.parseDouble(tmp);
+				monitor.setPrefs(clientPrefs);
+				break;
+			case R.string.prefs_daily_xfer_limit_mb_header:
+				tmp=tmp.replaceAll(",","."); //replace e.g. European decimal seperator "," by "."
+				clientPrefs.daily_xfer_limit_mb = Double.parseDouble(tmp);
+				monitor.setPrefs(clientPrefs);
+				break;
+			default:
+				Log.d(TAG,"onClick (dialog submit button), couldnt match ID");
+				break;
+			
+			}
+			dialog.dismiss();
+			loadSettings();
+		} catch (Exception e) { //e.g. when parsing fails
+			Log.e(TAG, "Exception in dialog onClick", e);
+			Toast toast = Toast.makeText(getApplicationContext(), "wrong format!", Toast.LENGTH_SHORT);
+			toast.show();
 		}
-		dialog.dismiss();
-		loadSettings();
 	}
 	
 

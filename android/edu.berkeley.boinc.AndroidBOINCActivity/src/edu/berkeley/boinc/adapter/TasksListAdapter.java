@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -43,31 +42,18 @@ public class TasksListAdapter extends ArrayAdapter<Result>{
     	Result listItem = entries.get(position);
     	
 		pb.setIndeterminate(false);
-    	
-    	switch (determineTaskState(listItem)) {
-    	case 0: //task inactive
-    		Log.d(TAG,"inactive");
-    		pb.setProgressDrawable(this.activity.getResources().getDrawable((R.drawable.progressbar_stopped)));
-    		break;
-    	case 1: //task suspended
-    		Log.d(TAG,"suspended");
-    		pb.setProgressDrawable(this.activity.getResources().getDrawable((R.drawable.progressbar_paused)));
-    		break;
-    	case 2: //task active
-    		Log.d(TAG,"active");
-    		pb.setProgressDrawable(this.activity.getResources().getDrawable((R.drawable.progressbar_active)));
-    		break;
-    	default:
-    		break;
-    	}
-    	
-
+    	pb.setProgressDrawable(this.activity.getResources().getDrawable((determineProgressBarLayout(listItem))));
 		
 		//v.setTag(listItem.name);
     	String headerT = "Name: " + listItem.name;
 		header.setText(headerT);
-		pb.setProgress(Math.round(listItem.fraction_done * pb.getMax()));
-		String pT = Math.round(listItem.fraction_done * 100) + "%";
+		
+		Float fraction =  listItem.fraction_done;
+		if(!listItem.active_task && listItem.ready_to_report) { //fraction not available, set it to 100
+			fraction = Float.valueOf((float) 1.0);
+		}
+		pb.setProgress(Math.round(fraction * pb.getMax()));
+		String pT = Math.round(fraction * 100) + "%";
 		progress.setText(pT);
 		
 		String statusT = determineStatusText(listItem);
@@ -127,23 +113,26 @@ public class TasksListAdapter extends ArrayAdapter<Result>{
     	return text;
     }
     
-    private Integer determineTaskState(Result tmp) {
-    	Integer state = -1;
-    	/* Task states:
-    	 * 0 inactive
-    	 * 1 suspended
-    	 * 2 running
-    	 */
+    private Integer determineProgressBarLayout(Result tmp) {
     	if(tmp.active_task) {
-    		if(tmp.active_task_state == CommonDefs.PROCESS_SUSPENDED) {
-    			state = 1;
+    		if(tmp.active_task_state == CommonDefs.PROCESS_EXECUTING) {
+    			//running
+    			return R.drawable.progressbar_active;
     		} else {
-    			state = 2;
+    			//suspended - ready to run
+    			return R.drawable.progressbar_paused;
     		}
     	} else {
-    		state = 0;
+    		if((tmp.state == CommonDefs.RESULT_ABORTED) || (tmp.state == CommonDefs.RESULT_UPLOAD_FAILED) || (tmp.state == CommonDefs.RESULT_COMPUTE_ERROR)) { 
+    			//error
+    			return R.drawable.progressbar_error;
+    		} else if (tmp.ready_to_report) {
+    			//finished
+    			return R.drawable.progressbar_active;
+    		} else {
+    			//paused or stopped
+    			return R.drawable.progressbar_paused;
+    		}
     	}
-    	Log.d(TAG,"active: " + tmp.active_task + " active state: " + tmp.active_task_state + " -> " + state);
-    	return state;
     }
 }

@@ -10,7 +10,9 @@ import edu.berkeley.boinc.AndroidBOINCActivity;
 import edu.berkeley.boinc.definitions.CommonDefs;
 import edu.berkeley.boinc.rpc.CcState;
 import edu.berkeley.boinc.rpc.CcStatus;
+import edu.berkeley.boinc.rpc.Message;
 import edu.berkeley.boinc.rpc.Result;
+import edu.berkeley.boinc.rpc.Transfer;
 
 /*
  * Singleton that holds the client status data, as determined by the Monitor.
@@ -24,6 +26,8 @@ public class ClientStatus {
 	//RPC wrapper
 	private CcStatus status;
 	private CcState state;
+	private ArrayList<Transfer> transfers;
+	private ArrayList<Message> messages; //debug tab
 	
 	//setup status, set by "setupClient" method of ClientMonitorAsync
 	// 0 = client is in setup routine (default)
@@ -72,9 +76,11 @@ public class ClientStatus {
 	/*
 	 * called frequently by Monitor to set the RPC data. These objects are used to determine the client status and parse it in the data model of this class.
 	 */
-	public synchronized void setClientStatus(CcStatus status,CcState state) {
+	public synchronized void setClientStatus(CcStatus status,CcState state, ArrayList<Transfer> transfers, ArrayList<Message> msgs) {
 		this.status = status;
 		this.state = state;
+		this.transfers = transfers;
+		this.messages = msgs;
 		parseClientStatus();
 		Log.d(TAG,"parsing results: computing: " + computingParseError + computingStatus + computingSuspendReason + " - network: " + networkParseError + networkStatus + networkSuspendReason);
 		if(!computingParseError && !networkParseError) {
@@ -85,10 +91,36 @@ public class ClientStatus {
 	}
 	
 	public synchronized ArrayList<Result> getTasks() {
-		if(state == null) { //request comes in before first monitor cycle. (e.g. when not logged in)
+		if(state == null) { //check in case monitor is not set up yet (e.g. while logging in)
+			Log.d(TAG, "state is null");
 			return null;
 		}
 		return state.results;
+	}
+	
+	public synchronized ArrayList<Transfer> getTransfers() {
+		if(transfers == null) { //check in case monitor is not set up yet (e.g. while logging in)
+			Log.d(TAG, "transfers is null");
+			return null;
+		}
+		return transfers;
+	}
+	
+	//Debug Tab
+	public synchronized ArrayList<Message> getMessages() {
+		if(messages == null) { //check in case monitor is not set up yet (e.g. while logging in)
+			Log.d(TAG, "messages is null");
+			return null;
+		}
+		return messages;
+	}
+	
+	public synchronized void resetMessages() {
+		if(messages == null) { //check in case monitor is not set up yet (e.g. while logging in)
+			Log.d(TAG, "messages is null");
+			return;
+		}
+		messages.clear();
 	}
 	
 	/*

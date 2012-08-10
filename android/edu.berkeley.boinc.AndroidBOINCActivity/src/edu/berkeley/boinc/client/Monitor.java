@@ -15,10 +15,14 @@ import edu.berkeley.boinc.AppPreferences;
 import edu.berkeley.boinc.R;
 import edu.berkeley.boinc.rpc.AccountIn;
 import edu.berkeley.boinc.rpc.AccountOut;
+import edu.berkeley.boinc.rpc.CcState;
+import edu.berkeley.boinc.rpc.CcStatus;
 import edu.berkeley.boinc.rpc.GlobalPreferences;
+import edu.berkeley.boinc.rpc.Message;
 import edu.berkeley.boinc.rpc.Project;
 import edu.berkeley.boinc.rpc.ProjectAttachReply;
 import edu.berkeley.boinc.rpc.RpcClient;
+import edu.berkeley.boinc.rpc.Transfer;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -152,6 +156,15 @@ public class Monitor extends Service{
     	}
     }
     
+    public void quitClient() {
+    	Boolean success = rpc.quit();
+    	AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "graceful shutdown returned " + success);
+		if(!success) {
+			clientProcess.destroy();
+			AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "process killed ");
+		}
+    }
+    
     public synchronized void attachProject(String email, String pwd) {
 		Log.d(TAG,"attachProject");
 		String[] param = new String[2];
@@ -186,6 +199,8 @@ public class Monitor extends Service{
 		private final String authFileName = getString(R.string.auth_file_name); 
 		private String clientPath = getString(R.string.client_path); 
 		
+		private Integer test = 0;
+		
 		private Integer refreshFrequency = 3000; //frequency of which the monitor updates client status via RPC, to often can cause reduced performance!
 		
 		@Override
@@ -207,12 +222,21 @@ public class Monitor extends Service{
 				}
 				
 				Log.d(TAG, "getCcStatus");
-				edu.berkeley.boinc.rpc.CcStatus status = rpc.getCcStatus();
-				Log.d(TAG, "getState");
-				edu.berkeley.boinc.rpc.CcState state = rpc.getState();
+				CcStatus status = rpc.getCcStatus();
+				Log.d(TAG, "getState"); 
+				CcState state = rpc.getState();
+				//TODO getState is quite verbose, optimize!
+				Log.d(TAG, "getTransers");
+				ArrayList<Transfer>  transfers = rpc.getFileTransfers();
+				//TODO only when debug tab:
+				//TODO room for improvements, dont retrieve complete list every time, but only new messages.
+				Integer count = rpc.getMessageCount();
+				Log.d(TAG, "message count: " + count);
+				Log.d(TAG, "getMessages");
+				ArrayList<Message> msgs = rpc.getMessages(count - 25); //get the most recent 25 messages
 				
-				if((state!=null)&&(status!=null)) {
-					Monitor.clientStatus.setClientStatus(status,state);
+				if((state!=null)&&(status!=null)&&(transfers!=null)) {
+					Monitor.clientStatus.setClientStatus(status,state,transfers,msgs);
 				} else {
 					AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "client status connection problem");
 				}
@@ -274,6 +298,7 @@ public class Monitor extends Service{
 				if(!connect) {
 					getClientStatus().setupStatus = 2;
 					getClientStatus().fire();
+					return false;
 				}
 				
 			}
@@ -338,62 +363,6 @@ public class Monitor extends Service{
 	        }
 			return success;
 		}
-		
-		/*
-		private Boolean projectLogin() {
-			publishProgress("project login...");
-			Boolean success = false;
-
-	        if(success) {
-	        	publishProgress("credentials verified. logged in!");
-	        }
-	        else {
-	        	publishProgress("not logged in!");
-	        	return success;
-	        }
-			return success;
-		}
-		
-		
-
-		private Boolean reconnectClient() {
-			Boolean success = false;
-			
-			publishProgress("trying to re-connect client.");
-			
-	        success = connect();
-	        if(success) {
-	        	publishProgress("re-connected. (1/3)");
-	        }
-	        else {
-	        	publishProgress("re-connection failed!");
-	        	return success;
-	        }
-	        
-	        //authorize
-	        success = authorize();
-	        if(success) {
-	        	publishProgress("authorized. (2/3)");
-	        }
-	        else {
-	        	publishProgress("authorization failed!");
-	        	return success;
-	        }
-	        
-	        //attach project
-	        attachProject();
-	        success = attachProjectPoll();
-	        if(success) {
-	        	publishProgress("project attached. (3/3)");
-	        }
-	        else {
-	        	publishProgress("project attachment failed!");
-	        	return success;
-	        }
-	        
-	        publishProgress("client re-connected");
-	        return success;
-		} */
 		
 		/*
 		 * called by startUp()
@@ -509,7 +478,7 @@ public class Monitor extends Service{
 	    	Boolean success = false;
 	    	try { 
 	        	//starts a new process which executes the BOINC client 
-	        	clientProcess = Runtime.getRuntime().exec(clientPath + clientName);
+	        	clientProcess = Runtime.getRuntime().exec(clientPath + clientName, null, new File(clientPath));
 	        	success = true;
 	    	}
 	    	catch (IOException ioe) {
@@ -609,6 +578,10 @@ public class Monitor extends Service{
 			case -136:
 				Log.d(TAG, "eMail incorrect!");
 				publishProgress("eMail Incorrect!");
+				break;
+			case -113:
+				Log.d(TAG, "No internet connection!");
+				publishProgress("No internet connection!");
 				break;
 			default:
 				Log.d(TAG, "unkown error occured!");

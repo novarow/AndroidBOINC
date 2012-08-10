@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- preferences tab colors -->
-		<color name="status">#ACC288</color>
+		<color name="status">#11A800</color>
     <!-- tasks tab colors -->
-		<color name="active">#ACC288</color>
-		<color name="paused">#F0F000</color>
-		<color name="stopped">#E01B1E</color>
+		<color name="active">#11A800</color>
+		<color name="paused">#FCEC3D</color>
+		<color name="error">#ED0202</color>
 </resources>

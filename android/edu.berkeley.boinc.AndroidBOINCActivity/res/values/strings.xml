@@ -17,7 +17,7 @@
     <string name="tab_tasks">Tasks</string>
     <string name="tab_transfers">Transfers</string>
     <string name="tab_preferences">Settings</string>
-    <string name="tab_messages">News</string>
+    <string name="tab_messages">Messages</string>
     <string name="tab_debug">Debug</string>
    
     <!-- status tab strings -->
@@ -86,15 +86,18 @@
 	<string name="tasks_result_aborted">Aborted</string>
 	<string name="tasks_result_upload_failed">Upload failed</string>
 	
-	<string name="tasks_active_uninitialized">Starting</string>
+	<string name="tasks_active_uninitialized">Ready</string>
 	<string name="tasks_active_executing">Running</string>
 	<string name="tasks_active_suspended">Paused</string>
 	<string name="tasks_active_abort_pending">Stopping</string>
 	<string name="tasks_active_quit_pending">Stopping</string>
 	    
     <!-- debug tab strings -->
+    <string name="debug_kill">Kill BOINC Client</string>
+    <string name="debug_clear">Clear</string>
     <string name="debug_refresh">Refresh</string>
-    <string name="debug_clear">Clear Log</string>
+    <string name="debug_manager_header">AndroidBOINC manager messages:</string>
+    <string name="debug_client_header">BOINC Client messages:</string>
     
     
     

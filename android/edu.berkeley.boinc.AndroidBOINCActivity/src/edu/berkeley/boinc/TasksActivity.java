@@ -2,11 +2,6 @@ package edu.berkeley.boinc;
 
 import java.util.ArrayList;
 
-import edu.berkeley.boinc.adapter.PrefsListAdapter;
-import edu.berkeley.boinc.adapter.PrefsListItemWrapper;
-import edu.berkeley.boinc.adapter.PrefsListItemWrapperBool;
-import edu.berkeley.boinc.adapter.PrefsListItemWrapperDouble;
-import edu.berkeley.boinc.adapter.PrefsListItemWrapperText;
 import edu.berkeley.boinc.adapter.TasksListAdapter;
 import edu.berkeley.boinc.client.ClientStatus;
 import edu.berkeley.boinc.client.Monitor;
@@ -30,6 +25,7 @@ public class TasksActivity extends Activity {
 	private TasksListAdapter listAdapter;
 	
 	private ArrayList<Result> data = new ArrayList<Result>(); //Adapter for list data
+	private Boolean setup = false;
 
 	private BroadcastReceiver mClientStatusChangeRec = new BroadcastReceiver() {
 		
@@ -49,14 +45,9 @@ public class TasksActivity extends Activity {
 		//get singleton client status from monitor
 		status = Monitor.getClientStatus();
 		
-		//setup list and adapter
-		ArrayList<Result> tmp = status.getTasks();
-		if(tmp!=null) { //can be null before first monitor status cycle (e.g. when not logged in or during startup)
-			data = tmp;
-		}
-		lv = (ListView) findViewById(R.id.listview);
-        listAdapter = new TasksListAdapter(TasksActivity.this,R.id.listview,data);
-        lv.setAdapter(listAdapter);
+        //load data model
+		loadData();
+		
         
         Log.d(TAG,"onCreate");
 	}
@@ -78,8 +69,30 @@ public class TasksActivity extends Activity {
 	
 	
 	private void loadData() {
-		Log.d(TAG,"loadData");
-		listAdapter.notifyDataSetChanged(); //force list adapter to refresh
-	}
 
+		//setup list and adapter
+		ArrayList<Result> tmpA = status.getTasks();
+		if(tmpA!=null) { //can be null before first monitor status cycle (e.g. when not logged in or during startup)
+		
+			//deep copy, so ArrayList adapter actually recognizes the difference
+			data.clear();
+			for (Result tmp: tmpA) {
+				data.add(tmp);
+			}
+			
+			if(!setup) {// first time we got proper results, setup adapter
+				lv = (ListView) findViewById(R.id.tasksList);
+		        listAdapter = new TasksListAdapter(TasksActivity.this,R.id.tasksList,data);
+		        lv.setAdapter(listAdapter);
+		        
+		        setup = true;
+			} 
+		
+			Log.d(TAG,"loadData: array contains " + data.size() + " results.");
+			listAdapter.notifyDataSetChanged(); //force list adapter to refresh
+		}else {
+			Log.d(TAG, "loadData array is null");
+		}
+		
+	}
 }

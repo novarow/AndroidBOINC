@@ -11,6 +11,7 @@
 	    <LinearLayout 
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
+	        android:layout_marginTop="10dip"
 	        android:gravity="center_vertical"
 	        android:orientation="horizontal">
 
@@ -20,18 +21,57 @@
 	            android:layout_weight="1.0"
 	            android:text="@string/debug_refresh"
 	            android:onClick="refresh" />
-
+	        
 	        <Button
 	            android:layout_width="0dip"
 	            android:layout_height="wrap_content"
 	            android:layout_weight="1.0"
 	            android:text="@string/debug_clear"
 	            android:onClick="clear" />
-	            
+	        
+	        <Button
+	            android:layout_width="0dip"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="2.0"
+	            android:layout_marginLeft="20dip"
+	            android:text="@string/debug_kill"
+	            android:onClick="killClient" />
+
 	    </LinearLayout>
 
 	    <TextView
-	        android:id="@+id/logtext"
+	        android:id="@+id/managerLogHeader"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/debug_manager_header"
+        	android:textAppearance="?android:attr/textAppearanceMedium" 
+	        android:layout_marginBottom="3dip"
+	        android:layout_marginLeft="3dip"
+	        android:layout_marginRight="3dip"
+	        android:layout_marginTop="15dip" >
+	    </TextView>
+	    <TextView
+	        android:id="@+id/managerLog"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="3dip"
+	        android:layout_marginLeft="3dip"
+	        android:layout_marginRight="3dip"
+	        android:layout_marginTop="15dip" >
+	    </TextView>
+	    <TextView
+	        android:id="@+id/clientLogHeader"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/debug_client_header"
+        	android:textAppearance="?android:attr/textAppearanceMedium" 
+	        android:layout_marginBottom="3dip"
+	        android:layout_marginLeft="3dip"
+	        android:layout_marginRight="3dip"
+	        android:layout_marginTop="15dip" >
+	    </TextView>
+	    <TextView
+	        android:id="@+id/clientLog"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_marginBottom="3dip"
