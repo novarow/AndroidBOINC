@@ -2,8 +2,6 @@ package edu.berkeley.boinc;
 
 import edu.berkeley.boinc.client.ClientStatus;
 import edu.berkeley.boinc.client.Monitor;
-import edu.berkeley.boinc.client.Monitor.LocalBinder;
-import edu.berkeley.boinc.definitions.CommonDefs;
 import android.app.TabActivity;
 import android.content.ComponentName;
 import android.content.Context;
@@ -11,9 +9,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle; 
 import android.os.IBinder;
-import android.os.StrictMode;
 import android.util.Log;  
-import android.view.View;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.Toast;
@@ -37,9 +33,6 @@ public class AndroidBOINCActivity extends TabActivity {
 	        // service that we know is running in our own process, we can
 	        // cast its IBinder to a concrete class and directly access it.
 	        monitor = ((Monitor.LocalBinder)service).getService();
-
-	        // Tell the user about this for our demo.
-	        Toast.makeText(getApplicationContext(), "service connected", Toast.LENGTH_SHORT).show();
 	    }
 
 	    public void onServiceDisconnected(ComponentName className) {
@@ -54,14 +47,14 @@ public class AndroidBOINCActivity extends TabActivity {
 	};
 
 	void doBindService() {
-		// Start service, if we use this method first, the service will not terminate until "stopService" is called. Even if there are no more bound Activityies.
+		// Service has to be started "sticky" by the first instance that uses it. It causes the service to stay around, even when all Activities are destroyed (on purpose or by the system)
+		// check whether service already started by BootReiver is done within the service.
 		startService(new Intent(this,Monitor.class));
 		
 	    // Establish a connection with the service.  We use an explicit
 	    // class name because we want a specific service implementation that
 	    // we know will be running in our own process (and thus won't be
 	    // supporting component replacement by other applications).
-		Log.d(TAG,"doBindService()");
 		bindService(new Intent(this, Monitor.class), mConnection, 0);
 	    mIsBound = true;
 	}
@@ -87,12 +80,6 @@ public class AndroidBOINCActivity extends TabActivity {
         setContentView(R.layout.main);  
          
         Log.d(TAG, "onCreate"); 
-        
-        //temporary - disable strict mode
-        //StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        //StrictMode.setThreadPolicy(policy);
-        
-
         
         //bind monitor service
         doBindService();
@@ -136,18 +123,9 @@ public class AndroidBOINCActivity extends TabActivity {
 	        debugSpec.setContent(debugIntent);
 	        tabHost.addTab(debugSpec);
         }
-        
-        
-        
-        
-        
-        
         Log.d(TAG,"tab layout setup done");
 
-        
-
-        
-        AndroidBOINCActivity.logMessage(this, TAG, "on Create finished");
+        AndroidBOINCActivity.logMessage(this, TAG, "tab setup finished");
        
     }
     

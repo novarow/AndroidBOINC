@@ -9,7 +9,6 @@ BOINC Android manager:
 - add logout logic (re-login with different credentials) (project attach)
 - add register project account logic
 - add compatibility check for ARCH and ABI.
-- auto start service. (depending on pref)
 - Status: add network status, redesign layout, add aquired project credit, save state when logging in.
 - Messages: implement, find right RPC call
 -> find RPC calls and parse all above needed information accordingly

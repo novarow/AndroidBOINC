@@ -42,6 +42,8 @@ public class Monitor extends Service{
 	private static ClientStatus clientStatus; //holds the status of the client as determined by the Monitor
 	private static AppPreferences prefs; //hold the status of the app, controlled by AppPreferences
 	
+	private Boolean started = false;
+	
 	public static ClientStatus getClientStatus() { //singleton pattern
 		if (clientStatus == null) {
 			clientStatus = new ClientStatus();
@@ -72,34 +74,47 @@ public class Monitor extends Service{
         }
     }
 	
-	/*
-	 * gets called once, when startService is called from within an Activity
-	 */
 	@Override
     public void onCreate() {
 		Log.d(TAG,"onCreate()");
-		
-		getAppPrefs().readPrefs(this);
-		
-		getClientStatus().setCtx(this);
-        
-        // test notification
-		mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        showNotification();
-        
-        
-        (new ClientMonitorAsync()).execute(new Integer[0]);
+		//initialization of components gets performed in onStartCommand
     }
 	
 	/*
 	 * gets called once, when startService is called from within an Activity
 	 */
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-    	//this gets called after startService(intent)
+    public int onStartCommand(Intent intent, int flags, int startId) {	
+    	//this gets called after startService(intent) (either by BootReceiver or AndroidBOINCActivity, depending on the user's autostart configuration)
     	Log.d(TAG, "onStartCommand");
-        // returning START_STICKY causes service to run until it is explecitly closed
-        return START_STICKY;
+    	
+    	Boolean autostart = intent.getBooleanExtra("autostart", false); //if true, received intent is for autostart and got fired by the BootReceiver on start up.
+		
+		getAppPrefs().readPrefs(this); //create singleton AppPreferences prefs with current application context
+		
+		/*
+		 * start service if either
+		 * the user's preference autostart is enabled and the intent carries the autostart flag (intent from BootReceiver)
+		 * or it is not an autostart-intent (not from BootReceiver) and the service hasnt been started yet
+		 */
+		Log.d(TAG, "values: intent-autostart " + autostart + " - prefs-autostart " + prefs.getAutostart() + " - started " + started);
+		if((!autostart && !started) || (autostart && prefs.getAutostart())) {
+			started = true;
+			Log.d(TAG, "starting service sticky & setup start of monitor...");
+			
+			getClientStatus().setCtx(this);
+	        
+			if(autostart) {
+		        // show notification about started service in notification panel
+		        showNotification();
+			}
+	        
+	        (new ClientMonitorAsync()).execute(new Integer[0]); //start monitor in new thread
+	    	
+	        return START_STICKY; // returning START_STICKY causes service to run until it is explicitly closed
+		}
+		Log.d(TAG, "service did not get started!");
+		return START_NOT_STICKY;
     }
 
     /*
@@ -131,18 +146,17 @@ public class Monitor extends Service{
     private final IBinder mBinder = new LocalBinder();
     
     /*
-     * Show a notification while this service is running.
+     * Show a notification while service is running.
      */
     private void showNotification() {
-        Notification notification = new Notification(R.drawable.playw48, "service started", System.currentTimeMillis());
-
-        // The PendingIntent to launch our activity if the user selects this notification
+		mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        Notification notification = new Notification(R.drawable.boinc, getString(R.string.autostart_notification_header), System.currentTimeMillis());
         PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(), 0, new Intent(getApplicationContext(), AndroidBOINCActivity.class), 0);
 
-        // Set the info for the views that show in the notification panel.
-        notification.setLatestEventInfo(getApplicationContext(), "blub", "service started", contentIntent);
+        // Set current view for notification panel
+        notification.setLatestEventInfo(getApplicationContext(), getString(R.string.autostart_notification_header), getString(R.string.autostart_notification_text), contentIntent);
 
-        // Send the notification.
+        // Send notification
         mNM.notify(1234, notification);
     }
 	
@@ -231,8 +245,8 @@ public class Monitor extends Service{
 				//TODO only when debug tab:
 				//TODO room for improvements, dont retrieve complete list every time, but only new messages.
 				Integer count = rpc.getMessageCount();
-				Log.d(TAG, "message count: " + count);
-				Log.d(TAG, "getMessages");
+				//Log.d(TAG, "message count: " + count);
+				Log.d(TAG, "getMessages, count: " + count);
 				ArrayList<Message> msgs = rpc.getMessages(count - 25); //get the most recent 25 messages
 				
 				if((state!=null)&&(status!=null)&&(transfers!=null)) {

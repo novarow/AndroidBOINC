@@ -19,6 +19,7 @@ public class AppPreferences {
 		if(prefs == null) {
 			prefs = ctx.getSharedPreferences(PREFS, 0);
 		}
+		//second parameter of reading function is the initial value after installation of AndroidBOINC on new device.
 		autostart = prefs.getBoolean("autostart", false);
 		email = prefs.getString("email", "");
 		pwd = prefs.getString("pwd", "");

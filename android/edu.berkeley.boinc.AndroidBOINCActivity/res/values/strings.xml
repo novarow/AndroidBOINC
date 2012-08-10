@@ -5,6 +5,8 @@
     <string name="project_name">BOINC Test Project</string>
     <string name="project_url">http://isaac.ssl.berkeley.edu/test/</string>
     <string name="project_auth_token">dfdf2520a9999a3f86874c5894d2cb7d</string>
+    <string name="autostart_notification_header">BOINC started.</string>
+    <string name="autostart_notification_text">to manage auto-start configuration go to BOINC settings..</string>
     
     <!-- configuration -->
     <string name="client_name">boinc_client</string>
