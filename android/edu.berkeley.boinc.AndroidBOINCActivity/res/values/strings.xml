@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<!-- global -->
-    <string name="app_name">AndroidBOINC</string>
+    <!-- project settings -->
     <string name="project_name">BOINC Test Project</string>
     <string name="project_url">http://isaac.ssl.berkeley.edu/test/</string>
-    <string name="project_auth_token">dfdf2520a9999a3f86874c5894d2cb7d</string>
+    
+	<!-- app global -->
+    <string name="app_name">AndroidBOINC</string>
     <string name="autostart_notification_header">BOINC started.</string>
     <string name="autostart_notification_text">to manage auto-start configuration go to BOINC settings..</string>
     
-    <!-- configuration -->
+    <!-- path and file configuration -->
     <string name="client_name">boinc_client</string>
     <string name="client_path">/data/data/edu.berkeley.boinc/client/</string>
     <string name="auth_file_name">gui_rpc_auth.cfg</string>
     
-    
-    <!-- tabs -->
+    <!-- tab names -->
     <string name="tab_status">Status</string>
     <string name="tab_tasks">Tasks</string>
     <string name="tab_transfers">Transfers</string>

@@ -213,8 +213,6 @@ public class Monitor extends Service{
 		private final String authFileName = getString(R.string.auth_file_name); 
 		private String clientPath = getString(R.string.client_path); 
 		
-		private Integer test = 0;
-		
 		private Integer refreshFrequency = 3000; //frequency of which the monitor updates client status via RPC, to often can cause reduced performance!
 		
 		@Override

@@ -49,6 +49,7 @@ public class PrefsActivity extends Activity implements OnClickListener {
 	}
 	
 	public void onResume() {
+		super.onResume();
 		//gets called every time Activity comes to front, therefore also after onCreate
 		if(clientPrefs == null) { //no data available, first call
 			setContentView(R.layout.prefs_layout_loading);
@@ -56,7 +57,6 @@ public class PrefsActivity extends Activity implements OnClickListener {
 		if(mIsBound) { //update prefs in case Monitor is already bound. use case: user navigates back to prefs tab -> refresh
 			loadSettings();
 		}
-		super.onResume();
 	}
 	
 	/*

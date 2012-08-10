@@ -83,7 +83,7 @@ public class StatusActivity extends Activity {
 		//unregister receiver, so there are not multiple intents flying in
 		Log.d(TAG+"-onPause","remove receiver");
 		unregisterReceiver(mClientStatusChangeRec);
-		super.onStop();
+		super.onPause();
 	}
 
 	@Override
@@ -98,17 +98,17 @@ public class StatusActivity extends Activity {
 		if(mIsBound) {
 			ClientStatus status = Monitor.getClientStatus();
 			switch(status.setupStatus){
-			case 0:
+			case 0: //launching
 				setContentView(R.layout.status_layout_launching);
 				break;
 			case 1: 
 				switch(status.computingStatus) {
-				case 0:
+				case 0: //suspended by user
 					setContentView(R.layout.status_layout_computing_disabled);
 					findViewById(R.id.enableImage).setOnClickListener(mEnableClickListener);
 					findViewById(R.id.enableText).setOnClickListener(mEnableClickListener);
 					break;
-				case 1: //suspended for reason
+				case 1: //suspended because of preference
 					setContentView(R.layout.status_layout_suspended);
 					findViewById(R.id.disableImage).setOnClickListener(mDisableClickListener);
 					findViewById(R.id.disableText).setOnClickListener(mDisableClickListener);
@@ -166,7 +166,7 @@ public class StatusActivity extends Activity {
 					TextView t2=(TextView)findViewById(R.id.suspend_reason);
 				    t2.setText(R.string.suspend_idle);
 					break;
-				case 3:
+				case 3: // computing
 					setContentView(R.layout.status_layout_computing);
 					findViewById(R.id.disableImage).setOnClickListener(mDisableClickListener);
 					findViewById(R.id.disableText).setOnClickListener(mDisableClickListener);

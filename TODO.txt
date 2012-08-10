@@ -5,10 +5,9 @@ BOINC client:
 - submit build script to BOINC repo. (caution: confustion with Android build script currently present)
 
 BOINC Android manager:
-- configuration of tabbed layout in resource file (booleans defining which tabs to show)
 - add logout logic (re-login with different credentials) (project attach)
 - add register project account logic
-- add compatibility check for ARCH and ABI.
+- add compatibility check for ARCH and ABI. (has to be done by "app store"??)
 - Status: add network status, redesign layout, add aquired project credit, save state when logging in.
 - Messages: implement, find right RPC call
 -> find RPC calls and parse all above needed information accordingly

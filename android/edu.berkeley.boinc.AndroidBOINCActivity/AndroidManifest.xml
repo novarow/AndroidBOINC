@@ -11,8 +11,7 @@
 
     <application
         android:icon="@drawable/boinc"
-        android:label="@string/app_name"
-        android:debuggable="true" >
+        android:label="@string/app_name">
         <activity
             android:name=".AndroidBOINCActivity"
             android:label="@string/app_name" 
