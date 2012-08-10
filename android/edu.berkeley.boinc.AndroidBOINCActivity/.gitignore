@@ -6,3 +6,4 @@ project.properties
 .classpath
 .DS_Store
 ._.DS_Store
+*.apk
