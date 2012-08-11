@@ -40,7 +40,7 @@ public class Monitor extends Service{
 	private final String TAG = "BOINC Client Monitor Service";
 	
 	private static ClientStatus clientStatus; //holds the status of the client as determined by the Monitor
-	private static AppPreferences prefs; //hold the status of the app, controlled by AppPreferences
+	private static AppPreferences appPrefs; //hold the status of the app, controlled by AppPreferences
 	
 	private Boolean started = false;
 	
@@ -52,10 +52,10 @@ public class Monitor extends Service{
 	}
 	
 	public static AppPreferences getAppPrefs() { //singleton pattern
-		if (prefs == null) {
-			prefs = new AppPreferences();
+		if (appPrefs == null) {
+			appPrefs = new AppPreferences();
 		}
-		return prefs;
+		return appPrefs;
 	}
 	
 	private NotificationManager mNM;
@@ -97,8 +97,8 @@ public class Monitor extends Service{
 		 * the user's preference autostart is enabled and the intent carries the autostart flag (intent from BootReceiver)
 		 * or it is not an autostart-intent (not from BootReceiver) and the service hasnt been started yet
 		 */
-		Log.d(TAG, "values: intent-autostart " + autostart + " - prefs-autostart " + prefs.getAutostart() + " - started " + started);
-		if((!autostart && !started) || (autostart && prefs.getAutostart())) {
+		Log.d(TAG, "values: intent-autostart " + autostart + " - prefs-autostart " + appPrefs.getAutostart() + " - started " + started);
+		if((!autostart && !started) || (autostart && appPrefs.getAutostart())) {
 			started = true;
 			Log.d(TAG, "starting service sticky & setup start of monitor...");
 			
@@ -171,15 +171,10 @@ public class Monitor extends Service{
     }
     
     public void quitClient() {
-    	Boolean success = rpc.quit();
-    	AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "graceful shutdown returned " + success);
-		if(!success) {
-			clientProcess.destroy();
-			AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "process killed ");
-		}
+    	(new ShutdownClientAsync()).execute();
     }
     
-    public synchronized void attachProject(String email, String pwd) {
+    public void attachProject(String email, String pwd) {
 		Log.d(TAG,"attachProject");
 		String[] param = new String[2];
 		param[0] = email;
@@ -188,24 +183,20 @@ public class Monitor extends Service{
     }
     
     
-	public synchronized void setRunMode(Integer mode) {
-		Boolean success = rpc.setRunMode(mode,0);
-		Log.d(TAG,"run mode set to " + mode + " returned " + success);
+	public void setRunMode(Integer mode) {
+		//execute in different thread, in order to avoid network communication in main thread and therefore ANR errors
+		(new WriteClientRunModeAsync()).execute(mode);
 	}
 	
-	public synchronized GlobalPreferences getPrefs() {
-		Log.d(TAG,"getPrefs");
-		return rpc.getGlobalPrefsWorkingStruct();
-	}
-	
-	public synchronized void setPrefs(GlobalPreferences globalPrefs) {
-		rpc.setGlobalPrefsOverrideStruct(globalPrefs); //set new override settings
-		rpc.readGlobalPrefsOverride(); //trigger reload of override settings
+	public void setPrefs(GlobalPreferences globalPrefs) {
+		//execute in different thread, in order to avoid network communication in main thread and therefore ANR errors
+		(new WriteClientPrefsAsync()).execute(globalPrefs);
 	}
 	
 	private final class ClientMonitorAsync extends AsyncTask<Integer,String,Boolean> {
 
 		private final String TAG = "ClientMonitorAsync";
+		private final Boolean showRpcCommands = false;
 		
 		private Boolean clientStarted = false;
 		
@@ -233,22 +224,24 @@ public class Monitor extends Service{
 					}
 				}
 				
-				Log.d(TAG, "getCcStatus");
+				if(showRpcCommands) Log.d(TAG, "getCcStatus");
 				CcStatus status = rpc.getCcStatus();
-				Log.d(TAG, "getState"); 
+				if(showRpcCommands) Log.d(TAG, "getState"); 
 				CcState state = rpc.getState();
 				//TODO getState is quite verbose, optimize!
-				Log.d(TAG, "getTransers");
+				if(showRpcCommands) Log.d(TAG, "getTransers");
 				ArrayList<Transfer>  transfers = rpc.getFileTransfers();
+				if(showRpcCommands) Log.d(TAG, "getGlobalPrefsWorkingStruct");
+				GlobalPreferences clientPrefs = rpc.getGlobalPrefsWorkingStruct();
 				//TODO only when debug tab:
 				//TODO room for improvements, dont retrieve complete list every time, but only new messages.
 				Integer count = rpc.getMessageCount();
 				//Log.d(TAG, "message count: " + count);
-				Log.d(TAG, "getMessages, count: " + count);
+				if(showRpcCommands) Log.d(TAG, "getMessages, count: " + count);
 				ArrayList<Message> msgs = rpc.getMessages(count - 25); //get the most recent 25 messages
 				
-				if((state!=null)&&(status!=null)&&(transfers!=null)) {
-					Monitor.clientStatus.setClientStatus(status,state,transfers,msgs);
+				if((state!=null)&&(status!=null)&&(transfers!=null)&&(clientPrefs!=null)) {
+					Monitor.clientStatus.setClientStatus(status,state,transfers,clientPrefs,msgs);
 				} else {
 					AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "client status connection problem");
 				}
@@ -706,5 +699,49 @@ public class Monitor extends Service{
 	    	}
 	    	return success;
 	    }
+	}
+
+	private final class WriteClientPrefsAsync extends AsyncTask<GlobalPreferences,Void,Boolean> {
+
+		private final String TAG = "WriteClientPrefsAsync";
+		@Override
+		protected Boolean doInBackground(GlobalPreferences... params) {
+			Log.d(TAG, "doInBackground");
+			Boolean retval1 = rpc.setGlobalPrefsOverrideStruct(params[0]); //set new override settings
+			Boolean retval2 = rpc.readGlobalPrefsOverride(); //trigger reload of override settings
+			if(retval1 && retval2) {
+				Log.d(TAG, "successful.");
+				return true;
+			}
+			return false;
+		}
+	}
+	
+	private final class WriteClientRunModeAsync extends AsyncTask<Integer,Void,Boolean> {
+
+		private final String TAG = "WriteClientRunModeAsync";
+		@Override
+		protected Boolean doInBackground(Integer... params) {
+			Log.d(TAG, "doInBackground");
+			Boolean success = rpc.setRunMode(params[0],0);
+			Log.d(TAG,"run mode set to " + params[0] + " returned " + success);
+			return success;
+		}
+	}
+	
+	private final class ShutdownClientAsync extends AsyncTask<Void,Void,Boolean> {
+
+		private final String TAG = "ShutdownClientAsync";
+		@Override
+		protected Boolean doInBackground(Void... params) {
+			Log.d(TAG, "doInBackground");
+	    	Boolean success = rpc.quit();
+	    	AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "graceful shutdown returned " + success);
+			if(!success) {
+				clientProcess.destroy();
+				AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "process killed ");
+			}
+			return success;
+		}
 	}
 }

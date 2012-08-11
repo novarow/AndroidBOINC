@@ -112,4 +112,5 @@ make clean
 fi
 make -f Makefile_android
 echo "============================app done============================="
+fi
 echo "============================script done=========================="

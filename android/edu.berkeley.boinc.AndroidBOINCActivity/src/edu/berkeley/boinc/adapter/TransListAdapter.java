@@ -3,8 +3,6 @@ package edu.berkeley.boinc.adapter;
 import java.util.ArrayList;
 
 import edu.berkeley.boinc.R;
-import edu.berkeley.boinc.definitions.CommonDefs;
-import edu.berkeley.boinc.rpc.Result;
 import edu.berkeley.boinc.rpc.Transfer;
 
 import android.app.Activity;
@@ -19,7 +17,7 @@ import android.widget.TextView;
 
 public class TransListAdapter extends ArrayAdapter<Transfer>{
 	
-	private final String TAG = "TasksListAdapter";
+	private final String TAG = "TransListAdapter";
 	private ArrayList<Transfer> entries;
     private Activity activity;
  
@@ -31,7 +29,6 @@ public class TransListAdapter extends ArrayAdapter<Transfer>{
  
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-    	Log.d(TAG, "getView");
     	
     	//get file that which shall be presented
     	Transfer listItem = entries.get(position);
@@ -40,13 +37,11 @@ public class TransListAdapter extends ArrayAdapter<Transfer>{
         View v = convertView;
         LayoutInflater vi = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         v = vi.inflate(R.layout.trans_layout_listitem, null);
-    Log.d(TAG,"test1");
         //instanciate layout elements
 		ProgressBar pb = (ProgressBar) v.findViewById(R.id.transProgressBar);
 		TextView name = (TextView) v.findViewById(R.id.transName);
 		TextView progress = (TextView) v.findViewById(R.id.transProgress);
 		TextView status = (TextView) v.findViewById(R.id.transStatus);
-	Log.d(TAG,"test2");
 		//customize layout elements
 		String nameS = listItem.name;
 		name.setText(nameS);
@@ -54,13 +49,12 @@ public class TransListAdapter extends ArrayAdapter<Transfer>{
 		progress.setText(progressS);
 		pb.setIndeterminate(false);
 		Float fraction = Float.valueOf("0.0");
-	Log.d(TAG,"test");
 		try {
 			fraction = listItem.nbytes / (float) listItem.bytes_xferred;
 		} catch (Exception e) { //e.g. 0 division
 			Log.e(TAG,"0 division?",e);
 		}
-		Log.d(TAG, listItem.bytes_xferred + "/" + listItem.nbytes + " equals fraction " + fraction);
+		Log.d(TAG, listItem.nbytes + "/" + listItem.bytes_xferred + " equals fraction " + fraction);
 		pb.setProgress(Math.round(fraction * pb.getMax()));
 		String statusS = "";
 		if(listItem.xfer_active) {
@@ -71,6 +65,7 @@ public class TransListAdapter extends ArrayAdapter<Transfer>{
 			statusS = "Waiting...";
 			pb.setProgressDrawable(this.activity.getResources().getDrawable((R.drawable.progressbar_paused)));
 		}
+		status.setText(statusS);
         return v;
     }
 }

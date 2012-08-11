@@ -8,7 +8,9 @@ BOINC Android manager:
 - add logout logic (re-login with different credentials) (project attach)
 - add register project account logic
 - add compatibility check for ARCH and ABI. (has to be done by "app store"??)
-- Status: add network status, redesign layout, add aquired project credit, save state when logging in.
+- Status Tab: add network status, redesign layout, add aquired project credit, save state when logging in.
+- Transfers Tab: add network status
+- Preferences: bug, if default values are changed before client finishes start up (e.g. while benchmarking), they become override settings and dont change to project settings. (hide until project settings?)
 - Messages: implement, find right RPC call
 -> find RPC calls and parse all above needed information accordingly
 

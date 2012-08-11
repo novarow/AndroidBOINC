@@ -2,11 +2,9 @@ package edu.berkeley.boinc;
 
 import java.util.ArrayList;
 
-import edu.berkeley.boinc.adapter.TasksListAdapter;
 import edu.berkeley.boinc.adapter.TransListAdapter;
 import edu.berkeley.boinc.client.ClientStatus;
 import edu.berkeley.boinc.client.Monitor;
-import edu.berkeley.boinc.rpc.Result;
 import edu.berkeley.boinc.rpc.Transfer;
 import android.app.Activity;
 import android.content.BroadcastReceiver;

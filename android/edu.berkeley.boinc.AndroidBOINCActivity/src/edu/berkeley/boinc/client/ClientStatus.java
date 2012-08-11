@@ -10,6 +10,7 @@ import edu.berkeley.boinc.AndroidBOINCActivity;
 import edu.berkeley.boinc.definitions.CommonDefs;
 import edu.berkeley.boinc.rpc.CcState;
 import edu.berkeley.boinc.rpc.CcStatus;
+import edu.berkeley.boinc.rpc.GlobalPreferences;
 import edu.berkeley.boinc.rpc.Message;
 import edu.berkeley.boinc.rpc.Result;
 import edu.berkeley.boinc.rpc.Transfer;
@@ -27,6 +28,7 @@ public class ClientStatus {
 	private CcStatus status;
 	private CcState state;
 	private ArrayList<Transfer> transfers;
+	private GlobalPreferences prefs;
 	private ArrayList<Message> messages; //debug tab
 	
 	//setup status, set by "setupClient" method of ClientMonitorAsync
@@ -76,10 +78,11 @@ public class ClientStatus {
 	/*
 	 * called frequently by Monitor to set the RPC data. These objects are used to determine the client status and parse it in the data model of this class.
 	 */
-	public synchronized void setClientStatus(CcStatus status,CcState state, ArrayList<Transfer> transfers, ArrayList<Message> msgs) {
+	public synchronized void setClientStatus(CcStatus status,CcState state, ArrayList<Transfer> transfers, GlobalPreferences clientPrefs, ArrayList<Message> msgs) {
 		this.status = status;
 		this.state = state;
 		this.transfers = transfers;
+		this.prefs = clientPrefs;
 		this.messages = msgs;
 		parseClientStatus();
 		Log.d(TAG,"parsing results: computing: " + computingParseError + computingStatus + computingSuspendReason + " - network: " + networkParseError + networkStatus + networkSuspendReason);
@@ -104,6 +107,14 @@ public class ClientStatus {
 			return null;
 		}
 		return transfers;
+	}
+	
+	public synchronized GlobalPreferences getPrefs() {
+		if(prefs == null) { //check in case monitor is not set up yet (e.g. while logging in)
+			Log.d(TAG, "prefs is null");
+			return null;
+		}
+		return prefs;
 	}
 	
 	//Debug Tab

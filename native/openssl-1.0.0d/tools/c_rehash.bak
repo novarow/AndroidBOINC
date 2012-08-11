@@ -6,8 +6,8 @@
 
 my $openssl;
 
-my $dir = "/home/novarow/tools/android-4-tc/arm-linux-androideabi/ssl";
-my $prefix = "/home/novarow/tools/android-4-tc/arm-linux-androideabi/ssl";
+my $dir = "/home/novarow/DocumentsAndroidBOINC/native/android-4-tc/arm-linux-androideabi/ssl";
+my $prefix = "/home/novarow/DocumentsAndroidBOINC/native/android-4-tc/arm-linux-androideabi/ssl";
 
 if(defined $ENV{OPENSSL}) {
 	$openssl = $ENV{OPENSSL};
