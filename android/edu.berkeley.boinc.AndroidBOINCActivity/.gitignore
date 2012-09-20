@@ -1,9 +1,0 @@
-/bin
-/gen
-proguard-project.txt
-project.properties
-.project
-.classpath
-.DS_Store
-._.DS_Store
-*.apk
