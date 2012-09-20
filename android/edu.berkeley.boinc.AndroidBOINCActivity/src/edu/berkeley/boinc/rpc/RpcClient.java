@@ -1,21 +1,21 @@
-/* 
- * AndroBOINC - BOINC Manager for Android
- * Copyright (C) 2010, Pavol Michalec
+/*******************************************************************************
+ * This file is part of BOINC.
+ * http://boinc.berkeley.edu
+ * Copyright (C) 2012 University of California
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * BOINC is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License
+ * as published by the Free Software Foundation,
+ * either version 3 of the License, or (at your option) any later version.
  * 
- * This program is distributed in the hope that it will be useful,
+ * BOINC is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU Lesser General Public License for more details.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * 
- */
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with BOINC.  If not, see <http://www.gnu.org/licenses/>.
+ ******************************************************************************/
 
 package edu.berkeley.boinc.rpc;
 
@@ -405,22 +405,6 @@ public class RpcClient {
 		}
 	}
 	
-	/**
-	 * Performs acct_mgr_info towards BOINC client
-	 * @return result of RPC call in case of success, null otherwise
-	 */
-	public AccountMgrInfo getAccountMgrInfo() {
-		mLastErrorMessage = null;
-		try {
-			sendRequest("<acct_mgr_info/>\n");
-			AccountMgrInfo out = AccountMgrInfoParser.parse(receiveReply());
-			return out;
-		}
-		catch (IOException e) {
-			if (Logging.WARNING) Log.w(TAG, "error in getAccountMgrInfo()", e);
-			return null;
-		}
-	}
 
 	/**
 	 * Performs get_cc_status RPC towards BOINC client
@@ -538,22 +522,6 @@ public class RpcClient {
 		}
 	}
 	
-	/**
-	 * Performs get_disk_usage RPC towards boinc client
-	 * 
-	 * @param projects - list of already fetched projects
-	 * @return list of disk usage for all projects
-	 */
-	public boolean getDiskUsage(ArrayList<Project> projects) {
-		mLastErrorMessage = null;
-		try {
-			sendRequest("<get_disk_usage/>\n");
-			return DiskUsageParser.parse(receiveReply(), projects);
-		} catch(IOException e) {
-			if (Logging.WARNING) Log.w(TAG, "error in getDiskUsage()", e);
-			return false;
-		}
-	}
 
 	/**
 	 * Performs get_results RPC towards BOINC client (only active results)
@@ -594,26 +562,6 @@ public class RpcClient {
 			return null;
 		}
 	}
-	/**
-	 * Performs get_notices RPC towards BOINC client
-	 * 
-	 * @return notices
-	 */
-	public Notices getNotices(int seqNo) {
-		mLastErrorMessage = null;
-		try {
-			mRequest.setLength(0);
-			mRequest.append("<get_notices>\n  <seqno>");
-			mRequest.append(seqNo);
-			mRequest.append("</seqno>\n</get_notices>\n");
-			sendRequest(mRequest.toString());
-			Notices notices = NoticesReplyParser.parse(receiveReply());
-			return notices;
-		} catch(IOException e) {
-			if (Logging.WARNING) Log.w(TAG, "error in getNotices()", e);
-			return null;
-		}
-	}
 
 	/**
 	 * Performs get_state RPC towards BOINC client
@@ -629,22 +577,6 @@ public class RpcClient {
 		}
 		catch (IOException e) {
 			if (Logging.WARNING) Log.w(TAG, "error in getState()", e);
-			return null;
-		}
-	}
-	
-	/**
-	 * Performs get_all_projects_list towards BOINC client
-	 * 
-	 * @return result of RPC call in case of success, null otherwise
-	 */
-	public ArrayList<ProjectListEntry> getAllProjectsList() {
-		mLastErrorMessage = null;
-		try {
-			sendRequest("<get_all_projects_list/>\n");
-			return ProjectListParser.parse(receiveReply());
-		} catch(IOException e) {
-			if (Logging.WARNING) Log.w(TAG, "error in getAllProjectsList()", e);
 			return null;
 		}
 	}
@@ -869,54 +801,6 @@ public class RpcClient {
 		}
 	}
 	
-	/**
-	 * Performs account Mgr RPC
-	 * @param url
-	 * @param name
-	 * @param passwd
-	 * @param useConfigFile
-	 * @return
-	 */
-	public boolean accountMgrRPC(String url, String name, String passwd, boolean useConfigFile) {
-		try {
-			mRequest.setLength(0);
-			if (useConfigFile)
-				mRequest.append("<acct_mgr_rpc>\n   <use_config_file/>\n</acct_mgr_rpc>\n");
-			else {
-				mRequest.append("<acct_mgr_rpc>\n   <url>");
-				mRequest.append(url);
-				mRequest.append("</url>\n   <name>");
-				mRequest.append(name);
-				mRequest.append("</name>\n   <password>");
-				mRequest.append(passwd);
-				mRequest.append("</password>\n</acct_mgr_rpc>\n");
-			}
-						
-			sendRequest(mRequest.toString());
-			SimpleReplyParser parser = SimpleReplyParser.parse(receiveReply());
-			if (parser == null)
-				return false;
-			mLastErrorMessage = parser.getErrorMessage();
-			return parser.result();
-		} catch (IOException e) {
-			if (Logging.WARNING) Log.w(TAG, "error in accountMgrRPC()", e);
-			return false;
-		}
-	}
-	
-	public AccountMgrRPCReply accountMgrRPCPoll() {
-		try {
-			mRequest.setLength(0);
-			mRequest.append("<acct_mgr_rpc_poll/>");
-			
-			sendRequest(mRequest.toString());
-			return AccountMgrRPCReplyParser.parse(receiveReply());
-		} catch (IOException e) {
-			if (Logging.WARNING) Log.w(TAG, "error in accountMgrRPCPoll()", e);
-			return null;
-		}
-	}
-	
 	public boolean getProjectConfig(String url) {
 		try {
 			mRequest.setLength(0);
@@ -933,19 +817,6 @@ public class RpcClient {
 		} catch (IOException e) {
 			if (Logging.WARNING) Log.w(TAG, "error in getProjectConfig()", e);
 			return false;
-		}
-	}
-	
-	public ProjectConfig getProjectConfigPoll() {
-		try {
-			mRequest.setLength(0);
-			mRequest.append("<get_project_config_poll/>");
-			
-			sendRequest(mRequest.toString());
-			return ProjectConfigParser.parse(receiveReply());
-		} catch (IOException e) {
-			if (Logging.WARNING) Log.w(TAG, "error in accountMgrRPCPoll()", e);
-			return null;
 		}
 	}
 	
@@ -1088,54 +959,6 @@ public class RpcClient {
 			return false;
 		}
 	}
-	
-	/**
-	 * Triggers operation on task in BOINC core client
-	 * @param operation operation to be triggered
-	 * @param projectUrl master URL of project
-	 * @param taskName name of the task
-	 * @return true for success, false for failure
-	 */
-	public boolean resultOp(int operation, String projectUrl, String taskName) {
-		try {
-			String opTag;
-			switch (operation) {
-			case RESULT_SUSPEND:
-				opTag = "suspend_result";
-				break;
-			case RESULT_RESUME:
-				opTag = "resume_result";
-				break;
-			case RESULT_ABORT:
-				opTag = "abort_result";
-				break;
-			default:
-				if (Logging.ERROR) Log.e(TAG, "resultOp() - unsupported operation: " + operation);
-				return false;
-			}
-			mRequest.setLength(0);
-			mRequest.append("<");
-			mRequest.append(opTag);
-			mRequest.append(">\n   <project_url>");
-			mRequest.append(projectUrl);
-			mRequest.append("</project_url>\n   <name>");
-			mRequest.append(taskName);
-			mRequest.append("</name>\n</");
-			mRequest.append(opTag);
-			mRequest.append(">\n");
-
-			sendRequest(mRequest.toString());
-			SimpleReplyParser parser = SimpleReplyParser.parse(receiveReply());
-			if (parser == null)
-				return false;
-			mLastErrorMessage = parser.getErrorMessage();
-			return parser.result();
-		}
-		catch (IOException e) {
-			if (Logging.WARNING) Log.w(TAG, "error in resultOp()", e);
-			return false;
-		}
-	}
 
 	/**
 	 * Tells the BOINC core client to exit. 
@@ -1152,25 +975,6 @@ public class RpcClient {
 		}
 		catch (IOException e) {
 			if (Logging.WARNING) Log.w(TAG, "error in quit()", e);
-			return false;
-		}
-	}
-
-	/**
-	 * Run the CPU benchmarks
-	 * @return true for success, false for failure
-	 */
-	public boolean runBenchmarks() {
-		try {
-			sendRequest("<run_benchmarks/>\n");
-			SimpleReplyParser parser = SimpleReplyParser.parse(receiveReply());
-			if (parser == null)
-				return false;
-			mLastErrorMessage = parser.getErrorMessage();
-			return parser.result();
-		}
-		catch (IOException e) {
-			if (Logging.WARNING) Log.w(TAG, "error in runBenchmarks()", e);
 			return false;
 		}
 	}

@@ -1,3 +1,21 @@
+/*******************************************************************************
+ * This file is part of BOINC.
+ * http://boinc.berkeley.edu
+ * Copyright (C) 2012 University of California
+ * 
+ * BOINC is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License
+ * as published by the Free Software Foundation,
+ * either version 3 of the License, or (at your option) any later version.
+ * 
+ * BOINC is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with BOINC.  If not, see <http://www.gnu.org/licenses/>.
+ ******************************************************************************/
 package edu.berkeley.boinc;
 
 import edu.berkeley.boinc.client.ClientStatus;
@@ -31,7 +49,7 @@ public class AndroidBOINCActivity extends TabActivity {
 	    }
 
 	    public void onServiceDisconnected(ComponentName className) {
-	        // This should nott happen
+	        // This should not happen
 	        monitor = null;
 	        Toast.makeText(getApplicationContext(), "service disconnected", Toast.LENGTH_SHORT).show();
 	    }
@@ -39,7 +57,7 @@ public class AndroidBOINCActivity extends TabActivity {
 
 	private void doBindService() {
 		// Service has to be started "sticky" by the first instance that uses it. It causes the service to stay around, even when all Activities are destroyed (on purpose or by the system)
-		// check whether service already started by BootReiver is done within the service.
+		// check whether service already started by BootReceiver is done within the service.
 		startService(new Intent(this,Monitor.class));
 		
 	    // Establish a connection with the service, onServiceConnected gets called when
@@ -58,8 +76,8 @@ public class AndroidBOINCActivity extends TabActivity {
 	@Override
 	protected void onDestroy() {
     	Log.d(TAG, "onDestroy");
-	    super.onDestroy();
 	    doUnbindService();
+	    super.onDestroy();
 	}
 	
     @Override

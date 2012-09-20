@@ -1,22 +1,21 @@
-/* 
- * NativeBOINC - Native BOINC Client with Manager
- * Copyright (C) 2011, Mateusz Szpakowski
+/*******************************************************************************
+ * This file is part of BOINC.
+ * http://boinc.berkeley.edu
+ * Copyright (C) 2012 University of California
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * BOINC is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License
+ * as published by the Free Software Foundation,
+ * either version 3 of the License, or (at your option) any later version.
  * 
- * This program is distributed in the hope that it will be useful,
+ * BOINC is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU Lesser General Public License for more details.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * 
- */
-
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with BOINC.  If not, see <http://www.gnu.org/licenses/>.
+ ******************************************************************************/
 package edu.berkeley.boinc.rpc;
 
 import org.xml.sax.Attributes;
@@ -26,10 +25,6 @@ import edu.berkeley.boinc.debug.Logging;
 import android.util.Log;
 import android.util.Xml;
 
-/**
- * @author mat
- *
- */
 public class AccountOutParser extends BaseParser {
 	private static final String TAG = "AccountOutParser";
 
@@ -43,7 +38,7 @@ public class AccountOutParser extends BaseParser {
 		try {
 			String outResult;
 			int xmlHeaderStart = rpcResult.indexOf("<?xml");
-			if (xmlHeaderStart!=-1) { // remove xml header inside body
+			if (xmlHeaderStart!=-1) { 
 				int xmlHeaderEnd = rpcResult.indexOf("?>");
 				outResult = rpcResult.substring(0, xmlHeaderStart);
 				outResult += rpcResult.substring(xmlHeaderEnd+2);
@@ -69,8 +64,6 @@ public class AccountOutParser extends BaseParser {
 			if (mAccountOut==null)
 				mAccountOut = new AccountOut();
 		} else {
-			// Another element, hopefully primitive and not constructor
-			// (although unknown constructor does not hurt, because there will be primitive start anyway)
 			mElementStarted = true;
 			mCurrentElement.setLength(0);
 		}

@@ -1,3 +1,21 @@
+/*******************************************************************************
+ * This file is part of BOINC.
+ * http://boinc.berkeley.edu
+ * Copyright (C) 2012 University of California
+ * 
+ * BOINC is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License
+ * as published by the Free Software Foundation,
+ * either version 3 of the License, or (at your option) any later version.
+ * 
+ * BOINC is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with BOINC.  If not, see <http://www.gnu.org/licenses/>.
+ ******************************************************************************/
 package edu.berkeley.boinc.client;
 
 import java.io.BufferedReader;
@@ -88,7 +106,13 @@ public class Monitor extends Service{
     	//this gets called after startService(intent) (either by BootReceiver or AndroidBOINCActivity, depending on the user's autostart configuration)
     	Log.d(TAG, "onStartCommand");
     	
-    	Boolean autostart = intent.getBooleanExtra("autostart", false); //if true, received intent is for autostart and got fired by the BootReceiver on start up.
+    	Boolean autostart = false;
+    	try {
+    		autostart = intent.getBooleanExtra("autostart", false); //if true, received intent is for autostart and got fired by the BootReceiver on start up.
+    	}
+    	catch (NullPointerException e) { // occurs, when intent in null because onStartCommand is a Re-delivery, after process got killed
+    		Log.d(TAG,"NullPointerException, intent flags: " + flags);
+    	}
 		
 		getAppPrefs().readPrefs(this); //create singleton AppPreferences prefs with current application context
 		
@@ -119,9 +143,11 @@ public class Monitor extends Service{
 
     /*
      * this should not be reached
-     */
+     
     @Override
     public void onDestroy() {
+    	Log.d(TAG,"onDestroy()");
+    	
         // Cancel the persistent notification.
         mNM.cancel(1234);
         
@@ -134,6 +160,7 @@ public class Monitor extends Service{
         // Tell the user we stopped.
         Toast.makeText(this, "service stopped", Toast.LENGTH_SHORT).show();
     }
+    */
 
     /*
      * gets called every-time an activity binds to this service, but not the initial start (onCreate and onStartCommand are called there)
@@ -647,6 +674,9 @@ public class Monitor extends Service{
 	    			} catch (Exception e) {}
 	    			counter ++;
 	    			AccountOut auth = rpc.lookupAccountPoll();
+	    			if(auth==null) {
+	    				return -1;
+	    			}
 	    			if (auth.error_num == -204) {
 	    				loop = true; //no result yet, keep looping
 	    			}
