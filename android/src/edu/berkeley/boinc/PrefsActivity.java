@@ -104,6 +104,13 @@ public class PrefsActivity extends Activity implements OnClickListener {
 		loadSettings();
 	}
 	
+	public void onPause() {
+		//unregister receiver, so there are not multiple intents flying in
+		Log.d(TAG+"-onPause","remove receiver");
+		unregisterReceiver(mClientStatusChangeRec);
+		super.onPause();
+	}
+	
 	/*
 	 * Service binding part
 	 * only necessary, when function on monitor instance has to be called

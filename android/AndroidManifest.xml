@@ -57,7 +57,7 @@
                 <action android:name="edu.berkeley.boinc.log" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".client.BootReceiver">
+        <receiver android:name=".receiver.BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
