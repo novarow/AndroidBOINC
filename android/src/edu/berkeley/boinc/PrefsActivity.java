@@ -50,7 +50,7 @@ import android.widget.Toast;
 
 public class PrefsActivity extends Activity implements OnClickListener {
 	
-	private final String TAG = "PrefsActivity";
+	private final String TAG = "BOINC PrefsActivity";
 	
 	private Monitor monitor;
 	private Boolean mIsBound = false;
@@ -134,7 +134,7 @@ public class PrefsActivity extends Activity implements OnClickListener {
 
 	private void doUnbindService() {
 	    if (mIsBound) {
-	        unbindService(mConnection);
+	    	getApplicationContext().unbindService(mConnection);
 	        mIsBound = false;
 	    }
 	}
@@ -279,8 +279,8 @@ public class PrefsActivity extends Activity implements OnClickListener {
 
 	@Override
 	protected void onDestroy() {
-	    super.onDestroy();
 	    Log.d(TAG,"onDestroy()");
+	    super.onDestroy();
 	    doUnbindService();
 	}
 

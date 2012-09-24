@@ -98,9 +98,6 @@ public class Monitor extends Service{
 		//initialization of components gets performed in onStartCommand
     }
 	
-	/*
-	 * gets called once, when startService is called from within an Activity
-	 */
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {	
     	//this gets called after startService(intent) (either by BootReceiver or AndroidBOINCActivity, depending on the user's autostart configuration)
@@ -110,14 +107,14 @@ public class Monitor extends Service{
     	try {
     		autostart = intent.getBooleanExtra("autostart", false); //if true, received intent is for autostart and got fired by the BootReceiver on start up.
     	}
-    	catch (NullPointerException e) { // occurs, when intent in null because onStartCommand is a Re-delivery, after process got killed
+    	catch (NullPointerException e) { // occurs, when onStartCommand is called with a null intent. Occurs on re-start, if START_STICKY is used. 
     		Log.d(TAG,"NullPointerException, intent flags: " + flags);
     	}
 		
 		getAppPrefs().readPrefs(this); //create singleton AppPreferences prefs with current application context
 		
 		/*
-		 * start service if either
+		 * start monitor if either
 		 * the user's preference autostart is enabled and the intent carries the autostart flag (intent from BootReceiver)
 		 * or it is not an autostart-intent (not from BootReceiver) and the service hasnt been started yet
 		 */
@@ -135,9 +132,21 @@ public class Monitor extends Service{
 	        
 	        (new ClientMonitorAsync()).execute(new Integer[0]); //start monitor in new thread
 	    	
-	        return START_STICKY; // returning START_STICKY causes service to run until it is explicitly closed
+	        Log.d(TAG, "asynchronous monitor started!");
 		}
-		Log.d(TAG, "service did not get started!");
+		else {
+			Log.d(TAG, "asynchronous monitor NOT started!");
+		}
+		/*
+		 * START_NOT_STICKY is now used and replaced START_STICKY in previous implementations.
+		 * Lifecycle events - e.g. killing apps by calling their "onDestroy" methods, or killing an app in the task manager - does not effect the non-Dalvik code like the native BOINC Client.
+		 * Therefore, it is not necessary for the service to get reactivated. When the user navigates back to the app (BOINC Manager), the service gets re-started from scratch.
+		 * Con: After user navigates back, it takes some time until current Client status is present.
+		 * Pro: Saves RAM/CPU.
+		 * 
+		 * For detailed service documentation see
+		 * http://android-developers.blogspot.com.au/2010/02/service-api-changes-starting-with.html
+		 */
 		return START_NOT_STICKY;
     }
 

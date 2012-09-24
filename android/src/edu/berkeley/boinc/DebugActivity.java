@@ -37,7 +37,7 @@ import android.widget.TextView;
 
 public class DebugActivity extends Activity {
 	
-	private final String TAG = "DebugActivity";
+	private final String TAG = "BOINC DebugActivity";
 	
 	private ClientStatus status; //client status, new information gets parsed by monitor, changes notified by "clientstatus" broadcast. read Result from here, to get information about tasks.
 	
@@ -97,7 +97,7 @@ public class DebugActivity extends Activity {
 
 	private void doUnbindService() {
 	    if (mIsBound) {
-	        unbindService(mConnection);
+	    	getApplicationContext().unbindService(mConnection);
 	        mIsBound = false;
 	    }
 	}

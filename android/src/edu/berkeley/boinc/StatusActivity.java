@@ -172,6 +172,7 @@ public class StatusActivity extends Activity {
 						t.setText(R.string.suspend_os);
 						break;
 					case 8192:
+						//pointless??! wifi causes network suspension, does not influence computing
 						t.setText(R.string.suspend_wifi);
 						break;
 					default:
@@ -182,7 +183,17 @@ public class StatusActivity extends Activity {
 				case 2: //idle
 					setContentView(R.layout.status_layout_suspended);
 					TextView t2=(TextView)findViewById(R.id.suspend_reason);
-				    t2.setText(R.string.suspend_idle);
+					findViewById(R.id.disableImage).setOnClickListener(mDisableClickListener);
+					findViewById(R.id.disableText).setOnClickListener(mDisableClickListener);
+					Integer networkState = 0;
+					try{
+						networkState = status.networkSuspendReason;
+					} catch (Exception e) {}
+					if(networkState==8192){ //network suspended due to wifi state
+						t2.setText(R.string.suspend_wifi);
+					}else {
+						t2.setText(R.string.suspend_idle);
+					}
 					break;
 				case 3: // computing
 					setContentView(R.layout.status_layout_computing);
