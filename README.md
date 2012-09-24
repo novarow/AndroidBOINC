@@ -3,7 +3,7 @@ AndroidBOINC
 
 Porting Berkeley's Open Infrastructure for Network Computing to Android-powered devices.
 
-Install AndroidBOINC.apk on your Android device to get the current version.
+To run AndroidBOINC on your device, download and install AndroidBOINC.apk from the download section.
 
 The intention of this project is to port the exisiting BOINC client to ARM based Android devices. This can vastly increase the potential devices participating in BOINC based scientific projects. In order to achieve this goal, the client has to be cross compiled for ARM architecutre and adapted to accomondate with Android specific behaviour. To offer the user a graphical interface, a BOINC manager has to be developed for Android using the common Android app development methods (Java, Android SDK).
 
