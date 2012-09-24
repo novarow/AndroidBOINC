@@ -1,0 +1,39 @@
+diff -rupN boinc-trunk-rev26130/client/hostinfo_network.cpp boinc-trunk-rev26130_android/client/hostinfo_network.cpp
+--- boinc-trunk-rev26130/client/hostinfo_network.cpp	2012-09-20 14:57:01.041165695 +0200
++++ boinc-trunk-rev26130_android/client/hostinfo_network.cpp	2012-09-24 13:13:30.022074152 +0200
+@@ -63,21 +63,30 @@
+ // if value cant be read, default return false
+ //
+ bool HOST_INFO::host_wifi_online() {
+-    char wifipath[1024];
+-    snprintf(wifipath, sizeof(wifipath), "/sys/class/net/eth0/operstate");
++    char wifipath_pri[1024];
++    snprintf(wifipath_pri, sizeof(wifipath_pri), "/sys/class/net/wlan0/operstate"); //wifi adapter location in Android 4
++    char wifipath_sec[1024];
++    snprintf(wifipath_sec, sizeof(wifipath_sec), "/sys/class/net/eth0/operstate"); //wifi adapter location in Android 2.3
+ 
+-    FILE *fsyswifi = fopen(wifipath, "r");
+-    char wifi_state[64];
++    FILE *fsyswifi = fopen(wifipath_pri, "r");
++
++    if(!fsyswifi) { //try other path
++        LOGD("primary path (/sys/class/net/wlan0) not found, trying eth0...");
++        fsyswifi = fopen(wifipath_sec, "r");
++    }
+ 
++    char wifi_state[64];
+     bool wifi_online = false;
+ 
+     if (fsyswifi) {
+         (void) fscanf(fsyswifi, "%s", &wifi_state);
+         fclose(fsyswifi);
+     }
++    else {
++        LOGD("wifi adapter not found!");
++    }
+ 
+     if ((strcmp(wifi_state,"up")) == 0) { //operstate = up
+-        LOGD("wifi is online");
+         wifi_online = true;
+     }
+ 
