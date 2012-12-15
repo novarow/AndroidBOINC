@@ -45,11 +45,6 @@ export LDFLAGS="-L$TCSYSROOT/usr/lib -L$TCINCLUDES/lib -llog" #log is Logcat
 export GDB_CFLAGS="--sysroot=$TCSYSROOT -Wall -g -I$TCINCLUDES/include"
 
 
-echo "===================cleanup of $BOINCINSTALL==========================="
-cd $BOINCINSTALL
-rm -r *
-echo "======================================================================"
-
 if [ -n "$COMPILEOPENSSL" ]; then
 echo "================building openssl from $OPENSSL============================="
 cd $OPENSSL
