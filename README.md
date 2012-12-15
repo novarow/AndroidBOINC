@@ -28,5 +28,5 @@ openssl-x: openSSL library source, used by the client
 
 build_android.sh: build script to build the required libraries, the BOINC client and BOINC applications for Android devices, using the cross compiler binaries offered by the Android NDK and the corresponding SYSROOT.
 
-
+for additional documentation see BOINC developer wiki at http://boinc.berkeley.edu/trac/wiki/SoftwareDevelopment
 	 
