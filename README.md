@@ -10,7 +10,8 @@ The intention of this project is to port the exisiting BOINC client to ARM based
 This repository contains all code to build a BOINC client for Android:
 
 android/:
-Sources of Android application
+edu.berkeley.boinc.AndroidBOINCActivity: generic BOINC application including BOINC Client
+EINSTEIN: EINSTEINatHOME branded BOINC Manager
 
 native/:
 android-4-tc: standalone toolchain for cross compilation of native source code for Android ARM (v5 ABI) devices. It contains cross compilation tool binaries as well as the SYSROOT for Android devices with NDK level 4 (Android 1.6)
