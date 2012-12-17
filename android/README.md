@@ -9,3 +9,8 @@ According to an architecture, whith generic and Android-wide unique BOINC Client
 
 - BOINC Manager:
 generic BOINC Manager. Can be adapted/branded for individual project. Requires BOINCClient on the Android system.
+
+
+CAUTION:
+if you want to build these projects on your own machine, make sure to copy BOINC Client binaries into the projects "assets/" direcory!
+Current build can be found at https://github.com/novarow/AndroidBOINC-binaries/android/

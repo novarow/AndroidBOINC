@@ -1,5 +1,6 @@
 package edu.berkeley.boinc.manager;
 
+import edu.berkeley.boinc.client.RemoteClientService;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
