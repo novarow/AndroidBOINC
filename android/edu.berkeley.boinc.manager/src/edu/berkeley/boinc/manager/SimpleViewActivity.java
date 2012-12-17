@@ -1,7 +1,8 @@
-package edu.uwm.phys.einstein;
+package edu.berkeley.boinc.manager;
 
 import edu.berkeley.boinc.client.ClientStatus;
 import edu.berkeley.boinc.client.Monitor;
+import edu.berkeley.boinc.manager.R;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;

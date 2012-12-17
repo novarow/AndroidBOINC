@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.uwm.phys.einstein"
+    package="edu.berkeley.boinc.manager"
     android:versionCode="1"
     android:versionName="1.0" >
 

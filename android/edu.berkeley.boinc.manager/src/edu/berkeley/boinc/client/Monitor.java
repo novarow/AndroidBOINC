@@ -31,7 +31,7 @@ import edu.berkeley.boinc.rpc.Project;
 import edu.berkeley.boinc.rpc.ProjectAttachReply;
 import edu.berkeley.boinc.rpc.RpcClient;
 import edu.berkeley.boinc.rpc.Transfer;
-import edu.uwm.phys.einstein.R;
+import edu.berkeley.boinc.manager.R;
 
 import android.app.Service;
 import android.content.Intent;
