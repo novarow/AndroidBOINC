@@ -1,2 +1,0 @@
-17:48:40 (7562): Can't open init data file - running in standalone mode
-17:49:05 (7562): called boinc_finish

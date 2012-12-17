@@ -1,46 +1,0 @@
-10
-
-dir
-25927
-http://boinc.berkeley.edu/svn/trunk/boinc/samples/example_app/bin/22489
-http://boinc.berkeley.edu/svn
-
-
-
-2011-08-24T01:18:23.574713Z
-24032
-davea
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-677681c0-c3c0-48b4-bd46-92119ef6d97a
-
-windows_x86_64
-dir
-
-windows_intelx86
-dir
-
-i686-apple-darwin
-dir
-
-x86_64-apple-darwin
-dir
-
-i686-pc-linux-gnu
-dir
-
-x86_64-pc-linux-gnu
-dir
-
