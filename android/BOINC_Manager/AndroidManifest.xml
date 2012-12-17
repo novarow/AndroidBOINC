@@ -6,8 +6,8 @@
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="15" />
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -16,13 +16,20 @@
         <activity
             android:name=".SimpleViewActivity"
             android:label="@string/title_activity_main" >
+        </activity>
+
+        <service android:name="edu.berkeley.boinc.client.ClientStatusMonitor" >
+        </service>
+
+        <activity
+            android:name=".InitialActivity"
+            android:label="@string/title_activity_initial" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="edu.berkeley.boinc.client.Monitor"></service>
     </application>
 
 </manifest>

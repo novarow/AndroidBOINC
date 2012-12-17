@@ -33,10 +33,10 @@ import edu.berkeley.boinc.rpc.Result;
 import edu.berkeley.boinc.rpc.Transfer;
 
 /*
- * Singleton that holds the client status data, as determined by the Monitor.
+ * Singleton that holds the client status data, as determined by RPC calls of Monitor.
  * To get instance call Monitor.getClientStatus()
  */
-public class ClientStatus {
+public class ClientStatusData {
 	
 	private final String TAG = "ClientStatus";
 	private Context ctx; // application context in order to fire broadcast events

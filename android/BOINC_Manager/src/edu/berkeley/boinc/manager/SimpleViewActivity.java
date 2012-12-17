@@ -1,7 +1,7 @@
 package edu.berkeley.boinc.manager;
 
-import edu.berkeley.boinc.client.ClientStatus;
-import edu.berkeley.boinc.client.Monitor;
+import edu.berkeley.boinc.client.ClientStatusData;
+import edu.berkeley.boinc.client.ClientStatusMonitor;
 import edu.berkeley.boinc.manager.R;
 import android.app.Activity;
 import android.content.ComponentName;
@@ -17,15 +17,15 @@ public class SimpleViewActivity  extends Activity {
 
 	private final String TAG = "SimpleViewActivity"; 
 	
-	private Monitor monitor;
-	public static ClientStatus client;
+	private ClientStatusMonitor monitor;
+	public static ClientStatusData client;
 	
 	private Boolean mIsBound;
 
 	private ServiceConnection mConnection = new ServiceConnection() {
 	    public void onServiceConnected(ComponentName className, IBinder service) {
 	        // This is called when the connection with the service has been established, getService returns the Monitor object that is needed to call functions.
-	        monitor = ((Monitor.LocalBinder)service).getService();
+	        monitor = ((ClientStatusMonitor.LocalBinder)service).getService();
 	    }
 
 	    public void onServiceDisconnected(ComponentName className) {
@@ -56,10 +56,10 @@ public class SimpleViewActivity  extends Activity {
 	private void bindMonitorService() {
 		// Service has to be started "sticky" by the first instance that uses it. It causes the service to stay around, even when all Activities are destroyed (on purpose or by the system)
 		// check whether service already started by BootReceiver is done within the service.
-		startService(new Intent(this,Monitor.class));
+		startService(new Intent(this,ClientStatusMonitor.class));
 		
 	    // Establish a connection with the service, onServiceConnected gets called when
-		bindService(new Intent(this, Monitor.class), mConnection, 0);
+		bindService(new Intent(this, ClientStatusMonitor.class), mConnection, 0);
 	    mIsBound = true;
 	}
 	

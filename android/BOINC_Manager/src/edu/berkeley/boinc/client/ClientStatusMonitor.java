@@ -41,18 +41,18 @@ import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
 
-public class Monitor extends Service{
+public class ClientStatusMonitor extends Service{
 	
-	private final String TAG = "BOINC Client Monitor Service";
+	private final String TAG = "ClientStatusMonitor";
 	
-	private static ClientStatus clientStatus; //holds the status of the client as determined by the Monitor
+	private static ClientStatusData clientStatus; //holds the status of the client as determined by the Monitor
 	private static AppPreferences appPrefs; //hold the status of the app, controlled by AppPreferences
 	
 	private Boolean monitorStarted = false;
 	
-	public static ClientStatus getClientStatus() { //singleton pattern
+	public static ClientStatusData getClientStatus() { //singleton pattern
 		if (clientStatus == null) {
-			clientStatus = new ClientStatus();
+			clientStatus = new ClientStatusData();
 		}
 		return clientStatus;
 	}
@@ -74,8 +74,8 @@ public class Monitor extends Service{
 	 * returns this class, allows clients to access this service's functions and attributes.
 	 */
 	public class LocalBinder extends Binder {
-        public Monitor getService() {
-            return Monitor.this;
+        public ClientStatusMonitor getService() {
+            return ClientStatusMonitor.this;
         }
     }
 	
@@ -135,7 +135,7 @@ public class Monitor extends Service{
 
 	
     public void restartMonitor() {
-    	if(Monitor.monitorActive) { //monitor is already active, launch cancelled
+    	if(ClientStatusMonitor.monitorActive) { //monitor is already active, launch cancelled
     		//AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "monitor active - restart cancelled");
     	}
     	else {
@@ -209,7 +209,7 @@ public class Monitor extends Service{
 				ArrayList<Message> msgs = rpc.getMessages(count - 25); //get the most recent 25 messages
 				
 				if((state!=null)&&(status!=null)&&(transfers!=null)&&(clientPrefs!=null)) {
-					Monitor.clientStatus.setClientStatus(status,state,transfers,clientPrefs,msgs);
+					ClientStatusMonitor.clientStatus.setClientStatus(status,state,transfers,clientPrefs,msgs);
 				} else {
 					//AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "client status connection problem");
 				}
@@ -232,7 +232,7 @@ public class Monitor extends Service{
 		@Override
 		protected void onPostExecute(Boolean success) {
 			Log.d(TAG+" - onPostExecute","monitor exit"); 
-			Monitor.monitorActive = false;
+			ClientStatusMonitor.monitorActive = false;
 		}
 		
 
@@ -479,7 +479,7 @@ public class Monitor extends Service{
 	    			else {
 	    				//final result ready
 	    				if(auth.error_num == 0) { //write usable results to AppPreferences
-	        				AppPreferences appPrefs = Monitor.getAppPrefs(); //get singleton appPrefs to save authToken
+	        				AppPreferences appPrefs = ClientStatusMonitor.getAppPrefs(); //get singleton appPrefs to save authToken
 	        				appPrefs.setEmail(email);
 	        				appPrefs.setPwd(pwd);
 	        				appPrefs.setMd5(auth.authenticator);
@@ -497,7 +497,7 @@ public class Monitor extends Service{
 	    	Boolean success = false;
 
 	    	//get singleton appPrefs to read authToken
-			AppPreferences appPrefs = Monitor.getAppPrefs(); 
+			AppPreferences appPrefs = ClientStatusMonitor.getAppPrefs(); 
 			
 			//make asynchronous call to attach project
 	    	success = rpc.projectAttach(getString(R.string.project_url), appPrefs.getMd5(), getString(R.string.project_name));

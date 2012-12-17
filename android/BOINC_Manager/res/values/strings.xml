@@ -1,10 +1,13 @@
 <resources>
+
     <string name="app_name">BOINC Manager</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
-  
+
     <!-- project settings -->
     <string name="project_name">BOINC Test Project</string>
     <string name="project_url">http://isaac.ssl.berkeley.edu/test/</string>
+    <string name="title_activity_initial">InitialActivity</string>
+
 </resources>
