@@ -1,4 +1,4 @@
-iAndroidBOINC
+AndroidBOINC
 ============
 
 Porting Berkeley's Open Infrastructure for Network Computing -BOINC- to Android-powered devices.
