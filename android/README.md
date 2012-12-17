@@ -13,4 +13,4 @@ generic BOINC Manager. Can be adapted/branded for individual project. Requires B
 
 CAUTION:
 if you want to build these projects on your own machine, make sure to copy BOINC Client binaries into the projects "assets/" direcory!
-Current build can be found at https://github.com/novarow/AndroidBOINC-binaries/android/
+Current build can be found at https://github.com/novarow/AndroidBOINC-binaries/
