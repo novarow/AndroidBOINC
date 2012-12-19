@@ -39,14 +39,14 @@ public class ClientService extends Service{
 	
 	private final String TAG = "BOINC ClientService";
 	
-	private Boolean started = false;
+	//does not need to be persistent. BOINC Client checks whether another instance is running.
+	private Boolean clientStarted = false; //shows whether native Client has already been executed.
+	// necessary? private Process clientProcess; //reference can be lost, when service get re-instantiated.
 	
 	private String clientName; 
 	private String authFileName; 
 	private String clientPath; 
 	
-	private Process clientProcess;
-	//private NotificationManager mNM;
 	
 	/*
 	 * returns this class, allows clients to access this service's AIDL methods.
@@ -63,6 +63,13 @@ public class ClientService extends Service{
     @Override
     public IBinder onBind(Intent intent) {
     	// return the AIDL interface stub.
+    	Log.d(TAG,"onBind");
+    	
+    	//onBind does on trigger onStartCommand. Thus, start Client here, too...
+    	/* start client */
+		Boolean status = setupClient(); //setupClient returns true, if Client already started.
+		Log.d(TAG, "setupClient returned: " + status);
+		
         return mBinder;
     }
 	
@@ -80,23 +87,18 @@ public class ClientService extends Service{
     	//this gets called when by BootReceiver calls startService(intent)
     	Log.d(TAG, "onStartCommand");
     	
+    	/*
     	Boolean autostart = false;
     	try {
     		autostart = intent.getBooleanExtra("autostart", false); //if true, received intent is for autostart and got fired by the BootReceiver on start up.
     	}
     	catch (NullPointerException e) { // occurs, when onStartCommand is called with a null intent. Occurs on re-start, if START_STICKY is used. 
     		Log.d(TAG,"NullPointerException, intent flags: " + flags);
-    	}
+    	} */
 		
     	/* start client */
-		Log.d(TAG, "values: intent-autostart " + autostart + " - started " + started);
-		if(!started) {
-			started = setupClient();
-			Log.d(TAG, "setupClient returned: " + started);
-		}
-		else {
-			Log.d(TAG, "asynchronous monitor NOT started!");
-		}
+		Boolean status = setupClient(); //setupClient returns true, if Client already started.
+		Log.d(TAG, "setupClient returned: " + status);
 		
 		/*
 		 * START_NOT_STICKY is now used and replaced START_STICKY in previous implementations.
@@ -112,25 +114,14 @@ public class ClientService extends Service{
     }
 
     
-    /*
-     * Show a notification while service is running.
-     
-    private void showNotification() {
-		mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        Notification notification = new Notification(R.drawable.boinc, getString(R.string.autostart_notification_header), System.currentTimeMillis());
-
-        // Set current view for notification panel
-        notification.setLatestEventInfo(getApplicationContext(), getString(R.string.autostart_notification_header), getString(R.string.autostart_notification_text), null);
-
-        // Send notification
-        mNM.notify(1234, notification);
-    }*/
-    
     private Boolean setupClient() {
-		//setup client
+    	Log.d(TAG,"setup Client routine");
 		Boolean success = false;
 		
-		
+		if(clientStarted) {
+			Log.d(TAG,"client already started, return.");
+			return true;
+		}
         success = installClient(false);
         if(success) {
         	Log.d(TAG,"installed");
@@ -164,7 +155,7 @@ public class ClientService extends Service{
     		//end execution if no overwrite
     		File boincClient = new File(clientPath+clientName);
     		if (boincClient.exists() && !overwrite) {
-    			Log.d(TAG,"client exists, end setup of client");
+    			Log.d(TAG,"client already installed, quit.");
     			return true;
     		}
     		
@@ -213,8 +204,9 @@ public class ClientService extends Service{
     	Boolean success = false;
     	try { 
         	//starts a new process which executes the BOINC client 
-        	clientProcess = Runtime.getRuntime().exec(clientPath + clientName, null, new File(clientPath));
+        	Runtime.getRuntime().exec(clientPath + clientName, null, new File(clientPath));
         	success = true;
+        	clientStarted = true;
     	}
     	catch (IOException ioe) {
     		Log.d(TAG, "starting BOINC client failed with Exception: " + ioe.getMessage());
@@ -229,10 +221,11 @@ public class ClientService extends Service{
      */
     private String readAuthKey() {
     	File authFile = new File(clientPath+authFileName);
-    	StringBuffer fileData = new StringBuffer(100);
-    	char[] buf = new char[1024];
+    	String authKey = null;
     	int read = 0;
     	try{
+        	StringBuffer fileData = new StringBuffer(100);
+        	char[] buf = new char[1024];
     		BufferedReader br = new BufferedReader(new FileReader(authFile));
     		while((read=br.read(buf)) != -1){
     	    	String readData = String.valueOf(buf, 0, read);
@@ -240,6 +233,8 @@ public class ClientService extends Service{
     	    	buf = new char[1024];
     	    }
     		br.close();
+    		authKey = fileData.toString();
+    		Log.d(TAG, "authKey: " + authKey);
     	}
     	catch (FileNotFoundException fnfe) {
     		Log.e(TAG, "auth file not found",fnfe);
@@ -248,9 +243,6 @@ public class ClientService extends Service{
     		Log.e(TAG, "ioexception",ioe);
     	}
 
-		String authKey = fileData.toString();
-		Log.d(TAG, "authKey: " + authKey);
-	
-		return authKey;
+		return authKey; //returns null if file not found or exception while reading.
     }
 }

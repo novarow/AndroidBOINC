@@ -36,6 +36,6 @@ interface IClientService {
 	 * URLs: ArrayList of all URLs that project intents to attach
 	 * packageName: Android package name of project application
 	 * 
-	 * returns web-RPC authentication token, which is required to establish socket communication to BOINC Client*/
+	 * returns web-RPC authentication token, which is required to establish socket communication to BOINC Client. Can be null, if problem occurs!*/
 	String getAuthToken(in List<String> URLs, in String packageName);
 }
