@@ -39,9 +39,18 @@ public class ClientService extends Service{
 	
 	private final String TAG = "BOINC ClientService";
 	
-	//does not need to be persistent. BOINC Client checks whether another instance is running.
-	private Boolean clientStarted = false; //shows whether native Client has already been executed.
-	// necessary? private Process clientProcess; //reference can be lost, when service get re-instantiated.
+	/* clientStarted
+	 * shows whether native BOINC Client has already been executed during
+	 * this particular service life-cycle.
+	 * It does not need to be persistent over several life-cycles, because
+	 * BOINC Client itself checks with "lockfile" whether another instance 
+	 * is running.
+	 * 
+	 * => not reliable!
+	 */
+	private Boolean nativeProcessStarted = false;
+	
+	private Boolean setupSuccess = false;
 	
 	private String clientName; 
 	private String authFileName; 
@@ -60,33 +69,29 @@ public class ClientService extends Service{
 		}
 	};
 	
-    @Override
-    public IBinder onBind(Intent intent) {
-    	// return the AIDL interface stub.
-    	Log.d(TAG,"onBind");
-    	
-    	//onBind does on trigger onStartCommand. Thus, start Client here, too...
-    	/* start client */
-		Boolean status = setupClient(); //setupClient returns true, if Client already started.
-		Log.d(TAG, "setupClient returned: " + status);
-		
-        return mBinder;
-    }
-	
 	@Override
     public void onCreate() {
+		//gets always called first at the beginning of the service life-cycle.
 		Log.d(TAG,"onCreate()");
-		//initialization of components gets performed in onStartCommand
+		
+		//read configuration strings from resource file
 		clientName = getResources().getString(R.string.client_name); 
 		authFileName = getResources().getString(R.string.auth_file_name); 
 		clientPath = getResources().getString(R.string.client_path); 
+		
+		//native client setup routine
+		setupClient();
+		Log.d(TAG, "setupClient has finished with: " + setupSuccess);
+		
+		 
     }
 	
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {	
-    	//this gets called when by BootReceiver calls startService(intent)
+    	//gets called (after onCreate) by BootReceiver's startService(intent).
     	Log.d(TAG, "onStartCommand");
     	
+    	//TODO: check for autostart setting necessary?
     	/*
     	Boolean autostart = false;
     	try {
@@ -95,11 +100,7 @@ public class ClientService extends Service{
     	catch (NullPointerException e) { // occurs, when onStartCommand is called with a null intent. Occurs on re-start, if START_STICKY is used. 
     		Log.d(TAG,"NullPointerException, intent flags: " + flags);
     	} */
-		
-    	/* start client */
-		Boolean status = setupClient(); //setupClient returns true, if Client already started.
-		Log.d(TAG, "setupClient returned: " + status);
-		
+				
 		/*
 		 * START_NOT_STICKY is now used and replaced START_STICKY in previous implementations.
 		 * Lifecycle events - e.g. killing apps by calling their "onDestroy" methods, or killing an app in the task manager - does not effect the non-Dalvik code like the native BOINC Client.
@@ -113,12 +114,26 @@ public class ClientService extends Service{
 		return START_NOT_STICKY;
     }
 
+    @Override
+    public IBinder onBind(Intent intent) {
+    	//get called every time service clients bind service in order to get the AIDL interface stub.
+    	Log.d(TAG,"onBind");
+    	
+		if(!setupSuccess) { //setupClient has not finished successfully before, try again:
+			if(!setupClient()) {
+				//failed again.
+				Log.d(TAG, "setupClient failed again, return null as Binder.");
+				return null; // Service client needs to check for null to determine success.
+			}
+		}
+        return mBinder;
+    }
     
     private Boolean setupClient() {
     	Log.d(TAG,"setup Client routine");
 		Boolean success = false;
 		
-		if(clientStarted) {
+		if(nativeProcessStarted) {
 			Log.d(TAG,"client already started, return.");
 			return true;
 		}
@@ -141,6 +156,7 @@ public class ClientService extends Service{
         	Log.d(TAG,"start failed");
         	return success;
         }
+        setupSuccess = success;
         return success;
 	}
     
@@ -203,10 +219,16 @@ public class ClientService extends Service{
     private Boolean runClient() {
     	Boolean success = false;
     	try { 
-        	//starts a new process which executes the BOINC client 
+    		/* Runtime.exec()
+    		 * Executes BOINC Client in a seperate native process, documented at:
+    		 * http://developer.android.com/reference/java/lang/Runtime.html#exec%28java.lang.String%29
+    		 * 
+    		 * Do not keep process reference, because it would be lost during service life-cycles,
+    		 * while native process would keep executing.
+    		 */
         	Runtime.getRuntime().exec(clientPath + clientName, null, new File(clientPath));
         	success = true;
-        	clientStarted = true;
+        	nativeProcessStarted = true;
     	}
     	catch (IOException ioe) {
     		Log.d(TAG, "starting BOINC client failed with Exception: " + ioe.getMessage());
