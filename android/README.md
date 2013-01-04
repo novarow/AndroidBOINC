@@ -6,10 +6,10 @@ generic BOINC applications that bundles BOINC Client and BOINC Manager in the sa
 - BOINC Client:
 generic BOINC Client.
 According to an architecture, whith generic and Android-wide unique BOINC Client. This architecture supports multiple project-branded Android applications that represent branded Managers.
+CAUTION:
+if you want to run this project on your machine, download BOINC Client ARM binaries [1] and copy them to the projects assets/ directory. For an up-to-date version, download current code from official UCB BOINC repository and build it using Android NDK.
 
 - BOINC Manager:
 generic BOINC Manager. Can be adapted/branded for individual project. Requires BOINCClient on the Android system.
 
-
-CAUTION:
-if you want to build these projects on your own machine, make sure to copy BOINC Client binaries into the projects "assets/" direcory!
+[1] http://fridgelike.com/boinc/boinc_client
