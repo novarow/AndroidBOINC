@@ -36,7 +36,7 @@ import edu.berkeley.boinc.rpc.Transfer;
  * Singleton that holds the client status data, as determined by RPC calls of Monitor.
  * To get instance call Monitor.getClientStatus()
  */
-public class ClientStatusData {
+public class ClientStatus {
 	
 	private final String TAG = "ClientStatus";
 	private Context ctx; // application context in order to fire broadcast events
@@ -53,6 +53,7 @@ public class ClientStatusData {
 	// 1 = client is launched and available for RPC (connected and authorized)
 	// 2 = client is in a permanent error state, there are not attempts to fix it (otherwise 0)
 	// 3 = client is launched but not attached to the project (login)
+	// 4 = no client installed
 	public Integer setupStatus = 0;
 	
 	//computing status

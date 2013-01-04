@@ -19,8 +19,11 @@
 package edu.berkeley.boinc.client;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import edu.berkeley.boinc.AppPreferences;
+import edu.berkeley.boinc.IClientService;
+import edu.berkeley.boinc.manager.R;
 import edu.berkeley.boinc.rpc.AccountIn;
 import edu.berkeley.boinc.rpc.AccountOut;
 import edu.berkeley.boinc.rpc.CcState;
@@ -31,10 +34,11 @@ import edu.berkeley.boinc.rpc.Project;
 import edu.berkeley.boinc.rpc.ProjectAttachReply;
 import edu.berkeley.boinc.rpc.RpcClient;
 import edu.berkeley.boinc.rpc.Transfer;
-import edu.berkeley.boinc.manager.R;
 
 import android.app.Service;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.AsyncTask;
 import android.os.Binder;
 import android.os.IBinder;
@@ -44,19 +48,20 @@ import android.widget.Toast;
 public class ClientStatusMonitor extends Service{
 	
 	private final String TAG = "ClientStatusMonitor";
-	
-	private static ClientStatusData clientStatus; //holds the status of the client as determined by the Monitor
-	private static AppPreferences appPrefs; //hold the status of the app, controlled by AppPreferences
-	
 	private Boolean monitorStarted = false;
+	public static Boolean monitorActive = false;
+	private RpcClient rpc = new RpcClient();
+	//private NotificationManager mNM;
 	
-	public static ClientStatusData getClientStatus() { //singleton pattern
+	//singletons:
+	private static ClientStatus clientStatus; //holds the status of the client as determined by the Monitor
+	public static ClientStatus getClientStatus() { //singleton pattern
 		if (clientStatus == null) {
-			clientStatus = new ClientStatusData();
+			clientStatus = new ClientStatus();
 		}
 		return clientStatus;
 	}
-	
+	private static AppPreferences appPrefs; //hold the status of the app, controlled by AppPreferences
 	public static AppPreferences getAppPrefs() { //singleton pattern
 		if (appPrefs == null) {
 			appPrefs = new AppPreferences();
@@ -64,12 +69,43 @@ public class ClientStatusMonitor extends Service{
 		return appPrefs;
 	}
 	
-	//private NotificationManager mNM;
-	
-	public static Boolean monitorActive = false;
-	
-	private RpcClient rpc = new RpcClient();
+	//IClientService.aidl:
+	private IClientService mIClientService;
+	private Boolean mClientServiceIsBound = false;
+	private ServiceConnection mClientServiceConnection = new ServiceConnection() {
+		private final String TAG = "mClientServiceConnection";
+		@Override
+		public void onServiceConnected (ComponentName className, IBinder service) {
+			Log.d(TAG,"onServiceConnected: remote ClientService bound.");
+			if (service==null) { //checking binding success
+				Log.d(TAG,"binding failed, service is null");
+				//error while setting up client.
+				Log.d(TAG, "onServiceConnected received null, error in remote service initialization!");
+				mClientServiceIsBound = false;
+				mIClientService = null;
+				// set setupStatus to 2
+				getClientStatus().setupStatus = 2;
+				getClientStatus().fire();
+			}
+			else {
+				mIClientService = IClientService.Stub.asInterface(service);
+				mClientServiceIsBound = true;
+				Log.d(TAG,"AIDL interface available. continue setup routine...");
+				
+				if(!monitorStarted){
+			        (new ClientMonitorAsync()).execute(new Integer[0]); //start monitor in new thread
+			        monitorStarted = true;
+				} else {Log.d(TAG, "can't start monitor, already running. monitorStarted: " + monitorStarted);}
+			}
+		}
 
+		@Override
+		public void onServiceDisconnected(ComponentName name) {
+			mIClientService = null;
+			Log.d(TAG,"service disconnected.");
+		}
+	};
+	
 	/*
 	 * returns this class, allows clients to access this service's functions and attributes.
 	 */
@@ -82,45 +118,13 @@ public class ClientStatusMonitor extends Service{
 	@Override
     public void onCreate() {
 		Log.d(TAG,"onCreate()");
-		//initialization of components gets performed in onStartCommand
-    }
-	
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {	
-    	Log.d(TAG, "onStartCommand");
 		
-		getAppPrefs().readPrefs(this); //create singleton AppPreferences prefs with current application context
+		//create singletons and set current application context:
+		getAppPrefs().readPrefs(this);
+		getClientStatus().setCtx(this);
 		
-		/*
-		 * start monitor if either
-		 * the user's preference autostart is enabled and the intent carries the autostart flag (intent from BootReceiver)
-		 * or it is not an autostart-intent (not from BootReceiver) and the service hasnt been started yet
-		 */
-		Log.d(TAG, "monitorStarted: " + monitorStarted);
-		if(!monitorStarted){
-			monitorStarted = true;
-			Log.d(TAG, "starting service sticky & setup start of monitor...");
-			
-			getClientStatus().setCtx(this);
-	        
-	        (new ClientMonitorAsync()).execute(new Integer[0]); //start monitor in new thread
-	    	
-	        Log.d(TAG, "asynchronous monitor started!");
-		}
-		else {
-			Log.d(TAG, "asynchronous monitor NOT started!");
-		}
-		/*
-		 * START_NOT_STICKY is now used and replaced START_STICKY in previous implementations.
-		 * Lifecycle events - e.g. killing apps by calling their "onDestroy" methods, or killing an app in the task manager - does not effect the non-Dalvik code like the native BOINC Client.
-		 * Therefore, it is not necessary for the service to get reactivated. When the user navigates back to the app (BOINC Manager), the service gets re-started from scratch.
-		 * Con: After user navigates back, it takes some time until current Client status is present.
-		 * Pro: Saves RAM/CPU.
-		 * 
-		 * For detailed service documentation see
-		 * http://android-developers.blogspot.com.au/2010/02/service-api-changes-starting-with.html
-		 */
-		return START_NOT_STICKY;
+		//start initialization of RemoteClientService
+		initRemoteService();
     }
 
     /*
@@ -132,7 +136,25 @@ public class ClientStatusMonitor extends Service{
         return mBinder;
     }
     private final IBinder mBinder = new LocalBinder();
-
+    
+    
+    private void initRemoteService() {
+    	
+    	// set client status
+    	getClientStatus().setupStatus = 0;
+		getClientStatus().fire();
+    	
+    	//TODO check whether client installed (whether RemoteService is available)
+    	
+    	// bind RemoteClientService
+		Intent i = new Intent();
+		i.setClassName("edu.berkeley.boinc", "edu.berkeley.boinc.ClientService"); 
+		bindService(i, mClientServiceConnection, BIND_AUTO_CREATE);
+		mClientServiceIsBound = true;
+		
+		Log.d(TAG,"initRemoteService finished, continue setup routing in onServiceConnected.");
+		//... continue setup routine in onServiceConnected method...
+    }
 	
     public void restartMonitor() {
     	if(ClientStatusMonitor.monitorActive) { //monitor is already active, launch cancelled
@@ -172,11 +194,11 @@ public class ClientStatusMonitor extends Service{
 		private final String TAG = "ClientMonitorAsync";
 		private final Boolean showRpcCommands = false;
 		
-		private Integer refreshFrequency = 3000; //frequency of which the monitor updates client status via RPC, to often can cause reduced performance!
+		private Integer refreshFrequency = getResources().getInteger(R.integer.monitor_refresh_interval_ms); //frequency of which the monitor updates client status via RPC
 		
 		@Override
 		protected Boolean doInBackground(Integer... params) {
-			Log.d(TAG+"-doInBackground","monitor started.");
+			Log.d(TAG+"-doInBackground","monitor started in new thread.");
 			
 			while(true) {
 				Log.d(TAG+"-doInBackground","monitor loop...");
@@ -185,6 +207,7 @@ public class ClientStatusMonitor extends Service{
 				if(!rpc.connectionAlive()) { //check whether connection is still alive
 					//if connection is not working, either client has not been set up yet, user not attached to project, or client crashed.
 					//in all cases trigger startUp again.
+					Log.d(TAG+"-doInBackground","connection is not alive. continue with setup routine...");
 					if(!startUp()) { //synchronous execution in same thread -> blocks monitor until finished
 						publishProgress("starting BOINC Client failed. Stop Monitor.");
 						//cancel(true); 
@@ -214,9 +237,12 @@ public class ClientStatusMonitor extends Service{
 					//AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "client status connection problem");
 				}
 				
+				//TODO pointless, since ClientStatus fires clientstatuschanged Broadcast?
+				/*
 		        Intent clientStatus = new Intent();
 		        clientStatus.setAction("edu.berkeley.boinc.clientstatus");
-		        getApplicationContext().sendBroadcast(clientStatus);
+		        getApplicationContext().sendBroadcast(clientStatus); */
+				
 	    		try {
 	    			Thread.sleep(refreshFrequency); //sleep
 	    		}catch(Exception e){}
@@ -238,39 +264,20 @@ public class ClientStatusMonitor extends Service{
 
 		
 		private Boolean startUp() {
-			
-			//adapt client status and broadcast event
-			getClientStatus().setupStatus = 0;
-			getClientStatus().fire();
-			
 			//status control
 			Boolean success = false;
+			Boolean clientConnect = false;
 			
-			//try to connect, if client of another Manager lifecycle exists.
-			Boolean connect =  connectClient();
+			// try connecting ...
+			publishProgress("connecting to client... (0/2)");
+			clientConnect = connectClient();
 			
-			if(!connect) { //if connect did not work out, start new client instance and run connect attempts in loop
-				Integer counter = 0;
-				Integer max = 5; //max number of setup attempts
-				
-				//TODO bind to BOINCClient???
-				
-				//try to connect to Client in loop
-				while(!(connect=connectClient()) && (counter<max)) { //re-trys setting up the client several times, before giving up.
-					//AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "--- restart setup ---");
-					counter++;
-					try {
-						Thread.sleep(5000);
-					}catch (Exception e) {}
-				}
-				
-				//connect still not succeeded. publish setupStatus 2 -> permanent error!
-				if(!connect) {
-					getClientStatus().setupStatus = 2;
-					getClientStatus().fire();
-					return false;
-				}
-				
+			if(!clientConnect) {
+				//connect failed (socket connection or client authorization) publish setupStatus 2 -> permanent error!
+				publishProgress("connection failed!");
+				getClientStatus().setupStatus = 2;
+				getClientStatus().fire();
+				return false;
 			}
 
 			//client is connected.
@@ -293,15 +300,24 @@ public class ClientStatusMonitor extends Service{
 		
 		private Boolean connectClient() {
 			Boolean success = false;
+			Log.d(TAG+"-doInBackground connectClient()","connecting to client in loop....");
 			
-			publishProgress("connect client.");
-			
-	        success = connect();
+			//connecting to client in loop ...
+			Integer counter = 0;
+			Integer max = getResources().getInteger(R.integer.setup_connection_attempts); //max number of connection attempts attempts
+			Integer duration = getResources().getInteger(R.integer.setup_connection_attempt_sleep_duration_ms); //sleep duration
+			while(!(success = connect()) && (counter<max)) {
+				counter++;
+				Log.d(TAG+"-doInBackground connectClient()","1. connection attempt failed, retry in " + duration + "ms.");
+				try {
+					Thread.sleep(duration);
+				}catch (Exception e) {}
+			}
 	        if(success) {
 	        	publishProgress("socket connection established (1/2)");
 	        }
 	        else {
-	        	publishProgress("socket connection failed!");
+	        	Log.d(TAG+"-doInBackground connectClient()","connection failed.");
 	        	return success;
 	        }
 	        
@@ -311,7 +327,7 @@ public class ClientStatusMonitor extends Service{
 	        	publishProgress("socket authorized. (2/2)");
 	        }
 	        else {
-	        	publishProgress("socket authorization failed!");
+	        	Log.d(TAG+"-doInBackground connectClient()","socket authorization failed.");
 	        	return success;
 	        }
 	        return success;
@@ -347,16 +363,27 @@ public class ClientStatusMonitor extends Service{
 	     * authorizes this application as valid RPC Manager by reading auth token from file and making RPC call.
 	     */
 	    private Boolean authorize() {
-	    	//TODO retrieve authKey
 	    	
-			//Log.d(TAG, "authKey: " + authKey);
-			
-			//trigger client rpc
-			//return rpc.authorize(authKey); 
-	    	return true;
+	    	String authKey = "";
+	    	List<String> projectURLs = new ArrayList<String>();
+	    	projectURLs.add(getResources().getString(R.string.project_url));
+	    	String applicationPackageName = getPackageName(); //method on Context, provides package name of current application
+	    	Log.d(TAG, "applicationPackageName: " + applicationPackageName);
+	    	try {
+	    		authKey = mIClientService.getAuthToken(projectURLs, applicationPackageName);
+	    		if (authKey==null) {
+	    			Log.d(TAG+"-doInBackground authorize()","auth key returned by AIDL call is null, return.");
+	    			return false;
+	    		}
+	    	}
+	    	catch (Exception e) {Log.e(TAG, "error in receiveing auth token", e);}
+	    	
+			Log.d(TAG, "authKey: " + authKey);
+			return rpc.authorize(authKey); 
 	    }
 	    
 	    private Boolean verifyProjectAttach() {
+	    	//TODO optimize so method checks for the actually specified project in configuration.xml
 	    	Log.d(TAG, "verifyProjectAttach");
 	    	Boolean success = false;
 	    	ArrayList<Project> projects = rpc.getProjectStatus();
