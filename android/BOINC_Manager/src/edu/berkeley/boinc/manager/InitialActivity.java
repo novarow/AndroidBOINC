@@ -4,6 +4,7 @@ import edu.berkeley.boinc.client.ClientStatus;
 import edu.berkeley.boinc.client.ClientStatusMonitor;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.StrictMode;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;

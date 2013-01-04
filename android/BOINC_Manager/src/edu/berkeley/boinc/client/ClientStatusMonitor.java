@@ -18,6 +18,11 @@
  ******************************************************************************/
 package edu.berkeley.boinc.client;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,11 +41,18 @@ import edu.berkeley.boinc.rpc.RpcClient;
 import edu.berkeley.boinc.rpc.Transfer;
 
 import android.app.Service;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Binder;
+import android.os.Environment;
 import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
@@ -124,7 +136,7 @@ public class ClientStatusMonitor extends Service{
 		getClientStatus().setCtx(this);
 		
 		//start initialization of RemoteClientService
-		initRemoteService();
+		initRemoteClientService();
     }
 
     /*
@@ -138,23 +150,60 @@ public class ClientStatusMonitor extends Service{
     private final IBinder mBinder = new LocalBinder();
     
     
-    private void initRemoteService() {
+    public void initRemoteClientService() {
     	
     	// set client status
     	getClientStatus().setupStatus = 0;
 		getClientStatus().fire();
     	
-    	//TODO check whether client installed (whether RemoteService is available)
-    	
-    	// bind RemoteClientService
-		Intent i = new Intent();
-		i.setClassName("edu.berkeley.boinc", "edu.berkeley.boinc.ClientService"); 
-		bindService(i, mClientServiceConnection, BIND_AUTO_CREATE);
-		mClientServiceIsBound = true;
-		
-		Log.d(TAG,"initRemoteService finished, continue setup routing in onServiceConnected.");
-		//... continue setup routine in onServiceConnected method...
+    	//checking whether client installed on device
+		if(!checkClientAvailable()) {
+			// client not available
+			getClientStatus().setupStatus = 4;
+			getClientStatus().fire();
+			
+			//TODO remove, in order to let user decide, whether to download or not (data usage)
+			downloadAndInstallClient();
+		} else {
+			// client installed, start binding ...
+			Intent i = new Intent();
+			i.setClassName("edu.berkeley.boinc", "edu.berkeley.boinc.ClientService"); 
+			bindService(i, mClientServiceConnection, BIND_AUTO_CREATE);
+			
+			Log.d(TAG,"initRemoteService finished, continue setup routing in onServiceConnected.");
+			//... continue setup routine in onServiceConnected method of mClientServiceConnection...
+		}
     }
+    
+    private Boolean checkClientAvailable() {
+    	Boolean found = false; 
+    	try {
+			Log.d(TAG,"initRemoteService() checking for presence of package: " + getResources().getString(R.string.client_android_package_name));
+			PackageInfo clientInfo = getPackageManager().getPackageInfo(getResources().getString(R.string.client_android_package_name), 0);
+			if(clientInfo!=null) {
+				Log.d(TAG,"initRemoteService() client found!");
+				return true;
+			}
+		} catch(PackageManager.NameNotFoundException e) {}
+		//client not installed.
+		Log.d(TAG,"initRemoteService() Client not found.");
+    	return found;
+    }
+    
+    /*
+     * should be triggerable by user, when in setupStatus = 4
+     */
+    public void downloadAndInstallClient() {
+    	//TODO download official Client app from PlayStore
+    	//TODO remove write external storage permission if not needed anymore
+    	
+    	// set client back to "setting up", in order to provide user feedback.
+		getClientStatus().setupStatus = 0;
+		getClientStatus().fire();
+    	(new DownloadAndInstallClientApp()).execute(); //asynchronous call.
+    	// initRemoteClientService gets called again by clientInstalledReceiver
+    }
+    
 	
     public void restartMonitor() {
     	if(ClientStatusMonitor.monitorActive) { //monitor is already active, launch cancelled
@@ -589,11 +638,75 @@ public class ClientStatusMonitor extends Service{
 		protected Boolean doInBackground(Void... params) {
 			Log.d(TAG, "doInBackground");
 	    	Boolean success = rpc.quit();
-	    	//AndroidBOINCActivity.logMessage(getApplicationContext(), TAG, "graceful shutdown returned " + success);
-			if(!success) {
-				//TODO quit BOINCClient service somehow?
-			}
+	    	Log.d(TAG,"graceful shutdown returned: " + success);
 			return success;
 		}
 	}
+	
+	private final class DownloadAndInstallClientApp extends AsyncTask<Void,Void,Boolean> {
+
+		private final String TAG = "DownloadAndInstallClientApp";
+		@Override
+		protected Boolean doInBackground(Void... params) {
+	    	Log.d(TAG+"-doInBackground", "installing Client...");
+	    	try{
+		    	if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) { //checking whether SD card is present
+		    		
+		    		//downloading apk
+		    		URL url = new URL(getResources().getString(R.string.client_download_url));
+		            HttpURLConnection c = (HttpURLConnection) url.openConnection();
+		            c.setRequestMethod("GET");
+		            c.setDoOutput(true);
+		            c.connect();
+		    		File tmpDir = new File(Environment.getExternalStorageDirectory(),"/boinc_download/"); 
+		    		tmpDir.mkdirs();
+		    		File app = new File(tmpDir,"boinc_client.apk");
+		    		FileOutputStream fos = new FileOutputStream(app);
+		    		InputStream is = c.getInputStream();
+		            byte[] buffer = new byte[1024];
+		            int len1 = 0;
+		            while ((len1 = is.read(buffer)) != -1) {
+		                fos.write(buffer, 0, len1);
+		            }
+		            fos.close();
+		            is.close();
+		            
+		            //register receiver for successful install
+		            IntentFilter mIntentFilter = new IntentFilter();
+		            mIntentFilter.addAction(Intent.ACTION_PACKAGE_ADDED);
+		            mIntentFilter.addDataScheme("package");
+		            registerReceiver(clientInstalledReceiver, mIntentFilter);
+		            
+		            //installation in new activity
+		            Intent intent = new Intent(Intent.ACTION_VIEW);
+		            intent.setDataAndType(Uri.fromFile(app), "application/vnd.android.package-archive");
+		            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		            startActivity(intent);  
+		    	} else{
+		    		Log.d(TAG, "getExternalStorageState() does not return MEDIA_MOUNTED");
+		    		return false;
+		    	}
+	    	} catch(Exception e) {Log.e(TAG, "error in installClient", e); return false;}
+			return true;
+		}
+	}
+	
+	BroadcastReceiver clientInstalledReceiver = new BroadcastReceiver() {
+		
+		private final String TAG = "clientInstalledReceiver";
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			Log.d(TAG,"onReceive");
+		    String action = intent.getAction();
+		    if (Intent.ACTION_PACKAGE_ADDED.equals(action)) {
+		        Uri data = intent.getData();
+		        String packageName = data.getEncodedSchemeSpecificPart();
+		        if(packageName.equals(getResources().getString(R.string.client_android_package_name))){
+		        	Log.d(TAG, "installation successful: " + packageName + " ; restarting initRemoteClientService()");
+		        	initRemoteClientService(); //restarting initialization of ClientService
+		        }
+            }
+        }          
+	};
+	
 }
