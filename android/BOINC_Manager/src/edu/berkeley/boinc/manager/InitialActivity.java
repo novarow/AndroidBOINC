@@ -1,20 +1,31 @@
 package edu.berkeley.boinc.manager;
 
+import java.util.ArrayList;
+
 import edu.berkeley.boinc.client.ClientStatus;
 import edu.berkeley.boinc.client.ClientStatusMonitor;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.os.StrictMode;
-import android.app.Activity;
+import android.app.ActionBar;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class InitialActivity extends Activity {
+
+public class InitialActivity extends FragmentActivity implements ActionBar.OnNavigationListener{
 	
 	private final String TAG = "InitialActivity"; 
 	
@@ -45,15 +56,52 @@ public class InitialActivity extends Activity {
         
         bindMonitorService();
         
+        // populate data for drop down (spinner) menu
+        ArrayList<SpinnerMenuEntry> menuData = new ArrayList<SpinnerMenuEntry>();
+        if(getResources().getBoolean(R.bool.menu_show_home)) menuData.add(new SpinnerMenuEntry(R.drawable.homew, R.string.menu_home));
+        if(getResources().getBoolean(R.bool.menu_show_tasks)) menuData.add(new SpinnerMenuEntry(R.drawable.chartw, R.string.menu_tasks));
+        if(getResources().getBoolean(R.bool.menu_show_transfers)) menuData.add(new SpinnerMenuEntry(R.drawable.exportw, R.string.menu_transfers));
+        if(getResources().getBoolean(R.bool.menu_show_messages)) menuData.add(new SpinnerMenuEntry(R.drawable.mailw, R.string.menu_messages));
+        if(getResources().getBoolean(R.bool.menu_show_debug)) menuData.add(new SpinnerMenuEntry(R.drawable.bugw, R.string.menu_debug));
+        if(getResources().getBoolean(R.bool.menu_show_settings)) menuData.add(new SpinnerMenuEntry(R.drawable.wrenchw, R.string.menu_settings));
+        SpinnerMenuAdapter mSpinnerAdapter = new SpinnerMenuAdapter(menuData);
 
-    }
+        final ActionBar ab = getActionBar();
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_initial, menu);
-        return true;
+        // set defaults for logo & home up
+        ab.setDisplayUseLogoEnabled(true);
+        ab.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
+        
+        // set spinner list
+        ab.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+        ab.setListNavigationCallbacks(mSpinnerAdapter, this);
+        
     }
     
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+    	MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.activity_initial, menu);
+        return true;
+    }
+
+
+    @Override
+    /*
+     * gets called when user selects action item ( see onCreateOptions) passing its ID
+     */
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+            // TODO handle clicking the app icon/logo
+            return false;
+        case R.id.menu_resume_computation:
+        	Log.d(TAG,"menu_resume_computation clicked");
+            return false;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+    }
 
     @Override
 	protected void onDestroy() {
@@ -78,4 +126,66 @@ public class InitialActivity extends Activity {
 	        mIsBound = false;
 	    }
 	}
+	
+	public class SpinnerMenuEntry {
+		public int iconId;
+		public int titleId;
+		public SpinnerMenuEntry(int icon, int title) {
+			this.iconId = icon;
+			this.titleId = title;
+		}
+	}
+	
+	public class SpinnerMenuAdapter extends BaseAdapter{
+		ArrayList<SpinnerMenuEntry> data;
+		LayoutInflater inflater;
+
+		public SpinnerMenuAdapter(ArrayList<SpinnerMenuEntry> data) {
+			this.data = data;
+			inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			//setup view
+			View v = convertView;
+			v = inflater.inflate(R.layout.menu_spinner_item_layout, null);
+			
+			//get data
+			SpinnerMenuEntry sme = data.get(position);
+			
+			//modify view elements according to data in sme:
+			TextView title = (TextView) v.findViewById(R.id.name);
+			title.setText(sme.titleId);
+			ImageView image = (ImageView) v.findViewById(R.id.icon);
+			image.setImageResource(sme.iconId);
+			return v;
+		}
+
+		@Override
+		public int getCount() {
+			return data.size();
+		}
+
+		@Override
+		public Object getItem(int arg0) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public long getItemId(int arg0) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+	}
+
+	@Override
+	public boolean onNavigationItemSelected(int itemPosition, long itemId) {
+		// TODO Auto-generated method stub
+		Log.d(TAG,"onNavigationItemSelected at position " + itemPosition);
+		return false;
+	}
+	
 }

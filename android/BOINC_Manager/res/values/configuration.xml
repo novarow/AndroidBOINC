@@ -22,8 +22,20 @@
 	    <string name="project_name">BOINC Test Project</string>
 	    <string name="project_url">http://isaac.ssl.berkeley.edu/test/</string>
 	    
+	<!-- global strings -->
+    	<string name="app_name">BOINC Manager</string>
+		<string name="title_activity_initial">BOINC on Android</string>
+	    
     <!-- application behavior -->
     	<integer name="monitor_refresh_interval_ms">3000</integer>
     	<integer name="setup_connection_attempts">5</integer>
     	<integer name="setup_connection_attempt_sleep_duration_ms">5000</integer>
+    	
+    <!-- menu customization -->
+    	<bool name="menu_show_home">true</bool>
+    	<bool name="menu_show_tasks">true</bool>
+    	<bool name="menu_show_transfers">true</bool>
+    	<bool name="menu_show_messages">true</bool>
+    	<bool name="menu_show_debug">true</bool>
+    	<bool name="menu_show_settings">false</bool>
 </resources>
